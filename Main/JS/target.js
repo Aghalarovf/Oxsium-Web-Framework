@@ -165,6 +165,23 @@ const Target = (() => {
                 UI.toast(`Backend error: ${data.error}`, 'error');
                 UI.setConnBadge('error');
             }
+
+            function reset() {
+                const domainEl = fields.domain();
+                const interceptEl = fields.intercept();
+                if (domainEl) domainEl.value = '';
+                if (interceptEl) interceptEl.value = '';
+                document.querySelectorAll('#target-threads-group .dns-thread-btn').forEach(btn => {
+                    btn.classList.toggle('dns-thread-btn-active', btn.dataset.val === '3');
+                });
+                State.target.domain = '';
+                State.target.url = '';
+                State.target.threads = 3;
+                State.target.intercept = '';
+                save();
+                syncRightPanel();
+                UI.toast('Target settings reset', 'info');
+            }
         } catch {
             UI.toast('Backend unreachable', 'error');
             UI.setConnBadge('error');
@@ -203,6 +220,8 @@ const Target = (() => {
             readForm();
             save();
         });
+        const resetBtn = document.getElementById('ts-reset-btn');
+        if (resetBtn) resetBtn.addEventListener('click', reset);
 
         const otherKeys = ['intercept'];
         otherKeys.forEach(key => {
@@ -221,5 +240,5 @@ const Target = (() => {
         initListeners();
     }
 
-    return { init, readForm, writeForm, validate, save, load, syncRightPanel, syncBackend };
+    return { init, readForm, writeForm, validate, save, load, reset, syncRightPanel, syncBackend };
 })();
