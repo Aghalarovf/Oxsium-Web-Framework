@@ -10,14 +10,9 @@ const Target = (() => {
     /* ── Form sahələri ─────────────────────────────────────── */
     const fields = {
         domain:   () => document.getElementById('input-domain'),
-        url:      () => document.querySelector('input[placeholder="https://target.com"]'),
-        ip:       () => document.querySelector('input[placeholder="192.168.1.10"]'),
-        port:     () => document.querySelector('input[placeholder="443"]'),
-        basePath: () => document.querySelector('input[placeholder="/api/v1"]'),
-        username: () => document.querySelector('input[placeholder="admin"]'),
-        password: () => document.querySelector('input[type="password"]'),
-        headers:  () => document.querySelector('.form-textarea'),
-        proxy:    () => document.querySelector('input[placeholder="http://127.0.0.1:8080"]'),
+        url:      () => null,
+        threads:  () => document.querySelector('#target-threads-group .dns-thread-btn-active'),
+        intercept:() => document.getElementById('input-intercept'),
     };
 
     /* ── URL-dən domain çıxar ──────────────────────────────── */
@@ -41,7 +36,9 @@ const Target = (() => {
     function readForm() {
         Object.entries(fields).forEach(([key, fn]) => {
             const el = fn();
-            if (el) State.target[key] = el.value.trim();
+            if (el) State.target[key] = key === 'threads'
+                ? parseInt(el.dataset.val || '3', 10)
+                : el.value.trim();
         });
     }
 
@@ -49,7 +46,15 @@ const Target = (() => {
     function writeForm() {
         Object.entries(fields).forEach(([key, fn]) => {
             const el = fn();
-            if (el && State.target[key]) el.value = State.target[key];
+            if (el && State.target[key]) {
+                if (key === 'threads') {
+                    document.querySelectorAll('#target-threads-group .dns-thread-btn').forEach(btn => {
+                        btn.classList.toggle('dns-thread-btn-active', btn.dataset.val === String(State.target[key]));
+                    });
+                } else {
+                    el.value = State.target[key];
+                }
+            }
         });
     }
 
@@ -59,38 +64,31 @@ const Target = (() => {
         if (!domainEl) return;
 
         State.target.domain = domainEl.value.trim();
+        State.target.url = _buildUrl(State.target.domain);
         save();
     }
 
     /* ── URL dəyişdikdə Domain-i avtomatik yenilə ─────────── */
     function _onUrlChange() {
         const domainEl = fields.domain();
-        const urlEl    = fields.url();
-        if (!domainEl || !urlEl) return;
-
-        const raw = urlEl.value.trim();
-
-        // http:// və ya https:// ilə başlamırsa avtomatik əlavə et
-        if (raw && !/^https?:\/\//i.test(raw)) {
-            urlEl.value = 'https://' + raw;
-        }
-
-        const domain = _extractDomain(urlEl.value.trim());
+        if (!domainEl) return;
+        const domain = _extractDomain(domainEl.value.trim());
         if (domain) domainEl.value = domain;
 
         State.target.domain = domainEl.value.trim();
-        State.target.url    = urlEl.value.trim();
+        State.target.url    = _buildUrl(State.target.domain);
         save();
     }
 
     /* ── Doğrulama ─────────────────────────────────────────── */
     function validate() {
         readForm();
-        const url = State.target.url;
+        const url = State.target.url || _buildUrl(State.target.domain);
+        State.target.url = url;
 
         if (!url) {
-            UI.toast('Target URL is required', 'error');
-            const el = fields.url();
+            UI.toast('Domain Name is required', 'error');
+            const el = fields.domain();
             if (el) {
                 el.classList.add('error');
                 setTimeout(() => el.classList.remove('error'), 2000);
@@ -140,16 +138,12 @@ const Target = (() => {
     async function syncBackend() {
         readForm();
         const url  = State.target.url;
-        const port = State.target.port ? parseInt(State.target.port, 10) : undefined;
-
         if (!url) return;
 
         try {
             const body = {
                 url,
-                ...(port && !isNaN(port) ? { port }            : {}),
-                ...(State.target.proxy   ? { proxy:   State.target.proxy   } : {}),
-                ...(State.target.headers ? { headers: State.target.headers } : {}),
+                ...(State.target.threads ? { threads: State.target.threads } : {}),
             };
 
             const res = await fetch(`${State.api.base}/api/target/set`, {
@@ -180,9 +174,6 @@ const Target = (() => {
     /* ── Form input-larını dinlə ───────────────────────────── */
     function initListeners() {
         const domainEl = fields.domain();
-        const urlEl    = fields.url();
-
-        // Domain inputu dəyişdikdə → URL avtomatik yenilənsin
         if (domainEl) {
             domainEl.addEventListener('input', _onDomainChange);
             domainEl.addEventListener('blur',  () => {
@@ -192,25 +183,35 @@ const Target = (() => {
             });
         }
 
-        // URL inputu dəyişdikdə → Domain avtomatik yenilənsin + prefix əlavə edilsin
-        if (urlEl) {
-            urlEl.addEventListener('input', _onUrlChange);
-            urlEl.addEventListener('blur',  () => {
-                _onUrlChange();
-                syncRightPanel();
-                syncBackend();
+        document.querySelectorAll('#target-threads-group .dns-thread-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#target-threads-group .dns-thread-btn').forEach(item => item.classList.remove('dns-thread-btn-active'));
+                btn.classList.add('dns-thread-btn-active');
+                readForm();
+                save();
             });
-        }
+        });
 
-        // Digər sahələr
-        const otherKeys = ['ip', 'port', 'basePath', 'username', 'password', 'headers', 'proxy'];
+        const browseBtn = document.getElementById('target-browse-btn');
+        const interceptFile = document.getElementById('target-intercept-file');
+        if (browseBtn && interceptFile) browseBtn.addEventListener('click', () => interceptFile.click());
+        if (interceptFile) interceptFile.addEventListener('change', event => {
+            const file = event.target.files?.[0];
+            const input = fields.intercept();
+            if (!file || !input) return;
+            input.value = file.name;
+            readForm();
+            save();
+        });
+
+        const otherKeys = ['intercept'];
         otherKeys.forEach(key => {
             const el = fields[key]();
             if (!el) return;
             el.addEventListener('input', () => { readForm(); save(); });
             el.addEventListener('blur',  () => {
                 syncRightPanel();
-                if (key === 'port') syncBackend();
+                syncBackend();
             });
         });
     }

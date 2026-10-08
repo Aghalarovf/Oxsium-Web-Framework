@@ -303,7 +303,8 @@ const ScanController = (() => {
         const dnsDomain = v('dns-input-domain') || v('input-domain');
         const dnsNS     = v('dns-input-nameserver');
         const dnsPanel  = document.getElementById('panel-dns-enum') || document;
-        const activeBtn = dnsPanel.querySelector('#dns-threads-group .dns-thread-btn-active');
+        const activeBtn = dnsPanel.querySelector('#dns-threads-group .dns-thread-btn-active')
+            || document.querySelector('#target-threads-group .dns-thread-btn-active');
         const dnsThreads = activeBtn ? parseInt(activeBtn.dataset.val) : 3;
         return {
             domain:     dnsDomain,

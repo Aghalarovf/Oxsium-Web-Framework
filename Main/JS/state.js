@@ -20,6 +20,8 @@ const State = {
         password: '',
         headers:  '',
         proxy:    '',
+        threads:  3,
+        intercept:'',
         protocol: 'http-https',  // 'http-https' | 'ws-wss'
         mode:     'single',      // 'single' | 'bulk' | 'file'
     },
