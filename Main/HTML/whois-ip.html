@@ -1,0 +1,389 @@
+<div class="section-title">WHOIS & IP Intelligence</div>
+<div class="section-sub">Domain registration details, IP geolocation, ASN, CDN detection, DNS records, and HTTP headers</div>
+
+<div class="dns-section" id="whois-sec-target-params" style="margin-bottom:12px;">
+  <div class="dns-section-head" id="whois-target-params-head">
+    <div class="dns-section-icon">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+        <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+        <path d="M5 5h2.5M5 8h6M5 11h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="11" cy="5" r="1.5" fill="currentColor" opacity=".7"/>
+      </svg>
+    </div>
+    <span class="dns-section-title">Target Parameters</span>
+    <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="dns-section-body">
+    <div class="form-row" style="grid-template-columns:1fr;margin-bottom:12px;">
+      <div class="form-group">
+        <label class="form-label">Domain Name</label>
+        <input class="form-input" id="whois-input-domain" type="text" placeholder="example.com" spellcheck="false" autocomplete="off">
+      </div>
+    </div>
+    <div class="form-row" style="grid-template-columns:1fr 1fr;margin-bottom:12px;">
+      <div class="form-group">
+        <label class="form-label">Workers</label>
+        <div class="dns-threads-group" id="whois-workers-group">
+          <button class="dns-thread-btn" data-val="5">5</button>
+          <button class="dns-thread-btn dns-thread-btn-active" data-val="10">10</button>
+          <button class="dns-thread-btn" data-val="20">20</button>
+          <button class="dns-thread-btn" data-val="30">30</button>
+          <button class="dns-thread-btn" data-val="50">50</button>
+        </div>
+      </div>
+      <div class="form-group"></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:4px;">
+      <button id="whois-start-btn" class="btn-primary" style="flex:1;">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+          <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        Start
+      </button>
+      <button id="whois-stop-btn" class="btn-danger">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+          <rect x="4" y="4" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.4"/>
+        </svg>
+        Stop
+      </button>
+      <button id="whois-reset-btn" class="btn-secondary" style="height:auto;align-self:stretch;padding:0 16px;" title="Reset">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8a5 5 0 1 0 5-5 5 5 0 0 0-3.54 1.46L3 3M3 3v3h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <button id="whois-load-db-btn" class="btn-load-db">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 2v8M5 7l3 3 3-3M3 12.5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Load From Database
+    </button>
+  </div>
+</div>
+
+<div style="margin-top:16px;margin-bottom:16px;">
+  <div class="output-title">Scan Results</div>
+  <div class="output-wrap sub-output-wrap" id="whois-output-wrap">
+    <span class="output-placeholder">// Output will appear here when scan is running...</span>
+  </div>
+</div>
+
+<div id="whois-subtab-bar" style="display:flex;gap:2px;padding:8px 10px 0;border-bottom:1px solid var(--border);background:var(--bg-input);flex-wrap:wrap;">
+  <button class="whois-subtab-btn active" data-whoistab="whois-sub-domain">Domain WHOIS</button>
+  <button class="whois-subtab-btn" data-whoistab="whois-sub-ip">IP Intelligence</button>
+  <button class="whois-subtab-btn" data-whoistab="whois-sub-cdn">CDN & Headers</button>
+  <button class="whois-subtab-btn" data-whoistab="whois-sub-rep">Reputation</button>
+  <button class="whois-subtab-btn" data-whoistab="whois-sub-history">History</button>
+  <button class="whois-subtab-btn" data-whoistab="whois-sub-json">Raw JSON</button>
+</div>
+
+<div class="whois-sub-panel active" id="whois-sub-domain">
+  <div class="dns-section" id="sec-whois-domain" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 3v10M2 7h12" stroke="currentColor" stroke-width="1.3"/></svg>
+      </div>
+      <span class="dns-section-title">Domain WHOIS / RDAP</span>
+      <span class="dns-section-badge dim" id="whois-domain-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="dns-anomaly-summary" id="whois-dates-summary" style="margin:10px;border-radius:var(--radius-sm);">
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-created">--</div>
+          <div class="anomaly-stat-label">Created</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-updated">--</div>
+          <div class="anomaly-stat-label">Updated</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-expires">--</div>
+          <div class="anomaly-stat-label">Expires</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-days-expiry">--</div>
+          <div class="anomaly-stat-label">Days Left</div>
+        </div>
+      </div>
+      <div id="whois-domain-rows" class="wh-kv-list">
+        <div class="wh-kv"><span class="wh-k">Domain</span><div class="wh-v" id="whois-domain-name">--</div></div>
+        <div class="wh-kv"><span class="wh-k">Status</span><div class="wh-v" id="whois-status">--</div></div>
+        <div class="wh-kv"><span class="wh-k">Registrar</span><div class="wh-v" id="whois-registrar">--</div></div>
+        <div class="wh-kv"><span class="wh-k">IANA ID</span><div class="wh-v" id="whois-iana">--</div></div>
+        <div class="wh-kv"><span class="wh-k">Nameservers</span><div class="wh-v" id="whois-ns">--</div></div>
+        <div class="wh-kv"><span class="wh-k">DNSSEC</span><div class="wh-v" id="whois-dnssec">--</div></div>
+        <div class="wh-kv"><span class="wh-k">Sources</span><div class="wh-v" id="whois-sources">--</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dns-section" id="sec-whois-privacy" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.3"/><path d="M2 14c0-3 2.5-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">Contacts & Privacy</span>
+      <span class="dns-section-badge dim" id="whois-privacy-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="dns-info-banner" id="privacy-banner" style="margin:10px 10px 0;">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 2l6 12H2L8 2z" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v3M8 11.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Privacy Check: Analyzing WHOIS output for GDPR, WhoisGuard, and redacted fields...
+      </div>
+      <div class="whois-contacts-grid" style="padding:10px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;">
+        <div class="data-empty" style="grid-column:1/-1;">
+          <span>Run enumeration to retrieve contact details</span>
+        </div>
+      </div>
+      <div id="whois-privacy-emails-wrap" style="display:none;padding:0 10px 10px;">
+        <div style="font-family:var(--head);font-size:10px;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">Visible Proxy Emails</div>
+        <div id="whois-privacy-emails" style="font-size:11px;color:var(--text-sec);word-break:break-all;line-height:1.7;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="whois-sub-panel" id="whois-sub-ip">
+  <div class="dns-section" id="sec-whois-ip" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M2 8h12M8 2c-2 2-3 4-3 6s1 4 3 6" stroke="currentColor" stroke-width="1.2"/></svg>
+      </div>
+      <span class="dns-section-title">IP Intelligence</span>
+      <span class="dns-section-badge dim" id="ip-intel-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div id="whois-ip-list" style="padding-bottom:10px;">
+        <div class="data-empty"><span>Run enumeration to retrieve IP intelligence</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dns-section" id="sec-whois-geo" style="margin-top:8px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M2 8h12M8 2c1.6 2 2.4 4 2.4 6s-.8 4-2.4 6c-1.6-2-2.4-4-2.4-6s.8-4 2.4-6z" stroke="currentColor" stroke-width="1.1"/></svg>
+      </div>
+      <span class="dns-section-title">Global Location</span>
+      <span class="dns-section-badge dim" id="whois-geo-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div id="whois-geo-coords-row" class="wh-meta">
+        <div class="wh-meta-item"><span class="wh-meta-k">Coordinates</span><span class="wh-meta-v" id="whois-geo-coords">--</span></div>
+        <div class="wh-meta-item"><span class="wh-meta-k">Location</span><span class="wh-meta-v" id="whois-geo-place">--</span></div>
+      </div>
+      <div id="whois-geo-map-wrap" style="padding:10px;">
+        <div class="data-empty" id="whois-geo-empty"><span>Run enumeration to retrieve geolocation</span></div>
+        <iframe id="whois-geo-map-frame" title="Global Location Map" style="display:none;width:100%;height:320px;border:1px solid var(--border);border-radius:var(--radius-sm);filter:grayscale(0.15) contrast(1.05);" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="whois-geo-link-row" style="margin-top:8px;display:none;">
+          <a id="whois-geo-link" href="#" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:var(--accent);text-decoration:none;">Open larger map ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="whois-sub-panel" id="whois-sub-cdn">
+  <div class="dns-section" id="sec-whois-cdn" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 11c0-2 1.5-3 3-3h6c1.5 0 3 1 3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M4 8V5a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">CDN Detection</span>
+      <span class="dns-section-badge dim" id="cdn-detect-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div id="cdn-meta-row" class="wh-meta" style="display:none;">
+        <div class="wh-meta-item"><span class="wh-meta-k">WAF</span><span class="wh-meta-v" id="cdn-waf">--</span></div>
+        <div class="wh-meta-item"><span class="wh-meta-k">Anycast</span><span class="wh-meta-v" id="cdn-anycast">--</span></div>
+      </div>
+      <div class="data-table-wrap">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:1;">Detected Vendor</div>
+          <div class="data-col" style="flex:2;">Evidence / Source</div>
+        </div>
+        <div class="data-table-body" id="cdn-table-body" style="max-height:200px;">
+          <div class="data-empty"><span>Run enumeration to detect CDN</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dns-section" id="sec-whois-http" style="margin-top:8px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 6l2 2-2 2M9 10h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="dns-section-title">HTTP Headers</span>
+      <span class="dns-section-badge dim" id="whois-http-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div id="http-meta-row" class="wh-meta">
+        <div class="wh-meta-item"><span class="wh-meta-k">Status</span><span class="wh-meta-v" id="http-status">--</span></div>
+        <div class="wh-meta-item"><span class="wh-meta-k">Final URL</span><span class="wh-meta-v" id="http-final-url">--</span></div>
+      </div>
+      <div class="data-table-wrap">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:1.2;">Header</div>
+          <div class="data-col" style="flex:2;">Value</div>
+        </div>
+        <div class="data-table-body" id="http-headers-body" style="max-height:300px;">
+          <div class="data-empty"><span>Run enumeration to retrieve HTTP headers</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="whois-sub-panel" id="whois-sub-rep">
+  <div class="dns-section" id="sec-whois-blacklist" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="dns-section-title">Blacklist / Reputation</span>
+      <span class="dns-section-badge dim" id="whois-bl-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="dns-anomaly-summary" style="margin:10px;border-radius:var(--radius-sm);">
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-bl-score">--</div>
+          <div class="anomaly-stat-label">Risk Score</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-bl-risk">--</div>
+          <div class="anomaly-stat-label">Risk Level</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-bl-listed">--</div>
+          <div class="anomaly-stat-label">Listed On</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-bl-ips">--</div>
+          <div class="anomaly-stat-label">IPs Checked</div>
+        </div>
+      </div>
+      <div class="data-table-wrap">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:1.5;">Blacklist</div>
+          <div class="data-col" style="flex:1;">Query</div>
+          <div class="data-col" style="width:80px;">Response</div>
+          <div class="data-col" style="width:80px;">Type</div>
+        </div>
+        <div class="data-table-body" id="whois-bl-body" style="max-height:280px;">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.3"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <span>Run enumeration to check reputation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dns-section" id="sec-whois-cross" style="margin-top:8px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.3"/></svg>
+      </div>
+      <span class="dns-section-title">Registrant Cross-Search</span>
+      <span class="dns-section-badge dim" id="whois-cross-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="dns-anomaly-summary" style="margin:10px;border-radius:var(--radius-sm);">
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-cross-domains">--</div>
+          <div class="anomaly-stat-label">Related Domains</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-cross-pivots">--</div>
+          <div class="anomaly-stat-label">Pivots Used</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-cross-org">--</div>
+          <div class="anomaly-stat-label">Registrant</div>
+        </div>
+      </div>
+      <div class="data-table-wrap">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:2;">Domain</div>
+          <div class="data-col" style="flex:1;">Pivot</div>
+          <div class="data-col" style="flex:1.5;">Value</div>
+          <div class="data-col" style="width:90px;">Source</div>
+        </div>
+        <div class="data-table-body" id="whois-cross-body" style="max-height:280px;">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <span>Run enumeration to find related domains</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="whois-sub-panel" id="whois-sub-history">
+  <div class="dns-section" id="sec-whois-history" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3l2 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">Historical WHOIS</span>
+      <span class="dns-section-badge dim" id="whois-history-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">Shows RDAP registration events and historical snapshots. Tracks registrar changes, nameserver history, and domain lifecycle events over time.</div>
+      <div class="dns-anomaly-summary" style="margin:10px;border-radius:var(--radius-sm);">
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-hist-events">--</div>
+          <div class="anomaly-stat-label">RDAP Events</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-hist-snapshots">--</div>
+          <div class="anomaly-stat-label">Snapshots</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="whois-hist-first-seen">--</div>
+          <div class="anomaly-stat-label">First Seen</div>
+        </div>
+      </div>
+      <div class="data-table-head">
+        <div class="data-col" style="width:110px;">Date</div>
+        <div class="data-col" style="flex:1;">Action / Event</div>
+        <div class="data-col" style="flex:1.5;">Registrar</div>
+        <div class="data-col" style="flex:1;">Nameservers</div>
+      </div>
+      <div class="data-table-body" id="whois-history-body" style="max-height:280px;">
+        <div class="data-empty">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.3"/><path d="M12 6v6l3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span>Run enumeration to fetch historical WHOIS records</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="whois-sub-panel" id="whois-sub-json">
+  <div class="dns-section" id="sec-whois-complete" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3h10v10H3zM5 6h6M5 8h6M5 10h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">Complete JSON Result</span>
+      <span class="dns-section-badge dim" id="whois-complete-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <pre id="whois-complete-json" class="output-placeholder" style="margin:0;padding:12px 14px;max-height:420px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:11px/1.55 var(--mono);">// Complete JSON result will appear here...</pre>
+    </div>
+  </div>
+</div>

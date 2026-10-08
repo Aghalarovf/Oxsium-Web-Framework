@@ -1,0 +1,763 @@
+<div class="section-title">HTTP Header Analysis</div>
+  <div class="section-sub">Inspect HTTP security headers, server information leakage, caching policy, rate limiting, and protocol-level headers</div>
+
+  <div class="dns-section" id="hdr-sec-target-params" style="margin-bottom:12px;">
+    <div class="dns-section-head" id="hdr-target-params-head">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M5 5h2.5M5 8h6M5 11h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="11" cy="5" r="1.5" fill="currentColor" opacity=".7"/>
+        </svg>
+      </div>
+      <span class="dns-section-title">Target Parameters</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body">
+      <div class="form-row" style="grid-template-columns:1fr 1fr;margin-bottom:12px;">
+        <div class="form-group">
+          <label class="form-label">Domain / Target URL</label>
+          <input class="form-input" id="hdr-input-domain" type="text" placeholder="example.com" spellcheck="false" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Intercept Logs <span style="opacity:.45;font-weight:400;">.json / .jsonl</span></label>
+          <div class="hdr-path-group">
+            <input class="form-input" id="hdr-input-intercept" type="text" placeholder="/path/to/intercept.jsonl" spellcheck="false" autocomplete="off">
+            <button type="button" class="hdr-tool-btn" id="hdr-browse-btn">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3H6l1.5 1.5h5A1.5 1.5 0 0 1 14 6v5.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5v-7z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+              Browse
+            </button>
+            <input type="file" id="hdr-intercept-file" accept=".json,.jsonl" hidden>
+          </div>
+          <div class="hdr-field-hint" id="hdr-intercept-hint">Path to a captured traffic log used for offline header analysis</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:4px;">
+        <button id="hdr-scan-btn" class="btn-primary" style="flex:1;">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+            <rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M2 6h12" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M5 9h4M5 11h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          Scan HTTP Headers
+        </button>
+        <button id="hdr-stop-btn" class="btn-danger">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+            <rect x="4" y="4" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.4"/>
+          </svg>
+          Stop
+        </button>
+        <button id="hdr-reset-btn" class="btn-secondary" style="height:auto;align-self:stretch;padding:0 16px;" title="Reset">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8a5 5 0 1 0 5-5 5 5 0 0 0-3.54 1.46L3 3M3 3v3h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+      </div>
+      <button id="hdr-load-db-btn" class="btn-load-db">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M8 2v8M5 7l3 3 3-3M3 12.5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Load From Database
+      </button>
+      <div class="tls-action-info" id="hdr-scan-info" style="margin-top:8px;font-size:10px;color:var(--text-dim);font-family:var(--mono);">No scan data — enter a target, optionally an intercept log, and click Scan HTTP Headers</div>
+    </div>
+  </div>
+
+  <div style="margin-top:0;margin-bottom:16px;">
+    <div class="output-title">Scan Results</div>
+    <div class="output-wrap" id="hdr-output-wrap" style="min-height:90px;">
+      <span class="output-placeholder">Output will appear here when the scan is running...</span>
+    </div>
+  </div>
+
+  <div id="hdr-subtab-bar" style="display:flex;gap:2px;padding:8px 10px 0;border-bottom:1px solid var(--border);background:var(--bg-input);flex-wrap:wrap;">
+    <button class="tls-subtab-btn active" data-hdrtab="hdr-sub-security">Security</button>
+    <button class="tls-subtab-btn" data-hdrtab="hdr-sub-server">Server Info</button>
+    <button class="tls-subtab-btn" data-hdrtab="hdr-sub-cache">Caching</button>
+    <button class="tls-subtab-btn" data-hdrtab="hdr-sub-auth">Cookies</button>
+    <button class="tls-subtab-btn" data-hdrtab="hdr-sub-ratelimit">Rate Limit</button>
+    <button class="tls-subtab-btn" data-hdrtab="hdr-sub-custom">Leaks</button>
+    <button class="tls-subtab-btn" data-hdrtab="hdr-sub-ws">WebSocket</button>
+  </div>
+
+  <div class="tls-sub-panel active" id="hdr-sub-security">
+
+    <div class="dns-section" id="sec-hdr-sec-summary">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 5h6M5 8h4M5 11h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">Security Scorecard</span>
+        <span class="dns-section-badge dim" id="hdr-sec-score-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad">
+        <div class="dns-anomaly-summary" style="margin:10px;border-radius:var(--radius-sm);">
+          <div class="anomaly-stat">
+            <div class="anomaly-stat-val ok" id="hdr-sec-ok">--</div>
+            <div class="anomaly-stat-label">Present &amp; Secure</div>
+          </div>
+          <div class="anomaly-stat">
+            <div class="anomaly-stat-val warn" id="hdr-sec-warn">--</div>
+            <div class="anomaly-stat-label">Misconfigured</div>
+          </div>
+          <div class="anomaly-stat">
+            <div class="anomaly-stat-val fail" id="hdr-sec-fail">--</div>
+            <div class="anomaly-stat-label">Missing</div>
+          </div>
+          <div class="anomaly-stat">
+            <div class="anomaly-stat-val" id="hdr-sec-total">--</div>
+            <div class="anomaly-stat-label">Total Checked</div>
+          </div>
+        </div>
+        <div style="padding:0 10px 10px;">
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);margin-bottom:4px;">
+            <span>Security Score</span>
+            <span id="hdr-sec-percent">--</span>
+          </div>
+          <div class="progress-bar" style="height:6px;">
+            <div class="progress-fill" id="hdr-sec-bar" style="width:0%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-hsts">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2L2 5v4c0 3 2.5 5 6 6 3.5-1 6-3 6-6V5L8 2z" stroke="currentColor" stroke-width="1.3"/></svg>
+        </div>
+        <span class="dns-section-title">Strict-Transport-Security (HSTS)</span>
+        <span class="dns-section-badge dim" id="hdr-hsts-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">
+          Ensures browsers always connect via HTTPS. Misconfigurations enable SSL stripping and downgrade attacks.
+        </div>
+        <div class="dns-check-row"><span class="dcr-label">Present</span><span class="dcr-val dim" id="hdr-hsts-present">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">max-age</span><span class="dcr-val dim" id="hdr-hsts-maxage">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">includeSubDomains</span><span class="dcr-val dim" id="hdr-hsts-sub">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">preload</span><span class="dcr-val dim" id="hdr-hsts-preload">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val" id="hdr-hsts-verdict" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="hsts">
+          <button type="button" class="hdr-req-btn" data-req-toggle="hsts">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-hsts-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-hsts-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-csp">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="5" y="8" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.3"/></svg>
+        </div>
+        <span class="dns-section-title">Content-Security-Policy (CSP)</span>
+        <span class="dns-section-badge dim" id="hdr-csp-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">
+          Controls which resources (scripts, styles, images, fonts) the browser is allowed to load. A strong CSP mitigates XSS and data injection.
+        </div>
+        <div class="dns-check-row"><span class="dcr-label">Present</span><span class="dcr-val dim" id="hdr-csp-present">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">default-src</span><span class="dcr-val dim monospace" id="hdr-csp-default">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">script-src</span><span class="dcr-val dim monospace" id="hdr-csp-script">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">style-src</span><span class="dcr-val dim monospace" id="hdr-csp-style">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">object-src</span><span class="dcr-val dim monospace" id="hdr-csp-object">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">frame-ancestors</span><span class="dcr-val dim monospace" id="hdr-csp-frame">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">report-uri / report-to</span><span class="dcr-val dim monospace" id="hdr-csp-report">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">'unsafe-inline'</span><span class="dcr-val dim" id="hdr-csp-unsafe">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val" id="hdr-csp-verdict" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="csp">
+          <button type="button" class="hdr-req-btn" data-req-toggle="csp">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-csp-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-csp-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-xcto">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 6h6M5 9h4M5 12h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">X-Content-Type-Options</span>
+        <span class="dns-section-badge dim" id="hdr-xcto-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">
+          Prevents MIME type sniffing. Without <code style="font-family:var(--mono);font-size:10.5px;color:var(--accent-dim);background:rgba(240,192,48,.06);padding:1px 5px;border-radius:2px;">nosniff</code>, browsers may interpret files as executable scripts.
+        </div>
+        <div class="dns-check-row"><span class="dcr-label">Present</span><span class="dcr-val dim" id="hdr-xcto-present">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-xcto-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val" id="hdr-xcto-verdict" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="xcto">
+          <button type="button" class="hdr-req-btn" data-req-toggle="xcto">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-xcto-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-xcto-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-xss">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2l6 12H2L8 2z" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v3M8 11.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">X-XSS-Protection</span>
+        <span class="dns-section-badge dim" id="hdr-xss-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">
+          Legacy header — most modern browsers ignore it in favor of CSP. Still useful for older browsers.
+        </div>
+        <div class="dns-check-row"><span class="dcr-label">Present</span><span class="dcr-val dim" id="hdr-xss-present">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-xss-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val" id="hdr-xss-verdict" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="xss">
+          <button type="button" class="hdr-req-btn" data-req-toggle="xss">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-xss-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-xss-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-xfo">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 6h3M5 9h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">X-Frame-Options</span>
+        <span class="dns-section-badge dim" id="hdr-xfo-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">
+          Prevents clickjacking by controlling whether the page can be embedded in a frame/iframe.
+        </div>
+        <div class="dns-check-row"><span class="dcr-label">Present</span><span class="dcr-val dim" id="hdr-xfo-present">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-xfo-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">frame-ancestors (CSP)</span><span class="dcr-val dim" id="hdr-xfo-csp">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val" id="hdr-xfo-verdict" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="xfo">
+          <button type="button" class="hdr-req-btn" data-req-toggle="xfo">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-xfo-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-xfo-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-referrer">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">Referrer-Policy</span>
+        <span class="dns-section-badge dim" id="hdr-referrer-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">
+          Controls how much referrer information is included with cross-origin requests. Leaky policies expose URLs and parameters.
+        </div>
+        <div class="dns-check-row"><span class="dcr-label">Present</span><span class="dcr-val dim" id="hdr-referrer-present">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-referrer-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val" id="hdr-referrer-verdict" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="referrer">
+          <button type="button" class="hdr-req-btn" data-req-toggle="referrer">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-referrer-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-referrer-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-cors">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">CORS (Access-Control-Allow-Origin)</span>
+        <span class="dns-section-badge dim" id="hdr-cors-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">
+          Controls which origins are allowed to read resources cross-origin. Wildcard or overly permissive origins enable data theft.
+        </div>
+        <div class="dns-check-row"><span class="dcr-label">Access-Control-Allow-Origin</span><span class="dcr-val dim" id="hdr-cors-aca">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Access-Control-Allow-Credentials</span><span class="dcr-val dim" id="hdr-cors-credentials">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Access-Control-Allow-Methods</span><span class="dcr-val dim monospace" id="hdr-cors-methods">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Access-Control-Allow-Headers</span><span class="dcr-val dim monospace" id="hdr-cors-headers">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Access-Control-Expose-Headers</span><span class="dcr-val dim monospace" id="hdr-cors-expose">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Access-Control-Max-Age</span><span class="dcr-val dim" id="hdr-cors-maxage">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Wildcard / Reflect Check</span><span class="dcr-val dim" id="hdr-cors-wildcard">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val" id="hdr-cors-verdict" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="cors">
+          <button type="button" class="hdr-req-btn" data-req-toggle="cors">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-cors-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-cors-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="tls-sub-panel" id="hdr-sub-server">
+
+    <div class="dns-section" id="sec-hdr-server">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 5h12M5 2v4" stroke="currentColor" stroke-width="1.2"/></svg>
+        </div>
+        <span class="dns-section-title">Server</span>
+        <span class="dns-section-badge dim" id="hdr-server-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-server-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Version Exposed</span><span class="dcr-val dim" id="hdr-server-version">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">CVE Risk</span><span class="dcr-val dim" id="hdr-server-cve">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="server">
+          <button type="button" class="hdr-req-btn" data-req-toggle="server">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-server-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-server-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-xpb">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">X-Powered-By</span>
+        <span class="dns-section-badge dim" id="hdr-xpb-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-xpb-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Framework</span><span class="dcr-val dim" id="hdr-xpb-framework">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="xpb">
+          <button type="button" class="hdr-req-btn" data-req-toggle="xpb">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-xpb-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-xpb-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-xasp">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 6h2M5 9h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">X-AspNet-Version</span>
+        <span class="dns-section-badge dim" id="hdr-xasp-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-xasp-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">.NET Version</span><span class="dcr-val dim" id="hdr-xasp-version">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="xasp">
+          <button type="button" class="hdr-req-btn" data-req-toggle="xasp">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-xasp-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-xasp-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-xrt">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v4M8 10v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M4 10l4-4 4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">X-Runtime</span>
+        <span class="dns-section-badge dim" id="hdr-xrt-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-xrt-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Language / Version</span><span class="dcr-val dim" id="hdr-xrt-lang">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="xrt">
+          <button type="button" class="hdr-req-btn" data-req-toggle="xrt">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-xrt-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-xrt-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-via">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 11c0-2 1.5-3 3-3h6c1.5 0 3 1 3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M4 8V5a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">Via</span>
+        <span class="dns-section-badge dim" id="hdr-via-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-via-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Proxy / CDN</span><span class="dcr-val dim" id="hdr-via-proxy">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="via">
+          <button type="button" class="hdr-req-btn" data-req-toggle="via">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-via-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-via-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-xsrv">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="6" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M4 6V4a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.3"/></svg>
+        </div>
+        <span class="dns-section-title">X-Served-By</span>
+        <span class="dns-section-badge dim" id="hdr-xsrv-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-xsrv-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Internal Host Leak</span><span class="dcr-val dim" id="hdr-xsrv-leak">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="xsrv">
+          <button type="button" class="hdr-req-btn" data-req-toggle="xsrv">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-xsrv-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-xsrv-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-xgen">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="3" y="2" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 5h6M5 8h4M5 11h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">X-Generator</span>
+        <span class="dns-section-badge dim" id="hdr-xgen-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-xgen-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">CMS / Framework</span><span class="dcr-val dim" id="hdr-xgen-cms">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="xgen">
+          <button type="button" class="hdr-req-btn" data-req-toggle="xgen">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-xgen-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-xgen-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="tls-sub-panel" id="hdr-sub-cache">
+
+    <div class="dns-section" id="sec-hdr-cc">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="8" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M6 4v8" stroke="currentColor" stroke-width="1.2"/></svg>
+        </div>
+        <span class="dns-section-title">Cache-Control</span>
+        <span class="dns-section-badge dim" id="hdr-cc-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">
+          Primary HTTP cache directive. Controls whether responses can be cached and by whom.
+        </div>
+        <div class="dns-check-row"><span class="dcr-label">Value</span><span class="dcr-val dim monospace" id="hdr-cc-value">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">no-store</span><span class="dcr-val dim" id="hdr-cc-nostore">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">no-cache</span><span class="dcr-val dim" id="hdr-cc-nocache">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">private/public</span><span class="dcr-val dim" id="hdr-cc-scope">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">max-age</span><span class="dcr-val dim" id="hdr-cc-maxage">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">s-maxage</span><span class="dcr-val dim" id="hdr-cc-smaxage">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val" id="hdr-cc-verdict" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="cc">
+          <button type="button" class="hdr-req-btn" data-req-toggle="cc">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-cc-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-cc-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="tls-sub-panel" id="hdr-sub-auth">
+
+    <div class="dns-section" id="sec-hdr-sc">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 5l6 5 6-5" stroke="currentColor" stroke-width="1.2"/></svg>
+        </div>
+        <span class="dns-section-title">Set-Cookie</span>
+        <span class="dns-section-badge dim" id="hdr-sc-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-desc" style="padding:10px 14px;border-bottom:1px solid var(--border);">
+          Parses all <code style="font-family:var(--mono);font-size:10.5px;color:var(--accent-dim);background:rgba(240,192,48,.06);padding:1px 5px;border-radius:2px;">Set-Cookie</code> headers and checks each cookie's security flags.
+        </div>
+        <div class="dns-check-row"><span class="dcr-label">Cookie Count</span><span class="dcr-val dim" id="hdr-sc-count">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">HttpOnly</span><span class="dcr-val dim" id="hdr-sc-httponly">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Secure</span><span class="dcr-val dim" id="hdr-sc-secure">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">SameSite</span><span class="dcr-val dim" id="hdr-sc-samesite">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Domain / Path</span><span class="dcr-val dim monospace" id="hdr-sc-domain">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Max-Age / Expires</span><span class="dcr-val dim" id="hdr-sc-maxage">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Session Cookie</span><span class="dcr-val dim" id="hdr-sc-session">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val" id="hdr-sc-verdict" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="sc">
+          <button type="button" class="hdr-req-btn" data-req-toggle="sc">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-sc-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-sc-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-ck-fp">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2.5a4.5 4.5 0 0 0-4.5 4.5v1.5M8 5.5A1.5 1.5 0 0 0 6.5 7v3c0 1.2-.5 2.200-1.300 3M8 5.500A1.500 1.500 0 0 1 9.500 7v1.500c0 1.800.5 3 1.500 4M12.500 8.500V7A4.500 4.500 0 0 0 8 2.500" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">Cookie Fingerprint</span>
+        <span class="dns-section-badge dim" id="hdr-ck-fp-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" id="hdr-ck-fp-body" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Cookies Observed</span><span class="dcr-val dim">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Fingerprinted</span><span class="dcr-val dim">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Unidentified</span><span class="dcr-val dim">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Technologies</span><span class="dcr-val dim">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Provider Tokens</span><span class="dcr-val dim">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="ckfp">
+          <button type="button" class="hdr-req-btn" data-req-toggle="ckfp">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-ckfp-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-ckfp-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-ck-cat">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/></svg>
+        </div>
+        <span class="dns-section-title">Cookie Category</span>
+        <span class="dns-section-badge dim" id="hdr-ck-cat-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" id="hdr-ck-cat-body" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Categories</span><span class="dcr-val dim">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Sensitive Cookies</span><span class="dcr-val dim">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="ckcat">
+          <button type="button" class="hdr-req-btn" data-req-toggle="ckcat">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-ckcat-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-ckcat-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-ck-jwt">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="5" y="8" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.3"/></svg>
+        </div>
+        <span class="dns-section-title">JWT</span>
+        <span class="dns-section-badge dim" id="hdr-ck-jwt-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" id="hdr-ck-jwt-body" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">JWT Cookies</span><span class="dcr-val dim">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Algorithm</span><span class="dcr-val dim">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Expiry</span><span class="dcr-val dim">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Claims</span><span class="dcr-val dim">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Verdict</span><span class="dcr-val dim">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="ckjwt">
+          <button type="button" class="hdr-req-btn" data-req-toggle="ckjwt">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-ckjwt-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-ckjwt-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="tls-sub-panel" id="hdr-sub-ratelimit">
+
+    <div class="dns-section" id="sec-hdr-rl-headers">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 6h12" stroke="currentColor" stroke-width="1.3"/><path d="M5 9h4M5 11h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">Rate Limit Headers</span>
+        <span class="dns-section-badge dim" id="hdr-rl-headers-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Retry-After</span><span class="dcr-val dim" id="hdr-rl-retry">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">X-RateLimit-Limit</span><span class="dcr-val dim" id="hdr-rl-xlimit">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">X-RateLimit-Remaining</span><span class="dcr-val dim" id="hdr-rl-xremaining">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">X-RateLimit-Reset</span><span class="dcr-val dim" id="hdr-rl-xreset">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Rate Limit Active</span><span class="dcr-val" id="hdr-rl-active" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="rl">
+          <button type="button" class="hdr-req-btn" data-req-toggle="rl">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-rl-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-rl-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="tls-sub-panel" id="hdr-sub-custom">
+
+    <div class="dns-section" id="sec-hdr-custom-table">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 5h6M5 8h4M5 11h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">Custom Header Inventory</span>
+        <span class="dns-section-badge dim" id="hdr-custom-inv-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad">
+        <div class="data-table-wrap">
+          <div class="data-table-head">
+            <div class="data-col" style="flex:1.5;">Header Name</div>
+            <div class="data-col" style="flex:2;">Value</div>
+            <div class="data-col" style="width:110px;">Classification</div>
+            <div class="data-col" style="width:80px;">Risk</div>
+          </div>
+          <div class="data-table-body" id="hdr-custom-body" style="max-height:300px;">
+            <div class="data-empty">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M2 6h20M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              <span>No custom headers detected — scan a target</span>
+            </div>
+          </div>
+        </div>
+        <div class="hdr-req-wrap" data-req-key="inv">
+          <button type="button" class="hdr-req-btn" data-req-toggle="inv">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-inv-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-inv-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dns-section" id="sec-hdr-custom-categories">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M2 8h12M8 2c-2 2-3 4-3 6s1 4 3 6M8 2c2 2 3 4 3 6s-1 4-3 6" stroke="currentColor" stroke-width="1.2"/></svg>
+        </div>
+        <span class="dns-section-title">Category Breakdown</span>
+        <span class="dns-section-badge dim" id="hdr-custom-cat-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">X-Debug / X-Dump</span><span class="dcr-val dim" id="hdr-cat-debug">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">X-Internal / X-Backend</span><span class="dcr-val dim" id="hdr-cat-internal">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">X-Env / X-Config</span><span class="dcr-val dim" id="hdr-cat-env">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">X-Version / X-API-Version</span><span class="dcr-val dim" id="hdr-cat-version">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">X-Request-ID / X-Trace / X-Correlation</span><span class="dcr-val dim" id="hdr-cat-trace">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">X-Forwarded / X-Real-IP</span><span class="dcr-val dim" id="hdr-cat-forwarded">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="cat">
+          <button type="button" class="hdr-req-btn" data-req-toggle="cat">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-cat-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-cat-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="tls-sub-panel" id="hdr-sub-ws">
+
+    <div class="dns-section" id="sec-hdr-ws-rows">
+      <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 6h6M5 9h4M5 12h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">WebSocket Headers</span>
+        <span class="dns-section-badge dim" id="hdr-ws-rows-badge">--</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dns-section-body no-pad" style="padding-bottom:8px;">
+        <div class="dns-check-row"><span class="dcr-label">Upgrade: websocket</span><span class="dcr-val dim" id="hdr-ws-upgrade">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Sec-WebSocket-Key</span><span class="dcr-val dim monospace" id="hdr-ws-key">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Sec-WebSocket-Accept</span><span class="dcr-val dim monospace" id="hdr-ws-accept">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Sec-WebSocket-Protocol</span><span class="dcr-val dim" id="hdr-ws-proto">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Sec-WebSocket-Version</span><span class="dcr-val dim" id="hdr-ws-version">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">WebSocket Endpoint</span><span class="dcr-val dim" id="hdr-ws-endpoint">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Origin Check</span><span class="dcr-val" id="hdr-ws-origin" style="font-weight:600;">--</span></div>
+        <div class="hdr-req-wrap" data-req-key="ws">
+          <button type="button" class="hdr-req-btn" data-req-toggle="ws">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            Requests
+            <span class="hdr-req-count" id="hdr-req-ws-count">0</span>
+          </button>
+          <div class="hdr-req-panel" id="hdr-req-ws-panel" hidden></div>
+        </div>
+      </div>
+    </div>
+
+  </div>

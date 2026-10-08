@@ -1,0 +1,193 @@
+/* ═══════════════════════════════════════════════════════════
+   subdomains.css  —  Oxsium Web Framework
+   Styles for the Subdomain Enumeration panel.
+   ═══════════════════════════════════════════════════════════ */
+
+/* Sub-panel (Tab) görünürlük idarəetməsi */
+#panel-subdomains .tls-sub-panel {
+  display: none;
+}
+#panel-subdomains .tls-sub-panel.active {
+  display: block;
+  animation: dnsFadeIn 0.25s ease;
+}
+@keyframes dnsFadeIn {
+  from { opacity: 0.3; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtab menyu düymələri */
+#subdomain-subtab-bar .tls-subtab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-family: var(--ui);
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+#subdomain-subtab-bar .tls-subtab-btn:hover {
+  color: var(--text-sec);
+  background: rgba(240,192,48,0.04);
+}
+#subdomain-subtab-bar .tls-subtab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: rgba(240,192,48,0.06);
+}
+
+/* ── Source tag toggle buttons ──────────────────────────── */
+.source-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.source-tag:hover  { border-color: var(--accent-dim); color: var(--text-sec); }
+.source-tag.active { border-color: var(--accent-dim); background: var(--bg-selected); color: var(--accent); }
+
+/* ── Checkbox toggle label ──────────────────────────────── */
+.check-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+.check-toggle input { display: none; }
+
+.check-box {
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--bg-card);
+  flex-shrink: 0;
+  position: relative;
+  transition: all .15s;
+}
+.check-toggle input:checked + .check-box {
+  background: var(--accent-glow);
+  border-color: var(--accent-dim);
+}
+.check-toggle input:checked + .check-box::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+.check-label { font-size: 11px; color: var(--text-sec); font-family: var(--ui); }
+
+/* ── Filter pills ───────────────────────────────────────── */
+.filter-pill {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all .15s;
+}
+.filter-pill:hover  { border-color: var(--border-hi); color: var(--text-sec); }
+.filter-pill.active { background: var(--bg-selected); border-color: var(--accent-dim); color: var(--accent); }
+
+/* ── Source breakdown grid item ─────────────────────────── */
+.source-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+}
+.source-item-name  { font-family: var(--mono); color: var(--text-sec); flex: 1; }
+.source-item-count { font-family: var(--mono); color: var(--accent); font-size: 11px; min-width: 28px; text-align: right; }
+.source-item-err   { color: var(--red); font-size: 10px; }
+
+/* ── Subdomain table row ────────────────────────────────── */
+.sub-row {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  height: 34px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  gap: 0;
+  transition: background .1s;
+}
+.sub-row:hover       { background: var(--bg-hover); }
+.sub-row:last-child  { border-bottom: none; }
+
+.sub-cell       { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0 4px; }
+.sub-cell-name  { flex: 2;      font-family: var(--mono); color: var(--text-sec); }
+.sub-cell-ip    { flex: 1.2;    font-family: var(--mono); color: var(--text-dim); font-size: 10px; }
+.sub-cell-https { width: 74px;  text-align: center; }
+.sub-cell-http  { width: 64px;  text-align: center; }
+.sub-cell-src   { width: 80px; }
+
+/* ── HTTP status badges ─────────────────────────────────── */
+.status-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.status-2xx { background: #1a3a1a; color: #6fcf6f; border: 1px solid #2d6b2d; }
+.status-3xx { background: #1a2d3a; color: #6fc0f0; border: 1px solid #2d5a7a; }
+.status-4xx { background: #3a2a1a; color: #f0a050; border: 1px solid #7a5020; }
+.status-5xx { background: #3a1a1a; color: #f06060; border: 1px solid #7a2020; }
+.status-err { color: var(--text-dim); font-size: 10px; }
+
+/* ── IP cluster rows ────────────────────────────────────── */
+.ip-cluster-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+  gap: 0;
+  font-size: 11px;
+}
+.ip-cluster-row:last-child  { border-bottom: none; }
+.ip-cluster-addr  { width: 150px; font-family: var(--mono); color: var(--accent); flex-shrink: 0; }
+.ip-cluster-count { width: 60px;  font-family: var(--mono); color: var(--text-dim); flex-shrink: 0; }
+.ip-cluster-subs  { flex: 1; font-family: var(--mono); color: var(--text-dim); font-size: 10px; word-break: break-all; line-height: 1.6; }
+
+/* ── SubdomainScanController: module tracker & output console ── */
+#sub-module-tracker {
+    display: none;
+    margin-top: 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+#sub-module-tracker.visible { display: block; }
+
+.sub-output-wrap {
+    min-height: 90px;
+    max-height: 220px;
+    overflow-y: auto;
+    background: var(--surface-1, rgba(0,0,0,.18));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-sec);
+}

@@ -1,0 +1,1191 @@
+{
+  "meta": {
+    "description": "Exchange Server build-to-CVE mapping database",
+    "latest_se_build": "15.2.2562.49",
+    "latest_cu15_build": "15.2.1748.51",
+    "updated": "2026-10-03"
+  },
+  "builds": [
+    {
+      "label": "Exchange SE RTM SU10",
+      "build": "15.2.2562.49",
+      "build_minor": 2562,
+      "release_date": "2026-09-08",
+      "kb": "KB5121608",
+      "cves": []
+    },
+    {
+      "label": "Exchange SE RTM SU9",
+      "build": "15.2.2562.46",
+      "build_minor": 2562,
+      "release_date": "2026-08-11",
+      "kb": "KB5121573",
+      "cves": [
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007"
+      ]
+    },
+    {
+      "label": "Exchange SE RTM SU8",
+      "build": "15.2.2562.45",
+      "build_minor": 2562,
+      "release_date": "2026-07-14",
+      "kb": "KB5103212",
+      "cves": [
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009"
+      ]
+    },
+    {
+      "label": "Exchange SE RTM SU7",
+      "build": "15.2.2562.43",
+      "build_minor": 2562,
+      "release_date": "2026-06-09",
+      "kb": "KB5094139",
+      "cves": [
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008"
+      ]
+    },
+    {
+      "label": "Exchange SE RTM HU6",
+      "build": "15.2.2562.41",
+      "build_minor": 2562,
+      "release_date": "2026-05-07",
+      "kb": "KB5081755",
+      "cves": [
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange SE RTM SU5",
+      "build": "15.2.2562.37",
+      "build_minor": 2562,
+      "release_date": "2026-02-10",
+      "kb": "KB5074992",
+      "cves": [
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange SE RTM SU4",
+      "build": "15.2.2562.35",
+      "build_minor": 2562,
+      "release_date": "2025-12-09",
+      "kb": "KB5071876",
+      "cves": [
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange SE RTM SU3",
+      "build": "15.2.2562.29",
+      "build_minor": 2562,
+      "release_date": "2025-10-14",
+      "kb": "KB5066366",
+      "cves": [
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange SE RTM HU2",
+      "build": "15.2.2562.27",
+      "build_minor": 2562,
+      "release_date": "2025-09-08",
+      "kb": "KB5066373",
+      "cves": [
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange SE RTM SU1",
+      "build": "15.2.2562.20",
+      "build_minor": 2562,
+      "release_date": "2025-08-12",
+      "kb": "KB5063224",
+      "cves": [
+        "CVE-2025-25005", "CVE-2025-25006", "CVE-2025-25007", "CVE-2025-33051",
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange SE RTM",
+      "build": "15.2.2562.17",
+      "build_minor": 2562,
+      "release_date": "2025-07-08",
+      "kb": "KB5047155",
+      "cves": [
+        "CVE-2025-25005", "CVE-2025-25006", "CVE-2025-25007", "CVE-2025-33051",
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 SU6",
+      "build": "15.2.1748.51",
+      "build_minor": 1748,
+      "release_date": "2026-09-08",
+      "kb": "KB5121609",
+      "cves": []
+    },
+    {
+      "label": "Exchange 2019 CU15 SU5",
+      "build": "15.2.1748.49",
+      "build_minor": 1748,
+      "release_date": "2026-08-11",
+      "kb": "KB5121574",
+      "cves": [
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 SU4",
+      "build": "15.2.1748.48",
+      "build_minor": 1748,
+      "release_date": "2026-07-14",
+      "kb": "KB5103213",
+      "cves": [
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 SU3",
+      "build": "15.2.1748.46",
+      "build_minor": 1748,
+      "release_date": "2026-06-09",
+      "kb": "KB5094140",
+      "cves": [
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 SU2",
+      "build": "15.2.1748.43",
+      "build_minor": 1748,
+      "release_date": "2026-02-10",
+      "kb": "KB5074993",
+      "cves": [
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 SU1",
+      "build": "15.2.1748.42",
+      "build_minor": 1748,
+      "release_date": "2025-12-09",
+      "kb": "KB5071875",
+      "cves": [
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 HU4",
+      "build": "15.2.1748.39",
+      "build_minor": 1748,
+      "release_date": "2025-10-14",
+      "kb": "KB5066367",
+      "cves": [
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 HU3",
+      "build": "15.2.1748.37",
+      "build_minor": 1748,
+      "release_date": "2025-09-08",
+      "kb": "KB5066372",
+      "cves": [
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 SU0",
+      "build": "15.2.1748.36",
+      "build_minor": 1748,
+      "release_date": "2025-08-12",
+      "kb": "KB5063221",
+      "cves": [
+        "CVE-2025-25005", "CVE-2025-25006", "CVE-2025-25007", "CVE-2025-33051",
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 HU2",
+      "build": "15.2.1748.26",
+      "build_minor": 1748,
+      "release_date": "2025-05-29",
+      "kb": "KB5057651",
+      "cves": [
+        "CVE-2025-25005", "CVE-2025-25006", "CVE-2025-25007", "CVE-2025-33051",
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15 HU1",
+      "build": "15.2.1748.24",
+      "build_minor": 1748,
+      "release_date": "2025-04-08",
+      "kb": "KB5050672",
+      "cves": [
+        "CVE-2025-25005", "CVE-2025-25006", "CVE-2025-25007", "CVE-2025-33051",
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU15",
+      "build": "15.2.1748.10",
+      "build_minor": 1748,
+      "release_date": "2025-02-10",
+      "kb": "KB5042461",
+      "cves": [
+        "CVE-2025-25005", "CVE-2025-25006", "CVE-2025-25007", "CVE-2025-33051",
+        "CVE-2025-59248", "CVE-2025-59249", "CVE-2025-53782",
+        "CVE-2025-64666", "CVE-2025-64667",
+        "CVE-2026-21527",
+        "CVE-2026-69355", "CVE-2026-69356", "CVE-2026-69361",
+        "CVE-2026-69375", "CVE-2026-69378", "CVE-2026-69380",
+        "CVE-2026-69382", "CVE-2026-69641", "CVE-2026-55007",
+        "CVE-2026-65813", "CVE-2026-62915", "CVE-2026-62914",
+        "CVE-2026-62913", "CVE-2026-62912", "CVE-2026-62911",
+        "CVE-2026-62910", "CVE-2026-55009",
+        "CVE-2026-55005", "CVE-2026-55006", "CVE-2026-55008",
+        "CVE-2026-42897", "CVE-2026-47631", "CVE-2026-45583",
+        "CVE-2026-45504", "CVE-2026-45503", "CVE-2026-45502",
+        "CVE-2026-45501", "CVE-2026-45500"
+      ]
+    },
+    {
+      "label": "Exchange 2019 CU14 SU3v2",
+      "build": "15.2.1544.14",
+      "build_minor": 1544,
+      "release_date": "2024-11-19",
+      "kb": "KB5049233",
+      "cves": ["CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU14 SU3",
+      "build": "15.2.1544.13",
+      "build_minor": 1544,
+      "release_date": "2024-11-12",
+      "kb": "KB5044062",
+      "cves": ["CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU14 SU2",
+      "build": "15.2.1544.11",
+      "build_minor": 1544,
+      "release_date": "2024-04-23",
+      "kb": "KB5037224",
+      "cves": ["CVE-2024-26198", "CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU14 SU1",
+      "build": "15.2.1544.9",
+      "build_minor": 1544,
+      "release_date": "2024-03-12",
+      "kb": "KB5036401",
+      "cves": ["CVE-2024-26198", "CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU14",
+      "build": "15.2.1544.4",
+      "build_minor": 1544,
+      "release_date": "2024-02-13",
+      "kb": "KB5035606",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU13 SU7v2",
+      "build": "15.2.1258.39",
+      "build_minor": 1258,
+      "release_date": "2024-11-19",
+      "kb": "KB5049233",
+      "cves": ["CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU13 SU7",
+      "build": "15.2.1258.38",
+      "build_minor": 1258,
+      "release_date": "2024-11-12",
+      "kb": "KB5044062",
+      "cves": ["CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU13 SU6",
+      "build": "15.2.1258.34",
+      "build_minor": 1258,
+      "release_date": "2024-04-23",
+      "kb": "KB5037224",
+      "cves": ["CVE-2024-26198", "CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU13 SU5",
+      "build": "15.2.1258.32",
+      "build_minor": 1258,
+      "release_date": "2024-03-12",
+      "kb": "KB5036402",
+      "cves": ["CVE-2024-26198", "CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU13 SU4",
+      "build": "15.2.1258.28",
+      "build_minor": 1258,
+      "release_date": "2023-11-14",
+      "kb": "KB5032146",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU13 SU3",
+      "build": "15.2.1258.27",
+      "build_minor": 1258,
+      "release_date": "2023-10-10",
+      "kb": "KB5030877",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439"]
+    },
+    {
+      "label": "Exchange 2019 CU13 SU2v2",
+      "build": "15.2.1258.25",
+      "build_minor": 1258,
+      "release_date": "2023-08-15",
+      "kb": "KB5030524",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745"]
+    },
+    {
+      "label": "Exchange 2019 CU13 SU2",
+      "build": "15.2.1258.23",
+      "build_minor": 1258,
+      "release_date": "2023-08-08",
+      "kb": "KB5029388",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745"]
+    },
+    {
+      "label": "Exchange 2019 CU13 SU1",
+      "build": "15.2.1258.16",
+      "build_minor": 1258,
+      "release_date": "2023-06-13",
+      "kb": "KB5026261",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745", "CVE-2023-36778"]
+    },
+    {
+      "label": "Exchange 2019 CU13",
+      "build": "15.2.1258.12",
+      "build_minor": 1258,
+      "release_date": "2023-05-03",
+      "kb": "KB5020999",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745", "CVE-2023-36778", "CVE-2023-21529"]
+    },
+    {
+      "label": "Exchange 2019 CU12 SU11",
+      "build": "15.2.1118.40",
+      "build_minor": 1118,
+      "release_date": "2023-11-14",
+      "kb": "KB5032146",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040"]
+    },
+    {
+      "label": "Exchange 2019 CU12 SU10",
+      "build": "15.2.1118.39",
+      "build_minor": 1118,
+      "release_date": "2023-10-10",
+      "kb": "KB5030877",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439"]
+    },
+    {
+      "label": "Exchange 2019 CU12 SU9v2",
+      "build": "15.2.1118.37",
+      "build_minor": 1118,
+      "release_date": "2023-08-15",
+      "kb": "KB5030524",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745"]
+    },
+    {
+      "label": "Exchange 2019 CU12 SU8",
+      "build": "15.2.1118.30",
+      "build_minor": 1118,
+      "release_date": "2023-06-13",
+      "kb": "KB5026261",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745", "CVE-2023-36778"]
+    },
+    {
+      "label": "Exchange 2019 CU12 SU7",
+      "build": "15.2.1118.26",
+      "build_minor": 1118,
+      "release_date": "2023-03-14",
+      "kb": "KB5024296",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745", "CVE-2023-36778", "CVE-2023-21529"]
+    },
+    {
+      "label": "Exchange 2019 CU12 SU6",
+      "build": "15.2.1118.25",
+      "build_minor": 1118,
+      "release_date": "2023-02-14",
+      "kb": "KB5023038",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745", "CVE-2023-36778", "CVE-2023-21529"]
+    },
+    {
+      "label": "Exchange 2019 CU12 SU5",
+      "build": "15.2.1118.21",
+      "build_minor": 1118,
+      "release_date": "2023-01-10",
+      "kb": "KB5022193",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745", "CVE-2023-36778", "CVE-2023-21529"]
+    },
+    {
+      "label": "Exchange 2019 CU12",
+      "build": "15.2.1118.7",
+      "build_minor": 1118,
+      "release_date": "2022-04-20",
+      "kb": "KB5011156",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745", "CVE-2023-36778", "CVE-2023-21529", "CVE-2022-41082", "CVE-2022-41080", "CVE-2022-41040"]
+    },
+    {
+      "label": "Exchange 2019 CU11",
+      "build": "15.2.986.5",
+      "build_minor": 986,
+      "release_date": "2021-09-28",
+      "kb": "KB5005334",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745", "CVE-2023-36778", "CVE-2023-21529", "CVE-2022-41082", "CVE-2022-41080", "CVE-2022-41040", "CVE-2021-34473", "CVE-2021-34523", "CVE-2021-31207"]
+    },
+    {
+      "label": "Exchange 2019 CU10",
+      "build": "15.2.922.7",
+      "build_minor": 922,
+      "release_date": "2021-06-29",
+      "kb": "KB5003612",
+      "cves": ["CVE-2024-21410", "CVE-2024-26198", "CVE-2024-49040", "CVE-2023-36439", "CVE-2023-36745", "CVE-2023-36778", "CVE-2023-21529", "CVE-2022-41082", "CVE-2022-41080", "CVE-2022-41040", "CVE-2021-34473", "CVE-2021-34523", "CVE-2021-31207", "CVE-2021-26855", "CVE-2021-26857", "CVE-2021-26858", "CVE-2021-27065"]
+    }
+  ],
+  "cve_details": {
+    "CVE-2021-26855": {
+      "title": "ProxyLogon — Pre-auth SSRF",
+      "cvss": 9.1,
+      "severity": "critical",
+      "type": "SSRF / Pre-auth RCE chain",
+      "auth_required": false,
+      "description": "Server-Side Request Forgery enabling pre-auth access to Exchange backend. Entry point of ProxyLogon chain. Exploited in the wild by HAFNIUM.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26855"]
+    },
+    "CVE-2021-26857": {
+      "title": "ProxyLogon — Insecure Deserialization",
+      "cvss": 7.8,
+      "severity": "high",
+      "type": "Insecure Deserialization / RCE (post-auth)",
+      "auth_required": true,
+      "description": "Insecure deserialization in the Unified Messaging service. Chained after CVE-2021-26855 for SYSTEM-level code execution.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26857"]
+    },
+    "CVE-2021-26858": {
+      "title": "ProxyLogon — Post-auth Arbitrary File Write",
+      "cvss": 7.8,
+      "severity": "high",
+      "type": "Arbitrary File Write (post-auth)",
+      "auth_required": true,
+      "description": "Post-authentication arbitrary file write. Exploited alongside CVE-2021-26855 to drop webshells.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26858"]
+    },
+    "CVE-2021-27065": {
+      "title": "ProxyLogon — Post-auth Arbitrary File Write",
+      "cvss": 7.8,
+      "severity": "high",
+      "type": "Arbitrary File Write (post-auth)",
+      "auth_required": true,
+      "description": "Post-authentication arbitrary file write via OAB virtual directory. Used to deploy webshells as SYSTEM.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065"]
+    },
+    "CVE-2021-34473": {
+      "title": "ProxyShell — Pre-auth Path Confusion / RCE",
+      "cvss": 9.8,
+      "severity": "critical",
+      "type": "Pre-auth RCE (ACL bypass)",
+      "auth_required": false,
+      "description": "Pre-auth path confusion bypassing ACLs. First component of ProxyShell chain enabling unauthenticated RCE when chained with CVE-2021-34523 and CVE-2021-31207.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34473"]
+    },
+    "CVE-2021-34523": {
+      "title": "ProxyShell — Privilege Escalation on Backend",
+      "cvss": 9.0,
+      "severity": "critical",
+      "type": "Privilege Escalation",
+      "auth_required": false,
+      "description": "Exchange PowerShell backend elevation of privilege. Part of ProxyShell chain.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34523"]
+    },
+    "CVE-2021-31207": {
+      "title": "ProxyShell — Post-auth Arbitrary File Write",
+      "cvss": 7.2,
+      "severity": "high",
+      "type": "Arbitrary File Write (post-auth)",
+      "auth_required": true,
+      "description": "Security feature bypass allowing arbitrary file write, completing the ProxyShell RCE chain.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31207"]
+    },
+    "CVE-2022-41040": {
+      "title": "ProxyNotShell — SSRF (pre-auth trigger)",
+      "cvss": 8.8,
+      "severity": "high",
+      "type": "SSRF",
+      "auth_required": true,
+      "description": "Authenticated SSRF vulnerability that serves as the entry point of ProxyNotShell chain. Requires valid credentials.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41040"]
+    },
+    "CVE-2022-41082": {
+      "title": "ProxyNotShell — Authenticated RCE via PowerShell",
+      "cvss": 8.0,
+      "severity": "high",
+      "type": "RCE (authenticated)",
+      "auth_required": true,
+      "description": "Authenticated RCE via PowerShell deserialization. Chained after CVE-2022-41040 for SYSTEM-level code execution.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41082"]
+    },
+    "CVE-2022-41080": {
+      "title": "ProxyNotShell — Privilege Escalation (EoP)",
+      "cvss": 8.8,
+      "severity": "high",
+      "type": "Elevation of Privilege",
+      "auth_required": true,
+      "description": "Elevation of privilege chainable with CVE-2022-41082 for RCE.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41080"]
+    },
+    "CVE-2023-21529": {
+      "title": "Exchange RCE (Feb 2023)",
+      "cvss": 8.8,
+      "severity": "high",
+      "type": "Remote Code Execution",
+      "auth_required": true,
+      "description": "Remote code execution vulnerability in Exchange Server 2019 CU11 and CU12. Patched in February 2023 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21529"]
+    },
+    "CVE-2023-36745": {
+      "title": "Exchange RCE — Deserialization (Aug 2023)",
+      "cvss": 8.0,
+      "severity": "high",
+      "type": "RCE (authenticated) — Deserialization",
+      "auth_required": true,
+      "description": "Insecure deserialization RCE affecting CU12 and CU13. PoC publicly available.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36745"]
+    },
+    "CVE-2023-36778": {
+      "title": "Exchange RCE — Network-Adjacent (Jun 2023)",
+      "cvss": 8.0,
+      "severity": "high",
+      "type": "RCE (authenticated, network-adjacent)",
+      "auth_required": true,
+      "description": "Authenticated RCE requiring network-adjacent access. Patched in June 2023 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36778"]
+    },
+    "CVE-2023-36439": {
+      "title": "Exchange RCE — Arbitrary File Write (Oct 2023)",
+      "cvss": 8.0,
+      "severity": "high",
+      "type": "RCE (authenticated) — Arbitrary File Write",
+      "auth_required": true,
+      "description": "Authenticated arbitrary file write leading to RCE. Affects CU13 and CU12. Patched October 2023.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36439"]
+    },
+    "CVE-2024-21410": {
+      "title": "NTLM Relay / EPA Bypass — EoP (CRITICAL)",
+      "cvss": 9.8,
+      "severity": "critical",
+      "type": "Elevation of Privilege / NTLM Relay",
+      "auth_required": false,
+      "description": "NTLM credential relay attack via Extended Protection for Authentication bypass. Affects Exchange 2016 CU23 and 2019 CU13/CU14 without Feb 2024 SU. Patched in Feb 2024 SU which enables EPA by default. CVSS 9.8.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-21410"]
+    },
+    "CVE-2024-26198": {
+      "title": "Exchange RCE — Untrusted Search Path (Mar 2024)",
+      "cvss": 8.8,
+      "severity": "high",
+      "type": "RCE — Untrusted Search Path (CWE-426)",
+      "auth_required": false,
+      "description": "Unauthenticated RCE via DLL search path hijacking. Affects CU13 and CU14 without Mar 2024 SU. Patched April 2024 with revised update.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-26198"]
+    },
+    "CVE-2024-49040": {
+      "title": "Exchange Spoofing — Sender Forgery (Nov 2024)",
+      "cvss": 7.5,
+      "severity": "high",
+      "type": "Spoofing",
+      "auth_required": false,
+      "description": "Allows attackers to forge legitimate sender addresses on incoming emails. Patched November 2024 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-49040"]
+    },
+    "CVE-2025-25005": {
+      "title": "Exchange Tampering (Aug 2025)",
+      "cvss": 6.5,
+      "severity": "medium",
+      "type": "Tampering",
+      "auth_required": true,
+      "description": "Input validation flaw allowing an authenticated attacker to tamper with Exchange data. Patched in August 2025 SU (first SE SU1, CU15 SU0).",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-25005"]
+    },
+    "CVE-2025-25006": {
+      "title": "Exchange Spoofing (Aug 2025)",
+      "cvss": 5.3,
+      "severity": "medium",
+      "type": "Spoofing",
+      "auth_required": true,
+      "description": "Special element handling flaw enabling spoofing of Exchange content. Patched in August 2025 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-25006"]
+    },
+    "CVE-2025-25007": {
+      "title": "Exchange Spoofing (Aug 2025)",
+      "cvss": 5.3,
+      "severity": "medium",
+      "type": "Spoofing",
+      "auth_required": true,
+      "description": "Input validation flaw permitting unauthorized spoofing of Exchange email content. Patched in August 2025 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-25007"]
+    },
+    "CVE-2025-33051": {
+      "title": "Exchange Information Disclosure (Aug 2025)",
+      "cvss": 7.5,
+      "severity": "high",
+      "type": "Information Disclosure",
+      "auth_required": false,
+      "description": "Exposure of sensitive Exchange information to an unauthorized actor. Patched in August 2025 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-33051"]
+    },
+    "CVE-2025-53782": {
+      "title": "Exchange EoP — Authentication Algorithm (Oct 2025)",
+      "cvss": 8.4,
+      "severity": "high",
+      "type": "Elevation of Privilege",
+      "auth_required": false,
+      "description": "Incorrect implementation of authentication algorithm allowing an unauthorized attacker to elevate privileges locally. Patched in October 2025 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-53782"]
+    },
+    "CVE-2025-59248": {
+      "title": "Exchange Spoofing (Oct 2025)",
+      "cvss": 7.5,
+      "severity": "high",
+      "type": "Spoofing",
+      "auth_required": false,
+      "description": "Input validation flaw permitting unauthorized spoofing. Patched in October 2025 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-59248"]
+    },
+    "CVE-2025-59249": {
+      "title": "Exchange EoP — Weak Authentication (Oct 2025)",
+      "cvss": 8.8,
+      "severity": "high",
+      "type": "Elevation of Privilege",
+      "auth_required": false,
+      "description": "Weak authentication mechanism enabling privilege escalation. Patched in October 2025 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-59249"]
+    },
+    "CVE-2025-64666": {
+      "title": "Exchange EoP — Input Validation (Dec 2025)",
+      "cvss": 7.5,
+      "severity": "high",
+      "type": "Elevation of Privilege",
+      "auth_required": true,
+      "description": "Improper input validation allowing an authorized attacker to elevate privileges. Patched in December 2025 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-64666"]
+    },
+    "CVE-2025-64667": {
+      "title": "Exchange Spoofing — UI Misrepresentation (Dec 2025)",
+      "cvss": 5.3,
+      "severity": "medium",
+      "type": "Spoofing",
+      "auth_required": false,
+      "description": "UI misrepresentation enabling spoofing of Exchange content. Patched in December 2025 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-64667"]
+    },
+    "CVE-2026-21527": {
+      "title": "Exchange Spoofing (Feb 2026)",
+      "cvss": 6.5,
+      "severity": "medium",
+      "type": "Spoofing",
+      "auth_required": true,
+      "description": "UI misrepresentation enabling user spoofing by authenticated attackers. Patched in February 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-21527"]
+    },
+    "CVE-2026-42897": {
+      "title": "Exchange XSS / Information Disclosure — Exploited (Jun 2026)",
+      "cvss": 8.1,
+      "severity": "critical",
+      "type": "Information Disclosure / XSS",
+      "auth_required": false,
+      "description": "XSS flaw permitting unauthenticated remote spoofing and information disclosure. Exploited in the wild before patch release. Patched in June 2026 SU.",
+      "exploited_in_wild": true,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-42897"]
+    },
+    "CVE-2026-45500": {
+      "title": "Exchange Spoofing — Output Encoding (Jun 2026)",
+      "cvss": 6.1,
+      "severity": "medium",
+      "type": "Spoofing",
+      "auth_required": false,
+      "description": "Output encoding flaw enabling unauthenticated spoofing. Patched in June 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45500"]
+    },
+    "CVE-2026-45501": {
+      "title": "Exchange Spoofing — SSRF (Jun 2026)",
+      "cvss": 6.5,
+      "severity": "medium",
+      "type": "Spoofing",
+      "auth_required": false,
+      "description": "SSRF vulnerability allowing content spoofing. Patched in June 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45501"]
+    },
+    "CVE-2026-45502": {
+      "title": "Exchange Information Disclosure — SSRF (Jun 2026)",
+      "cvss": 5.0,
+      "severity": "medium",
+      "type": "Information Disclosure",
+      "auth_required": false,
+      "description": "Lower-severity SSRF enabling information leakage from Exchange. Patched in June 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45502"]
+    },
+    "CVE-2026-45503": {
+      "title": "Exchange Information Disclosure — Authorization Flaw (Jun 2026)",
+      "cvss": 8.1,
+      "severity": "high",
+      "type": "Information Disclosure",
+      "auth_required": false,
+      "description": "Authorization flaw exposing sensitive Exchange information. Patched in June 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45503"]
+    },
+    "CVE-2026-45504": {
+      "title": "Exchange EoP — SSRF (Jun 2026)",
+      "cvss": 8.8,
+      "severity": "high",
+      "type": "Elevation of Privilege",
+      "auth_required": true,
+      "description": "SSRF vulnerability enabling authenticated privilege escalation. Patched in June 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45504"]
+    },
+    "CVE-2026-45583": {
+      "title": "Exchange RCE — Code Injection (Jun 2026)",
+      "cvss": 7.5,
+      "severity": "high",
+      "type": "Remote Code Execution",
+      "auth_required": false,
+      "description": "Code injection flaw permitting unauthenticated remote code execution. Patched in June 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45583"]
+    },
+    "CVE-2026-47631": {
+      "title": "Exchange Spoofing — Input Sanitization (Jun 2026)",
+      "cvss": 8.1,
+      "severity": "high",
+      "type": "Spoofing",
+      "auth_required": false,
+      "description": "Input sanitization flaw enabling unauthenticated spoofing. Patched in June 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-47631"]
+    },
+    "CVE-2026-55005": {
+      "title": "Exchange RCE — Heap Buffer Overflow (Jul 2026)",
+      "cvss": 8.8,
+      "severity": "high",
+      "type": "Remote Code Execution",
+      "auth_required": true,
+      "description": "Heap-based buffer overflow enabling authenticated remote code execution. Patched in July 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-55005"]
+    },
+    "CVE-2026-55006": {
+      "title": "Exchange EoP — Access Controls (Jul 2026)",
+      "cvss": 7.8,
+      "severity": "high",
+      "type": "Elevation of Privilege",
+      "auth_required": true,
+      "description": "Overly coarse access controls enabling privilege escalation. Patched in July 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-55006"]
+    },
+    "CVE-2026-55007": {
+      "title": "Exchange RCE (Jul/Sep 2026)",
+      "cvss": 8.1,
+      "severity": "high",
+      "type": "Remote Code Execution",
+      "auth_required": true,
+      "description": "Remote code execution vulnerability. Partially addressed in July 2026 SU and fully patched in September 2026 SU. Does not affect Exchange 2016.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-55007"]
+    },
+    "CVE-2026-55008": {
+      "title": "Exchange Spoofing — XSS CRITICAL (Jul 2026)",
+      "cvss": 9.6,
+      "severity": "critical",
+      "type": "Spoofing / XSS",
+      "auth_required": false,
+      "description": "XSS allowing unauthenticated spoofing with critical CVSS score of 9.6. Patched in July 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-55008"]
+    },
+    "CVE-2026-55009": {
+      "title": "Exchange EoP — Unsafe Deserialization (Jul/Aug 2026)",
+      "cvss": 7.8,
+      "severity": "high",
+      "type": "Elevation of Privilege",
+      "auth_required": true,
+      "description": "Unsafe deserialization enabling local privilege elevation. Disclosed July 2026, fully fixed in August 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-55009"]
+    },
+    "CVE-2026-62910": {
+      "title": "Exchange EoP — Resource Injection CRITICAL (Aug 2026)",
+      "cvss": 7.2,
+      "severity": "critical",
+      "type": "Elevation of Privilege",
+      "auth_required": true,
+      "description": "Resource injection enabling privilege escalation. Classified critical despite CVSS 7.2 due to attack surface. Patched in August 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62910"]
+    },
+    "CVE-2026-62911": {
+      "title": "Exchange EoP — Replay Authentication Bypass (Aug 2026)",
+      "cvss": 8.0,
+      "severity": "high",
+      "type": "Elevation of Privilege",
+      "auth_required": true,
+      "description": "Replay-based authentication bypass letting an authenticated attacker escalate privileges. Nearly 22,000 exposed servers identified as vulnerable. Patched in August 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62911"]
+    },
+    "CVE-2026-62912": {
+      "title": "Exchange DoS — Unsafe Deserialization (Aug 2026)",
+      "cvss": 6.5,
+      "severity": "medium",
+      "type": "Denial of Service",
+      "auth_required": true,
+      "description": "Unsafe deserialization allowing service crashes. Patched in August 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62912"]
+    },
+    "CVE-2026-62913": {
+      "title": "Exchange RCE — Heap Buffer Overflow (Aug 2026)",
+      "cvss": 8.8,
+      "severity": "high",
+      "type": "Remote Code Execution",
+      "auth_required": true,
+      "description": "Heap buffer overflow permitting authenticated remote code execution. Patched in August 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62913"]
+    },
+    "CVE-2026-62914": {
+      "title": "Exchange Spoofing — XSS (Aug 2026)",
+      "cvss": 7.3,
+      "severity": "high",
+      "type": "Spoofing / XSS",
+      "auth_required": true,
+      "description": "Cross-site scripting enabling content spoofing by authenticated users. Patched in August 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62914"]
+    },
+    "CVE-2026-62915": {
+      "title": "Exchange Security Feature Bypass (Aug 2026)",
+      "cvss": 6.5,
+      "severity": "medium",
+      "type": "Security Feature Bypass",
+      "auth_required": true,
+      "description": "Authorization bypass allowing logged-in users to sidestep Exchange security controls. Patched in August 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-62915"]
+    },
+    "CVE-2026-65813": {
+      "title": "Exchange EoP — SSRF (Aug 2026)",
+      "cvss": 6.5,
+      "severity": "medium",
+      "type": "Elevation of Privilege",
+      "auth_required": true,
+      "description": "Server-side request forgery flaw letting an authenticated attacker gain higher privileges remotely. Patched in August 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-65813"]
+    },
+    "CVE-2026-69355": {
+      "title": "Exchange RCE — Authenticated (Sep 2026)",
+      "cvss": 8.8,
+      "severity": "high",
+      "type": "Remote Code Execution",
+      "auth_required": true,
+      "description": "Authenticated attacker can execute arbitrary code on the Exchange server. Patched in September 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69355"]
+    },
+    "CVE-2026-69356": {
+      "title": "Exchange Spoofing — Sender Impersonation (Sep 2026)",
+      "cvss": 9.3,
+      "severity": "critical",
+      "type": "Spoofing",
+      "auth_required": false,
+      "description": "Allows an attacker to impersonate a different sender in Exchange emails. CVSS 9.3. Patched in September 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69356"]
+    },
+    "CVE-2026-69361": {
+      "title": "Exchange Spoofing — SSRF (Sep 2026)",
+      "cvss": 6.5,
+      "severity": "medium",
+      "type": "Spoofing",
+      "auth_required": false,
+      "description": "Server-side request forgery issue enabling spoofing over the network. Patched in September 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69361"]
+    },
+    "CVE-2026-69375": {
+      "title": "Exchange Tampering (Sep 2026)",
+      "cvss": 6.5,
+      "severity": "medium",
+      "type": "Tampering",
+      "auth_required": false,
+      "description": "Enables unauthorized data manipulation in Exchange. Patched in September 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69375"]
+    },
+    "CVE-2026-69378": {
+      "title": "Exchange DoS (Sep 2026)",
+      "cvss": 7.5,
+      "severity": "high",
+      "type": "Denial of Service",
+      "auth_required": false,
+      "description": "Allows an attacker to crash the Exchange service. Patched in September 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69378"]
+    },
+    "CVE-2026-69380": {
+      "title": "Exchange EoP — Missing Authorization (Sep 2026)",
+      "cvss": 8.1,
+      "severity": "high",
+      "type": "Elevation of Privilege",
+      "auth_required": true,
+      "description": "Missing authorization flaw enabling low-privilege users to read and send mail as other Exchange users. Patched in September 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69380"]
+    },
+    "CVE-2026-69382": {
+      "title": "Exchange Information Disclosure (Sep 2026)",
+      "cvss": 5.9,
+      "severity": "medium",
+      "type": "Information Disclosure",
+      "auth_required": false,
+      "description": "Permits disclosure of restricted Exchange information. Patched in September 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69382"]
+    },
+    "CVE-2026-69641": {
+      "title": "Exchange EoP — High Severity (Sep 2026)",
+      "cvss": 9.1,
+      "severity": "critical",
+      "type": "Elevation of Privilege",
+      "auth_required": false,
+      "description": "Permits attackers to obtain elevated privileges within Exchange. CVSS 9.1. Patched in September 2026 SU.",
+      "exploited_in_wild": false,
+      "references": ["https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-69641"]
+    }
+  }
+}

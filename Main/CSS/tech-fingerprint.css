@@ -1,0 +1,327 @@
+/* ══════════════════════════════════════════════════════════════
+   tech-fingerprint.css — Oxsium Web Technology Fingerprint Module
+   Refined for clarity, readability and visual hierarchy.
+══════════════════════════════════════════════════════════════ */
+
+/* ── Module Container ────────────────────────────────────────── */
+.tf-module { width: 100%; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+.tf-module .module-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 14px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+}
+.tf-module .module-header-left { display: flex; align-items: center; gap: 12px; }
+.tf-module .module-title       { font-size: 15px; color: var(--text-hi); }
+.tf-module .module-badge {
+    font-family: var(--mono); font-size: 9px; font-weight: 700;
+    letter-spacing: 1.2px; padding: 2px 8px; border-radius: 2px;
+    background: rgba(240,192,48,.08); border: 1px solid var(--accent-dim);
+    color: var(--accent); text-transform: uppercase;
+}
+.tf-module .module-header-actions { display: flex; gap: 6px; }
+
+/* ── Controls ────────────────────────────────────────────────── */
+.tf-controls { margin-bottom: 16px; }
+.tf-controls-row {
+    display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap;
+}
+.tf-input-group { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 280px; }
+.tf-label {
+    font-family: var(--head); font-size: 9px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; color: var(--accent-dim);
+}
+.tf-input {
+    background: var(--bg-input); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 8px 12px;
+    font-family: var(--mono); font-size: 12px; color: var(--text-sec);
+    outline: none; transition: border .15s, box-shadow .15s;
+}
+.tf-input:focus {
+    border-color: var(--accent-dim);
+    box-shadow: 0 0 0 2px rgba(240,192,48,.07);
+}
+
+/* ── Summary Bar ─────────────────────────────────────────────── */
+.tf-summary {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 14px;
+}
+.tf-summary-item {
+    background: var(--bg-card); padding: 14px 14px 12px; text-align: center;
+    position: relative;
+}
+.tf-summary-item:not(:last-child)::after {
+    content: ''; position: absolute; right: 0; top: 20%; bottom: 20%;
+    width: 1px; background: var(--border); opacity: .6;
+}
+.tf-summary-label {
+    display: block; font-family: var(--head); font-size: 8px; font-weight: 700;
+    letter-spacing: .9px; text-transform: uppercase; color: var(--accent-dim);
+    margin-bottom: 7px;
+}
+.tf-summary-value {
+    font-family: var(--mono); font-size: 18px; font-weight: 700;
+    color: var(--text-hi); line-height: 1;
+}
+.tf-summary-value.mono { font-size: 12px; letter-spacing: -.3px; }
+
+/* ── Toolbar ─────────────────────────────────────────────────── */
+.tf-toolbar {
+    display: flex; gap: 8px; margin-bottom: 12px; align-items: center;
+}
+.tf-filter-input { flex: 1; min-width: 0; }
+.tf-select {
+    background: var(--bg-input); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 8px 10px;
+    font-family: var(--head); font-size: 10px; font-weight: 600;
+    color: var(--text-sec); outline: none; cursor: pointer;
+    min-width: 160px; letter-spacing: .3px;
+    transition: border .15s;
+}
+.tf-select:focus { border-color: var(--accent-dim); }
+
+/* ── Category Cards (Collapsible) ────────────────────────────── */
+.tf-category {
+    margin-bottom: 6px; border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: box-shadow .15s;
+}
+.tf-category:hover { box-shadow: 0 1px 6px rgba(0,0,0,.18); }
+
+.tf-category-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 11px 14px; background: var(--bg-panel);
+    border-bottom: 1px solid var(--border); cursor: pointer; user-select: none;
+    transition: background .12s;
+}
+.tf-category-header:hover { background: var(--bg-hover); }
+.tf-category-header svg { color: var(--accent-dim); flex-shrink: 0; }
+.tf-category-header > span:nth-child(2) {
+    font-family: var(--head); font-size: 11px; font-weight: 700;
+    letter-spacing: .5px; color: var(--text-sec); flex: 1;
+}
+
+/* Shared section head style used for tf-category toggles too */
+.tf-module .dns-section-head,
+.tf-module .toggle-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; background: var(--bg-panel);
+    cursor: pointer; user-select: none; border-bottom: 1px solid var(--border);
+    transition: background .12s;
+}
+.tf-module .dns-section-head:hover,
+.tf-module .toggle-header:hover { background: var(--bg-hover); }
+
+.tf-module .dns-section-title {
+    font-family: var(--head); font-size: 11px; font-weight: 700;
+    letter-spacing: .5px; color: var(--text-sec); flex: 1;
+}
+
+/* ── Badges ──────────────────────────────────────────────────── */
+.tf-badge {
+    font-family: var(--mono); font-size: 10px; font-weight: 700;
+    padding: 2px 9px; border-radius: 3px; border: 1px solid var(--border);
+    background: var(--bg-deep); color: var(--text-dim); white-space: nowrap;
+    letter-spacing: .3px;
+}
+.tf-badge.ok {
+    color: var(--accent);
+    border-color: var(--accent-dim);
+    background: rgba(240,192,48,.08);
+}
+.tf-badge.warn {
+    color: #d09030;
+    border-color: #7a4a10;
+    background: rgba(160,120,32,.09);
+}
+.tf-badge.danger {
+    color: #c07820;
+    border-color: #6a3808;
+    background: rgba(160,80,20,.09);
+}
+.tf-badge.dim {
+    color: var(--text-dim);
+    border-color: var(--border);
+    background: var(--bg-deep);
+    opacity: .65;
+}
+
+/* dns-section-badge — used inside toggle headers */
+.dns-section-badge {
+    font-family: var(--mono); font-size: 10px; font-weight: 700;
+    padding: 2px 9px; border-radius: 3px;
+    border: 1px solid var(--border);
+    background: var(--bg-deep); color: var(--text-dim);
+    white-space: nowrap;
+}
+.dns-section-badge.ok     { color: var(--accent);  border-color: var(--accent-dim); background: rgba(240,192,48,.08); }
+.dns-section-badge.warn   { color: #d09030;         border-color: #7a4a10;           background: rgba(160,120,32,.09); }
+.dns-section-badge.danger { color: #c07820;         border-color: #6a3808;           background: rgba(160,80,20,.09); }
+.dns-section-badge.dim    { opacity: .6; }
+
+.tf-category-body {
+    padding: 0; background: var(--bg-card);
+}
+.tf-category.collapsed .tf-category-body { display: none; }
+.dns-section.collapsed .dns-section-body { display: none; }
+
+#tf-target-params-head { padding: 12px 14px; gap: 10px; }
+
+/* ── Tables ──────────────────────────────────────────────────── */
+.tf-table {
+    width: 100%; border-collapse: collapse;
+    font-family: var(--mono); font-size: 11.5px;
+}
+.tf-table thead th {
+    padding: 9px 14px; text-align: left;
+    font-family: var(--head); font-size: 9px; font-weight: 700;
+    letter-spacing: .8px; text-transform: uppercase;
+    color: var(--accent-dim); background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+.tf-table tbody td {
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
+    color: var(--text-sec); vertical-align: middle;
+    line-height: 1.4;
+}
+.tf-table tbody tr { transition: background .1s; }
+.tf-table tbody tr:hover { background: var(--bg-hover); }
+.tf-table tbody tr:last-child td { border-bottom: none; }
+
+/* First column emphasis */
+.tf-table tbody td:first-child {
+    color: var(--text-hi);
+    font-weight: 600;
+}
+/* Evidence / URL column — de-emphasise */
+.tf-table tbody td:last-child {
+    color: var(--text-dim);
+    font-size: 10.5px;
+    max-width: 340px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ── Empty row ───────────────────────────────────────────────── */
+.tf-empty-row td {
+    text-align: center !important; color: var(--text-dim) !important;
+    padding: 28px 14px !important; font-size: 11px !important;
+    font-family: var(--head) !important; letter-spacing: .3px;
+    opacity: .55;
+}
+
+/* ── Cookie Grid ─────────────────────────────────────────────── */
+.tf-cookie-grid { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px; }
+.tf-empty {
+    padding: 32px 0; text-align: center; color: var(--text-dim);
+    font-size: 11px; opacity: .6; width: 100%;
+}
+.tf-cookie-card {
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    background: var(--bg-panel); padding: 10px 14px; min-width: 180px;
+    transition: border-color .15s;
+}
+.tf-cookie-card:hover { border-color: var(--accent-dim); }
+.tf-cookie-name {
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    color: var(--accent); word-break: break-all;
+}
+.tf-cookie-attr {
+    font-size: 10px; color: var(--text-dim); margin-top: 4px;
+    font-family: var(--mono);
+}
+.tf-cookie-insights {
+    margin: 0 14px 14px; padding: 12px; background: var(--bg-panel);
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+}
+.tf-cookie-insights h4 {
+    font-family: var(--head); font-size: 11px; font-weight: 700;
+    letter-spacing: .5px; color: var(--text-sec); margin: 0 0 8px 0;
+}
+.tf-cookie-insights pre {
+    font-family: var(--mono); font-size: 10.5px; color: var(--text-dim);
+    background: var(--bg-deep); padding: 10px; border-radius: var(--radius-sm);
+    line-height: 1.6; margin: 0; overflow-x: auto;
+}
+
+/* ── Comment Section ─────────────────────────────────────────── */
+.tf-comment-section { padding: 14px; }
+.tf-comment-section h4 {
+    font-family: var(--head); font-size: 11px; font-weight: 700;
+    letter-spacing: .5px; color: var(--text-sec); margin: 0 0 8px 0;
+}
+.tf-comment-block {
+    background: var(--bg-panel); border-left: 2px solid var(--accent-dim);
+    padding: 8px 12px; font-family: var(--mono); font-size: 10.5px;
+    color: var(--text-dim); margin-bottom: 6px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    word-break: break-all; line-height: 1.55;
+}
+
+/* ── Favicon Display ─────────────────────────────────────────── */
+.tf-favicon-display {
+    display: flex; gap: 18px; align-items: center;
+    padding: 16px 14px; background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+}
+.tf-favicon-preview {
+    width: 56px; height: 56px; flex-shrink: 0;
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg-deep); overflow: hidden;
+}
+.tf-favicon-preview img { max-width: 100%; max-height: 100%; }
+.tf-favicon-placeholder {
+    font-size: 22px; font-family: var(--head); color: var(--text-dim); opacity: .3;
+}
+.tf-favicon-info {
+    font-size: 11px; color: var(--text-dim); line-height: 2;
+    font-family: var(--mono);
+}
+.tf-favicon-info strong {
+    color: var(--text-sec); font-weight: 600;
+}
+.tf-favicon-info code {
+    font-family: var(--mono); font-size: 11px; color: var(--accent);
+    background: rgba(240,192,48,.06); padding: 1px 6px; border-radius: 2px;
+}
+.tf-favicon-info a {
+    color: var(--accent-dim); text-decoration: none;
+    border-bottom: 1px solid transparent; transition: color .12s, border-color .12s;
+}
+.tf-favicon-info a:hover { color: var(--accent); border-color: var(--accent-dim); }
+
+/* ── Confidence Inline Colors ────────────────────────────────── */
+.conf-high   { color: var(--accent); font-weight: 600; }
+.conf-medium { color: #d09030; }
+.conf-low    { color: var(--text-dim); }
+
+/* ── Error Page status badges ────────────────────────────────── */
+.tf-status-found  { color: #c07820; }
+.tf-status-clear  { color: var(--accent-dim); }
+
+/* ── Scan Info line ──────────────────────────────────────────── */
+.tls-action-info {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10px; color: var(--text-dim);
+    font-family: var(--mono); margin-top: 8px;
+}
+
+/* ── dns-section-icon (shared) ───────────────────────────────── */
+.dns-section-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; flex-shrink: 0;
+    color: var(--accent-dim);
+}
+
+/* ── dns-section-chevron ─────────────────────────────────────── */
+.dns-section-chevron {
+    color: var(--text-dim); flex-shrink: 0;
+    transition: transform .2s ease;
+}

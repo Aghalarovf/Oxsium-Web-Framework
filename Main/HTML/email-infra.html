@@ -1,0 +1,353 @@
+<div class="ei-module">
+
+      <div class="section-title">Email Infrastructure</div>
+      <div class="section-sub">Full email recon — MX records, Exchange servers, SPF flattening, breach detection, mail endpoints &amp; security posture</div>
+
+      <div class="dns-section" id="ei-sec-target-params" style="margin-bottom:12px;">
+        <div class="dns-section-head" id="ei-target-params-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+          <div class="dns-section-icon">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M5 5h2.5M5 8h6M5 11h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="11" cy="5" r="1.5" fill="currentColor" opacity=".7"/>
+            </svg>
+          </div>
+          <span class="dns-section-title">Target Parameters</span>
+          <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="dns-section-body">
+          <div class="form-row" style="grid-template-columns:1fr 1fr;margin-bottom:12px;">
+            <div class="form-group">
+              <label class="form-label">Domain Name</label>
+              <input class="form-input" id="ei-target" type="text" placeholder="example.com" spellcheck="false" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Name Server <span style="opacity:.45;font-weight:400;">Optional</span></label>
+              <input class="form-input" id="ei-input-nameserver" type="text" placeholder="1.1.1.1" spellcheck="false" autocomplete="off">
+            </div>
+          </div>
+          <div class="form-row" style="grid-template-columns:1fr 1fr;margin-bottom:12px;">
+            <div class="form-group">
+              <label class="form-label">Threads</label>
+              <div class="dns-threads-group" id="ei-threads-group">
+                <button class="dns-thread-btn" data-val="1">1</button>
+                <button class="dns-thread-btn" data-val="2">2</button>
+                <button class="dns-thread-btn dns-thread-btn-active" data-val="3">3</button>
+                <button class="dns-thread-btn" data-val="4">4</button>
+                <button class="dns-thread-btn" data-val="5">5</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Options</label>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 10px;padding-top:2px;">
+                <label class="check-toggle">
+                  <input type="checkbox" id="ei-opt-dns-security" checked>
+                  <span class="check-box"></span>
+                  <span class="check-label">Mail DNS Security</span>
+                </label>
+                <label class="check-toggle">
+                  <input type="checkbox" id="ei-opt-service-scanner" checked>
+                  <span class="check-box"></span>
+                  <span class="check-label">Service Scanner</span>
+                </label>
+                <label class="check-toggle">
+                  <input type="checkbox" id="ei-opt-exchange" checked>
+                  <span class="check-box"></span>
+                  <span class="check-label">Exchange Endpoints</span>
+                </label>
+                <label class="check-toggle">
+                  <input type="checkbox" id="ei-opt-ntlm">
+                  <span class="check-box"></span>
+                  <span class="check-label">NTLM Reconnaissance</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:4px;">
+            <button id="ei-scan-btn" class="btn-primary" style="flex:1;">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+                <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+              Start
+            </button>
+            <button id="ei-stop-btn" class="btn-danger">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+                <rect x="4" y="4" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.4"/>
+              </svg>
+              Stop
+            </button>
+            <button id="ei-reset-btn" class="btn-secondary" style="height:auto;align-self:stretch;padding:0 16px;" title="Reset">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8a5 5 0 1 0 5-5 5 5 0 0 0-3.54 1.46L3 3M3 3v3h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <button id="ei-load-db-btn" class="btn-load-db">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 2v8M5 7l3 3 3-3M3 12.5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Load From Database
+          </button>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;margin-bottom:16px;">
+        <div class="output-title">Scan Results</div>
+        <div class="output-wrap ei-output-wrap" style="min-height:90px;">
+          <span class="ei-output-placeholder">// Output will appear here when scan is running...</span>
+        </div>
+      </div>
+
+  <div class="ei-summary" id="ei-summary" style="display:none;">
+    <div class="ei-summary-item">
+      <span class="ei-summary-label">MX Records</span>
+      <span class="ei-summary-value" id="ei-sum-mx">0</span>
+    </div>
+    <div class="ei-summary-item">
+      <span class="ei-summary-label">Exchange Servers</span>
+      <span class="ei-summary-value" id="ei-sum-exchange">—</span>
+    </div>
+    <div class="ei-summary-item">
+      <span class="ei-summary-label">SPF Lookups</span>
+      <span class="ei-summary-value" id="ei-sum-spf-flat">—</span>
+    </div>
+    <div class="ei-summary-item">
+      <span class="ei-summary-label">Breaches</span>
+      <span class="ei-summary-value" id="ei-sum-breaches">0</span>
+    </div>
+    <div class="ei-summary-item">
+      <span class="ei-summary-label">Security Score</span>
+      <span class="ei-summary-value" id="ei-sum-security">—</span>
+    </div>
+  </div>
+
+  <div id="ei-subtab-bar" style="display:flex;gap:15px;padding:8px 10px 0;border-bottom:1px solid var(--border);background:var(--bg-input);flex-wrap:wrap;">
+    <button class="tls-subtab-btn active" data-subtab="mx-records">MX Records</button>
+    <button class="tls-subtab-btn" data-subtab="mail-security">Mail Security</button>
+    <button class="tls-subtab-btn" data-subtab="exchange">Exchange</button>
+    <button class="tls-subtab-btn" data-subtab="svc-config">Service Configurations</button>
+    <button class="tls-subtab-btn" data-subtab="spf-flat">SPF Flattening</button>
+    <button class="tls-subtab-btn" data-subtab="email-breaches">Email Breaches</button>
+    <button class="tls-subtab-btn" data-subtab="ntlm">NTLM</button>
+  </div>
+
+  <div class="ei-results" id="ei-results">
+
+    <div class="ei-section active" data-category="mx-records">
+      <div class="ei-section-head toggle-header">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>MX Record Enumeration</span>
+        <span class="ei-badge" id="ei-badge-mx-records">0</span>
+      </div>
+      <div class="ei-section-body">
+        <div class="mx-strip" id="ei-mx-strip"></div>
+        <div class="mx-list" id="ei-mx-list">
+          <div class="ei-empty">Run a scan to see MX records.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ei-section" data-category="mail-security">
+      <div class="ei-section-head toggle-header">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Mail Security</span>
+        <span class="ei-badge" id="ei-badge-mail-security">0</span>
+      </div>
+      <div class="ei-section-body">
+        <div class="ms-hero" id="ei-ms-hero"></div>
+        <div class="ms-grid" id="ei-ms-grid">
+          <div class="ei-empty">Run a scan to see mail security controls.</div>
+        </div>
+        <h4 class="ei-sub-head">Findings</h4>
+        <div class="ms-findings" id="ei-ms-findings"></div>
+        <h4 class="ei-sub-head">DANE / TLSA</h4>
+        <div class="ms-dane" id="ei-ms-dane"></div>
+      </div>
+    </div>
+
+    <div class="ei-section" data-category="exchange">
+      <div class="ei-section-head toggle-header">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Exchange Servers &amp; Service Configurations</span>
+        <span class="ei-badge" id="ei-badge-exchange">0</span>
+      </div>
+      <div class="ei-section-body">
+        <h4 class="ei-sub-head">Detected Exchange / Mail Servers</h4>
+        <div id="ei-exchange-list" class="ex-server-list">
+          <div class="ei-empty">Run a scan to see exchange servers.</div>
+        </div>
+        <h4 class="ei-sub-head">Service Configurations</h4>
+        <div id="ei-exchange-endpoint-list" class="ex-config-list">
+          <div class="ei-empty">Run a scan to see Exchange endpoints.</div>
+        </div>
+        <h4 class="ei-sub-head">Autodiscover &amp; Autoconfig</h4>
+        <div id="ei-exchange-config-list" class="ex-config-list">
+          <div class="ei-empty">Run a scan to see configuration endpoints.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ei-section" data-category="svc-config">
+      <div class="ei-section-head toggle-header">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Service Configurations</span>
+        <span class="ei-badge" id="ei-badge-svc-config">0</span>
+      </div>
+      <div class="ei-section-body">
+
+        <div class="svc-proto-block">
+          <div class="svc-proto-head">
+            <svg class="svc-proto-icon" width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M2 6l6 4 6-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            <span class="svc-proto-name">SMTP</span>
+            <span class="svc-proto-port">25</span>
+            <span class="svc-proto-port">465</span>
+            <span class="svc-proto-port">587</span>
+          </div>
+          <div class="svc-proto-body" id="ei-svc-smtp-body">
+            <div class="ei-empty svc-empty">No SMTP data found.</div>
+          </div>
+        </div>
+
+        <div class="svc-proto-block">
+          <div class="svc-proto-head">
+            <svg class="svc-proto-icon" width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2v8M5 7l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 12h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            <span class="svc-proto-name">IMAP</span>
+            <span class="svc-proto-port">143</span>
+          </div>
+          <div class="svc-proto-body" id="ei-svc-imap-body">
+            <div class="ei-empty svc-empty">No IMAP data found.</div>
+          </div>
+        </div>
+
+        <div class="svc-proto-block">
+          <div class="svc-proto-head">
+            <svg class="svc-proto-icon" width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2v8M5 7l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 12h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="13" cy="4" r="2" fill="currentColor" opacity=".6"/>
+            </svg>
+            <span class="svc-proto-name">IMAPS</span>
+            <span class="svc-proto-port">993</span>
+          </div>
+          <div class="svc-proto-body" id="ei-svc-imaps-body">
+            <div class="ei-empty svc-empty">No IMAPS data found.</div>
+          </div>
+        </div>
+
+        <div class="svc-proto-block">
+          <div class="svc-proto-head">
+            <svg class="svc-proto-icon" width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <rect x="2" y="4" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M5 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M5 8h6M5 11h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            <span class="svc-proto-name">POP3</span>
+            <span class="svc-proto-port">110</span>
+          </div>
+          <div class="svc-proto-body" id="ei-svc-pop3-body">
+            <div class="ei-empty svc-empty">No POP3 data found.</div>
+          </div>
+        </div>
+
+        <div class="svc-proto-block">
+          <div class="svc-proto-head">
+            <svg class="svc-proto-icon" width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <rect x="2" y="4" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M5 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M5 8h6M5 11h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="13" cy="5" r="2" fill="currentColor" opacity=".6"/>
+            </svg>
+            <span class="svc-proto-name">POP3S</span>
+            <span class="svc-proto-port">995</span>
+          </div>
+          <div class="svc-proto-body" id="ei-svc-pop3s-body">
+            <div class="ei-empty svc-empty">No POP3S data found.</div>
+          </div>
+        </div>
+
+        <div class="svc-proto-block">
+          <div class="svc-proto-head">
+            <svg class="svc-proto-icon" width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            <span class="svc-proto-name">ManageSieve</span>
+            <span class="svc-proto-port">4190</span>
+            <span class="svc-proto-port">2000</span>
+          </div>
+          <div class="svc-proto-body" id="ei-svc-sieve-body">
+            <div class="ei-empty svc-empty">No ManageSieve data found.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="ei-section" data-category="spf-flat">
+      <div class="ei-section-head toggle-header">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>SPF Flattening</span>
+        <span class="ei-badge" id="ei-badge-spf-flat">0</span>
+      </div>
+      <div class="ei-section-body">
+        <div class="ei-raw-record" id="ei-spf-flat-raw"><span class="ei-placeholder">// Resolved flat SPF record will appear here</span></div>
+        <h4 class="ei-sub-head">Resolved IP Ranges</h4>
+        <div id="ei-spf-chain-list" class="spf-chain-list">
+          <div class="ei-empty">Run a scan to see resolved IP ranges.</div>
+        </div>
+        <h4 class="ei-sub-head">Lookup Analysis</h4>
+        <div id="ei-spf-flat-analysis"></div>
+      </div>
+    </div>
+
+    <div class="ei-section" data-category="email-breaches">
+      <div class="ei-section-head toggle-header">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Email Breaches</span>
+        <span class="ei-badge" id="ei-badge-email-breaches">0</span>
+      </div>
+      <div class="ei-section-body">
+        <div class="ei-info-banner warn">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 2l6 12H2L8 2z" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v3M8 11.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          Queries public breach intelligence sources using privacy-preserving k-anonymity lookups. No plaintext credentials are transmitted.
+        </div>
+        <div id="ei-breach-list" class="breach-list">
+          <div class="ei-empty">Run a scan to see breach data.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ei-section" data-category="ntlm">
+      <div class="ei-section-head toggle-header">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>NTLM</span>
+        <span class="ei-badge" id="ei-badge-ntlm">0</span>
+      </div>
+      <div class="ei-section-body">
+
+        <h4 class="ei-sub-head">Endpoints</h4>
+        <div id="ei-ntlm-ep-list" class="ntlm-ep-list">
+          <div class="ei-empty">No NTLM endpoints found.</div>
+        </div>
+
+        <h4 class="ei-sub-head">Disclosure</h4>
+        <div id="ei-ntlm-disc-list" class="ntlm-disc-list">
+          <div class="ei-empty">No disclosure information found.</div>
+        </div>
+
+        <h4 class="ei-sub-head">Vulnerabilities</h4>
+        <div id="ei-ntlm-vuln-list" class="ntlm-vuln-list">
+          <div class="ei-empty">No vulnerabilities found.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

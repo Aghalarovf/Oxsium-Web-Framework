@@ -1,0 +1,25 @@
+# Local Python environments
+oxsium-web/
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.py[cod]
+
+# Local scan output and databases
+Main/Scan-Results/
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# Local certificates and private keys
+Main/Configurations/*.key
+Main/Configurations/*.crt
+
+# Local secrets and runtime configuration
+**/api_keys.json
+.env
+.env.*
+
+# Build and editor output
+*.log
+.vscode/*.local.json

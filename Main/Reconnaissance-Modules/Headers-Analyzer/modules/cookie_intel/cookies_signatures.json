@@ -1,0 +1,5699 @@
+{
+  "version": 1,
+  "categories": [
+    "session",
+    "auth",
+    "csrf",
+    "tracking",
+    "consent",
+    "load_balancer",
+    "bot_protection",
+    "cms",
+    "preference",
+    "cdn_waf"
+  ],
+  "exact": {
+    ".aspnet.applicationcookie": {
+      "label": "ASP.NET Identity (OWIN) application cookie",
+      "category": "auth"
+    },
+    ".aspnet.cookies": {
+      "label": "ASP.NET Identity (OWIN) application cookie",
+      "category": "auth"
+    },
+    ".aspnet.externalcookie": {
+      "label": "ASP.NET Identity (OWIN) application cookie",
+      "category": "auth"
+    },
+    ".aspnet.sharedcookie": {
+      "label": "ASP.NET Identity (OWIN) application cookie",
+      "category": "auth"
+    },
+    ".aspnet.twofactorcookie": {
+      "label": "ASP.NET Identity (OWIN) application cookie",
+      "category": "auth"
+    },
+    ".aspnet.twofactorrememberbrowsercookie": {
+      "label": "ASP.NET Identity (OWIN) application cookie",
+      "category": "auth"
+    },
+    ".aspnetcore.cookies": {
+      "label": "ASP.NET Core authentication cookie",
+      "category": "auth"
+    },
+    ".aspnetcore.culture": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    ".aspnetcore.identity.application": {
+      "label": "ASP.NET Core authentication cookie",
+      "category": "auth"
+    },
+    ".aspnetcore.identity.external": {
+      "label": "ASP.NET Core authentication cookie",
+      "category": "auth"
+    },
+    ".aspnetcore.identity.twofactorrememberme": {
+      "label": "ASP.NET Core authentication cookie",
+      "category": "auth"
+    },
+    ".aspnetcore.identity.twofactoruserid": {
+      "label": "ASP.NET Core authentication cookie",
+      "category": "auth"
+    },
+    ".aspnetcore.mvc.cookiestempdataprovider": {
+      "label": "ASP.NET temp-data cookie",
+      "category": "session"
+    },
+    ".aspnetcore.session": {
+      "label": "ASP.NET Core session",
+      "category": "session"
+    },
+    ".aspxanonymous": {
+      "label": ".NET anonymous identification",
+      "category": "auth"
+    },
+    ".aspxauth": {
+      "label": ".NET Forms Authentication ticket",
+      "category": "auth"
+    },
+    ".aspxrolesauthentication": {
+      "label": ".NET role authentication",
+      "category": "auth"
+    },
+    ".dotnetnuke": {
+      "label": "DotNetNuke authentication",
+      "category": "session"
+    },
+    "0xhighflyxsogo": {
+      "label": "SOGo authentication",
+      "category": "auth"
+    },
+    "1p_jar": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "___utmva": {
+      "label": "Imperva Advanced Bot Protection",
+      "category": "bot_protection"
+    },
+    "___utmvb": {
+      "label": "Imperva Advanced Bot Protection",
+      "category": "bot_protection"
+    },
+    "___utmvbm": {
+      "label": "Imperva Advanced Bot Protection",
+      "category": "bot_protection"
+    },
+    "___utmvc": {
+      "label": "Imperva Advanced Bot Protection",
+      "category": "bot_protection"
+    },
+    "___utmvm": {
+      "label": "Imperva Advanced Bot Protection",
+      "category": "bot_protection"
+    },
+    "__ac": {
+      "label": "Plone or Zope authentication",
+      "category": "auth"
+    },
+    "__atssc": {
+      "label": "AddThis",
+      "category": "tracking"
+    },
+    "__atuvc": {
+      "label": "AddThis",
+      "category": "tracking"
+    },
+    "__atuvs": {
+      "label": "AddThis",
+      "category": "tracking"
+    },
+    "__cf_bm": {
+      "label": "Cloudflare Bot Management",
+      "category": "bot_protection"
+    },
+    "__cfduid": {
+      "label": "Cloudflare Bot Management",
+      "category": "bot_protection"
+    },
+    "__cflb": {
+      "label": "Cloudflare load balancer session affinity",
+      "category": "load_balancer"
+    },
+    "__cflb_old": {
+      "label": "Cloudflare load balancer session affinity",
+      "category": "load_balancer"
+    },
+    "__cfruid": {
+      "label": "Cloudflare Bot Management",
+      "category": "bot_protection"
+    },
+    "__cfwaitingroom": {
+      "label": "Cloudflare Waiting Room",
+      "category": "cdn_waf"
+    },
+    "__clerk_db_jwt": {
+      "label": "Clerk authentication",
+      "category": "auth"
+    },
+    "__client_uat": {
+      "label": "Clerk authentication",
+      "category": "auth"
+    },
+    "__cq_bc": {
+      "label": "Salesforce Commerce Cloud analytics",
+      "category": "tracking"
+    },
+    "__cq_dnt": {
+      "label": "Salesforce Commerce Cloud analytics",
+      "category": "tracking"
+    },
+    "__cq_seg": {
+      "label": "Salesforce Commerce Cloud analytics",
+      "category": "tracking"
+    },
+    "__cq_uuid": {
+      "label": "Salesforce Commerce Cloud analytics",
+      "category": "tracking"
+    },
+    "__csrf": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "__csrf_token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "__eoi": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "__gads": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "__gpi": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "__host-authjs.csrf-token": {
+      "label": "NextAuth.js CSRF token",
+      "category": "csrf"
+    },
+    "__host-next-auth.csrf-token": {
+      "label": "NextAuth.js CSRF token",
+      "category": "csrf"
+    },
+    "__host-user_session_same_site": {
+      "label": "GitHub user session",
+      "category": "auth"
+    },
+    "__hs_cookie_cat_pref": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "__hs_do_not_track": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "__hs_gpc_banner_dismiss": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "__hs_initial_opt_in": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "__hs_opt_out": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "__hssc": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "__hssrc": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "__hstc": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "__jda": {
+      "label": "JD.com tracking",
+      "category": "tracking"
+    },
+    "__jdb": {
+      "label": "JD.com tracking",
+      "category": "tracking"
+    },
+    "__jdc": {
+      "label": "JD.com tracking",
+      "category": "tracking"
+    },
+    "__jdu": {
+      "label": "JD.com tracking",
+      "category": "tracking"
+    },
+    "__jdv": {
+      "label": "JD.com tracking",
+      "category": "tracking"
+    },
+    "__kla_id": {
+      "label": "Klaviyo",
+      "category": "tracking"
+    },
+    "__next_preview_data": {
+      "label": "Next.js preview mode cookie",
+      "category": "session"
+    },
+    "__prerender_bypass": {
+      "label": "Next.js preview mode cookie",
+      "category": "session"
+    },
+    "__qca": {
+      "label": "Quantcast",
+      "category": "tracking"
+    },
+    "__requestverificationtoken": {
+      "label": "ASP.NET anti-forgery token",
+      "category": "csrf"
+    },
+    "__secure-1papisid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "__secure-1psid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "__secure-1psidcc": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "__secure-1psidts": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "__secure-3papisid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "__secure-3psid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "__secure-3psidcc": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "__secure-3psidts": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "__secure-authjs.callback-url": {
+      "label": "NextAuth.js callback URL",
+      "category": "preference"
+    },
+    "__secure-next-auth.callback-url": {
+      "label": "NextAuth.js callback URL",
+      "category": "preference"
+    },
+    "__secure-osid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "__session": {
+      "label": "Firebase Hosting session cookie",
+      "category": "session"
+    },
+    "__sharethis_cookie_test__": {
+      "label": "ShareThis",
+      "category": "tracking"
+    },
+    "__stid": {
+      "label": "ShareThis",
+      "category": "tracking"
+    },
+    "__stripe_mid": {
+      "label": "Stripe",
+      "category": "tracking"
+    },
+    "__stripe_orig_props": {
+      "label": "Stripe",
+      "category": "tracking"
+    },
+    "__stripe_sid": {
+      "label": "Stripe",
+      "category": "tracking"
+    },
+    "__unam": {
+      "label": "ShareThis",
+      "category": "tracking"
+    },
+    "__utma": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "__utmb": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "__utmc": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "__utmd": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "__utmt": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "__utmv": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "__utmx": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "__utmxx": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "__utmz": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "__vercel_live_token": {
+      "label": "Vercel toolbar",
+      "category": "session"
+    },
+    "__vercel_toolbar": {
+      "label": "Vercel toolbar",
+      "category": "session"
+    },
+    "__zlcmid": {
+      "label": "Zendesk",
+      "category": "tracking"
+    },
+    "_abck": {
+      "label": "Akamai Bot Manager",
+      "category": "bot_protection"
+    },
+    "_app_session": {
+      "label": "Ruby on Rails application session",
+      "category": "session"
+    },
+    "_atuvc": {
+      "label": "AddThis",
+      "category": "tracking"
+    },
+    "_atuvs": {
+      "label": "AddThis",
+      "category": "tracking"
+    },
+    "_cfuvid": {
+      "label": "Cloudflare Bot Management",
+      "category": "bot_protection"
+    },
+    "_clck": {
+      "label": "Microsoft advertising and Clarity",
+      "category": "tracking"
+    },
+    "_clsk": {
+      "label": "Microsoft advertising and Clarity",
+      "category": "tracking"
+    },
+    "_cmp_a": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_csrf": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "_csrf-backend": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "_csrf-frontend": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "_csrf_token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "_dd_s": {
+      "label": "Datadog RUM",
+      "category": "tracking"
+    },
+    "_derived_epik": {
+      "label": "Pinterest",
+      "category": "tracking"
+    },
+    "_epik": {
+      "label": "Pinterest",
+      "category": "tracking"
+    },
+    "_et_coid": {
+      "label": "Salesforce Marketing Cloud",
+      "category": "tracking"
+    },
+    "_fbc": {
+      "label": "Meta (Facebook) Pixel and SDK",
+      "category": "tracking"
+    },
+    "_fbp": {
+      "label": "Meta (Facebook) Pixel and SDK",
+      "category": "tracking"
+    },
+    "_forum_session": {
+      "label": "Discourse forum session",
+      "category": "session"
+    },
+    "_ga": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "_gaexp": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_gaexp_rc": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_gat": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "_gcl_ag": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_gcl_au": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_gcl_aw": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_gcl_dc": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_gcl_gb": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_gcl_gs": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_gcl_ha": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_gh_sess": {
+      "label": "GitHub session",
+      "category": "session"
+    },
+    "_gid": {
+      "label": "Google Analytics",
+      "category": "tracking"
+    },
+    "_gitlab_session": {
+      "label": "GitLab session",
+      "category": "session"
+    },
+    "_gorilla_csrf": {
+      "label": "Gorilla CSRF token",
+      "category": "csrf"
+    },
+    "_grecaptcha": {
+      "label": "Google reCAPTCHA",
+      "category": "tracking"
+    },
+    "_guid": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "_icl_current_language": {
+      "label": "WPML language",
+      "category": "preference"
+    },
+    "_iub_previous_preference_id": {
+      "label": "iubenda consent",
+      "category": "consent"
+    },
+    "_kx": {
+      "label": "Klaviyo",
+      "category": "tracking"
+    },
+    "_landing_page": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_legacy_auth0.is.authenticated": {
+      "label": "Auth0 session",
+      "category": "session"
+    },
+    "_legacy_normandy_session": {
+      "label": "Canvas LMS session",
+      "category": "session"
+    },
+    "_m_h5_tk": {
+      "label": "Alibaba anti-bot",
+      "category": "bot_protection"
+    },
+    "_m_h5_tk_enc": {
+      "label": "Alibaba anti-bot",
+      "category": "bot_protection"
+    },
+    "_mastodon_session": {
+      "label": "Mastodon session",
+      "category": "session"
+    },
+    "_mcid": {
+      "label": "Mailchimp",
+      "category": "tracking"
+    },
+    "_mitata": {
+      "label": "Netacea bot protection",
+      "category": "bot_protection"
+    },
+    "_mitatacookie": {
+      "label": "Netacea bot protection",
+      "category": "bot_protection"
+    },
+    "_mkto_trk": {
+      "label": "Marketo tracking",
+      "category": "tracking"
+    },
+    "_nk_": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "_normandy_session": {
+      "label": "Canvas LMS session",
+      "category": "session"
+    },
+    "_octo": {
+      "label": "GitHub analytics",
+      "category": "tracking"
+    },
+    "_opt_awcid": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_opt_awgid": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_opt_awkid": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_opt_awmid": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_opt_expid": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_opt_utmc": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "_orig_referrer": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_pin_unauth": {
+      "label": "Pinterest",
+      "category": "tracking"
+    },
+    "_pinterest_ct": {
+      "label": "Pinterest",
+      "category": "tracking"
+    },
+    "_pinterest_ct_rt": {
+      "label": "Pinterest",
+      "category": "tracking"
+    },
+    "_pinterest_ct_ua": {
+      "label": "Pinterest",
+      "category": "tracking"
+    },
+    "_pinterest_sess": {
+      "label": "Pinterest session",
+      "category": "session"
+    },
+    "_px": {
+      "label": "HUMAN (PerimeterX) bot defense",
+      "category": "bot_protection"
+    },
+    "_px2": {
+      "label": "HUMAN (PerimeterX) bot defense",
+      "category": "bot_protection"
+    },
+    "_px3": {
+      "label": "HUMAN (PerimeterX) bot defense",
+      "category": "bot_protection"
+    },
+    "_pxde": {
+      "label": "HUMAN (PerimeterX) bot defense",
+      "category": "bot_protection"
+    },
+    "_pxhd": {
+      "label": "HUMAN (PerimeterX) bot defense",
+      "category": "bot_protection"
+    },
+    "_pxmvid": {
+      "label": "HUMAN (PerimeterX) bot defense",
+      "category": "bot_protection"
+    },
+    "_pxuuid": {
+      "label": "HUMAN (PerimeterX) bot defense",
+      "category": "bot_protection"
+    },
+    "_pxvid": {
+      "label": "HUMAN (PerimeterX) bot defense",
+      "category": "bot_protection"
+    },
+    "_rdt_uuid": {
+      "label": "Reddit",
+      "category": "tracking"
+    },
+    "_routing_id": {
+      "label": "Pinterest",
+      "category": "tracking"
+    },
+    "_samesite_flag_": {
+      "label": "Alibaba tracking",
+      "category": "tracking"
+    },
+    "_schn": {
+      "label": "Snapchat pixel",
+      "category": "tracking"
+    },
+    "_scid": {
+      "label": "Snapchat pixel",
+      "category": "tracking"
+    },
+    "_scid_r": {
+      "label": "Snapchat pixel",
+      "category": "tracking"
+    },
+    "_scor_uid": {
+      "label": "comScore",
+      "category": "tracking"
+    },
+    "_sctr": {
+      "label": "Snapchat pixel",
+      "category": "tracking"
+    },
+    "_secure_session_id": {
+      "label": "Shopify secure session",
+      "category": "session"
+    },
+    "_session_id": {
+      "label": "Ruby on Rails application session",
+      "category": "session"
+    },
+    "_shopify_d": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_essential": {
+      "label": "Shopify secure session",
+      "category": "session"
+    },
+    "_shopify_evids": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_fs": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_ga": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_m": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_s": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_sa_p": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_sa_t": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_tm": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_tw": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_uniq": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_visit": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_shopify_y": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_tb_token_": {
+      "label": "Taobao CSRF token",
+      "category": "csrf"
+    },
+    "_tbc": {
+      "label": "Taboola",
+      "category": "tracking"
+    },
+    "_tracking_consent": {
+      "label": "Shopify analytics",
+      "category": "tracking"
+    },
+    "_tt_enable_cookie": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "_ttp": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "_twitter_sess": {
+      "label": "X (Twitter) authentication",
+      "category": "auth"
+    },
+    "_uetmsclkid": {
+      "label": "Microsoft advertising and Clarity",
+      "category": "tracking"
+    },
+    "_uetsid": {
+      "label": "Microsoft advertising and Clarity",
+      "category": "tracking"
+    },
+    "_uetvid": {
+      "label": "Microsoft advertising and Clarity",
+      "category": "tracking"
+    },
+    "_vercel_jwt": {
+      "label": "Vercel authentication",
+      "category": "auth"
+    },
+    "_wixuid": {
+      "label": "Wix visitor",
+      "category": "tracking"
+    },
+    "_wixuidx": {
+      "label": "Wix visitor",
+      "category": "tracking"
+    },
+    "_xsrf": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "_yasc": {
+      "label": "Yandex",
+      "category": "tracking"
+    },
+    "_zendesk_cookie": {
+      "label": "Zendesk",
+      "category": "tracking"
+    },
+    "_zendesk_session": {
+      "label": "Zendesk session",
+      "category": "session"
+    },
+    "_zendesk_shared_session": {
+      "label": "Zendesk session",
+      "category": "session"
+    },
+    "_zm_page_auth": {
+      "label": "Zoom web session",
+      "category": "session"
+    },
+    "_zm_ssid": {
+      "label": "Zoom web session",
+      "category": "session"
+    },
+    "aam_uuid": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "accept_cookies": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "access-token": {
+      "label": "Generic access token",
+      "category": "auth"
+    },
+    "access_token": {
+      "label": "Generic access token",
+      "category": "auth"
+    },
+    "accesstoken": {
+      "label": "Generic access token",
+      "category": "auth"
+    },
+    "acsid": {
+      "label": "Google App Engine authentication",
+      "category": "auth"
+    },
+    "addtl_consent": {
+      "label": "IAB TCF consent string",
+      "category": "consent"
+    },
+    "adminconsolesession": {
+      "label": "WebLogic admin console session",
+      "category": "session"
+    },
+    "adminer_key": {
+      "label": "Adminer session",
+      "category": "session"
+    },
+    "adminer_permanent": {
+      "label": "Adminer session",
+      "category": "session"
+    },
+    "adminer_sid": {
+      "label": "Adminer session",
+      "category": "session"
+    },
+    "adminhtml": {
+      "label": "Magento admin session",
+      "category": "session"
+    },
+    "adonis-session": {
+      "label": "Adonis.js session",
+      "category": "session"
+    },
+    "adonis-session-values": {
+      "label": "Adonis.js session",
+      "category": "session"
+    },
+    "aec": {
+      "label": "Google consent state",
+      "category": "consent"
+    },
+    "ai_authuser": {
+      "label": "Microsoft Application Insights",
+      "category": "tracking"
+    },
+    "ai_session": {
+      "label": "Microsoft Application Insights",
+      "category": "tracking"
+    },
+    "ai_user": {
+      "label": "Microsoft Application Insights",
+      "category": "tracking"
+    },
+    "ak_bmsc": {
+      "label": "Akamai Bot Manager",
+      "category": "bot_protection"
+    },
+    "aka_a2": {
+      "label": "Akamai Bot Manager",
+      "category": "bot_protection"
+    },
+    "aliyun_choice": {
+      "label": "Alibaba Cloud console preference",
+      "category": "preference"
+    },
+    "aliyun_country": {
+      "label": "Alibaba Cloud console preference",
+      "category": "preference"
+    },
+    "aliyun_lang": {
+      "label": "Alibaba Cloud console preference",
+      "category": "preference"
+    },
+    "aliyun_site": {
+      "label": "Alibaba Cloud console preference",
+      "category": "preference"
+    },
+    "amp_token": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "anj": {
+      "label": "AppNexus (Xandr)",
+      "category": "tracking"
+    },
+    "anonchk": {
+      "label": "Microsoft advertising and Clarity",
+      "category": "tracking"
+    },
+    "anti-csrf-token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "apache": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "api-key": {
+      "label": "Generic API key cookie",
+      "category": "auth"
+    },
+    "api_key": {
+      "label": "Generic API key cookie",
+      "category": "auth"
+    },
+    "api_token": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "apikey": {
+      "label": "Generic API key cookie",
+      "category": "auth"
+    },
+    "apisid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "apitoken": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "app-session": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "app_language": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "app_session": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "appgwaffinity": {
+      "label": "Azure Application Gateway affinity",
+      "category": "load_balancer"
+    },
+    "applicationgatewayaffinity": {
+      "label": "Azure Application Gateway affinity",
+      "category": "load_balancer"
+    },
+    "applicationgatewayaffinitycors": {
+      "label": "Azure Application Gateway affinity",
+      "category": "load_balancer"
+    },
+    "appserviceauthsession": {
+      "label": "Azure App Service authentication session",
+      "category": "session"
+    },
+    "appsession": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "ar_debug": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "aslbsa": {
+      "label": "Azure load balancer affinity",
+      "category": "load_balancer"
+    },
+    "aslbsacors": {
+      "label": "Azure load balancer affinity",
+      "category": "load_balancer"
+    },
+    "asp.net_sessionid": {
+      "label": "ASP.NET session",
+      "category": "session"
+    },
+    "aspsessionid": {
+      "label": "Classic ASP session identifier",
+      "category": "session"
+    },
+    "aspxauth": {
+      "label": ".NET Forms Authentication ticket",
+      "category": "auth"
+    },
+    "at_check": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "athena_short_visit_id": {
+      "label": "BigCommerce visitor",
+      "category": "tracking"
+    },
+    "atl_token": {
+      "label": "Atlassian XSRF token",
+      "category": "csrf"
+    },
+    "atlassian.account.xsrf.token": {
+      "label": "Atlassian XSRF token",
+      "category": "csrf"
+    },
+    "atlassian.xsrf.token": {
+      "label": "Atlassian XSRF token",
+      "category": "csrf"
+    },
+    "auth": {
+      "label": "Generic authentication state",
+      "category": "auth"
+    },
+    "auth-token": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "auth0": {
+      "label": "Auth0 session",
+      "category": "session"
+    },
+    "auth0.is.authenticated": {
+      "label": "Auth0 session",
+      "category": "session"
+    },
+    "auth0_compat": {
+      "label": "Auth0 session",
+      "category": "session"
+    },
+    "auth_cookie": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "auth_key": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "auth_session_id": {
+      "label": "Keycloak session",
+      "category": "session"
+    },
+    "auth_session_id_legacy": {
+      "label": "Keycloak session",
+      "category": "session"
+    },
+    "auth_tkt": {
+      "label": "Paste or Pyramid authentication ticket",
+      "category": "auth"
+    },
+    "auth_token": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "authcookie": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "authelia_session": {
+      "label": "Authelia session",
+      "category": "session"
+    },
+    "authenticated": {
+      "label": "Generic authentication state",
+      "category": "auth"
+    },
+    "authentication": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "authentication_data": {
+      "label": "Discourse authentication data",
+      "category": "session"
+    },
+    "authentication_token": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "authentik_csrf": {
+      "label": "Authentik CSRF token",
+      "category": "csrf"
+    },
+    "authentik_session": {
+      "label": "Authentik session",
+      "category": "session"
+    },
+    "authjs.callback-url": {
+      "label": "NextAuth.js callback URL",
+      "category": "preference"
+    },
+    "authjs.csrf-token": {
+      "label": "NextAuth.js CSRF token",
+      "category": "csrf"
+    },
+    "authjs.nonce": {
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    "authjs.pkce.code_verifier": {
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    "authjs.session-token": {
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    "authjs.state": {
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    "authkey": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "authorization": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "authtoken": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "aws-userinfo": {
+      "label": "AWS console user info",
+      "category": "auth"
+    },
+    "aws-userinfo-signed": {
+      "label": "AWS console user info",
+      "category": "auth"
+    },
+    "aws-waf-token": {
+      "label": "AWS WAF token",
+      "category": "bot_protection"
+    },
+    "aws_lang": {
+      "label": "AWS cookie consent and preferences",
+      "category": "preference"
+    },
+    "awsccc": {
+      "label": "AWS cookie consent and preferences",
+      "category": "preference"
+    },
+    "baiduid": {
+      "label": "Baidu",
+      "category": "tracking"
+    },
+    "baiduid_bfess": {
+      "label": "Baidu",
+      "category": "tracking"
+    },
+    "balanceid": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "barra_counter_session": {
+      "label": "Barracuda load balancer",
+      "category": "load_balancer"
+    },
+    "bb_password": {
+      "label": "vBulletin user credentials",
+      "category": "auth"
+    },
+    "bb_sessionhash": {
+      "label": "vBulletin session hash",
+      "category": "session"
+    },
+    "bb_userid": {
+      "label": "vBulletin user credentials",
+      "category": "auth"
+    },
+    "bblastactivity": {
+      "label": "vBulletin activity",
+      "category": "preference"
+    },
+    "bblastvisit": {
+      "label": "vBulletin activity",
+      "category": "preference"
+    },
+    "bbpassword": {
+      "label": "vBulletin user credentials",
+      "category": "auth"
+    },
+    "bbrouter": {
+      "label": "Blackboard router",
+      "category": "load_balancer"
+    },
+    "bbsessionhash": {
+      "label": "vBulletin session hash",
+      "category": "session"
+    },
+    "bbuserid": {
+      "label": "vBulletin user credentials",
+      "category": "auth"
+    },
+    "bcookie": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "bd_upn": {
+      "label": "Baidu",
+      "category": "tracking"
+    },
+    "bdorz": {
+      "label": "Baidu",
+      "category": "tracking"
+    },
+    "bduss": {
+      "label": "Baidu authentication",
+      "category": "auth"
+    },
+    "bduss_bfess": {
+      "label": "Baidu authentication",
+      "category": "auth"
+    },
+    "be_typo_user": {
+      "label": "TYPO3 backend user session",
+      "category": "auth"
+    },
+    "beaker.session.id": {
+      "label": "Beaker (Pylons, Pyramid, Turbogears) session",
+      "category": "session"
+    },
+    "bearer": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "beegosessionid": {
+      "label": "Beego session",
+      "category": "session"
+    },
+    "bidupsid": {
+      "label": "Baidu authentication",
+      "category": "auth"
+    },
+    "bitrix_sm_login": {
+      "label": "Bitrix session",
+      "category": "session"
+    },
+    "bitrix_sm_uidh": {
+      "label": "Bitrix session",
+      "category": "session"
+    },
+    "bitrix_sm_uidl": {
+      "label": "Bitrix session",
+      "category": "session"
+    },
+    "bjar": {
+      "label": "Dropbox session",
+      "category": "session"
+    },
+    "bm_lso": {
+      "label": "Akamai Bot Manager",
+      "category": "bot_protection"
+    },
+    "bm_mi": {
+      "label": "Akamai Bot Manager",
+      "category": "bot_protection"
+    },
+    "bm_so": {
+      "label": "Akamai Bot Manager",
+      "category": "bot_protection"
+    },
+    "bm_sv": {
+      "label": "Akamai Bot Manager",
+      "category": "bot_protection"
+    },
+    "bm_sz": {
+      "label": "Akamai Bot Manager",
+      "category": "bot_protection"
+    },
+    "bni__barracuda_lb_cookie": {
+      "label": "Barracuda load balancer",
+      "category": "load_balancer"
+    },
+    "borlabs-cookie": {
+      "label": "Borlabs Cookie consent",
+      "category": "consent"
+    },
+    "box_visitor_id": {
+      "label": "Box",
+      "category": "tracking"
+    },
+    "branch_session": {
+      "label": "Branch",
+      "category": "tracking"
+    },
+    "branch_session_first": {
+      "label": "Branch",
+      "category": "tracking"
+    },
+    "browserid": {
+      "label": "Salesforce browser and session",
+      "category": "session"
+    },
+    "browserid_sec": {
+      "label": "Salesforce browser and session",
+      "category": "session"
+    },
+    "bscookie": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "bsession": {
+      "label": "Wix session",
+      "category": "session"
+    },
+    "buid": {
+      "label": "Microsoft Entra ID (Azure AD) session",
+      "category": "session"
+    },
+    "bx_user_id": {
+      "label": "Bitrix visitor id",
+      "category": "tracking"
+    },
+    "c_user": {
+      "label": "Facebook session",
+      "category": "auth"
+    },
+    "cadata": {
+      "label": "Exchange forms-based authentication",
+      "category": "auth"
+    },
+    "cadataidx": {
+      "label": "Exchange forms-based authentication",
+      "category": "auth"
+    },
+    "cadataiv": {
+      "label": "Exchange forms-based authentication",
+      "category": "auth"
+    },
+    "cadatasig": {
+      "label": "Exchange forms-based authentication",
+      "category": "auth"
+    },
+    "cadatatrans": {
+      "label": "Exchange forms-based authentication",
+      "category": "auth"
+    },
+    "cakephp": {
+      "label": "CakePHP session",
+      "category": "session"
+    },
+    "canvas_session": {
+      "label": "Canvas LMS session",
+      "category": "session"
+    },
+    "cart_cur": {
+      "label": "Shopify localization and currency",
+      "category": "preference"
+    },
+    "cart_currency": {
+      "label": "Shopify localization and currency",
+      "category": "preference"
+    },
+    "cart_sig": {
+      "label": "Shopify cart and checkout",
+      "category": "session"
+    },
+    "cart_ts": {
+      "label": "Shopify cart and checkout",
+      "category": "session"
+    },
+    "cart_ver": {
+      "label": "Shopify cart and checkout",
+      "category": "session"
+    },
+    "cf_appsession": {
+      "label": "Cloudflare Access authentication",
+      "category": "auth"
+    },
+    "cf_authorization": {
+      "label": "Cloudflare Access authentication",
+      "category": "auth"
+    },
+    "cf_clearance": {
+      "label": "Cloudflare Bot Management",
+      "category": "bot_protection"
+    },
+    "cf_ob_info": {
+      "label": "Cloudflare origin-bound routing",
+      "category": "cdn_waf"
+    },
+    "cf_use_ob": {
+      "label": "Cloudflare origin-bound routing",
+      "category": "cdn_waf"
+    },
+    "cfglobals": {
+      "label": "ColdFusion session identifier",
+      "category": "session"
+    },
+    "cfid": {
+      "label": "ColdFusion session identifier",
+      "category": "session"
+    },
+    "cftoken": {
+      "label": "ColdFusion session identifier",
+      "category": "session"
+    },
+    "checkout_token": {
+      "label": "Shopify cart and checkout",
+      "category": "session"
+    },
+    "ci_csrf_token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "ci_session": {
+      "label": "CodeIgniter session",
+      "category": "session"
+    },
+    "cky-action": {
+      "label": "CookieYes consent",
+      "category": "consent"
+    },
+    "cky-active-check": {
+      "label": "CookieYes consent",
+      "category": "consent"
+    },
+    "cky-consent": {
+      "label": "CookieYes consent",
+      "category": "consent"
+    },
+    "clientsrc": {
+      "label": "Salesforce browser and session",
+      "category": "session"
+    },
+    "cloud.session.token": {
+      "label": "Atlassian cloud session",
+      "category": "session"
+    },
+    "cloudfront-expires": {
+      "label": "CloudFront signed cookie",
+      "category": "auth"
+    },
+    "cloudfront-key-pair-id": {
+      "label": "CloudFront signed cookie",
+      "category": "auth"
+    },
+    "cloudfront-policy": {
+      "label": "CloudFront signed cookie",
+      "category": "auth"
+    },
+    "cloudfront-signature": {
+      "label": "CloudFront signed cookie",
+      "category": "auth"
+    },
+    "cmapi_cookie_privacy": {
+      "label": "TrustArc consent",
+      "category": "consent"
+    },
+    "cmapi_gtm_bl": {
+      "label": "TrustArc consent",
+      "category": "consent"
+    },
+    "cmscsrfcookie": {
+      "label": "Kentico CSRF cookie",
+      "category": "csrf"
+    },
+    "cmscurrentculture": {
+      "label": "Kentico culture",
+      "category": "preference"
+    },
+    "cmspreferredculture": {
+      "label": "Kentico culture",
+      "category": "preference"
+    },
+    "cna": {
+      "label": "Alibaba tracking",
+      "category": "tracking"
+    },
+    "color-mode": {
+      "label": "Dark mode preference",
+      "category": "preference"
+    },
+    "color_mode": {
+      "label": "GitHub login indicator",
+      "category": "preference"
+    },
+    "color_scheme": {
+      "label": "Dark mode preference",
+      "category": "preference"
+    },
+    "comment_author": {
+      "label": "WordPress comment author name",
+      "category": "preference"
+    },
+    "confluence.list.pages.cookie": {
+      "label": "Confluence UI state",
+      "category": "preference"
+    },
+    "connect.sid": {
+      "label": "Express.js (connect) session",
+      "category": "session"
+    },
+    "consent": {
+      "label": "Google consent state",
+      "category": "consent"
+    },
+    "cookie-agreed": {
+      "label": "Drupal EU cookie compliance",
+      "category": "consent"
+    },
+    "cookie-consent": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookie17": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "cookie2": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "cookie_accepted": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookie_check": {
+      "label": "PayPal",
+      "category": "tracking"
+    },
+    "cookie_consent": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookie_consent_user_accepted": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookie_law_accepted": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookie_notice": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookie_notice_accepted": {
+      "label": "WordPress cookie notice plugins",
+      "category": "consent"
+    },
+    "cookie_policy": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookie_preferences": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookie_settings": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookiebot-consent": {
+      "label": "Cookiebot consent",
+      "category": "consent"
+    },
+    "cookiebotconsent": {
+      "label": "Cookiebot consent",
+      "category": "consent"
+    },
+    "cookieconsent": {
+      "label": "Cookiebot consent",
+      "category": "consent"
+    },
+    "cookieconsent_dismissed": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookieconsent_status": {
+      "label": "Cookiebot consent",
+      "category": "consent"
+    },
+    "cookieconsentbulkticket": {
+      "label": "Cookiebot consent",
+      "category": "consent"
+    },
+    "cookielawinfo-checkbox-necessary": {
+      "label": "WordPress cookie notice plugins",
+      "category": "consent"
+    },
+    "cookienotice": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookiepolicy": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookies-accepted": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookies_accepted": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookies_consent": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookiescriptaccept": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookiesession1": {
+      "label": "Citrix and Fortinet persistence",
+      "category": "load_balancer"
+    },
+    "cookiesettings": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "cookieyes-consent": {
+      "label": "CookieYes consent",
+      "category": "consent"
+    },
+    "country": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "cprelogin": {
+      "label": "cPanel session",
+      "category": "auth"
+    },
+    "cpsession": {
+      "label": "cPanel session",
+      "category": "auth"
+    },
+    "cq-authoring-mode": {
+      "label": "AEM authoring mode",
+      "category": "preference"
+    },
+    "cq-editor-layer.page": {
+      "label": "AEM authoring mode",
+      "category": "preference"
+    },
+    "cqcid": {
+      "label": "Salesforce Commerce Cloud analytics",
+      "category": "tracking"
+    },
+    "cquid": {
+      "label": "Salesforce Commerce Cloud analytics",
+      "category": "tracking"
+    },
+    "crowd.token_key": {
+      "label": "Atlassian Seraph authentication",
+      "category": "auth"
+    },
+    "crumb": {
+      "label": "Squarespace CSRF crumb",
+      "category": "csrf"
+    },
+    "csg": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "csm-hit": {
+      "label": "Amazon preferences",
+      "category": "tracking"
+    },
+    "csrf": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "csrf-param": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "csrf-token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "csrf_cookie_name": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "csrf_token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "csrfptoken": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "csrftoken": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "ct0": {
+      "label": "X (Twitter) CSRF token",
+      "category": "csrf"
+    },
+    "cto_axid": {
+      "label": "Criteo",
+      "category": "tracking"
+    },
+    "cto_bidid": {
+      "label": "Criteo",
+      "category": "tracking"
+    },
+    "cto_bundle": {
+      "label": "Criteo",
+      "category": "tracking"
+    },
+    "cto_lwid": {
+      "label": "Criteo",
+      "category": "tracking"
+    },
+    "cto_optout": {
+      "label": "Criteo",
+      "category": "tracking"
+    },
+    "culture": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "currency": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "currentlanguage": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "customer_auth_provider": {
+      "label": "Shopify cart and checkout",
+      "category": "session"
+    },
+    "customer_auth_session_created_at": {
+      "label": "Shopify cart and checkout",
+      "category": "session"
+    },
+    "d-s": {
+      "label": "Slack session",
+      "category": "session"
+    },
+    "dark-mode": {
+      "label": "Dark mode preference",
+      "category": "preference"
+    },
+    "dark_mode": {
+      "label": "Dark mode preference",
+      "category": "preference"
+    },
+    "darkmode": {
+      "label": "Dark mode preference",
+      "category": "preference"
+    },
+    "datadome": {
+      "label": "DataDome bot protection",
+      "category": "bot_protection"
+    },
+    "datr": {
+      "label": "Meta (Facebook) Pixel and SDK",
+      "category": "tracking"
+    },
+    "demdex": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "destination_url": {
+      "label": "Discourse redirect target",
+      "category": "preference"
+    },
+    "did_compat": {
+      "label": "Auth0 session",
+      "category": "session"
+    },
+    "didomi_token": {
+      "label": "Didomi consent",
+      "category": "consent"
+    },
+    "diff_view": {
+      "label": "GitLab UI state",
+      "category": "preference"
+    },
+    "directus_refresh_token": {
+      "label": "Directus authentication",
+      "category": "auth"
+    },
+    "directus_session_token": {
+      "label": "Directus authentication",
+      "category": "auth"
+    },
+    "django_language": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "dnk": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "dotcom_user": {
+      "label": "GitHub login indicator",
+      "category": "preference"
+    },
+    "dpm": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "drift_aid": {
+      "label": "Drift",
+      "category": "tracking"
+    },
+    "drift_campaign_refresh": {
+      "label": "Drift",
+      "category": "tracking"
+    },
+    "drift_eid": {
+      "label": "Drift",
+      "category": "tracking"
+    },
+    "driftt_aid": {
+      "label": "Drift",
+      "category": "tracking"
+    },
+    "driftt_sid": {
+      "label": "Drift",
+      "category": "tracking"
+    },
+    "drupal.toolbar.collapsed": {
+      "label": "Drupal toolbar state",
+      "category": "preference"
+    },
+    "ds_user_id": {
+      "label": "Instagram session",
+      "category": "auth"
+    },
+    "dsfirstaccess": {
+      "label": "Pulse Secure (Ivanti Connect Secure) authentication",
+      "category": "auth"
+    },
+    "dsid": {
+      "label": "Pulse Secure (Ivanti Connect Secure) authentication",
+      "category": "auth"
+    },
+    "dsidletimeout": {
+      "label": "Pulse Secure (Ivanti Connect Secure) authentication",
+      "category": "auth"
+    },
+    "dslastaccess": {
+      "label": "Pulse Secure (Ivanti Connect Secure) authentication",
+      "category": "auth"
+    },
+    "dssignin": {
+      "label": "Pulse Secure (Ivanti Connect Secure) authentication",
+      "category": "auth"
+    },
+    "dtcookie": {
+      "label": "Dynatrace",
+      "category": "tracking"
+    },
+    "dtlatc": {
+      "label": "Dynatrace",
+      "category": "tracking"
+    },
+    "dtpc": {
+      "label": "Dynatrace",
+      "category": "tracking"
+    },
+    "dtsa": {
+      "label": "Dynatrace",
+      "category": "tracking"
+    },
+    "dw_dnt": {
+      "label": "Salesforce Commerce Cloud analytics",
+      "category": "tracking"
+    },
+    "dwsid": {
+      "label": "Salesforce Commerce Cloud session",
+      "category": "session"
+    },
+    "edgebucket": {
+      "label": "Reddit",
+      "category": "tracking"
+    },
+    "eloqua": {
+      "label": "Eloqua",
+      "category": "tracking"
+    },
+    "elqcustomerguid": {
+      "label": "Eloqua",
+      "category": "tracking"
+    },
+    "elqstatus": {
+      "label": "Eloqua",
+      "category": "tracking"
+    },
+    "enforce_policy": {
+      "label": "PayPal",
+      "category": "tracking"
+    },
+    "esctx": {
+      "label": "Microsoft Entra ID (Azure AD) session",
+      "category": "session"
+    },
+    "estsauth": {
+      "label": "Microsoft Entra ID (Azure AD) authentication",
+      "category": "auth"
+    },
+    "estsauthlight": {
+      "label": "Microsoft Entra ID (Azure AD) authentication",
+      "category": "auth"
+    },
+    "estsauthpersistent": {
+      "label": "Microsoft Entra ID (Azure AD) authentication",
+      "category": "auth"
+    },
+    "ets_sid": {
+      "label": "Salesforce Marketing Cloud",
+      "category": "tracking"
+    },
+    "eu_cookie": {
+      "label": "Reddit",
+      "category": "tracking"
+    },
+    "euconsent": {
+      "label": "IAB TCF consent string",
+      "category": "consent"
+    },
+    "euconsent-v2": {
+      "label": "IAB TCF consent string",
+      "category": "consent"
+    },
+    "eupubconsent": {
+      "label": "IAB TCF consent string",
+      "category": "consent"
+    },
+    "eupubconsent-v2": {
+      "label": "IAB TCF consent string",
+      "category": "consent"
+    },
+    "event_filter": {
+      "label": "GitLab UI state",
+      "category": "preference"
+    },
+    "exp_csrf_token": {
+      "label": "ExpressionEngine CSRF token",
+      "category": "csrf"
+    },
+    "exp_flash": {
+      "label": "ExpressionEngine activity",
+      "category": "preference"
+    },
+    "exp_last_activity": {
+      "label": "ExpressionEngine activity",
+      "category": "preference"
+    },
+    "exp_last_visit": {
+      "label": "ExpressionEngine activity",
+      "category": "preference"
+    },
+    "exp_sessionid": {
+      "label": "ExpressionEngine session",
+      "category": "session"
+    },
+    "exp_tracker": {
+      "label": "ExpressionEngine activity",
+      "category": "preference"
+    },
+    "express:sess": {
+      "label": "Express cookie-session",
+      "category": "session"
+    },
+    "express:sess.sig": {
+      "label": "Express cookie-session",
+      "category": "session"
+    },
+    "external_referer": {
+      "label": "X (Twitter) analytics and identifiers",
+      "category": "tracking"
+    },
+    "f5_cspm": {
+      "label": "F5 BIG-IP APM and AVR",
+      "category": "load_balancer"
+    },
+    "f5_fullwt": {
+      "label": "F5 BIG-IP APM and AVR",
+      "category": "load_balancer"
+    },
+    "f5_st": {
+      "label": "F5 BIG-IP APM and AVR",
+      "category": "load_balancer"
+    },
+    "f5_wt": {
+      "label": "F5 BIG-IP APM and AVR",
+      "category": "load_balancer"
+    },
+    "fbssls": {
+      "label": "Meta (Facebook) Pixel and SDK",
+      "category": "tracking"
+    },
+    "fcccf": {
+      "label": "Google consent state",
+      "category": "consent"
+    },
+    "fccdcf": {
+      "label": "Google consent state",
+      "category": "consent"
+    },
+    "fccs": {
+      "label": "Google consent state",
+      "category": "consent"
+    },
+    "fcnec": {
+      "label": "Google consent state",
+      "category": "consent"
+    },
+    "fe_typo_user": {
+      "label": "TYPO3 frontend user session",
+      "category": "session"
+    },
+    "fedauth": {
+      "label": "SharePoint authentication",
+      "category": "auth"
+    },
+    "fedauth1": {
+      "label": "SharePoint authentication",
+      "category": "auth"
+    },
+    "form_key": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "fornax_anonymousid": {
+      "label": "BigCommerce visitor",
+      "category": "tracking"
+    },
+    "fortiwafsid": {
+      "label": "Citrix and Fortinet persistence",
+      "category": "load_balancer"
+    },
+    "fpau": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "fpc": {
+      "label": "Microsoft Entra ID (Azure AD) session",
+      "category": "session"
+    },
+    "fpgsid": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "fpid": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "fplc": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "frontend": {
+      "label": "Magento frontend session",
+      "category": "session"
+    },
+    "frontend_cid": {
+      "label": "Magento frontend session",
+      "category": "session"
+    },
+    "frontend_lang": {
+      "label": "Odoo language",
+      "category": "preference"
+    },
+    "fs_cid": {
+      "label": "FullStory",
+      "category": "tracking"
+    },
+    "fs_lua": {
+      "label": "FullStory",
+      "category": "tracking"
+    },
+    "fs_uid": {
+      "label": "FullStory",
+      "category": "tracking"
+    },
+    "gclb": {
+      "label": "Google Cloud Load Balancer affinity",
+      "category": "load_balancer"
+    },
+    "gdpr": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "gdpr-consent": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "gdpr_consent": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "geo_country": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "geoip_country": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "ghost-admin-api-session": {
+      "label": "Ghost admin session",
+      "category": "session"
+    },
+    "ghost-members-ssr": {
+      "label": "Ghost members session",
+      "category": "session"
+    },
+    "gitea_awesome": {
+      "label": "Gitea cookie",
+      "category": "preference"
+    },
+    "gitea_incredible": {
+      "label": "Gitea cookie",
+      "category": "preference"
+    },
+    "glide_session_store": {
+      "label": "ServiceNow session store",
+      "category": "session"
+    },
+    "glide_sso_id": {
+      "label": "ServiceNow user",
+      "category": "auth"
+    },
+    "glide_user": {
+      "label": "ServiceNow user",
+      "category": "auth"
+    },
+    "glide_user_activity": {
+      "label": "ServiceNow user",
+      "category": "auth"
+    },
+    "glide_user_route": {
+      "label": "ServiceNow node routing",
+      "category": "load_balancer"
+    },
+    "gmail_at": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "gogs_awesome": {
+      "label": "Gogs cookie",
+      "category": "preference"
+    },
+    "gpc": {
+      "label": "IAB TCF consent string",
+      "category": "consent"
+    },
+    "grafana_sess": {
+      "label": "Grafana session",
+      "category": "session"
+    },
+    "grafana_session": {
+      "label": "Grafana session",
+      "category": "session"
+    },
+    "grafana_session_expiry": {
+      "label": "Grafana session expiry",
+      "category": "preference"
+    },
+    "guest_id": {
+      "label": "X (Twitter) analytics and identifiers",
+      "category": "tracking"
+    },
+    "guest_id_ads": {
+      "label": "X (Twitter) analytics and identifiers",
+      "category": "tracking"
+    },
+    "guest_id_marketing": {
+      "label": "X (Twitter) analytics and identifiers",
+      "category": "tracking"
+    },
+    "guest_language_id": {
+      "label": "Liferay guest language",
+      "category": "preference"
+    },
+    "gvc": {
+      "label": "Dropbox session",
+      "category": "session"
+    },
+    "h_ps_645ec": {
+      "label": "Baidu",
+      "category": "tracking"
+    },
+    "h_ps_pssid": {
+      "label": "Baidu",
+      "category": "tracking"
+    },
+    "has_js": {
+      "label": "Drupal JavaScript support flag",
+      "category": "preference"
+    },
+    "has_recent_activity": {
+      "label": "GitHub login indicator",
+      "category": "preference"
+    },
+    "hc_accessibility": {
+      "label": "hCaptcha accessibility",
+      "category": "bot_protection"
+    },
+    "hdnea": {
+      "label": "Akamai token authentication",
+      "category": "auth"
+    },
+    "hdntl": {
+      "label": "Akamai token authentication",
+      "category": "auth"
+    },
+    "hdnts": {
+      "label": "Akamai token authentication",
+      "category": "auth"
+    },
+    "heroku-session-affinity": {
+      "label": "Heroku session affinity",
+      "category": "load_balancer"
+    },
+    "horde_secret_key": {
+      "label": "Horde session",
+      "category": "session"
+    },
+    "hs_ab_test": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "hsid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "hubspotutk": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "hzn": {
+      "label": "VMware Horizon or Workspace ONE session",
+      "category": "session"
+    },
+    "i18n": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "i18n-prefs": {
+      "label": "Amazon preferences",
+      "category": "tracking"
+    },
+    "i18n_redirected": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "i18next": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "i_like_gitea": {
+      "label": "Gitea session",
+      "category": "session"
+    },
+    "i_like_gogs": {
+      "label": "Gogs session",
+      "category": "session"
+    },
+    "icu": {
+      "label": "AppNexus (Xandr)",
+      "category": "tracking"
+    },
+    "id_token": {
+      "label": "Generic identity token",
+      "category": "auth"
+    },
+    "ide": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "identity_state": {
+      "label": "Shopify cart and checkout",
+      "category": "session"
+    },
+    "idsrv": {
+      "label": "IdentityServer authentication",
+      "category": "auth"
+    },
+    "idsrv.external": {
+      "label": "IdentityServer session",
+      "category": "session"
+    },
+    "idsrv.partial": {
+      "label": "IdentityServer session",
+      "category": "session"
+    },
+    "idsrv.session": {
+      "label": "IdentityServer session",
+      "category": "session"
+    },
+    "idsrv.state": {
+      "label": "IdentityServer session",
+      "category": "session"
+    },
+    "idsrv.xsrf": {
+      "label": "IdentityServer anti-forgery token",
+      "category": "csrf"
+    },
+    "idtoken": {
+      "label": "Generic identity token",
+      "category": "auth"
+    },
+    "ig_cb": {
+      "label": "Instagram",
+      "category": "tracking"
+    },
+    "ig_did": {
+      "label": "Instagram",
+      "category": "tracking"
+    },
+    "ig_direct_region_hint": {
+      "label": "Instagram",
+      "category": "tracking"
+    },
+    "ig_nrcb": {
+      "label": "Instagram",
+      "category": "tracking"
+    },
+    "ingresscookie": {
+      "label": "Kubernetes NGINX Ingress sticky session",
+      "category": "load_balancer"
+    },
+    "is_logged_in": {
+      "label": "Generic authentication state",
+      "category": "auth"
+    },
+    "isg": {
+      "label": "Alibaba tracking",
+      "category": "tracking"
+    },
+    "isloggedin": {
+      "label": "Generic authentication state",
+      "category": "auth"
+    },
+    "ispeed_lsm": {
+      "label": "Baidu",
+      "category": "tracking"
+    },
+    "joomla_user_state": {
+      "label": "Joomla user state",
+      "category": "preference"
+    },
+    "jrunsessionid": {
+      "label": "JRun session",
+      "category": "session"
+    },
+    "js_csrf": {
+      "label": "Dropbox CSRF token",
+      "category": "csrf"
+    },
+    "jsessionid": {
+      "label": "Java servlet container session (Tomcat, Jetty, WebLogic, WebSphere and others)",
+      "category": "session"
+    },
+    "jsessionidsso": {
+      "label": "Tomcat single sign-on session",
+      "category": "session"
+    },
+    "jwt": {
+      "label": "Generic JWT cookie",
+      "category": "auth"
+    },
+    "jwt-session": {
+      "label": "SonarQube session token",
+      "category": "auth"
+    },
+    "jwt-token": {
+      "label": "Generic JWT cookie",
+      "category": "auth"
+    },
+    "jwt_token": {
+      "label": "Generic JWT cookie",
+      "category": "auth"
+    },
+    "jwttoken": {
+      "label": "Generic JWT cookie",
+      "category": "auth"
+    },
+    "kc-access": {
+      "label": "Keycloak session",
+      "category": "session"
+    },
+    "kc_restart": {
+      "label": "Keycloak session",
+      "category": "session"
+    },
+    "kc_state_check": {
+      "label": "Keycloak session",
+      "category": "session"
+    },
+    "kdt": {
+      "label": "X (Twitter) analytics and identifiers",
+      "category": "tracking"
+    },
+    "keep_logged_in": {
+      "label": "Generic remember-me token",
+      "category": "auth"
+    },
+    "keycloak_identity": {
+      "label": "Keycloak identity",
+      "category": "auth"
+    },
+    "keycloak_identity_legacy": {
+      "label": "Keycloak identity",
+      "category": "auth"
+    },
+    "keycloak_session": {
+      "label": "Keycloak session",
+      "category": "session"
+    },
+    "keycloak_session_legacy": {
+      "label": "Keycloak session",
+      "category": "session"
+    },
+    "klaro": {
+      "label": "Klaro consent",
+      "category": "consent"
+    },
+    "klaviyoonsite": {
+      "label": "Klaviyo",
+      "category": "tracking"
+    },
+    "km_ai": {
+      "label": "Kissmetrics",
+      "category": "tracking"
+    },
+    "km_lv": {
+      "label": "Kissmetrics",
+      "category": "tracking"
+    },
+    "km_ni": {
+      "label": "Kissmetrics",
+      "category": "tracking"
+    },
+    "km_uq": {
+      "label": "Kissmetrics",
+      "category": "tracking"
+    },
+    "km_vs": {
+      "label": "Kissmetrics",
+      "category": "tracking"
+    },
+    "known_sign_in": {
+      "label": "GitLab UI state",
+      "category": "preference"
+    },
+    "koa.sess": {
+      "label": "Koa session",
+      "category": "session"
+    },
+    "koa.sess.sig": {
+      "label": "Koa session",
+      "category": "session"
+    },
+    "koa:sess": {
+      "label": "Koa session",
+      "category": "session"
+    },
+    "kp_uidz": {
+      "label": "Kasada bot defense",
+      "category": "bot_protection"
+    },
+    "kp_uidz-ssn": {
+      "label": "Kasada bot defense",
+      "category": "bot_protection"
+    },
+    "kvcd": {
+      "label": "Kissmetrics",
+      "category": "tracking"
+    },
+    "l7_az": {
+      "label": "PayPal",
+      "category": "tracking"
+    },
+    "lang": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "language": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "laravel_session": {
+      "label": "Laravel session",
+      "category": "session"
+    },
+    "laravel_token": {
+      "label": "Laravel Passport API token (JWT)",
+      "category": "auth"
+    },
+    "lastmrh_session": {
+      "label": "F5 BIG-IP APM session",
+      "category": "auth"
+    },
+    "lbserverid": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "lgc": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "li_at": {
+      "label": "LinkedIn session and remember-me",
+      "category": "auth"
+    },
+    "li_fat_id": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "li_gc": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "li_mc": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "li_rm": {
+      "label": "LinkedIn session and remember-me",
+      "category": "auth"
+    },
+    "li_sugr": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "li_theme": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "li_theme_set": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "liap": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "lidc": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "lissc": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "lms_ads": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "lms_analytics": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "ln_or": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "lng": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "locale": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "localization": {
+      "label": "Shopify localization and currency",
+      "category": "preference"
+    },
+    "log_session_id": {
+      "label": "Canvas LMS session",
+      "category": "session"
+    },
+    "logged_in": {
+      "label": "GitHub login indicator",
+      "category": "preference"
+    },
+    "logged_in_user": {
+      "label": "Generic authentication state",
+      "category": "auth"
+    },
+    "loggedin": {
+      "label": "Generic authentication state",
+      "category": "auth"
+    },
+    "login-token": {
+      "label": "AEM login token",
+      "category": "auth"
+    },
+    "login_aliyunid": {
+      "label": "Alibaba Cloud console authentication",
+      "category": "auth"
+    },
+    "login_aliyunid_pk": {
+      "label": "Alibaba Cloud console authentication",
+      "category": "auth"
+    },
+    "login_aliyunid_ticket": {
+      "label": "Alibaba Cloud console authentication",
+      "category": "auth"
+    },
+    "login_current_pk": {
+      "label": "Alibaba Cloud console authentication",
+      "category": "auth"
+    },
+    "login_token": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "logintoken": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "loid": {
+      "label": "Reddit",
+      "category": "tracking"
+    },
+    "lsid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "ltpatoken": {
+      "label": "IBM WebSphere LTPA authentication",
+      "category": "auth"
+    },
+    "ltpatoken2": {
+      "label": "IBM WebSphere LTPA authentication",
+      "category": "auth"
+    },
+    "m_pixel_ratio": {
+      "label": "Meta (Facebook) Pixel and SDK",
+      "category": "tracking"
+    },
+    "mage-banners-cache-storage": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "mage-cache-sessid": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "mage-cache-storage": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "mage-cache-storage-section-invalidation": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "mage-messages": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "mage-translation-file-version": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "mage-translation-storage": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "mailchimp_landing_site": {
+      "label": "Mailchimp",
+      "category": "tracking"
+    },
+    "matomo_ignore": {
+      "label": "Matomo opt-out",
+      "category": "preference"
+    },
+    "matomo_sessid": {
+      "label": "Matomo session",
+      "category": "session"
+    },
+    "mbox": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "messagesutk": {
+      "label": "HubSpot",
+      "category": "tracking"
+    },
+    "mixpanel": {
+      "label": "Mixpanel",
+      "category": "tracking"
+    },
+    "mm_lang": {
+      "label": "WeChat preference",
+      "category": "preference"
+    },
+    "mmauthtoken": {
+      "label": "Mattermost authentication token",
+      "category": "auth"
+    },
+    "mmcsrf": {
+      "label": "Mattermost CSRF token",
+      "category": "csrf"
+    },
+    "mmuserid": {
+      "label": "Mattermost user id",
+      "category": "preference"
+    },
+    "mocksessid": {
+      "label": "Symfony test session",
+      "category": "session"
+    },
+    "mod_auth_openidc_session": {
+      "label": "mod_auth_openidc session",
+      "category": "session"
+    },
+    "moove_gdpr_popup": {
+      "label": "WordPress cookie notice plugins",
+      "category": "consent"
+    },
+    "mrhsession": {
+      "label": "F5 BIG-IP APM session",
+      "category": "auth"
+    },
+    "msclkid": {
+      "label": "Microsoft advertising and Clarity",
+      "category": "tracking"
+    },
+    "msisauth": {
+      "label": "AD FS authentication",
+      "category": "auth"
+    },
+    "msisauthenticated": {
+      "label": "AD FS authentication",
+      "category": "auth"
+    },
+    "msisloopdetectioncookie": {
+      "label": "AD FS authentication",
+      "category": "auth"
+    },
+    "mspauth": {
+      "label": "Microsoft account authentication",
+      "category": "auth"
+    },
+    "mspok": {
+      "label": "Microsoft account authentication",
+      "category": "auth"
+    },
+    "mspprof": {
+      "label": "Microsoft account authentication",
+      "category": "auth"
+    },
+    "msprequ": {
+      "label": "Microsoft account authentication",
+      "category": "auth"
+    },
+    "mstoken": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "mtm_consent": {
+      "label": "Matomo consent",
+      "category": "consent"
+    },
+    "mtm_consent_removed": {
+      "label": "Matomo consent",
+      "category": "consent"
+    },
+    "mtm_cookie_consent": {
+      "label": "Matomo consent",
+      "category": "consent"
+    },
+    "muc_ads": {
+      "label": "X (Twitter) analytics and identifiers",
+      "category": "tracking"
+    },
+    "muid": {
+      "label": "Microsoft advertising and Clarity",
+      "category": "tracking"
+    },
+    "muids": {
+      "label": "Microsoft advertising and Clarity",
+      "category": "tracking"
+    },
+    "munb": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "my_session": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "mybb_sid": {
+      "label": "MyBB session",
+      "category": "session"
+    },
+    "mybbuser": {
+      "label": "MyBB user cookie",
+      "category": "auth"
+    },
+    "mysapsso2": {
+      "label": "SAP single sign-on ticket",
+      "category": "auth"
+    },
+    "mysession": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "mywork.tab.tasks": {
+      "label": "Confluence UI state",
+      "category": "preference"
+    },
+    "nc_samesitecookielax": {
+      "label": "Nextcloud SameSite helper",
+      "category": "preference"
+    },
+    "nc_samesitecookiestrict": {
+      "label": "Nextcloud SameSite helper",
+      "category": "preference"
+    },
+    "nc_session_id": {
+      "label": "Nextcloud user",
+      "category": "auth"
+    },
+    "nc_token": {
+      "label": "Nextcloud user",
+      "category": "auth"
+    },
+    "nc_username": {
+      "label": "Nextcloud user",
+      "category": "auth"
+    },
+    "next-auth.callback-url": {
+      "label": "NextAuth.js callback URL",
+      "category": "preference"
+    },
+    "next-auth.csrf-token": {
+      "label": "NextAuth.js CSRF token",
+      "category": "csrf"
+    },
+    "next-auth.nonce": {
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    "next-auth.pkce.code_verifier": {
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    "next-auth.session-token": {
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    "next-auth.state": {
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    "next_locale": {
+      "label": "Next.js locale preference",
+      "category": "preference"
+    },
+    "nf_ab": {
+      "label": "Netlify preferences",
+      "category": "preference"
+    },
+    "nf_jwt": {
+      "label": "Netlify identity",
+      "category": "auth"
+    },
+    "nf_lang": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "nid": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "nid_aut": {
+      "label": "Naver authentication",
+      "category": "auth"
+    },
+    "nid_jkl": {
+      "label": "Naver authentication",
+      "category": "auth"
+    },
+    "nid_ses": {
+      "label": "Naver authentication",
+      "category": "auth"
+    },
+    "noflush_awsccs_sentiment": {
+      "label": "AWS cookie consent and preferences",
+      "category": "preference"
+    },
+    "notice_behavior": {
+      "label": "TrustArc consent",
+      "category": "consent"
+    },
+    "notice_gdpr_prefs": {
+      "label": "TrustArc consent",
+      "category": "consent"
+    },
+    "notice_preferences": {
+      "label": "TrustArc consent",
+      "category": "consent"
+    },
+    "notion_browser_id": {
+      "label": "Notion preferences",
+      "category": "preference"
+    },
+    "notion_check_cookie_consent": {
+      "label": "Notion preferences",
+      "category": "preference"
+    },
+    "notion_cookie_consent": {
+      "label": "Notion preferences",
+      "category": "preference"
+    },
+    "notion_experiment_device_id": {
+      "label": "Notion preferences",
+      "category": "preference"
+    },
+    "notion_locale": {
+      "label": "Notion preferences",
+      "category": "preference"
+    },
+    "notion_user_id": {
+      "label": "Notion preferences",
+      "category": "preference"
+    },
+    "notion_users": {
+      "label": "Notion preferences",
+      "category": "preference"
+    },
+    "ns_af": {
+      "label": "Citrix Gateway",
+      "category": "load_balancer"
+    },
+    "nsid": {
+      "label": "PayPal",
+      "category": "tracking"
+    },
+    "nxsessionid": {
+      "label": "Sonatype Nexus session",
+      "category": "session"
+    },
+    "oamrequestcontext": {
+      "label": "Oracle Access Manager SSO",
+      "category": "auth"
+    },
+    "obssocookie": {
+      "label": "Oracle Access Manager SSO",
+      "category": "auth"
+    },
+    "obuid": {
+      "label": "Outbrain",
+      "category": "tracking"
+    },
+    "oc_sessionpassphrase": {
+      "label": "Nextcloud or ownCloud session passphrase",
+      "category": "session"
+    },
+    "ocsessid": {
+      "label": "OpenCart session",
+      "category": "session"
+    },
+    "odin_tt": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "oinfo": {
+      "label": "Salesforce browser and session",
+      "category": "session"
+    },
+    "okta-oauth-nonce": {
+      "label": "Okta OAuth state",
+      "category": "session"
+    },
+    "okta-oauth-redirect-params": {
+      "label": "Okta OAuth state",
+      "category": "session"
+    },
+    "okta-oauth-state": {
+      "label": "Okta OAuth state",
+      "category": "session"
+    },
+    "okta-original-uri": {
+      "label": "Okta OAuth state",
+      "category": "session"
+    },
+    "openidconnect.token.v1": {
+      "label": "Outlook on the web authentication",
+      "category": "auth"
+    },
+    "optanonalertboxclosed": {
+      "label": "OneTrust consent",
+      "category": "consent"
+    },
+    "optanonconsent": {
+      "label": "OneTrust consent",
+      "category": "consent"
+    },
+    "ory_kratos_session": {
+      "label": "Ory Kratos session",
+      "category": "session"
+    },
+    "osano_consentmanager": {
+      "label": "Osano consent",
+      "category": "consent"
+    },
+    "osano_consentmanager_uuid": {
+      "label": "Osano consent",
+      "category": "consent"
+    },
+    "osid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "ot-consent": {
+      "label": "OneTrust consent",
+      "category": "consent"
+    },
+    "otgppconsent": {
+      "label": "OneTrust consent",
+      "category": "consent"
+    },
+    "outbrain_cid_fetch": {
+      "label": "Outbrain",
+      "category": "tracking"
+    },
+    "outlooksession": {
+      "label": "Outlook on the web authentication",
+      "category": "auth"
+    },
+    "p_skey": {
+      "label": "WeChat authentication",
+      "category": "auth"
+    },
+    "p_uin": {
+      "label": "WeChat authentication",
+      "category": "auth"
+    },
+    "passport_csrf_token": {
+      "label": "TikTok CSRF token",
+      "category": "csrf"
+    },
+    "passport_csrf_token_default": {
+      "label": "TikTok CSRF token",
+      "category": "csrf"
+    },
+    "pb_auth": {
+      "label": "PocketBase authentication",
+      "category": "auth"
+    },
+    "pbsauthcookie": {
+      "label": "Proxmox authentication",
+      "category": "auth"
+    },
+    "pd-h-session-id": {
+      "label": "IBM Security Verify Access (WebSEAL) session",
+      "category": "auth"
+    },
+    "pd-id": {
+      "label": "IBM Security Verify Access (WebSEAL) session",
+      "category": "auth"
+    },
+    "pd-s-session-id": {
+      "label": "IBM Security Verify Access (WebSEAL) session",
+      "category": "auth"
+    },
+    "pd_s_session_id": {
+      "label": "IBM Security Verify Access (WebSEAL) session",
+      "category": "auth"
+    },
+    "persistent_login": {
+      "label": "Generic remember-me token",
+      "category": "auth"
+    },
+    "persistent_shopping_cart": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "persistent_token": {
+      "label": "Generic remember-me token",
+      "category": "auth"
+    },
+    "personalization_id": {
+      "label": "X (Twitter) analytics and identifiers",
+      "category": "tracking"
+    },
+    "pf.adapterid": {
+      "label": "Ping Identity adapter",
+      "category": "preference"
+    },
+    "pgv_pvi": {
+      "label": "Tencent analytics",
+      "category": "tracking"
+    },
+    "pgv_si": {
+      "label": "Tencent analytics",
+      "category": "tracking"
+    },
+    "phpmyadmin": {
+      "label": "phpMyAdmin session",
+      "category": "session"
+    },
+    "phpsessid": {
+      "label": "PHP native session",
+      "category": "session"
+    },
+    "piwik_ignore": {
+      "label": "Matomo opt-out",
+      "category": "preference"
+    },
+    "piwik_sessid": {
+      "label": "Matomo session",
+      "category": "session"
+    },
+    "play_flash": {
+      "label": "Play Framework flash message",
+      "category": "preference"
+    },
+    "play_session": {
+      "label": "Play Framework signed session",
+      "category": "session"
+    },
+    "pleskid": {
+      "label": "Plesk session",
+      "category": "session"
+    },
+    "plesksessid": {
+      "label": "Plesk session",
+      "category": "session"
+    },
+    "pll_language": {
+      "label": "Polylang language",
+      "category": "preference"
+    },
+    "pma_collation_connection": {
+      "label": "phpMyAdmin preference",
+      "category": "preference"
+    },
+    "pma_lang": {
+      "label": "phpMyAdmin preference",
+      "category": "preference"
+    },
+    "pma_mcrypt_iv": {
+      "label": "phpMyAdmin preference",
+      "category": "preference"
+    },
+    "pmgauthcookie": {
+      "label": "Proxmox authentication",
+      "category": "auth"
+    },
+    "preferred_color_mode": {
+      "label": "GitHub login indicator",
+      "category": "preference"
+    },
+    "preferred_language": {
+      "label": "GitLab UI state",
+      "category": "preference"
+    },
+    "presence": {
+      "label": "Meta (Facebook) Pixel and SDK",
+      "category": "tracking"
+    },
+    "privacy_consent": {
+      "label": "Generic cookie consent",
+      "category": "consent"
+    },
+    "private_content_version": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "product_data_storage": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "ps_l": {
+      "label": "Meta (Facebook) Pixel and SDK",
+      "category": "tracking"
+    },
+    "ps_n": {
+      "label": "Meta (Facebook) Pixel and SDK",
+      "category": "tracking"
+    },
+    "pssid": {
+      "label": "Baidu authentication",
+      "category": "auth"
+    },
+    "pt4_token": {
+      "label": "WeChat authentication",
+      "category": "auth"
+    },
+    "pt_key": {
+      "label": "JD.com authentication",
+      "category": "auth"
+    },
+    "pt_pin": {
+      "label": "JD.com authentication",
+      "category": "auth"
+    },
+    "pt_token": {
+      "label": "JD.com authentication",
+      "category": "auth"
+    },
+    "ptcz": {
+      "label": "Tencent analytics",
+      "category": "tracking"
+    },
+    "pveauthcookie": {
+      "label": "Proxmox authentication",
+      "category": "auth"
+    },
+    "pxcts": {
+      "label": "HUMAN (PerimeterX) bot defense",
+      "category": "bot_protection"
+    },
+    "r_locale": {
+      "label": "Rancher preferences",
+      "category": "preference"
+    },
+    "r_pcs": {
+      "label": "Rancher preferences",
+      "category": "preference"
+    },
+    "r_redirected": {
+      "label": "Rancher preferences",
+      "category": "preference"
+    },
+    "r_sess": {
+      "label": "Rancher session",
+      "category": "auth"
+    },
+    "rack.session": {
+      "label": "Rack session",
+      "category": "session"
+    },
+    "rack_session": {
+      "label": "Rack session",
+      "category": "session"
+    },
+    "rbzid": {
+      "label": "Radware Bot Manager",
+      "category": "bot_protection"
+    },
+    "rbzsessionid": {
+      "label": "Radware Bot Manager",
+      "category": "bot_protection"
+    },
+    "rc_token": {
+      "label": "Rocket.Chat user id and token",
+      "category": "auth"
+    },
+    "rc_uid": {
+      "label": "Rocket.Chat user id and token",
+      "category": "auth"
+    },
+    "rdt_uuid": {
+      "label": "Reddit",
+      "category": "tracking"
+    },
+    "receive-cookie-deprecation": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "recently_compared_product": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "recently_compared_product_previous": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "recently_viewed_product": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "recently_viewed_product_previous": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "reddit_chat_view": {
+      "label": "Reddit",
+      "category": "tracking"
+    },
+    "reddit_session": {
+      "label": "Reddit session",
+      "category": "session"
+    },
+    "reese84": {
+      "label": "Imperva Advanced Bot Protection",
+      "category": "bot_protection"
+    },
+    "refresh-token": {
+      "label": "Generic refresh token",
+      "category": "auth"
+    },
+    "refresh_token": {
+      "label": "Generic refresh token",
+      "category": "auth"
+    },
+    "refreshtoken": {
+      "label": "Generic refresh token",
+      "category": "auth"
+    },
+    "region": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "remember-me": {
+      "label": "Spring Security remember-me",
+      "category": "auth"
+    },
+    "remember_me": {
+      "label": "Generic remember-me token",
+      "category": "auth"
+    },
+    "remember_token": {
+      "label": "Generic remember-me token",
+      "category": "auth"
+    },
+    "remember_user_token": {
+      "label": "Devise or Rails remember-me token",
+      "category": "auth"
+    },
+    "rememberme": {
+      "label": "Apache Shiro remember-me",
+      "category": "auth"
+    },
+    "rememberme_token": {
+      "label": "Generic remember-me token",
+      "category": "auth"
+    },
+    "remixdt": {
+      "label": "VK preference",
+      "category": "preference"
+    },
+    "remixflash": {
+      "label": "VK preference",
+      "category": "preference"
+    },
+    "remixgp": {
+      "label": "VK authentication",
+      "category": "auth"
+    },
+    "remixlang": {
+      "label": "VK preference",
+      "category": "preference"
+    },
+    "remixnsid": {
+      "label": "VK authentication",
+      "category": "auth"
+    },
+    "remixscreen_depth": {
+      "label": "VK preference",
+      "category": "preference"
+    },
+    "remixscreen_dpr": {
+      "label": "VK preference",
+      "category": "preference"
+    },
+    "remixscreen_orient": {
+      "label": "VK preference",
+      "category": "preference"
+    },
+    "remixscreen_winzoom": {
+      "label": "VK preference",
+      "category": "preference"
+    },
+    "remixsid": {
+      "label": "VK authentication",
+      "category": "auth"
+    },
+    "remixsid6": {
+      "label": "VK authentication",
+      "category": "auth"
+    },
+    "remixsslsid": {
+      "label": "VK authentication",
+      "category": "auth"
+    },
+    "remixstid": {
+      "label": "VK authentication",
+      "category": "auth"
+    },
+    "renderctx": {
+      "label": "Salesforce browser and session",
+      "category": "session"
+    },
+    "roundcube_sessauth": {
+      "label": "Roundcube authentication",
+      "category": "auth"
+    },
+    "roundcube_sessid": {
+      "label": "Roundcube session",
+      "category": "session"
+    },
+    "route": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "routeid": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "rpsauth": {
+      "label": "Microsoft account authentication",
+      "category": "auth"
+    },
+    "rpssecauth": {
+      "label": "Microsoft account authentication",
+      "category": "auth"
+    },
+    "rtfa": {
+      "label": "SharePoint authentication",
+      "category": "auth"
+    },
+    "rur": {
+      "label": "Instagram",
+      "category": "tracking"
+    },
+    "rxvisitor": {
+      "label": "Dynatrace",
+      "category": "tracking"
+    },
+    "rxvt": {
+      "label": "Dynatrace",
+      "category": "tracking"
+    },
+    "s_cc": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_ecid": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_fid": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_getnr": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_gpv": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_gpv_pn": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_ips": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_lv": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_lv_s": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_nr": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_nr30": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_nr365": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_ppn": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_ppv": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_sq": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_tbm": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_tp": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_tslv": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "s_v_web_id": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "s_vi": {
+      "label": "Adobe Analytics",
+      "category": "tracking"
+    },
+    "sacsid": {
+      "label": "Google App Engine authentication",
+      "category": "auth"
+    },
+    "sails.sid": {
+      "label": "Sails.js session",
+      "category": "session"
+    },
+    "sap-contextid": {
+      "label": "SAP session",
+      "category": "session"
+    },
+    "sap-ssocookie": {
+      "label": "SAP single sign-on ticket",
+      "category": "auth"
+    },
+    "sap-usercontext": {
+      "label": "SAP session",
+      "category": "session"
+    },
+    "sap-webdisp-session": {
+      "label": "SAP session",
+      "category": "session"
+    },
+    "sap_sessioncmd": {
+      "label": "SAP session",
+      "category": "session"
+    },
+    "sapisid": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "saved_user_sessions": {
+      "label": "GitHub user session",
+      "category": "auth"
+    },
+    "sb-access-token": {
+      "label": "Supabase authentication",
+      "category": "auth"
+    },
+    "sb-refresh-token": {
+      "label": "Supabase authentication",
+      "category": "auth"
+    },
+    "sc_analytics_global_cookie": {
+      "label": "Sitecore analytics",
+      "category": "tracking"
+    },
+    "sc_at": {
+      "label": "Snapchat pixel",
+      "category": "tracking"
+    },
+    "sc_f": {
+      "label": "PayPal",
+      "category": "tracking"
+    },
+    "sdsc": {
+      "label": "LinkedIn",
+      "category": "tracking"
+    },
+    "sec_cpt": {
+      "label": "Akamai Bot Manager",
+      "category": "bot_protection"
+    },
+    "section_data_ids": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "secure_customer_sig": {
+      "label": "Shopify cart and checkout",
+      "category": "session"
+    },
+    "selected_country": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "selectedcountry": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "selectedlanguage": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "seraph.confluence": {
+      "label": "Atlassian Seraph authentication",
+      "category": "auth"
+    },
+    "seraph.rememberme.cookie": {
+      "label": "Atlassian Seraph authentication",
+      "category": "auth"
+    },
+    "server_id": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "server_session_id": {
+      "label": "Twitch",
+      "category": "tracking"
+    },
+    "serverid": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "serverused": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "sess": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "sess_id": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "sessid": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "session": {
+      "label": "Generic session cookie (Spring Session, Flask or Starlette signed session, Play and others)",
+      "category": "session"
+    },
+    "session-id": {
+      "label": "Amazon session",
+      "category": "session"
+    },
+    "session-id-time": {
+      "label": "Amazon session",
+      "category": "session"
+    },
+    "session-key": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "session-token": {
+      "label": "Amazon session",
+      "category": "session"
+    },
+    "session.sig": {
+      "label": "Starlette or FastAPI signed session",
+      "category": "session"
+    },
+    "session_data": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "session_id": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "session_key": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "session_token": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "session_tracker": {
+      "label": "Reddit",
+      "category": "tracking"
+    },
+    "sessiondata": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "sessionid": {
+      "label": "Django session (or a generic session cookie of the same name)",
+      "category": "session"
+    },
+    "sessionid_ss": {
+      "label": "TikTok authentication",
+      "category": "auth"
+    },
+    "sessionkey": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "sessions": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "sessiontoken": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "sf-csrf-token": {
+      "label": "BigCommerce CSRF token",
+      "category": "csrf"
+    },
+    "sfdc_lv2": {
+      "label": "Salesforce browser and session",
+      "category": "session"
+    },
+    "sgcookie": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "shbid": {
+      "label": "Instagram",
+      "category": "tracking"
+    },
+    "shbts": {
+      "label": "Instagram",
+      "category": "tracking"
+    },
+    "shell#lang": {
+      "label": "Sitecore language",
+      "category": "preference"
+    },
+    "shop_session_token": {
+      "label": "BigCommerce shop session token",
+      "category": "session"
+    },
+    "shown_ssb_redirect_page": {
+      "label": "Slack",
+      "category": "tracking"
+    },
+    "sid": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "sid_client": {
+      "label": "Salesforce browser and session",
+      "category": "session"
+    },
+    "sid_guard": {
+      "label": "TikTok authentication",
+      "category": "auth"
+    },
+    "sid_tt": {
+      "label": "TikTok authentication",
+      "category": "auth"
+    },
+    "sid_ucp_v1": {
+      "label": "TikTok authentication",
+      "category": "auth"
+    },
+    "sidcc": {
+      "label": "Google account session",
+      "category": "auth"
+    },
+    "sidebar_collapsed": {
+      "label": "GitLab UI state",
+      "category": "preference"
+    },
+    "simplesamlauthtoken": {
+      "label": "SimpleSAMLphp authentication",
+      "category": "auth"
+    },
+    "site_lang": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "site_preference": {
+      "label": "Box",
+      "category": "tracking"
+    },
+    "sitecore#lang": {
+      "label": "Sitecore language",
+      "category": "preference"
+    },
+    "sitelang": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "skt": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "smchallenge": {
+      "label": "CA SiteMinder authentication",
+      "category": "auth"
+    },
+    "smdata": {
+      "label": "CA SiteMinder authentication",
+      "category": "auth"
+    },
+    "smidentity": {
+      "label": "CA SiteMinder authentication",
+      "category": "auth"
+    },
+    "smsession": {
+      "label": "CA SiteMinder authentication",
+      "category": "auth"
+    },
+    "smtryno": {
+      "label": "CA SiteMinder authentication",
+      "category": "auth"
+    },
+    "socs": {
+      "label": "Google consent state",
+      "category": "consent"
+    },
+    "sogosession": {
+      "label": "SOGo authentication",
+      "category": "auth"
+    },
+    "sp-cdn": {
+      "label": "Amazon preferences",
+      "category": "tracking"
+    },
+    "sp_ab": {
+      "label": "Spotify web",
+      "category": "tracking"
+    },
+    "sp_adid": {
+      "label": "Spotify web",
+      "category": "tracking"
+    },
+    "sp_dc": {
+      "label": "Spotify authentication",
+      "category": "auth"
+    },
+    "sp_key": {
+      "label": "Spotify authentication",
+      "category": "auth"
+    },
+    "sp_landing": {
+      "label": "Spotify web",
+      "category": "tracking"
+    },
+    "sp_m": {
+      "label": "Spotify web",
+      "category": "tracking"
+    },
+    "sp_new": {
+      "label": "Spotify web",
+      "category": "tracking"
+    },
+    "sp_t": {
+      "label": "Spotify web",
+      "category": "tracking"
+    },
+    "splunkweb_uid": {
+      "label": "Splunk Web user id",
+      "category": "preference"
+    },
+    "spring_security_remember_me_cookie": {
+      "label": "Spring Security remember-me",
+      "category": "auth"
+    },
+    "sqmsessid": {
+      "label": "SquirrelMail session",
+      "category": "session"
+    },
+    "srv_id": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "srvid": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "srvname": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "ss_cid": {
+      "label": "Squarespace analytics",
+      "category": "tracking"
+    },
+    "ss_cpvisit": {
+      "label": "Squarespace analytics",
+      "category": "tracking"
+    },
+    "ss_cvisit": {
+      "label": "Squarespace analytics",
+      "category": "tracking"
+    },
+    "ss_cvr": {
+      "label": "Squarespace analytics",
+      "category": "tracking"
+    },
+    "ssb_instance_id": {
+      "label": "Slack",
+      "category": "tracking"
+    },
+    "ssid": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "ssid_ucp_v1": {
+      "label": "TikTok authentication",
+      "category": "auth"
+    },
+    "sso-token": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "sso_token": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "ssotoken": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "ssr-caching": {
+      "label": "Wix visitor",
+      "category": "tracking"
+    },
+    "stay_logged_in": {
+      "label": "Generic remember-me token",
+      "category": "auth"
+    },
+    "stel_dt": {
+      "label": "Telegram web preference",
+      "category": "preference"
+    },
+    "stel_ssid": {
+      "label": "Telegram web authentication",
+      "category": "auth"
+    },
+    "stel_token": {
+      "label": "Telegram web authentication",
+      "category": "auth"
+    },
+    "stel_web_auth": {
+      "label": "Telegram web authentication",
+      "category": "auth"
+    },
+    "sticky": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "sticky-session": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "sticky_session": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "stickycookie": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "stickyid": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "stickysession": {
+      "label": "Generic sticky-session load balancer cookie",
+      "category": "load_balancer"
+    },
+    "stoken": {
+      "label": "Baidu authentication",
+      "category": "auth"
+    },
+    "store_notice": {
+      "label": "WooCommerce cart state",
+      "category": "preference"
+    },
+    "storefront_digest": {
+      "label": "Shopify cart and checkout",
+      "category": "session"
+    },
+    "stsservicecookie": {
+      "label": "Microsoft Entra ID (Azure AD) session",
+      "category": "session"
+    },
+    "studio.crowd.tokenkey": {
+      "label": "Atlassian Seraph authentication",
+      "category": "auth"
+    },
+    "supabase-auth-token": {
+      "label": "Supabase authentication",
+      "category": "auth"
+    },
+    "svpncookie": {
+      "label": "FortiGate SSL VPN authentication",
+      "category": "auth"
+    },
+    "svpnlogincookie": {
+      "label": "FortiGate SSL VPN authentication",
+      "category": "auth"
+    },
+    "svpnnetworkcookie": {
+      "label": "FortiGate SSL VPN authentication",
+      "category": "auth"
+    },
+    "svsession": {
+      "label": "Wix session",
+      "category": "session"
+    },
+    "t_gid": {
+      "label": "Taboola",
+      "category": "tracking"
+    },
+    "t_pt_gid": {
+      "label": "Taboola",
+      "category": "tracking"
+    },
+    "taboola_session_id": {
+      "label": "Taboola",
+      "category": "tracking"
+    },
+    "tarteaucitron": {
+      "label": "tarteaucitron consent",
+      "category": "consent"
+    },
+    "tarteaucitron_": {
+      "label": "tarteaucitron consent",
+      "category": "consent"
+    },
+    "tbla_id": {
+      "label": "Taboola",
+      "category": "tracking"
+    },
+    "tcsessionid": {
+      "label": "TeamCity session",
+      "category": "session"
+    },
+    "tdcpm": {
+      "label": "The Trade Desk",
+      "category": "tracking"
+    },
+    "tdid": {
+      "label": "The Trade Desk",
+      "category": "tracking"
+    },
+    "tealium_data": {
+      "label": "Tealium",
+      "category": "tracking"
+    },
+    "tenant.session.token": {
+      "label": "Atlassian cloud session",
+      "category": "session"
+    },
+    "test_cookie": {
+      "label": "Google preferences and advertising",
+      "category": "tracking"
+    },
+    "tfstk": {
+      "label": "Alibaba anti-bot",
+      "category": "bot_protection"
+    },
+    "theme": {
+      "label": "Dark mode preference",
+      "category": "preference"
+    },
+    "theme_mode": {
+      "label": "Dark mode preference",
+      "category": "preference"
+    },
+    "thor": {
+      "label": "JD.com tracking",
+      "category": "tracking"
+    },
+    "tiktok_webapp_theme": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "timezone": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "tipmix": {
+      "label": "Azure load balancer affinity",
+      "category": "load_balancer"
+    },
+    "tk_ai": {
+      "label": "Jetpack tracking",
+      "category": "tracking"
+    },
+    "tk_lr": {
+      "label": "Jetpack tracking",
+      "category": "tracking"
+    },
+    "tk_or": {
+      "label": "Jetpack tracking",
+      "category": "tracking"
+    },
+    "tk_qs": {
+      "label": "Jetpack tracking",
+      "category": "tracking"
+    },
+    "token": {
+      "label": "Generic JWT cookie",
+      "category": "auth"
+    },
+    "token_v2": {
+      "label": "Notion or Reddit session token",
+      "category": "auth"
+    },
+    "tracknick": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "trc_cookie_storage": {
+      "label": "Taboola",
+      "category": "tracking"
+    },
+    "truste.eu.cookie.notice_gdpr_prefs": {
+      "label": "TrustArc consent",
+      "category": "consent"
+    },
+    "ts_c": {
+      "label": "PayPal",
+      "category": "tracking"
+    },
+    "tsrce": {
+      "label": "PayPal",
+      "category": "tracking"
+    },
+    "tt_chain_token": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "tt_csrf_token": {
+      "label": "TikTok CSRF token",
+      "category": "csrf"
+    },
+    "tt_webid": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "tt_webid_v2": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "ttd": {
+      "label": "The Trade Desk",
+      "category": "tracking"
+    },
+    "ttwid": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "twid": {
+      "label": "X (Twitter) authentication",
+      "category": "auth"
+    },
+    "twilight-user": {
+      "label": "Twitch authentication",
+      "category": "auth"
+    },
+    "twtr_pixel_opt_in": {
+      "label": "X (Twitter) analytics and identifiers",
+      "category": "tracking"
+    },
+    "tz": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "uc1": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "uc3": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "uc4": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "uc_settings": {
+      "label": "Usercentrics consent",
+      "category": "consent"
+    },
+    "uc_user_interaction": {
+      "label": "Usercentrics consent",
+      "category": "consent"
+    },
+    "ucdata": {
+      "label": "Usercentrics consent",
+      "category": "consent"
+    },
+    "ui_language": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "uid_tt": {
+      "label": "TikTok",
+      "category": "tracking"
+    },
+    "unb": {
+      "label": "Taobao or Alibaba authentication",
+      "category": "auth"
+    },
+    "unique_id_durable": {
+      "label": "Twitch",
+      "category": "tracking"
+    },
+    "unpl": {
+      "label": "JD.com tracking",
+      "category": "tracking"
+    },
+    "us_privacy": {
+      "label": "IAB TCF consent string",
+      "category": "consent"
+    },
+    "user_country": {
+      "label": "Region and currency preference",
+      "category": "preference"
+    },
+    "user_lang": {
+      "label": "Language preference",
+      "category": "preference"
+    },
+    "user_session": {
+      "label": "GitHub user session",
+      "category": "auth"
+    },
+    "user_token": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "user_uuid": {
+      "label": "Liferay user id",
+      "category": "preference"
+    },
+    "usersession": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "usertoken": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "usida": {
+      "label": "Meta (Facebook) Pixel and SDK",
+      "category": "tracking"
+    },
+    "usprivacy": {
+      "label": "IAB TCF consent string",
+      "category": "consent"
+    },
+    "utag_main": {
+      "label": "Tealium",
+      "category": "tracking"
+    },
+    "uuid2": {
+      "label": "AppNexus (Xandr)",
+      "category": "tracking"
+    },
+    "viewed_cookie_policy": {
+      "label": "WordPress cookie notice plugins",
+      "category": "consent"
+    },
+    "visitor_info1_live": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "visitor_privacy_metadata": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "visitor_uuid": {
+      "label": "Odoo visitor",
+      "category": "tracking"
+    },
+    "vmware-session": {
+      "label": "VMware Horizon or Workspace ONE session",
+      "category": "session"
+    },
+    "vuid": {
+      "label": "Vimeo",
+      "category": "tracking"
+    },
+    "w3tc_logged_out": {
+      "label": "W3 Total Cache logged-out marker",
+      "category": "preference"
+    },
+    "wawebsitesid": {
+      "label": "Azure App Service authentication session",
+      "category": "session"
+    },
+    "websession": {
+      "label": "Generic session identifier (Spring Session, Okta, Google account, Odoo and others)",
+      "category": "session"
+    },
+    "webvpn": {
+      "label": "Cisco AnyConnect / ASA WebVPN session",
+      "category": "auth"
+    },
+    "webvpnc": {
+      "label": "Cisco AnyConnect / ASA WebVPN session",
+      "category": "auth"
+    },
+    "webvpncontext": {
+      "label": "Cisco AnyConnect / ASA WebVPN session",
+      "category": "auth"
+    },
+    "webvpnlogin": {
+      "label": "Cisco AnyConnect / ASA WebVPN session",
+      "category": "auth"
+    },
+    "webvpnx": {
+      "label": "Cisco AnyConnect / ASA WebVPN session",
+      "category": "auth"
+    },
+    "webwx_data_ticket": {
+      "label": "WeChat authentication",
+      "category": "auth"
+    },
+    "webwxuvid": {
+      "label": "Tencent analytics",
+      "category": "tracking"
+    },
+    "whostmgrrelogin": {
+      "label": "cPanel session",
+      "category": "auth"
+    },
+    "whostmgrsession": {
+      "label": "cPanel session",
+      "category": "auth"
+    },
+    "wlssc": {
+      "label": "Microsoft account authentication",
+      "category": "auth"
+    },
+    "woocommerce_cart_hash": {
+      "label": "WooCommerce cart state",
+      "category": "preference"
+    },
+    "woocommerce_items_in_cart": {
+      "label": "WooCommerce cart state",
+      "category": "preference"
+    },
+    "woocommerce_recently_viewed": {
+      "label": "WooCommerce cart state",
+      "category": "preference"
+    },
+    "wordfence_verifiedhuman": {
+      "label": "Wordfence human verification",
+      "category": "bot_protection"
+    },
+    "wordpress_test_cookie": {
+      "label": "WordPress test cookie",
+      "category": "preference"
+    },
+    "wp-wpml_current_language": {
+      "label": "WPML language",
+      "category": "preference"
+    },
+    "wp_lang": {
+      "label": "WordPress language",
+      "category": "preference"
+    },
+    "wpml_browser_redirect_test": {
+      "label": "WPML language",
+      "category": "preference"
+    },
+    "wxloadtime": {
+      "label": "WeChat preference",
+      "category": "preference"
+    },
+    "wxsid": {
+      "label": "WeChat authentication",
+      "category": "auth"
+    },
+    "wxuin": {
+      "label": "WeChat authentication",
+      "category": "auth"
+    },
+    "x-access-token": {
+      "label": "Generic access token",
+      "category": "auth"
+    },
+    "x-anonresource": {
+      "label": "Exchange back-end routing cookie",
+      "category": "load_balancer"
+    },
+    "x-anonresource-backend": {
+      "label": "Exchange back-end routing cookie",
+      "category": "load_balancer"
+    },
+    "x-api-key": {
+      "label": "Generic API key cookie",
+      "category": "auth"
+    },
+    "x-auth-token": {
+      "label": "Generic authentication token",
+      "category": "auth"
+    },
+    "x-backendcookie": {
+      "label": "Exchange back-end routing cookie",
+      "category": "load_balancer"
+    },
+    "x-beresource": {
+      "label": "Exchange back-end routing cookie",
+      "category": "load_balancer"
+    },
+    "x-csrf-token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "x-jwt-token": {
+      "label": "Generic JWT cookie",
+      "category": "auth"
+    },
+    "x-magento-vary": {
+      "label": "Magento customer cache and section data",
+      "category": "preference"
+    },
+    "x-mailboxguid": {
+      "label": "Exchange back-end routing cookie",
+      "category": "load_balancer"
+    },
+    "x-ms-cpim-admin": {
+      "label": "Azure AD B2C session",
+      "category": "session"
+    },
+    "x-ms-cpim-cache": {
+      "label": "Azure AD B2C session",
+      "category": "session"
+    },
+    "x-ms-cpim-csrf": {
+      "label": "Azure AD B2C CSRF token",
+      "category": "csrf"
+    },
+    "x-ms-cpim-rc": {
+      "label": "Azure AD B2C session",
+      "category": "session"
+    },
+    "x-ms-cpim-sessionid": {
+      "label": "Azure AD B2C session",
+      "category": "session"
+    },
+    "x-ms-cpim-slice": {
+      "label": "Azure AD B2C session",
+      "category": "session"
+    },
+    "x-ms-cpim-sso": {
+      "label": "Azure AD B2C session",
+      "category": "session"
+    },
+    "x-ms-cpim-ssoid": {
+      "label": "Azure AD B2C session",
+      "category": "session"
+    },
+    "x-ms-cpim-trans": {
+      "label": "Azure AD B2C session",
+      "category": "session"
+    },
+    "x-ms-gateway-slice": {
+      "label": "Microsoft Entra ID (Azure AD) session",
+      "category": "session"
+    },
+    "x-ms-routing-name": {
+      "label": "Azure routing cookie",
+      "category": "load_balancer"
+    },
+    "x-owa-canary": {
+      "label": "Exchange OWA canary",
+      "category": "csrf"
+    },
+    "x-pp-s": {
+      "label": "PayPal",
+      "category": "tracking"
+    },
+    "x-xsrf-token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "x-zumo-auth": {
+      "label": "Azure Mobile Apps token",
+      "category": "auth"
+    },
+    "x5sec": {
+      "label": "Alibaba anti-bot",
+      "category": "bot_protection"
+    },
+    "xf_csrf": {
+      "label": "XenForo CSRF token",
+      "category": "csrf"
+    },
+    "xf_notice_dismiss": {
+      "label": "XenForo notice dismissal",
+      "category": "preference"
+    },
+    "xf_session": {
+      "label": "XenForo session",
+      "category": "session"
+    },
+    "xf_tfa_trust": {
+      "label": "XenForo two-factor trust",
+      "category": "auth"
+    },
+    "xf_user": {
+      "label": "XenForo user cookie",
+      "category": "auth"
+    },
+    "xs": {
+      "label": "Facebook session",
+      "category": "auth"
+    },
+    "xsrf": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "xsrf-token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "xsrf_token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "yabs-frequency": {
+      "label": "Yandex",
+      "category": "tracking"
+    },
+    "yabs-sid": {
+      "label": "Yandex",
+      "category": "tracking"
+    },
+    "yandexuid": {
+      "label": "Yandex",
+      "category": "tracking"
+    },
+    "yii_csrf_token": {
+      "label": "CSRF double-submit token",
+      "category": "csrf"
+    },
+    "ymex": {
+      "label": "Yandex",
+      "category": "tracking"
+    },
+    "ysc": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-player-bandaid-host": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-player-bandwidth": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-player-headers-readable": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-player-performance-cap": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-player-quality": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-player-volume": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-remote-cast-available": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-remote-cast-installed": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-remote-connected-devices": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-remote-device-id": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-remote-fast-check-period": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-remote-session-app": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yt-remote-session-name": {
+      "label": "YouTube",
+      "category": "tracking"
+    },
+    "yuidss": {
+      "label": "Yandex",
+      "category": "tracking"
+    },
+    "zbx_session": {
+      "label": "Zabbix session",
+      "category": "session"
+    },
+    "zbx_sessionid": {
+      "label": "Zabbix session",
+      "category": "session"
+    },
+    "zm_admin_auth_token": {
+      "label": "Zimbra authentication",
+      "category": "auth"
+    },
+    "zm_aid": {
+      "label": "Zoom web tracking",
+      "category": "tracking"
+    },
+    "zm_auth_token": {
+      "label": "Zimbra authentication",
+      "category": "auth"
+    },
+    "zm_haid": {
+      "label": "Zoom web tracking",
+      "category": "tracking"
+    },
+    "zm_jwt": {
+      "label": "Zimbra authentication",
+      "category": "auth"
+    },
+    "zm_login_csrf": {
+      "label": "Zimbra login CSRF",
+      "category": "csrf"
+    }
+  },
+  "prefix": [
+    {
+      "match": ".aspnetcore.openidconnect.correlation.",
+      "label": "ASP.NET Core OpenID Connect state",
+      "category": "session"
+    },
+    {
+      "match": ".aspnetcore.openidconnect.nonce.",
+      "label": "ASP.NET Core OpenID Connect state",
+      "category": "session"
+    },
+    {
+      "match": "cognitoidentityserviceprovider.",
+      "label": "Amazon Cognito (Amplify) token storage",
+      "category": "auth"
+    },
+    {
+      "match": "_hjabsolutesessioninprogress",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "__requestverificationtoken_",
+      "label": "ASP.NET MVC anti-forgery token",
+      "category": "csrf"
+    },
+    {
+      "match": "_hjincludedinpageviewsample",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "_hjincludedinsessionsample",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "cookieconsentbulksetting-",
+      "label": "Cookiebot consent",
+      "category": "consent"
+    },
+    {
+      "match": ".aspnetcore.antiforgery.",
+      "label": "ASP.NET Core anti-forgery token",
+      "category": "csrf"
+    },
+    {
+      "match": ".aspnetcore.correlation.",
+      "label": "ASP.NET Core OpenID Connect state",
+      "category": "session"
+    },
+    {
+      "match": "_hjcachedusersattributes",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "_hjrecordinglastactivity",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "_hjshownfeedbackmessage",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "cookielawinfo-checkbox-",
+      "label": "CookieYes consent",
+      "category": "consent"
+    },
+    {
+      "match": "mod_auth_openidc_state_",
+      "label": "mod_auth_openidc state",
+      "category": "session"
+    },
+    {
+      "match": "wp_woocommerce_session_",
+      "label": "WooCommerce session",
+      "category": "session"
+    },
+    {
+      "match": "_hjclosedsurveyinvites",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "splunkweb_csrf_token_",
+      "label": "Splunk Web CSRF token",
+      "category": "csrf"
+    },
+    {
+      "match": "sub_session_onelogin",
+      "label": "OneLogin session",
+      "category": "session"
+    },
+    {
+      "match": "wordpress_logged_in_",
+      "label": "WordPress authentication cookie",
+      "category": "auth"
+    },
+    {
+      "match": "__secure-next-auth.",
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    {
+      "match": "_hjrecordingenabled",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "amplitude_device_id",
+      "label": "Amplitude",
+      "category": "tracking"
+    },
+    {
+      "match": "intercom-device-id-",
+      "label": "Intercom",
+      "category": "tracking"
+    },
+    {
+      "match": "joomla_remember_me_",
+      "label": "Joomla remember-me",
+      "category": "auth"
+    },
+    {
+      "match": "ensighten_privacy_",
+      "label": "Ensighten",
+      "category": "tracking"
+    },
+    {
+      "match": "sucuri_cloudproxy_",
+      "label": "Sucuri CloudProxy cookie",
+      "category": "bot_protection"
+    },
+    {
+      "match": "__host-next-auth.",
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    {
+      "match": "_hjminimizedpolls",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "intercom-session-",
+      "label": "Intercom",
+      "category": "tracking"
+    },
+    {
+      "match": "ketch_consent_v1_",
+      "label": "Ketch consent",
+      "category": "consent"
+    },
+    {
+      "match": "wfwaf-authcookie-",
+      "label": "Wordfence authentication cookie",
+      "category": "auth"
+    },
+    {
+      "match": "__secure-authjs.",
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    {
+      "match": "_opensaml_req_ss",
+      "label": "Shibboleth session",
+      "category": "session"
+    },
+    {
+      "match": "__clerk_db_jwt_",
+      "label": "Clerk authentication",
+      "category": "auth"
+    },
+    {
+      "match": "bni_persistence",
+      "label": "Barracuda load balancer",
+      "category": "load_balancer"
+    },
+    {
+      "match": "com.auth0.auth.",
+      "label": "Auth0 SPA transaction",
+      "category": "session"
+    },
+    {
+      "match": "comment_author_",
+      "label": "WordPress comment author details",
+      "category": "preference"
+    },
+    {
+      "match": "dd_cookie_test_",
+      "label": "DataDome cookie test",
+      "category": "bot_protection"
+    },
+    {
+      "match": "drupal.visitor.",
+      "label": "Drupal visitor state",
+      "category": "session"
+    },
+    {
+      "match": "identity_state_",
+      "label": "Shopify identity state",
+      "category": "session"
+    },
+    {
+      "match": "web2py_session_",
+      "label": "web2py session",
+      "category": "session"
+    },
+    {
+      "match": "__host-authjs.",
+      "label": "NextAuth.js session",
+      "category": "session"
+    },
+    {
+      "match": "_hjdonesurveys",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "_hjsessionuser",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "_hp2_ses_props",
+      "label": "Heap analytics",
+      "category": "tracking"
+    },
+    {
+      "match": "_pk_testcookie",
+      "label": "Matomo (Piwik)",
+      "category": "tracking"
+    },
+    {
+      "match": "cookie-agreed-",
+      "label": "Drupal EU cookie compliance",
+      "category": "consent"
+    },
+    {
+      "match": "dwsecuretoken_",
+      "label": "Salesforce Commerce Cloud secure token",
+      "category": "csrf"
+    },
+    {
+      "match": "oamauthncookie",
+      "label": "Oracle Access Manager authentication",
+      "category": "auth"
+    },
+    {
+      "match": "sap-sessionid_",
+      "label": "SAP session",
+      "category": "session"
+    },
+    {
+      "match": "wordpress_sec_",
+      "label": "WordPress authentication cookie",
+      "category": "auth"
+    },
+    {
+      "match": "__client_uat_",
+      "label": "Clerk authentication",
+      "category": "auth"
+    },
+    {
+      "match": "_shibsession_",
+      "label": "Shibboleth session",
+      "category": "session"
+    },
+    {
+      "match": "a0.spajs.txs.",
+      "label": "Auth0 SPA transaction",
+      "category": "session"
+    },
+    {
+      "match": "azureappproxy",
+      "label": "Azure AD Application Proxy",
+      "category": "auth"
+    },
+    {
+      "match": "moodlesession",
+      "label": "Moodle session",
+      "category": "session"
+    },
+    {
+      "match": "remember_web_",
+      "label": "Laravel remember-me guard",
+      "category": "auth"
+    },
+    {
+      "match": "wc_cart_hash_",
+      "label": "WooCommerce cart hash",
+      "category": "preference"
+    },
+    {
+      "match": "_hjfirstseen",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "amplitude_id",
+      "label": "Amplitude",
+      "category": "tracking"
+    },
+    {
+      "match": "citrix_ns_id",
+      "label": "Citrix NetScaler persistence cookie",
+      "category": "load_balancer"
+    },
+    {
+      "match": "crisp-client",
+      "label": "Crisp chat",
+      "category": "tracking"
+    },
+    {
+      "match": "dwanonymous_",
+      "label": "Salesforce Commerce Cloud anonymous shopper",
+      "category": "tracking"
+    },
+    {
+      "match": "intercom-id-",
+      "label": "Intercom",
+      "category": "tracking"
+    },
+    {
+      "match": "ory_session_",
+      "label": "Ory session",
+      "category": "session"
+    },
+    {
+      "match": "visid_incap_",
+      "label": "Imperva Incapsula visitor id",
+      "category": "bot_protection"
+    },
+    {
+      "match": "wp-postpass_",
+      "label": "WordPress authentication cookie",
+      "category": "auth"
+    },
+    {
+      "match": "wp-settings-",
+      "label": "WordPress user settings",
+      "category": "preference"
+    },
+    {
+      "match": "_shibstate_",
+      "label": "Shibboleth session",
+      "category": "session"
+    },
+    {
+      "match": "arraffinity",
+      "label": "Azure App Service ARR affinity",
+      "category": "load_balancer"
+    },
+    {
+      "match": "bigipserver",
+      "label": "F5 BIG-IP persistence cookie",
+      "category": "load_balancer"
+    },
+    {
+      "match": "csrf_token_",
+      "label": "Ory CSRF token",
+      "category": "csrf"
+    },
+    {
+      "match": "jsessionid.",
+      "label": "Jenkins session",
+      "category": "session"
+    },
+    {
+      "match": "prestashop-",
+      "label": "PrestaShop session",
+      "category": "session"
+    },
+    {
+      "match": "__refresh_",
+      "label": "Clerk authentication",
+      "category": "auth"
+    },
+    {
+      "match": "_hjsession",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "_hjtldtest",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "_hp2_props",
+      "label": "Heap analytics",
+      "category": "tracking"
+    },
+    {
+      "match": "a_session_",
+      "label": "Appwrite session",
+      "category": "session"
+    },
+    {
+      "match": "bitrix_sm_",
+      "label": "Bitrix site manager cookie",
+      "category": "preference"
+    },
+    {
+      "match": "incap_ses_",
+      "label": "Imperva Incapsula session",
+      "category": "bot_protection"
+    },
+    {
+      "match": "optimizely",
+      "label": "Optimizely",
+      "category": "tracking"
+    },
+    {
+      "match": "_vis_opt_",
+      "label": "VWO",
+      "category": "tracking"
+    },
+    {
+      "match": "__adroll",
+      "label": "AdRoll",
+      "category": "tracking"
+    },
+    {
+      "match": "_dc_gtm_",
+      "label": "Google Tag Manager",
+      "category": "tracking"
+    },
+    {
+      "match": "_iub_cs-",
+      "label": "iubenda consent",
+      "category": "consent"
+    },
+    {
+      "match": "_pk_cvar",
+      "label": "Matomo (Piwik)",
+      "category": "tracking"
+    },
+    {
+      "match": "akavpau_",
+      "label": "Akamai Visitor Prioritization and edge state",
+      "category": "load_balancer"
+    },
+    {
+      "match": "hm_lpvt_",
+      "label": "Baidu Tongji",
+      "category": "tracking"
+    },
+    {
+      "match": "moodleid",
+      "label": "Moodle user",
+      "category": "auth"
+    },
+    {
+      "match": "pmaauth-",
+      "label": "phpMyAdmin authentication",
+      "category": "auth"
+    },
+    {
+      "match": "pmapass-",
+      "label": "phpMyAdmin authentication",
+      "category": "auth"
+    },
+    {
+      "match": "pmauser-",
+      "label": "phpMyAdmin authentication",
+      "category": "auth"
+    },
+    {
+      "match": "taboola_",
+      "label": "Taboola",
+      "category": "tracking"
+    },
+    {
+      "match": "__ar_v4",
+      "label": "AdRoll",
+      "category": "tracking"
+    },
+    {
+      "match": "_hp2_id",
+      "label": "Heap analytics",
+      "category": "tracking"
+    },
+    {
+      "match": "_pendo_",
+      "label": "Pendo",
+      "category": "tracking"
+    },
+    {
+      "match": "_pk_hsr",
+      "label": "Matomo (Piwik)",
+      "category": "tracking"
+    },
+    {
+      "match": "_pk_ref",
+      "label": "Matomo (Piwik)",
+      "category": "tracking"
+    },
+    {
+      "match": "_pk_ses",
+      "label": "Matomo (Piwik)",
+      "category": "tracking"
+    },
+    {
+      "match": "_sp_ses",
+      "label": "Snowplow",
+      "category": "tracking"
+    },
+    {
+      "match": "awswaf_",
+      "label": "AWS WAF",
+      "category": "bot_protection"
+    },
+    {
+      "match": "cf_chl_",
+      "label": "Cloudflare challenge",
+      "category": "bot_protection"
+    },
+    {
+      "match": "hm_lvt_",
+      "label": "Baidu Tongji",
+      "category": "tracking"
+    },
+    {
+      "match": "kndctr_",
+      "label": "Adobe Experience Cloud",
+      "category": "tracking"
+    },
+    {
+      "match": "pma_iv-",
+      "label": "phpMyAdmin authentication",
+      "category": "auth"
+    },
+    {
+      "match": "queueit",
+      "label": "Queue-it waiting room",
+      "category": "bot_protection"
+    },
+    {
+      "match": "__cesp",
+      "label": "Crazy Egg",
+      "category": "tracking"
+    },
+    {
+      "match": "__lc2_",
+      "label": "LiveChat",
+      "category": "tracking"
+    },
+    {
+      "match": "_pk_id",
+      "label": "Matomo (Piwik)",
+      "category": "tracking"
+    },
+    {
+      "match": "_pxff_",
+      "label": "HUMAN (PerimeterX) first-party cookie",
+      "category": "bot_protection"
+    },
+    {
+      "match": "_sp_id",
+      "label": "Snowplow",
+      "category": "tracking"
+    },
+    {
+      "match": "akaas_",
+      "label": "Akamai Visitor Prioritization and edge state",
+      "category": "load_balancer"
+    },
+    {
+      "match": "akacd_",
+      "label": "Akamai Visitor Prioritization and edge state",
+      "category": "load_balancer"
+    },
+    {
+      "match": "amcvs_",
+      "label": "Adobe Experience Cloud",
+      "category": "tracking"
+    },
+    {
+      "match": "awsalb",
+      "label": "AWS Application Load Balancer affinity cookie",
+      "category": "load_balancer"
+    },
+    {
+      "match": "awselb",
+      "label": "AWS Classic Load Balancer stickiness",
+      "category": "load_balancer"
+    },
+    {
+      "match": "cmplz_",
+      "label": "Complianz consent",
+      "category": "consent"
+    },
+    {
+      "match": "saplb_",
+      "label": "SAP load balancer",
+      "category": "load_balancer"
+    },
+    {
+      "match": "__lc_",
+      "label": "LiveChat",
+      "category": "tracking"
+    },
+    {
+      "match": "__utm",
+      "label": "Google Analytics legacy",
+      "category": "tracking"
+    },
+    {
+      "match": "__uzm",
+      "label": "Radware Bot Manager (ShieldSquare)",
+      "category": "bot_protection"
+    },
+    {
+      "match": "_ceir",
+      "label": "Crazy Egg",
+      "category": "tracking"
+    },
+    {
+      "match": "_gac_",
+      "label": "Google Ads conversion linker",
+      "category": "tracking"
+    },
+    {
+      "match": "_gat_",
+      "label": "Google Analytics throttling",
+      "category": "tracking"
+    },
+    {
+      "match": "_gcl_",
+      "label": "Google Ads conversion linker",
+      "category": "tracking"
+    },
+    {
+      "match": "_gtm_",
+      "label": "Google Tag Manager",
+      "category": "tracking"
+    },
+    {
+      "match": "_hjid",
+      "label": "Hotjar",
+      "category": "tracking"
+    },
+    {
+      "match": "_vwo_",
+      "label": "VWO",
+      "category": "tracking"
+    },
+    {
+      "match": "adrum",
+      "label": "AppDynamics",
+      "category": "tracking"
+    },
+    {
+      "match": "amcv_",
+      "label": "Adobe Experience Cloud",
+      "category": "tracking"
+    },
+    {
+      "match": "bnes_",
+      "label": "Barracuda load balancer",
+      "category": "load_balancer"
+    },
+    {
+      "match": "dwac_",
+      "label": "Salesforce Commerce Cloud cookie",
+      "category": "session"
+    },
+    {
+      "match": "f5avr",
+      "label": "F5 Application Visibility and Reporting",
+      "category": "tracking"
+    },
+    {
+      "match": "fbsr_",
+      "label": "Facebook signed request",
+      "category": "auth"
+    },
+    {
+      "match": "gclb_",
+      "label": "Google Cloud Load Balancer affinity",
+      "category": "load_balancer"
+    },
+    {
+      "match": "nlbi_",
+      "label": "Imperva Incapsula load balancer",
+      "category": "load_balancer"
+    },
+    {
+      "match": "sbjs_",
+      "label": "WooCommerce order attribution (Sourcebuster)",
+      "category": "tracking"
+    },
+    {
+      "match": "utag_",
+      "label": "Tealium",
+      "category": "tracking"
+    },
+    {
+      "match": "_ce.",
+      "label": "Crazy Egg",
+      "category": "tracking"
+    },
+    {
+      "match": "_ga_",
+      "label": "Google Analytics 4 measurement",
+      "category": "tracking"
+    },
+    {
+      "match": "_lo_",
+      "label": "Lucky Orange",
+      "category": "tracking"
+    },
+    {
+      "match": "_lr_",
+      "label": "LogRocket",
+      "category": "tracking"
+    },
+    {
+      "match": "_ym_",
+      "label": "Yandex Metrica",
+      "category": "tracking"
+    },
+    {
+      "match": "ajs_",
+      "label": "Segment analytics",
+      "category": "tracking"
+    },
+    {
+      "match": "fbm_",
+      "label": "Facebook SDK",
+      "category": "tracking"
+    },
+    {
+      "match": "nsc_",
+      "label": "Citrix NetScaler persistence cookie",
+      "category": "load_balancer"
+    },
+    {
+      "match": "twk_",
+      "label": "Tawk.to chat",
+      "category": "tracking"
+    },
+    {
+      "match": "mf_",
+      "label": "Mouseflow",
+      "category": "tracking"
+    }
+  ],
+  "suffix": [
+    {
+      "match": "_cookie_notice_accepted",
+      "label": "Application consent state",
+      "category": "consent"
+    },
+    {
+      "match": "_cookie_consent",
+      "label": "Application consent state",
+      "category": "consent"
+    },
+    {
+      "match": "_cookieconsent",
+      "label": "Application consent state",
+      "category": "consent"
+    },
+    {
+      "match": "_refresh_token",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "_stickysession",
+      "label": "Application load balancer affinity",
+      "category": "load_balancer"
+    },
+    {
+      "match": "-access-token",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "_access_token",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "_login_token",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "-auth-token",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "-csrf-token",
+      "label": "Application CSRF token",
+      "category": "csrf"
+    },
+    {
+      "match": "-xsrf-token",
+      "label": "Application CSRF token",
+      "category": "csrf"
+    },
+    {
+      "match": "_auth_token",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "_csrf_token",
+      "label": "Application CSRF token",
+      "category": "csrf"
+    },
+    {
+      "match": "_session_id",
+      "label": "Application session cookie",
+      "category": "session"
+    },
+    {
+      "match": "_authtoken",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "_csrftoken",
+      "label": "Application CSRF token",
+      "category": "csrf"
+    },
+    {
+      "match": "_sessionid",
+      "label": "Application session cookie",
+      "category": "session"
+    },
+    {
+      "match": "-affinity",
+      "label": "Application load balancer affinity",
+      "category": "load_balancer"
+    },
+    {
+      "match": "_affinity",
+      "label": "Application load balancer affinity",
+      "category": "load_balancer"
+    },
+    {
+      "match": "_id_token",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "-consent",
+      "label": "Application consent state",
+      "category": "consent"
+    },
+    {
+      "match": "-session",
+      "label": "Application session cookie",
+      "category": "session"
+    },
+    {
+      "match": "_consent",
+      "label": "Application consent state",
+      "category": "consent"
+    },
+    {
+      "match": "_session",
+      "label": "Application session cookie",
+      "category": "session"
+    },
+    {
+      "match": "_route",
+      "label": "Application load balancer affinity",
+      "category": "load_balancer"
+    },
+    {
+      "match": "_csrf",
+      "label": "Application CSRF token",
+      "category": "csrf"
+    },
+    {
+      "match": "_gdpr",
+      "label": "Application consent state",
+      "category": "consent"
+    },
+    {
+      "match": "_sess",
+      "label": "Application session cookie",
+      "category": "session"
+    },
+    {
+      "match": "_xsrf",
+      "label": "Application CSRF token",
+      "category": "csrf"
+    },
+    {
+      "match": "-jwt",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "_jwt",
+      "label": "Application authentication token",
+      "category": "auth"
+    },
+    {
+      "match": "_sid",
+      "label": "Application session cookie",
+      "category": "session"
+    }
+  ],
+  "regex": [
+    {
+      "pattern": "^aspsessionid[a-z]{8}$",
+      "label": "Classic ASP session identifier",
+      "category": "session"
+    },
+    {
+      "pattern": "^sess[0-9a-f]{32}$",
+      "label": "Drupal session",
+      "category": "session"
+    },
+    {
+      "pattern": "^ssess[0-9a-f]{32}$",
+      "label": "Drupal secure session",
+      "category": "session"
+    },
+    {
+      "pattern": "^[0-9a-f]{32}$",
+      "label": "Joomla session (32-character hexadecimal cookie name)",
+      "category": "session"
+    },
+    {
+      "pattern": "^phpbb3_[a-z0-9]+_sid$",
+      "label": "phpBB session",
+      "category": "session"
+    },
+    {
+      "pattern": "^phpbb3_[a-z0-9]+_u$",
+      "label": "phpBB user id",
+      "category": "session"
+    },
+    {
+      "pattern": "^phpbb3_[a-z0-9]+_k$",
+      "label": "phpBB auto-login key",
+      "category": "auth"
+    },
+    {
+      "pattern": "^smfcookie[0-9]+$",
+      "label": "Simple Machines Forum login",
+      "category": "auth"
+    },
+    {
+      "pattern": "^visitor_id[0-9]+(?:-hash)?$",
+      "label": "Pardot visitor",
+      "category": "tracking"
+    },
+    {
+      "pattern": "^lpv[0-9]+$",
+      "label": "Pardot visitor",
+      "category": "tracking"
+    },
+    {
+      "pattern": "^pi_opt_in[0-9]+$",
+      "label": "Pardot visitor",
+      "category": "tracking"
+    },
+    {
+      "pattern": "^sb-[a-z0-9]+-auth-token(?:\\.[0-9]+)?$",
+      "label": "Supabase authentication",
+      "category": "auth"
+    },
+    {
+      "pattern": "^sb-[a-z0-9]+-auth-token-code-verifier$",
+      "label": "Supabase authentication",
+      "category": "auth"
+    },
+    {
+      "pattern": "^(?:at|sess-at|sst)-(?:main|acb[a-z]{2})$",
+      "label": "Amazon account authentication",
+      "category": "auth"
+    },
+    {
+      "pattern": "^(?:ubid|lc|x)-(?:main|acb[a-z]{2})$",
+      "label": "Amazon identifiers and preferences",
+      "category": "tracking"
+    },
+    {
+      "pattern": "^ts[0-9a-f]{8}(?:[0-9a-f]{3})?$",
+      "label": "F5 BIG-IP ASM / Advanced WAF TS cookie",
+      "category": "load_balancer"
+    },
+    {
+      "pattern": "^tspd_[0-9a-z_]+$",
+      "label": "F5 BIG-IP ASM / Advanced WAF Bot Defense (TSPD) cookie",
+      "category": "bot_protection"
+    },
+    {
+      "pattern": "^mp_[0-9a-f]+_mixpanel$",
+      "label": "Mixpanel",
+      "category": "tracking"
+    }
+  ]
+}

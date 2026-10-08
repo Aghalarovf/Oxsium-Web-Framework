@@ -1,0 +1,522 @@
+<div class="section-title">DNS Enumeration</div>
+<div class="section-sub">Full DNS recon — records, zone transfer, mail security, transport &amp; anomaly checks</div>
+
+<div class="dns-section" id="sec-target-params" style="margin-bottom:12px;">
+  <div class="dns-section-head" id="target-params-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+    <div class="dns-section-icon">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+        <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+        <path d="M5 5h2.5M5 8h6M5 11h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="11" cy="5" r="1.5" fill="currentColor" opacity=".7"/>
+      </svg>
+    </div>
+    <span class="dns-section-title">Target Parameters</span>
+    <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="dns-section-body">
+    <div class="form-row" style="grid-template-columns:1fr 1fr;margin-bottom:12px;">
+      <div class="form-group">
+        <label class="form-label">Domain Name</label>
+        <input class="form-input" id="dns-input-domain" type="text" placeholder="example.com" spellcheck="false" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Name Server <span style="opacity:.45;font-weight:400;">Optional</span></label>
+        <input class="form-input" id="dns-input-nameserver" type="text" placeholder="1.1.1.1" spellcheck="false" autocomplete="off">
+      </div>
+    </div>
+    <div class="form-row" style="grid-template-columns:1fr 1fr;margin-bottom:12px;">
+      <div class="form-group">
+        <label class="form-label">Threads</label>
+        <div class="dns-threads-group" id="dns-threads-group">
+          <button class="dns-thread-btn" data-val="1">1</button>
+          <button class="dns-thread-btn" data-val="2">2</button>
+          <button class="dns-thread-btn dns-thread-btn-active" data-val="3">3</button>
+          <button class="dns-thread-btn" data-val="4">4</button>
+          <button class="dns-thread-btn" data-val="5">5</button>
+        </div>
+      </div>
+      <div></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:4px;">
+      <button id="dns-scan-btn" class="btn-primary" style="flex:1;">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+          <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        Start
+      </button>
+      <button id="dns-stop-btn" class="btn-danger">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+          <rect x="4" y="4" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.4"/>
+        </svg>
+        Stop
+      </button>
+      <button id="dns-reset-btn" class="btn-secondary" style="height:auto;align-self:stretch;padding:0 16px;" title="Reset">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8a5 5 0 1 0 5-5 5 5 0 0 0-3.54 1.46L3 3M3 3v3h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <button id="dns-load-db-btn" class="btn-load-db">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 2v8M5 7l3 3 3-3M3 12.5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Load From Database
+    </button>
+  </div>
+</div>
+
+
+<div style="margin-top:16px;margin-bottom:16px;">
+  <div class="output-title">Scan Results</div>
+  <div class="output-wrap" style="min-height:90px;">
+    <span class="output-placeholder">// Output will appear here when scan is running...</span>
+  </div>
+</div>
+
+<div id="dns-subtab-bar" style="display:flex;gap:2px;padding:8px 10px 0;border-bottom:1px solid var(--border);background:var(--bg-input);flex-wrap:wrap;">
+  <button class="tls-subtab-btn active" data-dnstab="dns-sub-records">DNS Records</button>
+  <button class="tls-subtab-btn" data-dnstab="dns-sub-axfr">Zone Transfer</button>
+  <button class="tls-subtab-btn" data-dnstab="dns-sub-dangling">Dangling DNS</button>
+  <button class="tls-subtab-btn" data-dnstab="dns-sub-dnssec">DNSSEC</button>
+  <button class="tls-subtab-btn" data-dnstab="dns-sub-anomaly">TTL Anomaly</button>
+  <button class="tls-subtab-btn" data-dnstab="dns-sub-module">Module Results</button>
+</div>
+
+<div class="tls-sub-panel active" id="dns-sub-records">
+  <div class="dns-section" id="sec-records" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 5h6M5 8h6M5 11h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">DNS Records</span>
+      <span class="dns-section-badge dim" id="records-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="dns-record-grid" id="dns-record-grid" style="padding:10px;">
+        <div class="dns-record-empty" id="dns-record-empty">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" opacity=".18"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 8h10M7 12h10M7 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span>Run enumeration to see DNS records</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tls-sub-panel" id="dns-sub-axfr">
+
+  <!-- Zone Transfer (AXFR) -->
+  <div class="dns-section" id="sec-axfr" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3h10v10H3z" stroke="currentColor" stroke-width="1.3"/><path d="M6 6l4 4M10 6l-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">Zone Transfer (AXFR)</span>
+      <span class="dns-section-badge dim" id="axfr-result-val">IDLE</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body">
+      <div class="dns-axfr-status" id="axfr-status-bar" style="margin-bottom:12px;">
+        <div class="axfr-status-item">
+          <span class="axfr-status-label">STATUS</span>
+          <span class="axfr-status-val dim" id="axfr-status-val">IDLE</span>
+        </div>
+        <div class="axfr-status-item">
+          <span class="axfr-status-label">NAMESERVER</span>
+          <span class="axfr-status-val dim" id="axfr-ns-val">--</span>
+        </div>
+        <div class="axfr-status-item">
+          <span class="axfr-status-label">RECORDS LEAKED</span>
+          <span class="axfr-status-val dim" id="axfr-count-val">--</span>
+        </div>
+        <div class="axfr-status-item">
+          <span class="axfr-status-label">VULNERABLE</span>
+          <span class="axfr-status-val dim" id="axfr-vuln-val">--</span>
+        </div>
+      </div>
+      <div class="output-title">Zone Records Output</div>
+      <div class="output-wrap" id="axfr-output" style="min-height:80px;max-height:220px;">
+        <span class="output-placeholder">// AXFR zone records will appear here...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zone Transfer (IXFR) -->
+  <div class="dns-section collapsed" id="sec-ixfr" style="margin-top:8px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <path d="M2 5h12M2 8h8M2 11h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M12 10l2 2-2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="dns-section-title">Zone Transfer (IXFR)</span>
+      <span class="dns-section-badge dim" id="ixfr-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body">
+      <div class="dns-info-banner" style="margin-bottom:12px;">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v4M8 5.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        IXFR (Incremental Zone Transfer) transfers only changes since the last serial — more efficient than full AXFR. If a server responds to IXFR with a full zone, it may still be leaking data.
+      </div>
+      <div class="dns-axfr-status" id="ixfr-status-bar" style="margin-bottom:12px;">
+        <div class="axfr-status-item">
+          <span class="axfr-status-label">STATUS</span>
+          <span class="axfr-status-val dim" id="ixfr-status-val">IDLE</span>
+        </div>
+        <div class="axfr-status-item">
+          <span class="axfr-status-label">TYPE</span>
+          <span class="axfr-status-val dim" id="ixfr-type-val">--</span>
+        </div>
+        <div class="axfr-status-item">
+          <span class="axfr-status-label">CHANGES</span>
+          <span class="axfr-status-val dim" id="ixfr-changes-val">--</span>
+        </div>
+        <div class="axfr-status-item">
+          <span class="axfr-status-label">VULNERABLE</span>
+          <span class="axfr-status-val dim" id="ixfr-vuln-val">--</span>
+        </div>
+      </div>
+      <div class="output-title">IXFR Incremental Records</div>
+      <div class="output-wrap" id="ixfr-output" style="min-height:80px;max-height:220px;">
+        <span class="output-placeholder">// IXFR incremental records will appear here...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zone Transfer (ANY) -->
+  <div class="dns-section collapsed" id="sec-axfr-any" style="margin-top:8px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M5 5h6M5 8h6M5 11h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="dns-section-title">Zone Transfer (ANY)</span>
+      <span class="dns-section-badge dim" id="axfr-any-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="dns-info-banner" style="margin:10px 10px 0;">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v4M8 5.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        ANY query responses expose all record types the server will answer for — useful for enumeration. Modern resolvers often return HINFO or refuse ANY, but older servers leak full zone snapshots.
+      </div>
+      <div class="data-table-wrap" style="margin-top:10px;">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:1.4;">Record</div>
+          <div class="data-col" style="width:80px;">TTL</div>
+          <div class="data-col" style="width:70px;">Class</div>
+          <div class="data-col" style="width:80px;">Type</div>
+          <div class="data-col" style="flex:2;">Value</div>
+        </div>
+        <div class="data-table-body" id="axfr-any-body" style="max-height:300px;">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 8h10M7 12h10M7 16h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <span>Run enumeration to see ANY query records</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOA Info -->
+  <div class="dns-section collapsed" id="sec-soa-info" style="margin-top:8px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M8 5v3l2 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="dns-section-title">SOA Info</span>
+      <span class="dns-section-badge dim" id="soa-info-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="data-table-wrap">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:1.2;">Nameserver</div>
+          <div class="data-col" style="width:100px;">Serial</div>
+          <div class="data-col" style="width:100px;">Negative TTL</div>
+          <div class="data-col" style="flex:1.4;">Admin Email</div>
+        </div>
+        <div class="data-table-body" id="soa-info-body" style="max-height:260px;">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.3"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <span>Run enumeration to see SOA authority info</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="tls-sub-panel" id="dns-sub-dangling">
+  <div class="dns-section" id="sec-dangling" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v6M8 11v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/></svg>
+      </div>
+      <span class="dns-section-title">Dangling DNS</span>
+      <span class="dns-section-badge dim" id="dangling-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="dns-info-banner" style="margin:10px 10px 0;">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v4M8 5.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Checks CNAME chains for dangling pointers — targets resolving to unclaimed external services (GitHub Pages, Heroku, S3, Netlify, Vercel, Azure, Fastly…)
+      </div>
+      <div class="data-table-wrap" style="margin-top:10px;">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:1.2;">Subdomain / CNAME</div>
+          <div class="data-col" style="flex:1;">Points To</div>
+          <div class="data-col" style="width:110px;">Provider</div>
+          <div class="data-col" style="width:100px;">Status</div>
+          <div class="data-col" style="width:90px;">Risk</div>
+        </div>
+        <div class="data-table-body" id="dangling-table-body">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <span>No dangling records detected yet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tls-sub-panel" id="dns-sub-dnssec">
+
+  <!-- 1. Chain of Trust -->
+  <div class="dns-section" id="sec-dnssec-chain" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="5" y="8" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M5 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.3"/></svg>
+      </div>
+      <span class="dns-section-title">Chain of Trust</span>
+      <span class="dns-section-badge dim" id="dnssec-chain-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div id="dnssec-rows">
+        <div class="dns-check-row"><span class="dcr-label">DNSKEY Present</span><span class="dcr-val dim" id="dnssec-dnskey">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">DS Record</span><span class="dcr-val dim" id="dnssec-ds">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">RRSIG Valid</span><span class="dcr-val dim" id="dnssec-rrsig">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">NSEC / NSEC3</span><span class="dcr-val dim" id="dnssec-nsec">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Chain of Trust</span><span class="dcr-val dim" id="dnssec-chain">--</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. RRSIG Expiry -->
+  <div class="dns-section collapsed" id="sec-dnssec-rrsig">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">RRSIG Expiry</span>
+      <span class="dns-section-badge dim" id="dnssec-rrsig-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="data-table-wrap">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:1;">Record Type</div>
+          <div class="data-col" style="flex:1.4;">Expires</div>
+          <div class="data-col" style="width:100px;">Days Left</div>
+          <div class="data-col" style="width:90px;">Status</div>
+        </div>
+        <div class="data-table-body" id="rrsig-expiry-body" style="max-height:200px;">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.3"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <span>Run enumeration to check RRSIG expiry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. NSEC Zone Walking -->
+  <div class="dns-section collapsed" id="sec-dnssec-nsec">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6h8M4 10h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">NSEC Zone Walking</span>
+      <span class="dns-section-badge dim" id="dnssec-nsec-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div id="nsec-walk-rows">
+        <div class="dns-check-row"><span class="dcr-label">NSEC / NSEC3 Present</span><span class="dcr-val dim" id="nsec-present">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Zone Walking</span><span class="dcr-val dim" id="nsec-walkable">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Names Discovered</span><span class="dcr-val dim" id="nsec-count">--</span></div>
+      </div>
+      <div class="data-table-wrap" style="margin-top:8px;">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:1;">Discovered Name</div>
+          <div class="data-col" style="flex:1;">Next Name</div>
+        </div>
+        <div class="data-table-body" id="nsec-walk-body" style="max-height:200px;">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><path d="M4 6h16M4 10h16M4 14h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <span>Run enumeration to attempt zone walking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. NSEC3 Parameters -->
+  <div class="dns-section collapsed" id="sec-dnssec-nsec3">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">NSEC3 Parameters</span>
+      <span class="dns-section-badge dim" id="dnssec-nsec3-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div id="nsec3-rows">
+        <div class="dns-check-row"><span class="dcr-label">Opt-Out Flag</span><span class="dcr-val dim" id="nsec3-optout">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Flags</span><span class="dcr-val dim" id="nsec3-flags">--</span></div>
+        <div class="dns-check-row"><span class="dcr-label">Iterations</span><span class="dcr-val dim" id="nsec3-iterations">--</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. SSHFP Records -->
+  <div class="dns-section collapsed" id="sec-dnssec-sshfp">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M15 7a2 2 0 0 1 2 2m4 0a6 6 0 0 1-7.74 5.74L11 17H9v2H7v2H4a1 1 0 0 1-1-1v-2.59a1 1 0 0 1 .29-.7L11 9.26A6 6 0 0 1 21 9z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="dns-section-title">SSHFP Records</span>
+      <span class="dns-section-badge dim" id="dnssec-sshfp-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div id="sshfp-meta-rows">
+        <div class="dns-check-row"><span class="dcr-label">DNSSEC Valid</span><span class="dcr-val dim" id="sshfp-dnssec-state">--</span></div>
+      </div>
+      <div class="data-table-wrap" style="margin-top:8px;">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:0.8;">Algorithm</div>
+          <div class="data-col" style="width:90px;">Hash Type</div>
+          <div class="data-col" style="flex:2;">Fingerprint</div>
+          <div class="data-col" style="width:80px;">Status</div>
+        </div>
+        <div class="data-table-body" id="sshfp-body" style="max-height:200px;">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><path d="M15 7a2 2 0 0 1 2 2m4 0a6 6 0 0 1-7.74 5.74L11 17H9v2H7v2H4a1 1 0 0 1-1-1v-2.59a1 1 0 0 1 .29-.7L11 9.26A6 6 0 0 1 21 9z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Run enumeration to check SSHFP records</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. TLSA / DANE -->
+  <div class="dns-section collapsed" id="sec-dnssec-tlsa">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="dns-section-title">TLSA / DANE</span>
+      <span class="dns-section-badge dim" id="dnssec-tlsa-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="data-table-wrap">
+        <div class="data-table-head">
+          <div class="data-col" style="width:80px;">Service</div>
+          <div class="data-col" style="flex:1.4;">Record Name</div>
+          <div class="data-col" style="width:60px;">Usage</div>
+          <div class="data-col" style="width:70px;">Selector</div>
+          <div class="data-col" style="width:60px;">MType</div>
+          <div class="data-col" style="flex:1.2;">Cert Hash</div>
+          <div class="data-col" style="width:80px;">Status</div>
+        </div>
+        <div class="data-table-body" id="tlsa-body" style="max-height:200px;">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Run enumeration to check TLSA/DANE records</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="tls-sub-panel" id="dns-sub-anomaly">
+  <div class="dns-section" id="sec-anomaly" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2l6 12H2L8 2z" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v3M8 11.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">TTL Anomaly / Fast-Flux</span>
+      <span class="dns-section-badge dim" id="anomaly-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad">
+      <div class="dns-info-banner warn" style="margin:10px 10px 0;">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 2l6 12H2L8 2z" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v3M8 11.5v.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        TTL values below 300s may indicate fast-flux DNS — commonly used by botnets or DGA malware to rotate IPs rapidly. Values of 0 or 1 are almost certainly malicious.
+      </div>
+      <div class="dns-anomaly-summary" id="anomaly-summary" style="margin:10px;border-radius:var(--radius-sm);">
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="anom-total">--</div>
+          <div class="anomaly-stat-label">Records Checked</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val warn" id="anom-low">--</div>
+          <div class="anomaly-stat-label">Low TTL (&lt;300s)</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val danger" id="anom-vlow">--</div>
+          <div class="anomaly-stat-label">Very Low TTL (&lt;60s)</div>
+        </div>
+        <div class="anomaly-stat">
+          <div class="anomaly-stat-val" id="anom-flux">--</div>
+          <div class="anomaly-stat-label">Fast-Flux Score</div>
+        </div>
+      </div>
+      <div class="data-table-wrap">
+        <div class="data-table-head">
+          <div class="data-col" style="flex:1.2;">Record Name</div>
+          <div class="data-col" style="width:80px;">Type</div>
+          <div class="data-col" style="width:90px;">TTL (s)</div>
+          <div class="data-col" style="flex:1;">Value</div>
+          <div class="data-col" style="width:110px;">Anomaly</div>
+        </div>
+        <div class="data-table-body" id="anomaly-table-body" style="max-height:280px;">
+          <div class="data-empty">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" opacity=".18"><path d="M8 2l6 12H2L8 2z" stroke="currentColor" stroke-width="1.3"/></svg>
+            <span>Run enumeration to analyse TTL anomalies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tls-sub-panel" id="dns-sub-module">
+  <div class="dns-section" id="sec-module-results" style="margin-top:10px;">
+    <div class="dns-section-head" onclick="this.closest('.dns-section').classList.toggle('collapsed')">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3h10v10H3zM5 6h6M5 8h6M5 10h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </div>
+      <span class="dns-section-title">Complete Module Results</span>
+      <span class="dns-section-badge dim" id="module-results-badge">--</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body no-pad" id="module-results-body">
+      <div class="data-empty"><span>Run enumeration to load complete module payloads</span></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oxsium Web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg-deep:    #050505;
+    --bg-base:    #0c0c0c;
+    --bg-panel:   #131313;
+    --bg-card:    #181818;
+    --bg-input:   #0f0f0f;
+    --bg-alt:     #101010;
+    --bg-hover:   #1a1a1a;
+    --bg-selected:#1a1000;
+
+    --border:     #2a2510;
+    --border-hi:  #4a4018;
+
+    --accent:     #f0c030;
+    --accent-dim: #8a6a18;
+    --accent-glow:#f0c03022;
+
+    --green:      #c8a855;
+    --green-dim:  #5a4820;
+    --red:        #a07820;
+    --amber:      #f0c030;
+    --amber-dim:  #6a5015;
+
+    --text-pri:   #f5d980;
+    --text-sec:   #e0c060;
+    --text-dim:   #b89840;
+    --text-hi:    #fff0b8;
+
+    --mono:       'JetBrains Mono', monospace;
+    --head:       'Outfit', sans-serif;
+    --ui:         'Inter', sans-serif;
+
+    --sidebar-w:  260px;
+    --right-w:    260px;
+    --radius:     6px;
+    --radius-sm:  4px;
+}
+</style>
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/topbar.css">
+<link rel="stylesheet" href="css/sidebar.css">
+<link rel="stylesheet" href="css/panels.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/buttons.css">
+<link rel="stylesheet" href="css/modals.css">
+<link rel="stylesheet" href="css/misc.css">
+<link rel="stylesheet" href="css/dns-enum.css">
+<link rel="stylesheet" href="css/headers.css">
+<link rel="stylesheet" href="css/subdomains.css">
+<link rel="stylesheet" href="css/tls.css">
+<link rel="stylesheet" href="css/social.css">
+<link rel="stylesheet" href="css/wayback.css">
+<link rel="stylesheet" href="css/OxsProxy.css">
+<link rel="stylesheet" href="css/tech-fingerprint.css">
+<link rel="stylesheet" href="css/email-infra.css?v=20261004-1444">
+
+
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-logo">
+    <div class="logo-icon">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+        <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M2 10h16M10 2c-2 2-3 5-3 8s1 6 3 8M10 2c2 2 3 5 3 8s-1 6-3 8" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <span class="logo-name">
+      <span>Oxsium</span>
+      <span class="logo-sub">Web</span>
+    </span>
+    <span class="logo-version">v0.1.0</span>
+  </div>
+
+  <nav class="main-tabs">
+    <a class="main-tab active" href="javascript:void(0)"><span class="tab-dot"></span> Recon</a>
+    <a class="main-tab deactive" href="Scanner-Module/Oxsium-Web-Scanner.html" target="_blank"><span class="tab-dot"></span> Scanner</a>
+    <a class="main-tab deactive" href="Exploit-Module/Oxsium-Web-Exploit.html" target="_blank"><span class="tab-dot"></span> Exploit</a>
+  </nav>
+
+  <div class="conn-badge">
+    <div class="conn-dot"></div>
+    <span class="conn-label">IDLE</span>
+  </div>
+</header>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Recon</div>
+      <div class="nav-item active" data-panel="panel-target-setup">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.3"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Target Setup
+        <span class="nav-count">--</span>
+      </div>
+      <div class="nav-item" data-panel="panel-oxs-proxy">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 2.5v3M8 10.5v3M2.5 8h3M10.5 8h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Proxy
+        <span class="nav-count">--</span>
+      </div>
+      <div class="nav-item" data-panel="panel-dns-enum">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h10M2 12h7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        DNS Enum
+        <span class="nav-count">--</span>
+      </div>
+      <div class="nav-item" data-panel="panel-subdomains">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 3v10M2 7h12" stroke="currentColor" stroke-width="1.3"/></svg>
+        Subdomains
+        <span class="nav-count">--</span>
+      </div>
+      <div class="nav-item" data-panel="panel-whois-ip">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        WHOIS / IP
+        <span class="nav-count">--</span>
+      </div>
+      <div class="nav-item" data-panel="panel-social-media">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.3"/><path d="M2 14c0-3 2.5-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Social &amp; Metadata
+        <span class="nav-count">--</span>
+      </div>
+      <div class="nav-item" data-panel="panel-headers">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 6h12" stroke="currentColor" stroke-width="1.3"/><path d="M5 9h4M5 11h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        Headers
+        <span class="nav-count">--</span>
+      </div>
+      <div class="nav-item" data-panel="panel-wayback" data-icon="archive">
+        <div class="n-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/>
+            <path d="M4 8v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/>
+            <path d="M10 12h4"/>
+            <path d="M2 8h20"/>
+            <circle cx="12" cy="16" r="1"/>
+            <path d="M12 13v3"/>
+          </svg>
+        </div>
+        <span class="n-lbl">Wayback / Archive</span>
+        <span class="nav-count">--</span>
+      </div>
+
+      <!-- Email Infrastructure -->
+      <div class="nav-item" data-panel="panel-email-infra">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none">
+          <rect x="2" y="4" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M2 5l6 4 6-4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+        Email Infrastructure
+        <span class="nav-count">--</span>
+      </div>
+
+      <div class="nav-item" data-panel="panel-tls">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none"><path d="M8 2L2 5v4c0 3 2.5 5 6 6 3.5-1 6-3 6-6V5L8 2z" stroke="currentColor" stroke-width="1.3"/></svg>
+        TLS / Certs
+        <span class="nav-count">--</span>
+      </div>
+
+      <!-- ====== NEW MODULES ====== -->
+
+      <!-- Technology Fingerprint -->
+      <div class="nav-item" data-panel="panel-tech-fingerprint">
+        <svg class="nav-icon" viewBox="0 0 16 16" fill="none">
+          <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/>
+          <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M5 2v1M11 2v1M5 13v1M11 13v1M2 5h1M2 11h1M13 5h1M13 11h1" stroke="currentColor" stroke-width="1.3"/>
+        </svg>
+        Technology Fingerprint
+        <span class="nav-count">--</span>
+      </div>
+
+
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-version">Oxsium Web v0.1.0</div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main fade-in">
+
+    <div id="panel-target-setup"    class="module-panel active"></div>
+    <div id="panel-oxs-proxy"       class="module-panel"></div>
+    <div id="panel-dns-enum"        class="module-panel"></div>
+    <div id="panel-subdomains"      class="module-panel"></div>
+    <div id="panel-whois-ip"        class="module-panel"></div>
+    <div id="panel-tls"             class="module-panel"></div>
+    <div id="panel-social-media"    class="module-panel"></div>
+    <div id="panel-headers"         class="module-panel"></div>
+    <div id="panel-wayback"         class="module-panel"></div>
+    <div id="panel-tech-fingerprint" class="module-panel"></div>
+    <div id="panel-email-infra"     class="module-panel"></div>
+
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="right-panel">
+    <div class="panel-header">Target Status</div>
+    <div class="stat-block"><div class="stat-label">Status</div><div class="stat-value dim" data-field="status">IDLE</div></div>
+    <div class="stat-block"><div class="stat-label">Target URL</div><div class="stat-value dim" data-field="targetUrl">--</div></div>
+    <div class="stat-block"><div class="stat-label">IP Address</div><div class="stat-value dim" data-field="ipAddress">--</div></div>
+    <div class="stat-block"><div class="stat-label">Web Server</div><div class="stat-value dim" data-field="webServer">--</div></div>
+    <div class="stat-block"><div class="stat-label">TLS Version</div><div class="stat-value dim" data-field="tlsVersion">--</div></div>
+    <div class="stat-block"><div class="stat-label">WAF Detected</div><div class="stat-value dim" data-field="wafDetected">--</div></div>
+    <div class="stat-block"><div class="stat-label">Response Time</div><div class="stat-value dim" data-field="responseTime">--</div></div>
+
+    <div class="panel-header" style="margin-top:4px;">Protocol Checks</div>
+    <div class="security-proto-scroll">
+      <div class="security-proto-item"><div class="stat-label">HTTP/2</div><div class="stat-value dim" data-field="http2">--</div></div>
+      <div class="security-proto-item"><div class="stat-label">CORS</div><div class="stat-value dim" data-field="cors">--</div></div>
+      <div class="security-proto-item"><div class="stat-label">HSTS</div><div class="stat-value dim" data-field="hsts">--</div></div>
+      <div class="security-proto-item"><div class="stat-label">CSP</div><div class="stat-value dim" data-field="csp">--</div></div>
+      <div class="security-proto-item"><div class="stat-label">Clickjacking</div><div class="stat-value dim" data-field="clickjacking">--</div></div>
+    </div>
+
+    <div class="stat-block">
+      <div class="stat-label">API Backend</div>
+      <div class="stat-value dim" data-field="apiBackend">--</div>
+      <div class="progress-bar"><div class="progress-fill" id="api-latency-bar"></div></div>
+    </div>
+    <div class="stat-block"><div class="stat-label">Latency</div><div class="stat-value dim" data-field="latency">--</div></div>
+  </aside>
+
+</div>
+
+<!-- STATUS BAR -->
+<div class="statusbar">
+  <div class="statusbar-item"><span class="s-label">STATUS:</span><span class="s-val" data-field="status">IDLE</span></div>
+  <div class="statusbar-item"><span class="s-label">MODULE:</span><span class="s-val" data-field="module">--</span></div>
+  <div class="statusbar-item"><span class="s-label">API:</span><span class="s-val" data-field="apiStatus">OFFLINE</span></div>
+  <div class="statusbar-item statusbar-right"><span class="s-label">SESSION:</span><span class="s-val" data-field="session">--</span></div>
+</div>
+
+<div class="toast-container" id="toasts"></div>
+
+<!-- EXISTING JS -->
+<script src="js/state.js"></script>
+<script src="js/ui.js?v=20261005-2057"></script>
+<script src="js/nav.js"></script>
+<script src="js/target.js"></script>
+<script src="js/dns-enum.js?v=20261005-2105"></script>
+<script src="js/headers.js?v=20261005-2052"></script>
+<script src="js/subdomains.js?v=20261005-2059"></script>
+<script src="js/whois.js?v=20261005-2052"></script>
+<script src="js/tls.js?v=20261005-2052"></script>
+<script src="js/social.js?v=20261005-2105"></script>
+<script src="js/wayback.js?v=20261005-2052"></script>
+<script src="js/tech-fingerprint.js?v=20261005-2100"></script>
+<script src="js/email-infra.js?v=20261005-2058"></script>
+<script src="js/OxsProxy.js"></script>
+
+
+<script>
+(function() {
+  window.markPanelComplete = function(panelId, label) {
+    const item = document.querySelector(`.nav-item[data-panel="${panelId}"]`);
+    const count = item?.querySelector('.nav-count');
+    if (!count) return;
+    count.textContent = '✓';
+    count.classList.remove('dns-enum-complete');
+    void count.offsetWidth;
+    count.classList.add('dns-enum-complete');
+    count.setAttribute('aria-label', `${label || 'Module'} completed`);
+  };
+
+  const PANELS = [
+    { id: 'panel-target-setup',  src: 'HTML/target-setup.html'    },
+    { id: 'panel-oxs-proxy',     src: 'HTML/OxsProxy.html'         },
+    { id: 'panel-dns-enum',      src: 'HTML/dns-enum.html'        },
+    { id: 'panel-subdomains',    src: 'HTML/subdomains.html'      },
+    { id: 'panel-whois-ip',      src: 'HTML/whois-ip.html'        },
+    { id: 'panel-tls',           src: 'HTML/tls.html'             },
+    { id: 'panel-wayback',       src: 'HTML/wayback.html'         },
+    { id: 'panel-social-media',  src: 'HTML/social-metadata.html' },
+    { id: 'panel-headers',       src: 'HTML/headers.html'         },
+    { id: 'panel-tech-fingerprint', src: 'HTML/tech-fingerprint.html' },
+    { id: 'panel-email-infra',      src: 'HTML/email-infra.html'      }
+  ];
+
+  // Hər panel öz HTML-i DOM-a düşən kimi özünü init edir — digər
+  // panellərin (hətta lənglərinin/xətalarının) bitməsini gözləmədən.
+  const PANEL_INIT = {
+    'panel-target-setup': () => {
+      Target.init();
+      Nav.initModeToggle();
+      Nav.initProtocol();
+      if (typeof ScanController !== 'undefined') ScanController.init();
+
+      const tsStartBtn = document.getElementById('ts-start-btn');
+      const tsStopBtn  = document.getElementById('ts-stop-btn');
+      if (tsStartBtn) {
+        tsStartBtn.addEventListener('click', async () => {
+          try { await fetch(`${State.api.base}/api/reset`, { method: 'POST' }); } catch (_) {}
+          SubdomainScanController.startScan();
+        });
+      }
+      if (tsStopBtn) tsStopBtn.addEventListener('click', () => SubdomainScanController.stopScan());
+    },
+    'panel-dns-enum':   () => DnsEnum.init(),
+    'panel-subdomains': () => { Subdomains.init(); SubdomainScanController.init(); },
+    'panel-oxs-proxy':  () => { if (typeof OxsProxy !== 'undefined')        OxsProxy.init(); },
+    'panel-wayback':    () => { if (typeof WaybackModule !== 'undefined')  WaybackModule.init(); },
+    'panel-tech-fingerprint': () => { if (typeof TechFingerprint !== 'undefined') TechFingerprint.init(); },
+    'panel-email-infra':      () => { if (typeof EmailInfra !== 'undefined')      EmailInfra.init(); },
+  };
+
+  async function loadPanel(id, src) {
+    const el = document.getElementById(id);
+    if (!el) { console.warn('[PanelLoader] Element not found:', id); return; }
+    try {
+      // Timeout: bir panel donub qalsa belə, digərlərini və UI-ı bloklamasın.
+      const res = await fetch(src, { signal: AbortSignal.timeout(8000) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      el.innerHTML = await res.text();
+      PANEL_INIT[id]?.();
+    } catch (err) {
+      el.innerHTML = `<div style="padding:20px;color:#a07820;font-family:monospace;font-size:12px;">
+        ⚠ Failed to load panel: <b>${src}</b><br><small>${err.message}</small>
+      </div>`;
+      console.error('[PanelLoader]', src, err);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    Nav.initNavItems();
+    UI.startPing();
+
+    PANELS.forEach(p => loadPanel(p.id, p.src));
+
+    if (typeof AppSec  !== 'undefined') AppSec.init();
+    if (typeof Dorking !== 'undefined') Dorking.init();
+  });
+})();
+</script>
+</body>
+</html>

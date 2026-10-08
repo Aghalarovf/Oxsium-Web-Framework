@@ -1,0 +1,408 @@
+<div class="tf-module">
+
+  <div class="section-title">Technology Fingerprint</div>
+  <div class="section-sub">Passive detection of web frameworks, frontend libraries, CMS, cookies, JS variables, OS banners and more</div>
+
+  <!-- ═══ TARGET PARAMETERS ═══ -->
+  <div class="dns-section collapsed" id="tf-sec-target-params" style="margin-bottom:12px;">
+    <div class="dns-section-head" id="tf-target-params-head" onclick="(function(h){var sec=h.closest('.dns-section');if(!sec)return;sec.classList.toggle('collapsed');var chev=h.querySelector('.dns-section-chevron');if(chev)chev.style.transform=sec.classList.contains('collapsed')?'rotate(-90deg)':''})(this)">
+      <div class="dns-section-icon">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M5 5h2.5M5 8h6M5 11h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="11" cy="5" r="1.5" fill="currentColor" opacity=".7"/>
+        </svg>
+      </div>
+      <span class="dns-section-title">Target Parameters</span>
+      <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="dns-section-body">
+      <div class="form-row" style="grid-template-columns:1fr 1fr;margin-bottom:12px;">
+        <div class="form-group">
+          <label class="form-label">Target URL</label>
+          <input class="form-input" id="tf-target" type="text" placeholder="https://example.com or target domain" spellcheck="false" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Proxy <span style="opacity:.45;font-weight:400;">Optional</span></label>
+          <input class="form-input" id="tf-proxy" type="text" placeholder="http://127.0.0.1:8080" spellcheck="false" autocomplete="off">
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:4px;">
+        <button id="tf-scan-btn" class="btn-primary" style="flex:1;">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+            <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          Fingerprint
+        </button>
+        <button id="tf-stop-btn" class="btn-secondary" disabled>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+            <rect x="4" y="4" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.4"/>
+          </svg>
+          Stop
+        </button>
+      </div>
+      <button id="tf-load-db-btn" class="btn-load-db">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M8 2v8M5 7l3 3 3-3M3 12.5h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Load From Database
+      </button>
+      <div class="tls-action-info" id="tf-scan-info" style="margin-top:8px;font-size:10px;color:var(--text-dim);font-family:var(--mono);">No scan data — enter a target and click Fingerprint</div>
+    </div>
+  </div>
+
+  <!-- Scan Results Output -->
+  <div style="margin-top:0;margin-bottom:16px;">
+    <div class="output-title">Scan Results</div>
+    <div class="output-wrap" id="tf-output-wrap" style="min-height:90px;">
+      <span class="output-placeholder">// Fingerprint output will appear here when scan is running...</span>
+    </div>
+  </div>
+
+  <!-- SUMMARY BAR -->
+  <div class="tf-summary" id="tf-summary" style="display:none;">
+    <div class="tf-summary-item">
+      <span class="tf-summary-label">Technologies Detected</span>
+      <span class="tf-summary-value" id="tf-total-techs">0</span>
+    </div>
+    <div class="tf-summary-item">
+      <span class="tf-summary-label">Confidence Score</span>
+      <span class="tf-summary-value" id="tf-confidence">0%</span>
+    </div>
+    <div class="tf-summary-item">
+      <span class="tf-summary-label">Server OS</span>
+      <span class="tf-summary-value" id="tf-server-os">—</span>
+    </div>
+    <div class="tf-summary-item">
+      <span class="tf-summary-label">Backend Language</span>
+      <span class="tf-summary-value" id="tf-backend-lang">—</span>
+    </div>
+    <div class="tf-summary-item">
+      <span class="tf-summary-label">CMS Detected</span>
+      <span class="tf-summary-value" id="tf-cms">—</span>
+    </div>
+    <div class="tf-summary-item">
+      <span class="tf-summary-label">Favicon Hash</span>
+      <span class="tf-summary-value mono" id="tf-favicon-hash">—</span>
+    </div>
+  </div>
+
+  <!-- SEARCH & FILTER -->
+  <div class="tf-toolbar" id="tf-toolbar" style="display:none;">
+    <input type="text" class="tf-input tf-filter-input" id="tf-filter" placeholder="Filter technologies…">
+    <select class="tf-select" id="tf-category-filter">
+      <option value="all">All Categories</option>
+      <option value="web-framework">Web Frameworks</option>
+      <option value="security-header">Security Headers</option>
+      <option value="frontend-library">Frontend Libraries</option>
+      <option value="cms">CMS</option>
+      <option value="web-server">Web Servers</option>
+      <option value="cdn">CDN</option>
+      <option value="security-misc">Security &amp; Misc</option>
+      <option value="waf">WAF</option>
+      <option value="retire-js">Retire.js</option>
+      <option value="vuln">JS Vulnerabilities</option>
+      <option value="favicon">Favicon Hash</option>
+      <option value="backend-lang">Backend Languages</option>
+      <option value="os">OS Fingerprint</option>
+    </select>
+  </div>
+
+  <!-- SUB-TAB NAV BAR — removed -->
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL 1: Web Frameworks                     -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" style="display:block !important;" id="tf-sub-frameworks">
+    <div class="tf-category" data-category="web-framework" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">Web Framework Detection</span>
+        <span class="tf-badge dim" id="tf-badge-web-framework">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-web-framework">
+          <thead><tr><th>Framework</th><th>Version</th><th>Confidence</th><th>Evidence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL: Security Headers                     -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-security-headers">
+    <div class="tf-category" data-category="security-header" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2L3 4.5v4c0 3 2.5 5 5 5.5 2.5-.5 5-2.5 5-5.5v-4L8 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">Security Headers</span>
+        <span class="tf-badge dim" id="tf-badge-security-header">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-security-header">
+          <thead><tr><th>Header</th><th>HTTP Header</th><th>Value</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL 2: Frontend Libraries                 -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-frontend">
+    <div class="tf-category" data-category="frontend-library" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4l-2 4 2 4M12 4l2 4-2 4M8 2l-2 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">Frontend Library Fingerprinting</span>
+        <span class="tf-badge dim" id="tf-badge-frontend-library">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-frontend-library">
+          <thead><tr><th>Library</th><th>Version</th><th>Confidence</th><th>Evidence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL 3: CMS                                -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-cms">
+    <div class="tf-category" data-category="cms" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 5h6M5 8h4M5 11h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">CMS Identification</span>
+        <span class="tf-badge dim" id="tf-badge-cms">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-cms">
+          <thead><tr><th>CMS</th><th>Version</th><th>Confidence</th><th>Evidence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL: Web Servers & Reverse Proxies        -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-webserver">
+    <div class="tf-category" data-category="web-server" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="4" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="2" y="9" width="12" height="4" rx="1" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="5" r="0.9" fill="currentColor"/><circle cx="12" cy="11" r="0.9" fill="currentColor"/></svg>
+        </div>
+        <span class="dns-section-title">Web Servers &amp; Reverse Proxies</span>
+        <span class="tf-badge dim" id="tf-badge-web-server">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-web-server">
+          <thead><tr><th>Name</th><th>Version</th><th>Confidence</th><th>Evidence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL: CDN Detection                        -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-cdn">
+    <div class="tf-category" data-category="cdn" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 10a3 3 0 01.5-5.9A4 4 0 0113 6a2.5 2.5 0 010 5H3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">CDN Detection</span>
+        <span class="tf-badge dim" id="tf-badge-cdn">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-cdn">
+          <thead><tr><th>Name</th><th>Version</th><th>Confidence</th><th>Evidence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL: Security & Miscellaneous             -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-security-misc">
+    <div class="tf-category" data-category="security-misc" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">Security &amp; Miscellaneous</span>
+        <span class="tf-badge dim" id="tf-badge-security-misc">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-security-misc">
+          <thead><tr><th>Name</th><th>Version</th><th>Confidence</th><th>Evidence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL: WAF Detection                        -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-waf">
+    <div class="tf-category" data-category="waf" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2L3 4.5v4c0 3 2.5 5 5 5.5 2.5-.5 5-2.5 5-5.5v-4L8 2z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">WAF Detection</span>
+        <span class="tf-badge dim" id="tf-badge-waf">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-waf">
+          <thead><tr><th>WAF Name</th><th>Type</th><th>Confidence</th><th>Evidence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL: RetireJS                             -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-retire">
+    <div class="tf-category" data-category="retire-js" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4l-2 4 2 4M12 4l2 4-2 4M8 2l-2 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">Retire.js — JS Libraries</span>
+        <span class="tf-badge dim" id="tf-badge-retire-js">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-retire-js">
+          <thead><tr><th>Library</th><th>Version</th><th>Vulnerable</th><th>Script URL</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL: JS Vulnerabilities                   -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-vuln">
+    <div class="tf-category" data-category="vuln" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2l1 5H7l1-5zM8 10v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="13" r=".7" fill="currentColor"/></svg>
+        </div>
+        <span class="dns-section-title">JS Vulnerabilities</span>
+        <span class="tf-badge dim" id="tf-badge-vuln">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-vuln">
+          <thead><tr><th>Library</th><th>Version</th><th>Severity</th><th>Summary</th><th>CVE</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL 8: Favicon                            -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-favicon">
+    <div class="tf-category" data-category="favicon" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">Favicon Hash Matching</span>
+        <span class="tf-badge dim" id="tf-badge-favicon">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <div class="tf-favicon-display" id="tf-favicon-display" style="padding:12px 14px;display:flex;gap:14px;align-items:center;">
+          <div class="tf-favicon-preview">
+            <img id="tf-favicon-img" src="" alt="favicon" style="display:none;width:32px;height:32px;">
+            <div class="tf-favicon-placeholder" id="tf-favicon-placeholder" style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--bg-input);border:1px solid var(--border);border-radius:4px;font-size:16px;">?</div>
+          </div>
+          <div class="tf-favicon-info" style="font-size:11px;display:flex;flex-direction:column;gap:4px;">
+            <div><strong>Hash (mmh3):</strong> <code id="tf-favicon-hash-display">—</code></div>
+            <div><strong>Matched To:</strong> <span id="tf-favicon-match">—</span></div>
+            <div><strong>Shodan Link:</strong> <a id="tf-favicon-shodan" href="#" target="_blank" style="display:none;">Search Shodan</a></div>
+          </div>
+        </div>
+        <table class="tf-table" id="tf-table-favicon">
+          <thead><tr><th>Technology</th><th>Hash</th><th>Confidence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════ -->
+  <!-- SUB-PANEL 10: Backend / OS                      -->
+  <!-- ════════════════════════════════════════════════ -->
+  <div class="tls-sub-panel" style="display:block !important;" id="tf-sub-backend">
+
+    <div class="tf-category" data-category="backend-lang" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 7l2 2-2 2M9 11h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="dns-section-title">Backend Language Detection</span>
+        <span class="tf-badge dim" id="tf-badge-backend-lang">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-backend-lang">
+          <thead><tr><th>Language</th><th>Version</th><th>Confidence</th><th>Evidence</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tf-category" data-category="os" style="margin-top:10px;">
+      <div class="dns-section-head toggle-header" onclick="TechFingerprint.toggleCategory(this)">
+        <div class="dns-section-icon">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5 14h6M8 12v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <span class="dns-section-title">OS Fingerprinting via Server Banners</span>
+        <span class="tf-badge dim" id="tf-badge-os">0</span>
+        <svg class="dns-section-chevron" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="tf-category-body">
+        <table class="tf-table" id="tf-table-os">
+          <thead><tr><th>Banner Source</th><th>OS Detected</th><th>Confidence</th><th>Raw Banner</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /tf-sub-backend -->
+
+</div><!-- /tf-module -->

@@ -1,0 +1,24 @@
+1	Records	                          google.com, cloudflare.com
+2	DNSSEC	                          dnssec-tools.org, isc.org
+3	NSEC Walking	                  ietf.org, verisigninc.com (NSEC3)
+4	AXFR	                          zonetransfer.me (icazə verir), nsztm1.digi.ninja
+5	IXFR	                          zonetransfer.me
+6	ANY	                              google.com (RFC8482), zonetransfer.me (açıq)
+7	Dangling DNS	                  dangling.bugbounty.cloud (test üçün)
+8	TTL Anomaly	                      fast-flux.feodotracker.abuse.ch
+9	SOA rekon	                      zonetransfer.me, google.com
+10	NS delegation takeover	          nsztm1.digi.ninja
+11	SRV dangling	                  gmail.com (_imap._tcp, _smtp._tcp)
+12	Wildcard CNAME	                  *.elasticbeanstalk.com
+13	PTR leakage	                      shodan.io, censys.io
+14	DNSKEY algorithm	              dnssec-tools.org (ED25519), verisigninc.com (ECDSA)
+15	DS/DNSKEY	                      isc.org, iana.org
+16	RRSIG expiry	                  dnssec-tools.org
+17	TLSA/DANE	                      dane.sys4.de, _443._tcp.fedoraproject.org
+18	SSHFP	                          lacnic.net, bind9.net
+19	CAA records	                      letsencrypt.org, digicert.com
+20	NAPTR/VoIP	                      e164.org, freeswitch.org
+21	HINFO exposure	                  zonetransfer.me
+22	RP record	                      zonetransfer.me
+23	Reverse DNS	                      8.8.8.8, 1.1.1.1, 208.67.222.222
+24	NSEC3 opt-out	                  com. (opt-out aktiv), net.
