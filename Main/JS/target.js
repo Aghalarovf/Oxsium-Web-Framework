@@ -166,11 +166,115 @@ const Target = (() => {
                 UI.setConnBadge('error');
             }
 
-        } catch {
-            UI.toast('Backend unreachable', 'error');
-            UI.setConnBadge('error');
-        }
-    }
+                } catch {
+                    UI.toast('Backend unreachable', 'error');
+                    UI.setConnBadge('error');
+                }
+            }
+
+            function _setInput(id, value) {
+                const el = document.getElementById(id);
+                if (!el) return;
+                el.value = value;
+                el.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+
+            function _prepareAllScanInputs() {
+                readForm();
+                const domain = State.target.domain;
+                const url = State.target.url || _buildUrl(domain);
+                const intercept = State.target.intercept || '';
+                [
+                    'dns-input-domain', 'sub-input-domain', 'whois-input-domain',
+                    'tls-input-domain', 'social-input-domain', 'hdr-input-domain',
+                    'ei-target', 'proxy-domain'
+                ].forEach(id => _setInput(id, domain));
+                _setInput('wb-input-url', url);
+                _setInput('tf-target', url);
+                ['hdr-input-intercept', 'social-input-intercept', 'input-intercept']
+                    .forEach(id => _setInput(id, intercept));
+
+                document.querySelectorAll('.dns-thread-btn').forEach(btn => {
+                    const group = btn.closest('.dns-threads-group');
+                    if (!group) return;
+                    const supportedGroups = ['target-threads-group', 'dns-threads-group', 'sub-threads-group',
+                        'tls-threads-group', 'ei-threads-group', 'wb-workers-group'];
+                    if (supportedGroups.includes(group.id)) {
+                        btn.classList.toggle('dns-thread-btn-active', btn.dataset.val === String(State.target.threads || 3));
+                    }
+                });
+            }
+
+            function _waitForScanPanels() {
+                const requiredIds = [
+                    'dns-input-domain', 'sub-input-domain', 'whois-input-domain',
+                    'tls-input-domain', 'wb-input-url', 'social-input-domain',
+                    'hdr-input-domain', 'tf-target', 'ei-target'
+                ];
+                return new Promise(resolve => {
+                    const startedAt = Date.now();
+                    const check = () => {
+                        const ready = requiredIds.every(id => document.getElementById(id));
+                        if (ready || Date.now() - startedAt >= 8000) {
+                            resolve();
+                            return;
+                        }
+                        setTimeout(check, 50);
+                    };
+                    check();
+                });
+            }
+
+            async function startAllScans() {
+                if (!validate()) return;
+                await _waitForScanPanels();
+                _prepareAllScanInputs();
+                await syncBackend();
+                const scans = [
+                    ['DNS Enumeration', typeof DnsEnum !== 'undefined' && DnsEnum.startScan],
+                    ['Subdomains', typeof SubdomainScanController !== 'undefined' && SubdomainScanController.startScan],
+                    ['WHOIS / IP', typeof WhoisScanController !== 'undefined' && WhoisScanController.startScan],
+                    ['TLS', typeof TLS !== 'undefined' && TLS.startScan],
+                    ['Wayback / Archive', typeof WaybackModule !== 'undefined' && WaybackModule.startScan],
+                    ['Social & Metadata', typeof Social !== 'undefined' && Social.startScan],
+                    ['HTTP Headers', typeof HeaderScan !== 'undefined' && HeaderScan.startScan],
+                    ['Technology Fingerprint', typeof TechFingerprint !== 'undefined' && TechFingerprint.scan],
+                    ['Email Infrastructure', typeof EmailInfra !== 'undefined' && EmailInfra.startScan]
+                ].filter(([, scan]) => typeof scan === 'function');
+                if (!scans.length) {
+                    UI.toast('No scan modules are available', 'error');
+                    return;
+                }
+                State.scan.running = true;
+                State.scan.module = 'all';
+                UI.toast(`Starting ${scans.length} scan modules`, 'info');
+                await Promise.allSettled(scans.map(async ([name, scan]) => {
+                    try {
+                        await scan();
+                    } catch (error) {
+                        console.error(`[Target] ${name} scan failed`, error);
+                        UI.toast(`${name} scan failed: ${error.message}`, 'error');
+                    }
+                }));
+                State.scan.running = false;
+                State.scan.module = null;
+            }
+
+            function stopAllScans() {
+                [
+                    typeof DnsEnum !== 'undefined' && DnsEnum.stopScan,
+                    typeof SubdomainScanController !== 'undefined' && SubdomainScanController.stopScan,
+                    typeof WhoisScanController !== 'undefined' && WhoisScanController.stopScan,
+                    typeof TLS !== 'undefined' && TLS.stopScan,
+                    typeof WaybackModule !== 'undefined' && WaybackModule.stopScan,
+                    typeof Social !== 'undefined' && Social.stopScan,
+                    typeof HeaderScan !== 'undefined' && HeaderScan.stopScan,
+                    typeof TechFingerprint !== 'undefined' && TechFingerprint.stopScan,
+                    typeof EmailInfra !== 'undefined' && EmailInfra.stopScan
+                ].filter(fn => typeof fn === 'function').forEach(fn => fn());
+                State.scan.running = false;
+                State.scan.module = null;
+            }
 
     function reset() {
         const domainEl = fields.domain();
@@ -241,5 +345,8 @@ const Target = (() => {
         initListeners();
     }
 
-    return { init, readForm, writeForm, validate, save, load, reset, syncRightPanel, syncBackend };
+    return {
+        init, readForm, writeForm, validate, save, load, reset,
+        syncRightPanel, syncBackend, startAllScans, stopAllScans
+    };
 })();

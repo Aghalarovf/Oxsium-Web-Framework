@@ -291,10 +291,10 @@
       if (tsStartBtn) {
         tsStartBtn.addEventListener('click', async () => {
           try { await fetch(`${State.api.base}/api/reset`, { method: 'POST' }); } catch (_) {}
-          SubdomainScanController.startScan();
+          Target.startAllScans();
         });
       }
-      if (tsStopBtn) tsStopBtn.addEventListener('click', () => SubdomainScanController.stopScan());
+      if (tsStopBtn) tsStopBtn.addEventListener('click', () => Target.stopAllScans());
     },
     'panel-dns-enum':   () => DnsEnum.init(),
     'panel-subdomains': () => { Subdomains.init(); SubdomainScanController.init(); },
