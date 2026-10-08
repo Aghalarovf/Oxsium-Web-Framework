@@ -321,7 +321,7 @@ const Target = (() => {
             const file = event.target.files?.[0];
             const input = fields.intercept();
             if (!file || !input) return;
-            input.value = file.name;
+            input.value = file.path || file.name;
             readForm();
             save();
         });
