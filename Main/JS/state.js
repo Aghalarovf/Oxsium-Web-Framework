@@ -22,6 +22,16 @@ const State = {
         proxy:    '',
         threads:  3,
         intercept:'',
+        options: {
+            takeover: false,
+            checkLive: false,
+            resolve: false,
+            wildcardFilter: false,
+            dnsSecurity: true,
+            serviceScanner: true,
+            exchange: true,
+            ntlm: false,
+        },
         protocol: 'http-https',  // 'http-https' | 'ws-wss'
         mode:     'single',      // 'single' | 'bulk' | 'file'
     },

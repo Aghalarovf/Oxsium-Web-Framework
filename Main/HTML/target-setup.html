@@ -31,6 +31,49 @@
         <button type="button" class="dns-thread-btn" data-val="4">4</button>
         <button type="button" class="dns-thread-btn" data-val="5">5</button>
       </div>
+      <label class="form-label" style="margin-top:12px;">Options</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 10px;padding-top:2px;">
+        <label class="check-toggle">
+          <input type="checkbox" id="target-opt-takeover">
+          <span class="check-box"></span>
+          <span class="check-label">Check subdomain takeover</span>
+        </label>
+        <label class="check-toggle">
+          <input type="checkbox" id="target-opt-check-live">
+          <span class="check-box"></span>
+          <span class="check-label">Check Live (HTTP probe)</span>
+        </label>
+        <label class="check-toggle">
+          <input type="checkbox" id="target-opt-resolve">
+          <span class="check-box"></span>
+          <span class="check-label">Resolve DNS</span>
+        </label>
+        <label class="check-toggle">
+          <input type="checkbox" id="target-opt-wildcard-filter">
+          <span class="check-box"></span>
+          <span class="check-label">Wildcard Filter</span>
+        </label>
+        <label class="check-toggle">
+          <input type="checkbox" id="target-opt-dns-security" checked>
+          <span class="check-box"></span>
+          <span class="check-label">Mail DNS Security</span>
+        </label>
+        <label class="check-toggle">
+          <input type="checkbox" id="target-opt-service-scanner" checked>
+          <span class="check-box"></span>
+          <span class="check-label">Service Scanner</span>
+        </label>
+        <label class="check-toggle">
+          <input type="checkbox" id="target-opt-exchange" checked>
+          <span class="check-box"></span>
+          <span class="check-label">Exchange Endpoints</span>
+        </label>
+        <label class="check-toggle">
+          <input type="checkbox" id="target-opt-ntlm">
+          <span class="check-box"></span>
+          <span class="check-label">NTLM Reconnaissance</span>
+        </label>
+      </div>
     </div>
     <div class="form-group">
       <label class="form-label">Intercept Logs <span style="opacity:.45;font-weight:400;">.json / .jsonl</span></label>

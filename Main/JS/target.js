@@ -14,6 +14,16 @@ const Target = (() => {
         threads:  () => document.querySelector('#target-threads-group .dns-thread-btn-active'),
         intercept:() => document.getElementById('input-intercept'),
     };
+    const optionFields = {
+        takeover: 'target-opt-takeover',
+        checkLive: 'target-opt-check-live',
+        resolve: 'target-opt-resolve',
+        wildcardFilter: 'target-opt-wildcard-filter',
+        dnsSecurity: 'target-opt-dns-security',
+        serviceScanner: 'target-opt-service-scanner',
+        exchange: 'target-opt-exchange',
+        ntlm: 'target-opt-ntlm',
+    };
 
     /* ── URL-dən domain çıxar ──────────────────────────────── */
     function _extractDomain(url) {
@@ -40,6 +50,11 @@ const Target = (() => {
                 ? parseInt(el.dataset.val || '3', 10)
                 : el.value.trim();
         });
+        State.target.options = State.target.options || {};
+        Object.entries(optionFields).forEach(([key, id]) => {
+            const el = document.getElementById(id);
+            if (el) State.target.options[key] = el.checked;
+        });
     }
 
     /* ── State-dən forma yaz ───────────────────────────────── */
@@ -50,6 +65,12 @@ const Target = (() => {
                 if (key === 'threads') {
                     document.querySelectorAll('#target-threads-group .dns-thread-btn').forEach(btn => {
                         btn.classList.toggle('dns-thread-btn-active', btn.dataset.val === String(State.target[key]));
+                    });
+                    Object.entries(optionFields).forEach(([key, id]) => {
+                        const el = document.getElementById(id);
+                        if (el && State.target.options && typeof State.target.options[key] === 'boolean') {
+                            el.checked = State.target.options[key];
+                        }
                     });
                 } else {
                     el.value = State.target[key];
@@ -193,11 +214,26 @@ const Target = (() => {
                 _setInput('tf-target', url);
                 ['hdr-input-intercept', 'social-input-intercept', 'input-intercept']
                     .forEach(id => _setInput(id, intercept));
+                const optionMap = {
+                    'target-opt-takeover': 'sub-opt-takeover',
+                    'target-opt-check-live': 'sub-opt-check-live',
+                    'target-opt-resolve': 'sub-opt-resolve',
+                    'target-opt-wildcard-filter': 'sub-opt-wildcard-filter',
+                    'target-opt-dns-security': 'ei-opt-dns-security',
+                    'target-opt-service-scanner': 'ei-opt-service-scanner',
+                    'target-opt-exchange': 'ei-opt-exchange',
+                    'target-opt-ntlm': 'ei-opt-ntlm',
+                };
+                Object.entries(optionMap).forEach(([sourceId, targetId]) => {
+                    const source = document.getElementById(sourceId);
+                    const target = document.getElementById(targetId);
+                    if (source && target) target.checked = source.checked;
+                });
 
                 document.querySelectorAll('.dns-thread-btn').forEach(btn => {
                     const group = btn.closest('.dns-threads-group');
                     if (!group) return;
-                    const supportedGroups = ['target-threads-group', 'dns-threads-group', 'sub-threads-group',
+                    const supportedGroups = ['target-threads-group', 'dns-threads-group', 'sub-workers-group',
                         'tls-threads-group', 'ei-threads-group', 'wb-workers-group'];
                     if (supportedGroups.includes(group.id)) {
                         btn.classList.toggle('dns-thread-btn-active', btn.dataset.val === String(State.target.threads || 3));
@@ -284,10 +320,26 @@ const Target = (() => {
         document.querySelectorAll('#target-threads-group .dns-thread-btn').forEach(btn => {
             btn.classList.toggle('dns-thread-btn-active', btn.dataset.val === '3');
         });
+        Object.values(optionFields).forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('change', () => { readForm(); save(); });
+        });
         State.target.domain = '';
         State.target.url = '';
         State.target.threads = 3;
         State.target.intercept = '';
+        [
+            'target-opt-takeover', 'target-opt-check-live', 'target-opt-resolve',
+            'target-opt-wildcard-filter', 'target-opt-ntlm'
+        ].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.checked = false;
+        });
+        ['target-opt-dns-security', 'target-opt-service-scanner', 'target-opt-exchange']
+            .forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.checked = true;
+            });
         save();
         syncRightPanel();
         UI.toast('Target settings reset', 'info');
