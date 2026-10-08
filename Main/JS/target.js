@@ -239,7 +239,7 @@ const Target = (() => {
                     ['Social & Metadata', typeof Social !== 'undefined' && Social.startScan],
                     ['HTTP Headers', typeof HeaderScan !== 'undefined' && HeaderScan.startScan],
                     ['Technology Fingerprint', typeof TechFingerprint !== 'undefined' && TechFingerprint.scan],
-                    ['Email Infrastructure', typeof EmailInfra !== 'undefined' && EmailInfra.startScan]
+                    ['Email Infrastructure', typeof EmailInfra !== 'undefined' && EmailInfra.scan]
                 ].filter(([, scan]) => typeof scan === 'function');
                 if (!scans.length) {
                     UI.toast('No scan modules are available', 'error');
