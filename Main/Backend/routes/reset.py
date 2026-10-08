@@ -1,31 +1,18 @@
 import os
+import shutil
 
 from app import app, limiter
 from config import logger, RESULTS_DIR
 from helpers import _ok, _err
 
-_FRAMEWORK_RESULT_FILES = frozenset({
-    "dns_enum.json",
-    "email_infra.json",
-    "headers.json",
-    "js_files.json",
-    "scan_results.db",
-    "scan_results.db-shm",
-    "scan_results.db-wal",
-    "social_metadata_results.json",
-    "subdomains_enum.json",
-    "tech_fingerprint.json",
-    "tls_certs.json",
-    "wayback_archive.json",
-    "whois_results.json",
-})
+_PRESERVED_FILES = frozenset({"burp_traffic.json"})
 
 
 @app.route("/api/reset", methods=["POST"])
 @limiter.limit("30 per minute")
 def reset_scan_results():
     """
-    Clears framework-generated scan results while preserving user files.
+    Clears Scan-Results while preserving the hardcoded Burp traffic file.
     """
     if not os.path.isdir(RESULTS_DIR):
         logger.info("[RESET] Scan-Results directory does not exist, skipping.")
@@ -35,11 +22,13 @@ def reset_scan_results():
     errors  = []
 
     for entry in os.scandir(RESULTS_DIR):
-        if entry.name not in _FRAMEWORK_RESULT_FILES:
+        if entry.name in _PRESERVED_FILES:
             continue
         try:
-            if entry.is_file(follow_symlinks=False):
+            if entry.is_file(follow_symlinks=False) or entry.is_symlink():
                 os.remove(entry.path)
+            elif entry.is_dir(follow_symlinks=False):
+                shutil.rmtree(entry.path)
             removed += 1
         except Exception as exc:
             msg = f"{entry.name}: {exc}"
