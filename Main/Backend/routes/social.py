@@ -46,7 +46,11 @@ def _resolve_intercept(data: dict, job_id: str):
     if os.path.isabs(raw):
         candidates = [raw]
     else:
-        candidates = [os.path.abspath(raw), os.path.join(os.path.dirname(SOCIAL_SCRIPT), raw)]
+        candidates = [
+            os.path.abspath(raw),
+            os.path.join(RESULTS_DIR, raw),
+            os.path.join(os.path.dirname(SOCIAL_SCRIPT), raw),
+        ]
 
     for candidate in candidates:
         if os.path.isfile(candidate):
