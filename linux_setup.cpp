@@ -863,6 +863,7 @@ class MainWindow(QMainWindow):
             self._mgr.register_service(ctrl, panel)
             self._stack.addWidget(panel)
 
+        # Web Viewer — always last (sidebar index = len(SERVICE_DEFS))
         web_ctrl  = WebController(DEFAULT_PORTS["http"])
         web_panel = WebPanel(web_ctrl)
         self._mgr.register_web(web_ctrl, web_panel)
@@ -898,35 +899,17 @@ def main():
     sys.exit(app.exec())
 
 if __name__ == "__main__":
-    main()
-)===";
+    main())===";
 }
 
 static bool create_start_py(const fs::path& root) {
     fs::path dest = root / "start.py";
 
-    // Read the real start.py sitting next to this binary if it exists,
-    // otherwise fall back to the embedded template above.
-    fs::path src = fs::current_path() / "start.py";
-    if (fs::exists(src) && src != dest) {
-        std::ifstream in(src, std::ios::binary);
-        if (in) {
-            std::string content((std::istreambuf_iterator<char>(in)),
-                                 std::istreambuf_iterator<char>());
-            if (write_file(dest, content)) {
-                ok("start.py copied from: " + src.string());
-                bullet(ansi::PATH_CLR() + dest.string() + ansi::RST());
-                return true;
-            }
-        }
-    }
-
-    // Embedded fallback
     if (!write_file(dest, start_py_content())) {
         err("Failed to write start.py.");
         return false;
     }
-    ok("start.py created.");
+    ok("start.py written from the embedded service manager.");
     bullet(ansi::PATH_CLR() + dest.string() + ansi::RST());
     return true;
 }
