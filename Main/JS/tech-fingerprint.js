@@ -716,6 +716,57 @@ const TechFingerprint = (() => {
         _toast('Tech fingerprint scan stopped', 'warn');
     }
 
+    function resetScan() {
+        if (_scanning) stopScan();
+
+        const target = $('tf-target');
+        const proxy = $('tf-proxy');
+        if (target) target.value = '';
+        if (proxy) proxy.value = '';
+
+        _currentJob = null;
+        _clearOutput();
+        _setBtnState(false);
+
+        const summary = $('tf-summary');
+        const toolbar = $('tf-toolbar');
+        if (summary) summary.style.display = 'none';
+        if (toolbar) toolbar.style.display = 'none';
+
+        const info = $('tf-scan-info');
+        if (info) info.textContent = 'No scan data — enter a target and click Fingerprint';
+
+        document.querySelectorAll('#panel-tech-fingerprint .tf-badge').forEach(badge => {
+            badge.textContent = '0';
+        });
+        document.querySelectorAll('#panel-tech-fingerprint .tf-table tbody').forEach(tbody => {
+            const columns = tbody.closest('table')?.querySelectorAll('thead th').length || 1;
+            tbody.innerHTML = `<tr class="tf-empty-row"><td colspan="${columns}">No technologies detected in this category</td></tr>`;
+        });
+
+        const filter = $('tf-filter');
+        const category = $('tf-category-filter');
+        if (filter) filter.value = '';
+        if (category) category.value = 'all';
+
+        const favicon = $('tf-favicon-img');
+        const faviconPlaceholder = $('tf-favicon-placeholder');
+        const faviconHash = $('tf-favicon-hash-display');
+        const faviconMatch = $('tf-favicon-match');
+        const faviconShodan = $('tf-favicon-shodan');
+        if (favicon) {
+            favicon.src = '';
+            favicon.style.display = 'none';
+        }
+        if (faviconPlaceholder) faviconPlaceholder.style.display = 'flex';
+        if (faviconHash) faviconHash.textContent = '—';
+        if (faviconMatch) faviconMatch.textContent = '—';
+        if (faviconShodan) faviconShodan.style.display = 'none';
+
+        _openDefaultView();
+        _toast('Technology fingerprint results cleared', 'info');
+    }
+
     /* ── Output helpers ─────────────────────────────────────── */
     function _outputEl() { return document.querySelector('#panel-tech-fingerprint .output-wrap') || $('tf-output'); }
 
@@ -1233,6 +1284,8 @@ const TechFingerprint = (() => {
         if (scanBtn) scanBtn.addEventListener('click', () => scan());
         const stopBtn = $('tf-stop-btn');
         if (stopBtn) stopBtn.addEventListener('click', stopScan);
+        const resetBtn = $('tf-reset-btn');
+        if (resetBtn) resetBtn.addEventListener('click', resetScan);
 
         if (loadDbBtn) loadDbBtn.addEventListener('click', async () => {
             loadDbBtn.disabled = true;
@@ -1291,7 +1344,7 @@ const TechFingerprint = (() => {
         if (chevron) chevron.style.transform = isVisible ? 'rotate(-90deg)' : '';
     }
 
-    return { init, scan, stopScan, toggleCategory, loadFromDatabase: _fetchAndRenderFromDB };
+    return { init, scan, stopScan, resetScan, toggleCategory, loadFromDatabase: _fetchAndRenderFromDB };
 })();
 
 // DOM hazır olana qədər gözlə — panel dinamik inject olunduqdan sonra init çağır
