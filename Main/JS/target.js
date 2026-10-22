@@ -12,6 +12,7 @@ const Target = (() => {
         domain:   () => document.getElementById('input-domain'),
         url:      () => null,
         threads:  () => document.querySelector('#target-threads-group .dns-thread-btn-active'),
+        nameserver:() => document.getElementById('input-nameserver'),
         intercept:() => document.getElementById('input-intercept'),
     };
     const optionFields = {
@@ -315,8 +316,10 @@ const Target = (() => {
     function reset() {
         const domainEl = fields.domain();
         const interceptEl = fields.intercept();
+        const nameserverEl = fields.nameserver();
         if (domainEl) domainEl.value = '';
         if (interceptEl) interceptEl.value = '';
+        if (nameserverEl) nameserverEl.value = '';
         document.querySelectorAll('#target-threads-group .dns-thread-btn').forEach(btn => {
             btn.classList.toggle('dns-thread-btn-active', btn.dataset.val === '3');
         });
@@ -380,7 +383,7 @@ const Target = (() => {
         const resetBtn = document.getElementById('ts-reset-btn');
         if (resetBtn) resetBtn.addEventListener('click', reset);
 
-        const otherKeys = ['intercept'];
+        const otherKeys = ['intercept', 'nameserver'];
         otherKeys.forEach(key => {
             const el = fields[key]();
             if (!el) return;

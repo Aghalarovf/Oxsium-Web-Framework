@@ -1,0 +1,5433 @@
+{
+  "@sulu/web": {
+    "category": "frontend",
+    "website": "https://sulu.io",
+    "headers": [
+      {
+        "name": "x-generator",
+        "pattern": "Sulu",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^sulu(_|-)?(redirect|locale|session)$",
+        "confidence": 70
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "Sulu",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "@sulu/web|sulu(-|_)?(admin|website|content)|/bundles/sulu|sulu\\.io",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/bundles/sulu[a-z]*/|data-sulu-|class=\"[^\"]*\\bsulu-|Sulu\\.|sulu-content",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "sulu",
+        "confidence": 25
+      }
+    ]
+  },
+  "_hyperscript": {
+    "category": "frontend",
+    "website": "https://hyperscript.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "_hyperscript(\\.min)?\\.js|unpkg\\.com/hyperscript\\.org|hyperscript\\.org(@[0-9.]+)?/dist",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "<[^>]+\\s_=\"[^\"]*\\b(on\\s+(click|load|change|submit|intersection)|init\\s|set\\s|add\\s|toggle\\s|send\\s|wait\\s)[^\"]*\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "<[^>]+\\sscript=\"[^\"]*\\bon\\s+(click|load|change|submit)[^\"]*\"",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "_hyperscript\\.(browserInit|define|config)|hyperscript\\.org",
+        "confidence": 85
+      }
+    ]
+  },
+  "AMP": {
+    "category": "frontend",
+    "website": "https://amp.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<html[^>]+(amp|⚡)(\\s|>)",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "cdn\\.ampproject\\.org/v0(\\.js|/)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "<script[^>]+src=\"https://cdn\\.ampproject\\.org/v0\\.js\"",
+        "confidence": 90
+      }
+    ]
+  },
+  "AOS": {
+    "category": "frontend",
+    "website": "https://michalsnik.github.io/aos/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "aos(\\.min)?\\.js|aos@[0-9.]+/dist",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "<[^>]+\\sdata-aos=\"[a-z\\-]+\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "aos\\.css|AOS\\.init\\(",
+        "confidence": 75
+      }
+    ]
+  },
+  "ARM JS": {
+    "category": "frontend",
+    "website": "https://github.com/petercollingridge/code-for-blog/tree/master/armjs",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "arm(\\.min)?\\.js|arm-js",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "armjs|arm-js",
+        "confidence": 45
+      }
+    ]
+  },
+  "Adobe Flash": {
+    "category": "frontend",
+    "website": "https://www.adobe.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "application/x-shockwave-flash|\\.swf[\"'?]",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "<object[^>]+classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\"",
+        "confidence": 95
+      }
+    ]
+  },
+  "AlertifyJS": {
+    "category": "frontend",
+    "website": "https://alertifyjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "alertify(\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\balertify(-[a-z]+)?\\b",
+        "confidence": 75
+      }
+    ]
+  },
+  "AlloyUI": {
+    "category": "frontend",
+    "website": "https://alloyui.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "alloy(-min)?\\.js|aui(-min)?\\.js|alloyui",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\baui-[a-z\\-]+\\b",
+        "confidence": 55
+      }
+    ]
+  },
+  "Alpine.js": {
+    "category": "frontend",
+    "website": "https://alpinejs.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "alpinejs(@[0-9.]+)?(/dist)?(\\.min)?\\.js|cdn\\.jsdelivr\\.net/npm/alpinejs",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "<[^>]+\\sx-(data|init|show|bind|on|model|if|for|text|html|transition|cloak)([:.=\\s>]|\\.)",
+        "confidence": 70
+      }
+    ]
+  },
+  "Amaze UI": {
+    "category": "frontend",
+    "website": "https://amazeui.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "amazeui(\\.min)?\\.js|amazeui\\.org",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bam-[a-z\\-]+\\b",
+        "confidence": 45
+      }
+    ]
+  },
+  "Amplify JS": {
+    "category": "frontend",
+    "website": "https://aws-amplify.github.io/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "aws-amplify(\\.min)?\\.js|@aws-amplify/",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "aws-amplify|Amplify\\.configure\\(",
+        "confidence": 60
+      }
+    ]
+  },
+  "Angular": {
+    "category": "frontend",
+    "website": "https://angular.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<[a-z\\-]+[^>]+\\sng-version=\"[0-9.]+\"",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "<app-root(\\s|>)|_nghost-|_ngcontent-",
+        "confidence": 80
+      },
+      {
+        "type": "script",
+        "pattern": "main(\\.[a-f0-9]{8,20})?\\.js.*runtime(\\.[a-f0-9]{8,20})?\\.js|polyfills(\\.[a-f0-9]{8,20})?\\.js",
+        "confidence": 35
+      }
+    ]
+  },
+  "Angular Gridster": {
+    "category": "frontend",
+    "website": "https://github.com/sdorra/angular-gridster",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "angular-gridster(\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bgridster\\b",
+        "confidence": 55
+      }
+    ]
+  },
+  "Angular Notitia": {
+    "category": "frontend",
+    "website": "https://github.com/notitia",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "angular-notitia|notitia(\\.min)?\\.js",
+        "confidence": 75
+      }
+    ]
+  },
+  "AngularDart": {
+    "category": "frontend",
+    "website": "https://angulardart.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "main\\.dart\\.js|packages/angular/",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "ng-binding|ng-app.*dart",
+        "confidence": 40
+      }
+    ]
+  },
+  "AngularJS": {
+    "category": "frontend",
+    "website": "https://angularjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<[a-z\\-]+[^>]+\\sng-app(=\"[a-zA-Z0-9_]*\")?[\\s>]",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "angular(\\.min)?\\.js|angular-([a-z\\-]+)(\\.min)?\\.js",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "ng-binding|ng-scope|\\{\\{[a-zA-Z_][a-zA-Z0-9_.]*\\}\\}",
+        "confidence": 30
+      }
+    ]
+  },
+  "AnythingSlider": {
+    "category": "frontend",
+    "website": "https://css-tricks.com/anythingslider-jquery-plugin/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.anythingslider(\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\banythingSlider\\b",
+        "confidence": 85
+      }
+    ]
+  },
+  "Apollo": {
+    "category": "frontend",
+    "website": "https://www.apollographql.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "apollo-client(\\.min)?\\.js|@apollo/client",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "window\\.__APOLLO_STATE__|__APOLLO_CLIENT__",
+        "confidence": 90
+      }
+    ]
+  },
+  "Arwes": {
+    "category": "frontend",
+    "website": "https://arwes.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "arwes(\\.min)?\\.js|@arwes/",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\barwes-",
+        "confidence": 70
+      }
+    ]
+  },
+  "Astro": {
+    "category": "frontend",
+    "website": "https://astro.build",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Astro",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "Astro",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "astro-island|<astro-island|data-astro-cid-",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "/_astro/[a-zA-Z0-9_\\-.]+\\.js",
+        "confidence": 70
+      }
+    ]
+  },
+  "Aurelia": {
+    "category": "frontend",
+    "website": "https://aurelia.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "aurelia-(bootstrapper|framework|app)(\\.min)?\\.js|aurelia\\.io",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "au-target-id=|aurelia-app",
+        "confidence": 85
+      }
+    ]
+  },
+  "Automatic.css": {
+    "category": "frontend",
+    "website": "https://automaticcss.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "automatic(\\.min)?\\.css|automaticcss",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bacss-",
+        "confidence": 60
+      }
+    ]
+  },
+  "Axios": {
+    "category": "frontend",
+    "website": "https://axios-http.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "axios(\\.min)?\\.js|axios@[0-9.]+/dist",
+        "confidence": 80
+      }
+    ]
+  },
+  "autoComplete.js": {
+    "category": "frontend",
+    "website": "https://tarekraafat.github.io/autoComplete.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "autoComplete(\\.min)?\\.js|@tarekraafat/autocomplete",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"autoComplete\"|class=\"[^\"]*\\bautoComplete_",
+        "confidence": 75
+      }
+    ]
+  },
+  "BEM": {
+    "category": "frontend",
+    "website": "https://en.bem.info",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\b__[a-z][a-z-]*\\b",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\b[a-z][a-z-]*--(mod|size|theme|view)[^\"]*\"",
+        "confidence": 40
+      }
+    ]
+  },
+  "Backbone.js": {
+    "category": "frontend",
+    "website": "https://backbonejs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:^|/)backbone(?:-min)?(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Backbone\\.js\\s+[\\d.]+",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Backbone\\.(Model|View|Router|Collection)\\b",
+        "confidence": 60
+      }
+    ]
+  },
+  "Backstretch": {
+    "category": "frontend",
+    "website": "https://github.com/jquery-backstretch/jquery-backstretch",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.backstretch(\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbackstretch\\b",
+        "confidence": 85
+      }
+    ]
+  },
+  "Barba.js": {
+    "category": "frontend",
+    "website": "https://barba.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "barba(\\.min)?\\.js|@barba/core",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "data-barba=\"(wrapper|container)\"|data-barba-namespace",
+        "confidence": 90
+      }
+    ]
+  },
+  "Batman.js": {
+    "category": "frontend",
+    "website": "http://batmanjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "batman(\\.min)?\\.js",
+        "confidence": 80
+      }
+    ]
+  },
+  "Blankshield": {
+    "category": "frontend",
+    "website": "https://github.com/danielstjules/blankshield",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "blankshield",
+        "confidence": 85
+      }
+    ]
+  },
+  "Blazor": {
+    "category": "frontend",
+    "website": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "_framework/blazor\\.(server|webassembly)\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "blazor-error-ui",
+        "confidence": 70
+      }
+    ]
+  },
+  "Boba.js": {
+    "category": "frontend",
+    "website": "https://boba.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boba(\\.min)?\\.js|boba\\.js\\.org",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "data-boba-|boba\\.js",
+        "confidence": 55
+      }
+    ]
+  },
+  "Bootbox.js": {
+    "category": "frontend",
+    "website": "https://bootboxjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bootbox(\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "bootbox\\.(alert|confirm|dialog|prompt)\\(",
+        "confidence": 85
+      }
+    ]
+  },
+  "Bootstrap Table": {
+    "category": "frontend",
+    "website": "https://bootstrap-table.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bootstrap-table(\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbootstrap-table\\b|data-toggle=\"table\"",
+        "confidence": 85
+      }
+    ]
+  },
+  "Browser-Update.org": {
+    "category": "frontend",
+    "website": "https://browser-update.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "browser-update\\.org/update(\\.min)?\\.js",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "\\$buoop|window\\.buoop",
+        "confidence": 85
+      }
+    ]
+  },
+  "basket.js": {
+    "category": "frontend",
+    "website": "https://github.com/addyosmani/basket.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "basket(\\.min)?\\.js",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "basket\\.(require|remove|clear)\\(",
+        "confidence": 80
+      }
+    ]
+  },
+  "bowser": {
+    "category": "frontend",
+    "website": "https://github.com/lancedikson/bowser",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bowser(\\.min)?\\.js",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "window\\.bowser|bowser\\.(getParser|parse)\\(",
+        "confidence": 75
+      }
+    ]
+  },
+  "bxSlider": {
+    "category": "frontend",
+    "website": "https://bxslider.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.bxslider(\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbx-wrapper\\b",
+        "confidence": 90
+      }
+    ]
+  },
+  "C3.js": {
+    "category": "frontend",
+    "website": "https://c3js.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "c3(?:\\.min)?(?:-[a-zA-Z0-9]{8})?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "CamanJS": {
+    "category": "frontend",
+    "website": "https://github.com/meltingice/CamanJS",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "caman(?:\\.full)?(?:\\.min)?\\.js",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Caman\\(",
+        "confidence": 40
+      }
+    ]
+  },
+  "CanJS": {
+    "category": "frontend",
+    "website": "https://canjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/canjs/can\\.custom\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Cart.js": {
+    "category": "frontend",
+    "website": "https://cartjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:shopify-cartjs/([\\d\\.]+)|assets)/rivets-cart\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Chai": {
+    "category": "frontend",
+    "website": "https://www.chaijs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "chai(?:\\.min)?\\.js",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "\\bchai\\.(?:expect|assert|should)\\b",
+        "confidence": 40
+      }
+    ]
+  },
+  "Choices": {
+    "category": "frontend",
+    "website": "https://github.com/Choices-js/Choices",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "choices\\.js(?:@|/)?([\\d\\.]+)?.+choices\\.min\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/modules/choices/js/choices\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Classnames": {
+    "category": "frontend",
+    "website": "https://jedwatson.github.io/classnames/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "classnames\\.?\\w{0,20}(?:\\.chunk)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Cleave.js": {
+    "category": "frontend",
+    "website": "https://nosir.github.io/cleave.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cleave(?:\\.min)?(?:\\.\\w{0,32})?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "ClientJS": {
+    "category": "frontend",
+    "website": "https://clientjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/clientjs@(\\d.*?)/",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/ClientJS/(?:(\\d.*?)/)?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Clipboard.js": {
+    "category": "frontend",
+    "website": "https://clipboardjs.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Closure Library": {
+    "category": "frontend",
+    "website": "https://github.com/google/closure-library",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Copyright\\sThe\\sClosure\\sLibrary\\sAuthors",
+        "confidence": 100
+      }
+    ]
+  },
+  "Coffee Script": {
+    "category": "frontend",
+    "website": "https://coffeescript.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "coffee-?script(?:-lint)?(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "chroma.js": {
+    "category": "frontend",
+    "website": "https://www.vis4.net/chromajs/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "chroma(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?chroma(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "core-js": {
+    "category": "frontend",
+    "website": "https://github.com/zloirock/core-js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "core-js(?:[./-](?:bundle|min|shim|library))*(?:\\.min)?\\.js",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "__core-js_shared__|_babelPolyfill",
+        "confidence": 60
+      }
+    ]
+  },
+  "crypto-js": {
+    "category": "frontend",
+    "website": "https://github.com/brix/crypto-js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/([\\d\\.-]+))?/crypto-js(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Chart.js": {
+    "category": "frontend",
+    "website": "https://www.chartjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:^|/)chart(?:\\.bundle)?(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "/chart\\.js(?:@|/)([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "\\*\\s*Chart\\.js\\b[\\s\\S]{0,60}(?:chartjs\\.org|Version:|v\\d)",
+        "confidence": 95
+      }
+    ]
+  },
+  "DHTMLX": {
+    "category": "frontend",
+    "website": "https://dhtmlx.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/dhtmlxcommon\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Darkmode.js": {
+    "category": "frontend",
+    "website": "https://github.com/sandoche/Darkmode.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "darkmode-js@([\\d\\.]+)/lib/darkmode-js\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "DataTables": {
+    "category": "frontend",
+    "website": "https://datatables.net",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "dataTables.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Datastar": {
+    "category": "frontend",
+    "website": "https://data-star.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "https?://(?:[^/]+/.*)?datastar\\.js(?:\\?.*)?$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Day.js": {
+    "category": "frontend",
+    "website": "https://github.com/iamkun/dayjs",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "dayjs(?:\\.min)?\\.js|/dayjs@",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\bdayjs\\(",
+        "confidence": 30
+      }
+    ]
+  },
+  "Dexie.js": {
+    "category": "frontend",
+    "website": "https://dexie.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?dexie(?:\\.bitrix)?(?:\\.bundle)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Dojo": {
+    "category": "frontend",
+    "website": "https://dojotoolkit.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "((?:\\d+\\.)+\\d+)/dojo/dojo(?:\\.xd)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Dropzone": {
+    "category": "frontend",
+    "website": "https://www.dropzone.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "dropzone(?:\\.min)?(?:-amd-module)?\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=[\"\\'][^\"\\']*\\bdropzone\\b",
+        "confidence": 45
+      }
+    ]
+  },
+  "Dynamics.js": {
+    "category": "frontend",
+    "website": "https://dynamicsjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "dynamics(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "dc.js": {
+    "category": "frontend",
+    "website": "https://dc-js.github.io/dc.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/(?:dc\\/)?)?(?:/|-)dc(?:\\.leaflet)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "decimal.js": {
+    "category": "frontend",
+    "website": "https://mikemcl.github.io/decimal.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "decimal[.-]([\\d.]*\\d+)(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/([\\d.]*\\d+)/decimal(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "decimal(?:\\.min)?\\.js(?:\\?ver(?:sion)?=([\\d.]*\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "dimple": {
+    "category": "frontend",
+    "website": "http://dimplejs.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "dimple(?:\\/lib\\/[\\w\\.]+)?(?:\\/theme\\/js\\/[\\w\\.-]+)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "EasyUI": {
+    "category": "frontend",
+    "website": "https://www.jeasyui.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.easyui([\\.\\-][0-9.]+)?(\\.min)?\\.js|easyloader\\.js|easyui(\\.min)?\\.js|/easyui/",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\beasyui-(datagrid|window|dialog|tabs|panel|combobox|combo|layout|linkbutton|tree|treegrid|textbox|accordion|menu|numberbox|datebox|validatebox|pagination|propertygrid|calendar)\\b",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "themes/(default|bootstrap|metro|gray|material|black)/easyui\\.css|easyui\\.css|easyui-?theme",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "\\$\\.parser\\.parse|\\.easyui\\(|easyui",
+        "confidence": 40
+      }
+    ]
+  },
+  "Element UI": {
+    "category": "frontend",
+    "website": "https://element.eleme.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "element-ui(@[0-9.]+)?(/lib)?(/index)?(\\.min)?\\.js|element-ui/lib|/element-ui/|elementui",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "element-ui(@[0-9.]+)?/lib/theme-chalk|theme-chalk/index\\.css|element-ui",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bel-button\\b[^\"]*\\bel-button--(primary|default|success|warning|danger|info|text|mini|small|medium)",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bel-(input__inner|form-item|dialog__wrapper|table__body|menu-item|submenu|select-dropdown|dropdown-menu|pagination|message-box|loading-mask|carousel__container|upload|tabs__item|tree-node|date-editor|cascader|rate__item)",
+        "confidence": 55
+      }
+    ]
+  },
+  "Elm": {
+    "category": "frontend",
+    "website": "https://elm-lang.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Elm\\.[A-Z][A-Za-z0-9_.]*\\.(init|embed|fullscreen)\\s*\\(",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "_Platform_(effectManagers|initialize|export)|_VirtualDom_(node|text|diff|render)|_Browser_(element|document|application)",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "(^|/)elm(\\.min|\\.js|\\.[a-f0-9]{6,})*\\.js|/elm-stuff/|elm-(runtime|app)\\.js|Elm\\.js",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "This Elm program|elm-lang\\.org|Compiled with Elm|elm-stuff",
+        "confidence": 60
+      }
+    ]
+  },
+  "Elm-ui": {
+    "category": "frontend",
+    "website": "https://github.com/mdgriffith/elm-ui",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bs\\s+(e|r|c)\\s+[^\"]*\\b(wf|hf|cptr|ccx|ccy|ctr|cl|cr|ccy|sbt|sbl|ui)\\b",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "<style[^>]*>[^<]*\\.(ui-?|explain)[^<]*\\.s\\.e|\\.s\\.e\\s*\\{|\\.s\\.r\\s*\\{|\\.se\\.el",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "elm-ui|Element\\.layout|mdgriffith",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"elm-ui|class=\"[^\"]*\\bui-(placeholder|ph)",
+        "confidence": 50
+      }
+    ]
+  },
+  "Ember.js": {
+    "category": "frontend",
+    "website": "https://emberjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "[a-zA-Z0-9\\-_]+/config/environment",
+        "pattern": "%7B%22modulePrefix%22|\\{\"modulePrefix\"",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "ember([\\.\\-][0-9.]+)?(\\.min|\\.prod|\\.debug|\\.production)*\\.js|/assets/(vendor|[a-z0-9\\-]+)(-[a-f0-9]{32,})?\\.js|ember-(source|cli)|ember-?(data|template-compiler)",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"ember[0-9]+\"|class=\"[^\"]*\\bember-(view|application|text-field|checkbox|select|power-select)",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "data-ember-(action|extension)|ember-application|EmberENV|ember-testing|ember-cli-live-reload",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "<meta[^>]+name=\"[^\"]+/config/environment\"",
+        "confidence": 90
+      }
+    ]
+  },
+  "Emotion": {
+    "category": "frontend",
+    "website": "https://emotion.sh",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<style[^>]+data-emotion=\"[^\"]*\"",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "data-emotion-css=\"|data-emotion=\"(css|[a-z0-9\\-]+)",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bcss-[a-z0-9]{5,8}(-[A-Za-z0-9\\-]+)?\\b",
+        "confidence": 25
+      },
+      {
+        "type": "script",
+        "pattern": "@emotion/|emotion(-[a-z]+)?(\\.umd)?(\\.min)?\\.js",
+        "confidence": 85
+      }
+    ]
+  },
+  "Enyo": {
+    "category": "frontend",
+    "website": "http://enyojs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "enyo([\\.\\-][0-9.]+)?(\\.min)?\\.js|/enyo/(enyo|source|tools)|enyo/boot/|enyo-?(core|ilib|onyx)",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\benyo-(unselectable|fit|fill|scroller|tool-decorator|button|input)|\\benyo-",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "enyo\\.(kind|ready|create|Control|Application)|onyx-(button|toolbar|input|scroller)|enyo-ui",
+        "confidence": 85
+      }
+    ]
+  },
+  "Essential JS 2": {
+    "category": "frontend",
+    "website": "https://www.syncfusion.com/javascript-ui-controls",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ej2([\\.\\-][a-z0-9\\-]+)*(\\.min)?\\.js|cdn\\.syncfusion\\.com/(ej2|[0-9.]+/ej2)|ej2\\.syncfusion\\.com|@syncfusion/ej2|syncfusion\\.ej2|ej2-[a-z\\-]+",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\be-control\\b[^\"]*\\be-[a-z\\-]+\\b[^\"]*\\be-lib\\b|class=\"[^\"]*\\be-lib\\b[^\"]*\\be-control",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "cdn\\.syncfusion\\.com/ej2|ej2-[a-z\\-]+/styles|ej2\\.syncfusion\\.com|data-ripple=\"true\"[^>]*e-btn|class=\"[^\"]*\\be-(grid|btn|input-group|dropdownlist|schedule|treeview|dialog|calendar|datepicker|chart|tab)\\b",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "ej\\.base\\.enableRipple|ej\\.[a-z]+\\.[A-Z][A-Za-z]+\\(|ej\\.(grids|buttons|dropdowns|inputs|popups|navigations|calendars|charts|schedule)\\.",
+        "confidence": 85
+      }
+    ]
+  },
+  "ExtJS": {
+    "category": "frontend",
+    "website": "https://www.sencha.com/products/extjs",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ext(js)?([\\.\\-][0-9.]+)?(-all|-base|-debug|-all-debug|-core|-modern|-classic)?(\\.min)?\\.js|/ext-[0-9.]+/|/extjs/|ext-all|ext-(theme|lang)-[a-z\\-]+\\.js|sencha(-touch)?",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bx-(panel|grid|btn|window|form|toolbar|tab|viewport|body|border-box|component|container|layout)[^\"]*\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Ext\\.(onReady|application|create|define|require|Loader|get)\\s*\\(|Ext\\.(isReady|version|buildSettings)|ext-(gecko|webkit|ie|chrome|safari|strict)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "ext-all[\\w\\-]*\\.css|resources/css/ext-all|ext-theme-[a-z\\-]+(/|\\.)|extjs/resources",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"ext-(comp|gen|element)-?[0-9]+\"|id=\"[a-z]+-[0-9]{4}\"[^>]+class=\"[^\"]*x-",
+        "confidence": 85
+      }
+    ]
+  },
+  "ef.js": {
+    "category": "frontend",
+    "website": "https://ef.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(^|/)ef(\\.min)?\\.js|ef\\.js|ef-core|ef\\.(umd|esm)|/ef@[0-9.]+/",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "ef\\.js\\.org|ef-js|efjs",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "\\{\\{>\\s*[a-zA-Z0-9_]+\\s*\\}\\}.*ef\\.|ef\\.(create|parseEft|setParser)",
+        "confidence": 65
+      }
+    ]
+  },
+  "Face Age": {
+    "category": "frontend",
+    "website": "https://getfaceage.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.jsdelivr\\.net/npm/face-age@([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "cdn\\.jsdelivr\\.net/npm/face-age(?:/|$)",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "unpkg\\.com/face-age@([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "unpkg\\.com/face-age(?:/|$)",
+        "confidence": 100
+      }
+    ]
+  },
+  "FancyBox": {
+    "category": "frontend",
+    "website": "https://fancyapps.com/fancybox",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$",
+        "confidence": 100
+      }
+    ]
+  },
+  "FilePond": {
+    "category": "frontend",
+    "website": "https://pqina.nl/filepond/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "filepond.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "FingerprintJS": {
+    "category": "frontend",
+    "website": "https://fingerprintjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "fingerprint(?:/fp)?(\\d)?(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "fingerprintjs(?:\\-pro|2)?(?:@|/)(\\d.*?)?/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Flickity": {
+    "category": "frontend",
+    "website": "https://flickity.metafizzy.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "flickity(?:/|@)([\\d\\.]+).+flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "FlipClock.js": {
+    "category": "frontend",
+    "website": "https://flipclock.readthedocs.io/en/dev-1.0.0/CHANGE%20LOG/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "flipclock(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Floating UI": {
+    "category": "frontend",
+    "website": "https://floating-ui.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "floating-ui(?:\\/core)?(?:\\/dom)?(?:\\.js)?(?:@?(?:\\?v(?:er)?=)?((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Fluid Framework": {
+    "category": "frontend",
+    "website": "https://fluidframework.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "webpackChunk_fluidx_loop_app",
+        "confidence": 100
+      }
+    ]
+  },
+  "FooTable": {
+    "category": "frontend",
+    "website": "https://fooplugins.github.io/FooTable/index.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\$FOOTABLE\\.init|footable\\.plugins",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "footable(?:\\.min)?\\.js",
+        "confidence": 85
+      }
+    ]
+  },
+  "Formstone": {
+    "category": "frontend",
+    "website": "https://formstone.it",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.formstone\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Framer Motion": {
+    "category": "frontend",
+    "website": "https://motion.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "MotionIsMounted",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "framer-motion",
+        "confidence": 80
+      }
+    ]
+  },
+  "Fresco": {
+    "category": "frontend",
+    "website": "https://github.com/staaky/fresco",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "fresco(?:\\.min)?\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=[\"\\'][^\"\\']*\\bfr-window\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "framework7": {
+    "category": "frontend",
+    "website": "https://framework7.io/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:\\/(?:js\\/)?)?framework7(?:-((?:\\d+\\.)+\\d+))?(?:\\.custom)?(?:\\.min)?(?:-vue)?_?[\\w\\.]{0,29}\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/(?:js\\/)?)?framework7(?:-)?(?:\\.custom)?(?:\\.min)?(?:-vue)?_?[\\w\\.]{0,29}\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "fullPage.js": {
+    "category": "frontend",
+    "website": "https://github.com/alvarotrigo/fullpage.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/fullPage\\.js(?:/([\\d\\.]+)/)?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Font Awesome": {
+    "category": "frontend",
+    "website": "https://fontawesome.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "font-?awesome(?:[-.]|/)|/fontawesome[^/]*\\.(?:js|css)",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bfa[srlbd]?\\s+fa-[\\w-]+",
+        "confidence": 75
+      }
+    ]
+  },
+  "GSAP": {
+    "category": "frontend",
+    "website": "https://greensock.com/gsap",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "TweenMax(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "gsap(?:\\.min)?\\.js|/gsap/[\\d.]+/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "window\\.gsap\\b|gsap\\.registerPlugin",
+        "confidence": 85
+      }
+    ]
+  },
+  "Gatsby": {
+    "category": "frontend",
+    "website": "https://www.gatsbyjs.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Gatsby(?: ([0-9.]+))?$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Gijgo": {
+    "category": "frontend",
+    "website": "https://gijgo.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/gijgo@([\\d\\.]+)/js/gijgo\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Glide.js": {
+    "category": "frontend",
+    "website": "https://glidejs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/@glidejs/glide(?:@([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Glider.js": {
+    "category": "frontend",
+    "website": "https://nickpiscitelli.github.io/Glider.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/|@)?([\\d\\.]{2,})?/glider\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Goat Slider": {
+    "category": "frontend",
+    "website": "https://goatslider.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "GoatSliderCarousel|GoatSliderSlider",
+        "confidence": 100
+      }
+    ]
+  },
+  "Goober": {
+    "category": "frontend",
+    "website": "https://goober.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<style[^>]+id=[\"\\']_goober[\"\\']",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "\\bgoober(?:Global|Prefixer)?\\b",
+        "confidence": 40
+      }
+    ]
+  },
+  "Granim.js": {
+    "category": "frontend",
+    "website": "https://sarcadass.github.io/granim.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "granim(?:\\.min)?\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "new Granim\\(",
+        "confidence": 70
+      }
+    ]
+  },
+  "Gridster": {
+    "category": "frontend",
+    "website": "https://dsmorse.github.io/gridster.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.gridster(?:\\.min)?\\.js|gridster(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "GridsterCollision|GridsterCoords|GridsterDraggable",
+        "confidence": 80
+      }
+    ]
+  },
+  "HTML5 Media": {
+    "category": "frontend",
+    "website": "https://html5media.info/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?html5media(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Hammer.js": {
+    "category": "frontend",
+    "website": "https://hammerjs.github.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "hammer(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Handlebars": {
+    "category": "frontend",
+    "website": "https://handlebarsjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Handsontable": {
+    "category": "frontend",
+    "website": "https://handsontable.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?(?:jquery\\.)?handsontable(?:\\.full)?(?:\\.min)?(?:\\.[\\w]+)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "HeadJS": {
+    "category": "frontend",
+    "website": "https://headjs.github.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "head\\.(?:core|load)(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<[^>]*data-headjs-load",
+        "confidence": 100
+      }
+    ]
+  },
+  "Headroom.js": {
+    "category": "frontend",
+    "website": "https://wicky.nillia.ms/headroom.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "headroom(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Highlight.js": {
+    "category": "frontend",
+    "website": "https://highlightjs.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/(?:([\\d.])+/)?highlight(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Hogan.js": {
+    "category": "frontend",
+    "website": "https://twitter.github.io/hogan.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "hogan-[.-]([\\d.]*\\d)[^/]*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "([\\d.]+)/hogan(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Howler.js": {
+    "category": "frontend",
+    "website": "https://howlerjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "howler@([\\d.]+)/dist/howler\\.min\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "howler/([\\d.]+)/howler(?:\\.core)?\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Htmx": {
+    "category": "frontend",
+    "website": "https://htmx.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/htmx\\.org@([\\d\\.]+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Hydrogen": {
+    "category": "frontend",
+    "website": "https://hydrogen.shopify.dev",
+    "headers": [
+      {
+        "name": "powered-by",
+        "pattern": "^Shopify-Hydrogen$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "html2canvas": {
+    "category": "frontend",
+    "website": "https://html2canvas.hertzen.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "html2canvas(?:\\.min)?(?:[_\\w]{0,8})?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?html2canvas(?:\\.min)?(?:[_\\w]{0,8})?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Immutable.js": {
+    "category": "frontend",
+    "website": "https://facebook.github.io/immutable-js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "^immutable\\.(?:min\\.)?js$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Inertia.js": {
+    "category": "frontend",
+    "website": "https://inertiajs.com",
+    "headers": [
+      {
+        "name": "vary",
+        "pattern": "X-Inertia",
+        "confidence": 100
+      },
+      {
+        "name": "x-inertia",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "InfernoJS": {
+    "category": "frontend",
+    "website": "https://infernojs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "inferno(?:\\.min)?\\.js|inferno@",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Inferno\\.version",
+        "confidence": 70
+      }
+    ]
+  },
+  "Infinite Scroll": {
+    "category": "frontend",
+    "website": "https://infinite-scroll.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "infinite-?scroll(?:\\.pkgd)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Instafeed.js": {
+    "category": "frontend",
+    "website": "https://instafeedjs.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "instafeed(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Instant.Page": {
+    "category": "frontend",
+    "website": "https://instant.page/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "instant\\.page",
+        "confidence": 100
+      }
+    ]
+  },
+  "InstantClick": {
+    "category": "frontend",
+    "website": "https://instantclick.io/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "instantclick\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "InstantGeo": {
+    "category": "frontend",
+    "website": "https://instantgeo.info",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "js\\.instantgeo\\.info",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "script\\.instantgeo\\.info",
+        "confidence": 100
+      }
+    ]
+  },
+  "Intersection Observer": {
+    "category": "frontend",
+    "website": "https://www.w3.org/TR/intersection-observer",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.jsdelivr\\.net/npm/intersection-observer@([\\d\\.]+)",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/assets/(?:.+)?intersection-observer\\.[\\d\\w\\.]+\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Isotope": {
+    "category": "frontend",
+    "website": "https://isotope.metafizzy.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "isotope(?:\\.pkgd)?(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "init_isotope",
+        "confidence": 70
+      }
+    ]
+  },
+  "iCheck": {
+    "category": "frontend",
+    "website": "https://github.com/drgullin/icheck",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/(?:js|iCheck)/icheck\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "imagesLoaded": {
+    "category": "frontend",
+    "website": "https://imagesloaded.desandro.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "imagesloaded(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "JSS": {
+    "category": "frontend",
+    "website": "https://cssinjs.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<style[^>]+data-jss",
+        "confidence": 100
+      }
+    ]
+  },
+  "JSZip": {
+    "category": "frontend",
+    "website": "https://stuk.github.io/jszip/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/jszip\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "JsObservable": {
+    "category": "frontend",
+    "website": "https://www.jsviews.com/#jsobservable",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "JsRender": {
+    "category": "frontend",
+    "website": "https://www.jsviews.com/#jsrender",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "([\\d\\.]+)?/jsrender(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "JsViews": {
+    "category": "frontend",
+    "website": "https://www.jsviews.com/#jsviews",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "([\\d\\.]+)?/jsviews(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "jComponent": {
+    "category": "frontend",
+    "website": "https://componentator.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jcomponent(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "MAIN\\.version",
+        "confidence": 30
+      }
+    ]
+  },
+  "jPlayer": {
+    "category": "frontend",
+    "website": "https://jplayer.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/jquery\\.jplayer\\.min\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "jquery\\.jplayer\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "jQuery": {
+    "category": "frontend",
+    "website": "https://jquery.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/jquery(?:-(\\d+\\.\\d+\\.\\d+))[/.-]",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/(\\d+\\.\\d+\\.\\d+)/jquery(?!\\.popupoverlay\\.js|(?:\\.[\\w-]*)*fancybox)[/.-][^u]",
+        "confidence": 100
+      }
+    ]
+  },
+  "jQuery BlockUI": {
+    "category": "frontend",
+    "website": "https://jquery.malsup.com/block",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/jquery\\.blockUI\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "jQuery DevBridge Autocomplete": {
+    "category": "frontend",
+    "website": "https://www.devbridge.com/sourcery/components/jquery-autocomplete/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/devbridgeAutocomplete(?:-min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/jquery\\.devbridge-autocomplete/([0-9.]+)/jquery\\.autocomplete(?:.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "jQuery Migrate": {
+    "category": "frontend",
+    "website": "https://github.com/jquery/jquery-migrate",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery-migrate(?:\\.min)?(?:-)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "jquery-migrate(?:\\.min)?(?:-?((?:\\d+\\.)+\\d+))?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "jQuery Modal": {
+    "category": "frontend",
+    "website": "https://jquerymodal.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery-modal/([\\d\\.]+)/jquery\\.modal\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "jQuery Popup Overlay": {
+    "category": "frontend",
+    "website": "https://www.npmjs.com/package/jquery-popup-overlay",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(\\d+\\.\\d+\\.\\d+)/jquery\\.popupoverlay\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "jQuery UI": {
+    "category": "frontend",
+    "website": "https://jqueryui.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery-ui[.-]([\\d.]*\\d)[^/]*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "([\\d.]+)/jquery-ui(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "jquery-ui.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "jsPDF": {
+    "category": "frontend",
+    "website": "https://parall.ax/products/jspdf",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/jspdf\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Karma": {
+    "category": "frontend",
+    "website": "https://karma-runner.github.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "karma\\.mdpcdn\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Keen-Slider": {
+    "category": "frontend",
+    "website": "https://keen-slider.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\'][^\"\\']*\\bkeen-slider(?:__slide)?\\b",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "keen-slider(?:\\.min)?\\.js|keen-slider@",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\bKeenSlider\\b",
+        "confidence": 60
+      }
+    ]
+  },
+  "KerningJS": {
+    "category": "frontend",
+    "website": "https://webupon.com/blog/what-is-kerning",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.FLAutoKerning\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Knockout.js": {
+    "category": "frontend",
+    "website": "https://knockoutjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "knockout(?:-[\\d.]+)?(?:\\.min|\\.debug)?\\.js|knockout@",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "ko\\.version",
+        "confidence": 60
+      }
+    ]
+  },
+  "Koishi.js": {
+    "category": "frontend",
+    "website": "https://github.com/koishijs",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "KOISHI_CONFIG",
+        "confidence": 100
+      }
+    ]
+  },
+  "Laravel Echo": {
+    "category": "frontend",
+    "website": "https://laravel.com/docs/broadcasting#client-side-installation",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "laravel-echo|echo(?:\\.iife)?(?:\\.min)?\\.js",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "\\b[Ee]cho\\.connector\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "LazySizes": {
+    "category": "frontend",
+    "website": "https://github.com/aFarkas/lazysizes",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "lazysizes(?:\\.min)?\\.js|lazysizes@",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "lazySizesConfig",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "class=[\"\\'][^\"\\']*\\blazyload\\b",
+        "confidence": 40
+      }
+    ]
+  },
+  "LazySizes unveilhooks plugin": {
+    "category": "frontend",
+    "website": "https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ls\\.unveilhooks(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Lenis": {
+    "category": "frontend",
+    "website": "http://lenis.darkroom.engineering",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "lenis(?:\\.min)?\\.js|lenis@|@studio-freight/lenis",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "lenisVersion",
+        "confidence": 80
+      }
+    ]
+  },
+  "Lightbox": {
+    "category": "frontend",
+    "website": "https://lokeshdhakar.com/projects/lightbox2/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "lightbox(?:-plus-jquery)?.{0,32}\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "List.js": {
+    "category": "frontend",
+    "website": "https://listjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "list\\.js/",
+        "confidence": 50
+      },
+      {
+        "type": "script",
+        "pattern": "@([\\d.]+)/(?:/dist)?list\\.(?:min\\.)?js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Loadable-Components": {
+    "category": "frontend",
+    "website": "https://github.com/gregberge/loadable-components",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<script[^>]+id=[\"\\']__LOADABLE_REQUIRED_CHUNKS__[\"\\']",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "__LOADABLE_LOADED_CHUNKS__",
+        "confidence": 100
+      }
+    ]
+  },
+  "Locomotive Scroll": {
+    "category": "frontend",
+    "website": "https://github.com/locomotivemtl/locomotive-scroll",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "locomotive-scroll(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Lodash": {
+    "category": "frontend",
+    "website": "https://www.lodash.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "lodash.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Lozad.js": {
+    "category": "frontend",
+    "website": "https://apoorv.pro/lozad.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "/lozad\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Lunr.js": {
+    "category": "frontend",
+    "website": "https://lunrjs.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?lunr(?:-store)?(?:-en)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "libphonenumber": {
+    "category": "frontend",
+    "website": "https://github.com/google/libphonenumber",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/([\\d\\.]+))?/libphonenumber(?:-js\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "lit-element": {
+    "category": "frontend",
+    "website": "https://lit.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "litElementVersions",
+        "confidence": 100
+      }
+    ]
+  },
+  "lit-html": {
+    "category": "frontend",
+    "website": "https://lit.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "litHtmlVersions",
+        "confidence": 100
+      }
+    ]
+  },
+  "lite-youtube-embed": {
+    "category": "frontend",
+    "website": "https://github.com/paulirish/lite-youtube-embed",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<lite-youtube\\b",
+        "confidence": 100
+      }
+    ]
+  },
+  "Leaflet": {
+    "category": "frontend",
+    "website": "https://leafletjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:^|/)leaflet(?:-src)?(?:\\.min)?\\.(?:js|css)",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/leaflet/([\\d.]+)/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "@preserve\\s*\\*\\s*Leaflet\\s+[\\d.]+",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bleaflet-container\\b",
+        "confidence": 85
+      }
+    ]
+  },
+  "Magnific Popup": {
+    "category": "frontend",
+    "website": "https://dimsemenov.com/plugins/magnific-popup/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "magnific-popup(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Mailcheck": {
+    "category": "frontend",
+    "website": "https://github.com/mailcheck/mailcheck",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mailcheck(?:\\.min)?\\.js(?:\\?v(?:er)?=(\\d+\\.\\d+\\.\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Marionette.js": {
+    "category": "frontend",
+    "website": "https://marionettejs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "backbone\\.marionette.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Marked": {
+    "category": "frontend",
+    "website": "https://marked.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/marked(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Masonry": {
+    "category": "frontend",
+    "website": "https://masonry.desandro.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "masonry(?:\\.pkgd)?(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Masonry\\.Item",
+        "confidence": 70
+      }
+    ]
+  },
+  "Matter.js": {
+    "category": "frontend",
+    "website": "https://brm.io/matter-js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "matter(?:-wrap)?(?:\\/demo\\/js\\/lib(?:\\/matter-tools\\/jquery)?(?:\\/decomp)?)?(?:\\/?-?((?:\\d+\\.)+\\d+))?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Mavo": {
+    "category": "frontend",
+    "website": "https://mavo.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mavo(?:\\.min)?\\.js|get\\.mavo\\.io",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Mavo\\.version",
+        "confidence": 70
+      }
+    ]
+  },
+  "Microsoft Authentication": {
+    "category": "frontend",
+    "website": "https://github.com/AzureAD/microsoft-authentication-library-for-js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "msal(?:-browser)?(?:\\.min)?\\.js|alcdn\\.msauth\\.net",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Msal\\.Authority|msal\\.authorityInstance|msalConfig\\.auth",
+        "confidence": 80
+      }
+    ]
+  },
+  "Milonic": {
+    "category": "frontend",
+    "website": "https://milonic.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "milonic_src\\.js|mm_menu\\.js",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "milonic\\.C",
+        "confidence": 70
+      }
+    ]
+  },
+  "Mithril": {
+    "category": "frontend",
+    "website": "https://mithril.js.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mithril(?:[\\.-]min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?mithril(?:[\\.-]min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Mithril.js": {
+    "category": "frontend",
+    "website": "https://mithril.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/mithril(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Mixitup": {
+    "category": "frontend",
+    "website": "https://www.kunkalabs.com/mixitup/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mixitup(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "MobX": {
+    "category": "frontend",
+    "website": "https://mobx.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/([\\d\\.]+))?/mobx(?:\\.[a-z]+){0,2}\\.js(?:$|\\?)",
+        "confidence": 100
+      }
+    ]
+  },
+  "MochiKit": {
+    "category": "frontend",
+    "website": "https://mochi.github.io/mochikit/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "MochiKit(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Modernizr": {
+    "category": "frontend",
+    "website": "https://modernizr.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "modernizr(?:\\.([\\d.]+))?.*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "([\\d.]+)?/modernizr.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Moment Timezone": {
+    "category": "frontend",
+    "website": "https://momentjs.com/timezone/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "moment-timezone(?:-data)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Moment.js": {
+    "category": "frontend",
+    "website": "https://momentjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "moment(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "MooTools": {
+    "category": "frontend",
+    "website": "https://mootools.net",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mootools.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Moofx": {
+    "category": "frontend",
+    "website": "https://github.com/kamicane/moofx",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "moofx(?:\\.min)?\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "moofx\\.parse",
+        "confidence": 70
+      }
+    ]
+  },
+  "Moon": {
+    "category": "frontend",
+    "website": "https://kbrsh.github.io/moon/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/moon(?:\\.min)?\\.js$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Morphext": {
+    "category": "frontend",
+    "website": "https://morphext.fyianlai.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "morphext(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Morris.js": {
+    "category": "frontend",
+    "website": "https://morrisjs.github.io/morris.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "morris(?:\\/(?:area|bar|donut|grid|hover|line))?(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Mustache": {
+    "category": "frontend",
+    "website": "https://mustache.github.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mustache(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Muuri": {
+    "category": "frontend",
+    "website": "https://muuri.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "muuri(?:\\.min)?\\.js|muuri@",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "new Muuri\\(",
+        "confidence": 70
+      }
+    ]
+  },
+  "mOxie": {
+    "category": "frontend",
+    "website": "https://github.com/moxiecode/moxie",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "moxie(?:\\.min)?\\.js",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\bmOxie\\b",
+        "confidence": 60
+      }
+    ]
+  },
+  "math.js": {
+    "category": "frontend",
+    "website": "https://mathjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "math(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "metisMenu": {
+    "category": "frontend",
+    "website": "https://github.com/onokumus/metismenu",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/|\\.)metisMenu(?:js)?(?:\\.min)?\\.js(?:\\?([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "mobile-detect.js": {
+    "category": "frontend",
+    "website": "https://hgoebl.github.io/mobile-detect.js/doc/MobileDetect.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mobile-detect(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "NProgress": {
+    "category": "frontend",
+    "website": "https://ricostacruz.com/nprogress/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/nprogress\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Notie": {
+    "category": "frontend",
+    "website": "https://github.com/jaredreich/notie",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "notie(?:\\.min)?\\.js|notie@",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "\\bnotie\\.(?:alert|confirm|input|select|date|force)\\(",
+        "confidence": 60
+      }
+    ]
+  },
+  "OWL Carousel": {
+    "category": "frontend",
+    "website": "https://owlcarousel2.github.io/OwlCarousel2/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "owl\\.carousel.*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<link [^>]*href=\"[^\"]+owl\\.carousel(?:\\.min)?\\.css",
+        "confidence": 100
+      }
+    ]
+  },
+  "Offline.js": {
+    "category": "frontend",
+    "website": "https://github.hubspot.com/offline/docs/welcome",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/(?:bundles/[^/]+|assets/javascripts|js)/offline\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "OpenCV": {
+    "category": "frontend",
+    "website": "https://opencv.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "opencv(?:\\.min)?\\.js|opencv\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "opencvIsReady",
+        "confidence": 100
+      }
+    ]
+  },
+  "OpenUI5": {
+    "category": "frontend",
+    "website": "https://openui5.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "sap-usercontext",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "sap-ui-fesr",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "sap-ui-core\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Orbit Slider": {
+    "category": "frontend",
+    "website": "https://zurb.com/playground/orbit-jquery-image-slider",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "orbit(?:\\.min)?([\\d.]{2,}[\\d])?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Packery": {
+    "category": "frontend",
+    "website": "https://packery.metafizzy.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "packery(?:\\.pkgd)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Page.js": {
+    "category": "frontend",
+    "website": "https://github.com/visionmedia/page.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "page(?:\\.min)?\\.js",
+        "confidence": 30
+      },
+      {
+        "type": "body",
+        "pattern": "page\\.Route",
+        "confidence": 70
+      }
+    ]
+  },
+  "Pannellum": {
+    "category": "frontend",
+    "website": "https://pannellum.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/(?:build\\/)?)?pannellum(?:-plugin)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Papa Parse": {
+    "category": "frontend",
+    "website": "https://www.papaparse.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "papaparse(?:\\.min)?\\.js|papaparse@",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Papa\\.(?:parse|Parser)",
+        "confidence": 60
+      }
+    ]
+  },
+  "Paraglide JS": {
+    "category": "frontend",
+    "website": "https://inlang.com/m/gerre34r/library-inlang-paraglideJs",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "__paraglide",
+        "confidence": 80
+      }
+    ]
+  },
+  "Parsley.js": {
+    "category": "frontend",
+    "website": "https://parsleyjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "parsley(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "PeerJS": {
+    "category": "frontend",
+    "website": "https://peerjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "peerjs(?:\\.min)?\\.js|peerjs@",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Peer\\.DEFAULT_KEY",
+        "confidence": 80
+      }
+    ]
+  },
+  "Peity": {
+    "category": "frontend",
+    "website": "https://benpickles.github.io/peity/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:jquery\\.)?peity(?:-demo)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Phaser": {
+    "category": "frontend",
+    "website": "https://phaser.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "phaser(?:\\.min)?\\.js|phaser@",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Phaser\\.VERSION|new Phaser\\.Game",
+        "confidence": 70
+      }
+    ]
+  },
+  "PhotoSwipe": {
+    "category": "frontend",
+    "website": "https://photoswipe.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "photoswipe/([\\d\\.]+)/photoswipe\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Pikaday": {
+    "category": "frontend",
+    "website": "https://github.com/dbushell/Pikaday",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "pikaday(?:-jquery)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Pinia": {
+    "category": "frontend",
+    "website": "https://pinia.vuejs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/pinia/.+\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Plupload": {
+    "category": "frontend",
+    "website": "https://plupload.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "plupload(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Polyfill": {
+    "category": "frontend",
+    "website": "https://polyfill.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "polyfill\\.io/v([\\d\\.]+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Polymer": {
+    "category": "frontend",
+    "website": "https://polymer-project.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "polymer\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "(?:<polymer-[^>]+|<link[^>]+rel=\"import\"[^>]+/polymer\\.html\")",
+        "confidence": 100
+      }
+    ]
+  },
+  "Popmotion": {
+    "category": "frontend",
+    "website": "https://popmotion.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "popmotion\\.global\\.min\\.js(?:\\?ver=\\d+\\.\\d+)?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Preact": {
+    "category": "frontend",
+    "website": "https://preactjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "preact(?:\\.min|\\.module|\\.umd)?\\.js|preact@|/preact/",
+        "confidence": 70
+      }
+    ]
+  },
+  "Prefix-Free": {
+    "category": "frontend",
+    "website": "https://leaverou.github.io/prefixfree/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "prefixfree\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "ProgressBar.js": {
+    "category": "frontend",
+    "website": "https://kimmobrunfeldt.github.io/progressbar.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdnjs\\.cloudflare\\.com\\/ajax\\/libs\\/progressbar\\.js\\/([\\d\\.]+)\\/progressbar(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "\\/progressbar\\.js@([\\d\\.]+)\\/dist\\/progressbar(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "\\/progressbar\\.js\\/dist\\/progressbar(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Prototype": {
+    "category": "frontend",
+    "website": "https://www.prototypejs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "PubSubJS": {
+    "category": "frontend",
+    "website": "https://github.com/mroderick/PubSubJS",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "pubsub(?:\\.min)?\\.js|pubsub-js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "PubSub\\.version",
+        "confidence": 70
+      }
+    ]
+  },
+  "Puter.js": {
+    "category": "frontend",
+    "website": "https://docs.puter.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "js\\.puter\\.com|puter\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "puter\\.APIOrigin|puter_gui_enabled",
+        "confidence": 100
+      }
+    ]
+  },
+  "p5.js": {
+    "category": "frontend",
+    "website": "https://p5js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/(?:addons\\/)?)?p5(?:\\.sound)?(?:\\.dom)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "parallax.js": {
+    "category": "frontend",
+    "website": "https://github.com/pixelcog/parallax.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "parallax(?:\\/assets\\/js)?(?:\\/jquery)?(?:\\/scripts)?(?:\\/wow)?(?:[_\\.]move)?(?:\\.inview)?(?:\\.pkgd)?(?:\\.scrolling)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?parallax(?:\\/assets\\/js)?(?:\\/jquery)?(?:\\/scripts)?(?:\\/wow)?(?:[_\\.]move)?(?:\\.inview)?(?:\\.pkgd)?(?:\\.scrolling)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "pdfmake": {
+    "category": "frontend",
+    "website": "https://bpampuch.github.io/pdfmake",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "pdfmake(?:[\\/-]((?:\\d+\\.)+\\d+)\\/(?:build\\/)?)?(?:pdfmake)?(?:vfs_fonts)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "pickadate.js": {
+    "category": "frontend",
+    "website": "https://amsul.ca/pickadate.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "pickadate(?:\\/translations)?(?:\\/de_DE)?(?:\\/picker)?(?:\\.date)?(?:\\.time)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "prettyPhoto": {
+    "category": "frontend",
+    "website": "https://github.com/scaron/prettyphoto",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.prettyPhoto\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "(?:<link [^>]*href=\"[^\"]*prettyPhoto(?:\\.min)?\\.css|<a [^>]*rel=\"prettyPhoto)",
+        "confidence": 100
+      }
+    ]
+  },
+  "punycode": {
+    "category": "frontend",
+    "website": "https://github.com/mathiasbynens/punycode.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "punycode(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.){1,2}\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Quasar": {
+    "category": "frontend",
+    "website": "https://quasar.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+id=[\"\\']q-app[\"\\']",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\'][^\"\\']*\\bq-notifications\\b",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\'][^\"\\']*\\bq-page-container\\b",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "<span[^>]+class=[\"\\'][^\"\\']*\\bq-focus-helper\\b",
+        "confidence": 100
+      }
+    ]
+  },
+  "Quicklink": {
+    "category": "frontend",
+    "website": "https://getquick.link/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "quicklink@([\\d.]+)/dist/quicklink.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "qiankun": {
+    "category": "frontend",
+    "website": "https://qiankun.umijs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "__POWERED_BY_QIANKUN__",
+        "confidence": 100
+      }
+    ]
+  },
+  "Ractive.js": {
+    "category": "frontend",
+    "website": "https://www.ractivejs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ractive/ractive\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Ramda": {
+    "category": "frontend",
+    "website": "https://ramdajs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ramda.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "React": {
+    "category": "frontend",
+    "website": "https://reactjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "description",
+        "pattern": "^Web site created using create-react-app$",
+        "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "og:image",
+        "pattern": "%REACT_APP_SEO_IMAGE_URL%",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "react(?:-with-addons)?[.-](\\d+(?:\\.\\d+)+)[^/]*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/([\\d\\.]+)/react(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "^react\\b.*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<[^>]+data-react",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "react\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "React Flow": {
+    "category": "frontend",
+    "website": "https://reactflow.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<style[^>]+type=[\"\\']text/css[\"\\'][^>]*>[^<]*react-flow",
+        "confidence": 100
+      }
+    ]
+  },
+  "React Native for Web": {
+    "category": "frontend",
+    "website": "https://necolas.github.io/react-native-web/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<style[^>]+id=[\"\\']react-native-stylesheet[\"\\']",
+        "confidence": 100
+      }
+    ]
+  },
+  "React Redux": {
+    "category": "frontend",
+    "website": "https://react-redux.js.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/react-redux(@|/)([\\d.]+)(?:/[a-z]+)?/react-redux(?:.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "React Router": {
+    "category": "frontend",
+    "website": "https://reactrouter.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/react-router(@|/)([\\d.]+)(?:/[a-z]+)?)?/react-router(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Redux": {
+    "category": "frontend",
+    "website": "https://redux.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/redux(@|/)([\\d.]+)(?:/[a-z]+)?/redux(?:.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Replicache": {
+    "category": "frontend",
+    "website": "https://replicache.dev/",
+    "headers": [
+      {
+        "name": "x-replicache-requestid",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "RequireJS": {
+    "category": "frontend",
+    "website": "https://requirejs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "require.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Responsive Nav": {
+    "category": "frontend",
+    "website": "http://responsive-nav.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "responsive-nav(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Retina.js": {
+    "category": "frontend",
+    "website": "https://imulus.github.io/retinajs",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/js/retina(\\.min)?\\.js\\?ver=([\\d\\.]+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Reveal.js": {
+    "category": "frontend",
+    "website": "https://revealjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:^|/)reveal(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "RightJS": {
+    "category": "frontend",
+    "website": "https://github.com/rightjs",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "right(?:-[\\d.]+)?(?:-olds)?(?:\\.min)?\\.js",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "\\bRightJS\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "Riot": {
+    "category": "frontend",
+    "website": "https://riot.js.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "riot(?:\\+compiler)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Riot.js": {
+    "category": "frontend",
+    "website": "https://riot.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "riot(?:\\+compiler)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Ripple": {
+    "category": "frontend",
+    "website": "https://dpc-sdp.github.io/sdp-docs/ripple/",
+    "headers": [
+      {
+        "name": "x-sdp-app-type",
+        "pattern": "ripple",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "RunKit": {
+    "category": "frontend",
+    "website": "https://runkit.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.runkit\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "RxJS": {
+    "category": "frontend",
+    "website": "https://reactivex.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Satūs": {
+    "category": "frontend",
+    "website": "https://github.com/darkroomengineering/satus",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "satusVersion",
+        "confidence": 100
+      }
+    ]
+  },
+  "Screenfull.js": {
+    "category": "frontend",
+    "website": "https://sindresorhus.com/screenfull/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "screenfull(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?screenfull(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "ScrollMagic": {
+    "category": "frontend",
+    "website": "https://scrollmagic.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ScrollMagic(?:\\.min)?\\.js|scrollmagic@",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "ScrollMagic\\.version|new ScrollMagic\\.",
+        "confidence": 70
+      }
+    ]
+  },
+  "Select2": {
+    "category": "frontend",
+    "website": "https://select2.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "select2(?:\\.min|\\.full)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Selectize": {
+    "category": "frontend",
+    "website": "https://selectize.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "selectize(?:\\.min)?\\.js|selectize\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=[\"\\'][^\"\\']*\\bselectize-control\\b",
+        "confidence": 80
+      }
+    ]
+  },
+  "Sencha Touch": {
+    "category": "frontend",
+    "website": "https://www.sencha.com/products/touch",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sencha-touch.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shepherd": {
+    "category": "frontend",
+    "website": "https://shepherdjs.dev/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "shepherd(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Showdown": {
+    "category": "frontend",
+    "website": "https://showdownjs.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:(?:dist\\/)?)?showdown(?:\\.min)?(?:-?((?:\\d+\\.)+\\d+))?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/(?:dist\\/)?)?showdown(?:\\.min)?(?:-)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Sigma.js": {
+    "category": "frontend",
+    "website": "https://www.sigmajs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/(static/js/|)sigma\\.min\\.js(?:\\?ver=([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "SignalR": {
+    "category": "frontend",
+    "website": "https://dotnet.microsoft.com/es-es/apps/aspnet/signalr",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:jquery\\.)?signal[rR](?:-((?:\\d+\\.)+\\d+))?(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/jquery\\.)?signal[rR](?:-)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "SimplexNoise.js": {
+    "category": "frontend",
+    "website": "https://github.com/jwagner/simplex-noise.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/simplex-noise/([\\d\\.]+)/simplex-noise.min.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Skitter": {
+    "category": "frontend",
+    "website": "https://skitter-slider.net",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/jquery\\.skitter\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Skrollr": {
+    "category": "frontend",
+    "website": "https://prinzhorn.github.io/skrollr/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "skrollr(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "skrollr\\.VERSION|skrollr\\.init",
+        "confidence": 70
+      }
+    ]
+  },
+  "Slick": {
+    "category": "frontend",
+    "website": "https://kenwheeler.github.io/slick",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/([\\d.]+))?/slick(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<link [^>]+(?:/([\\d.]+)/)?slick-theme\\.css",
+        "confidence": 100
+      }
+    ]
+  },
+  "Slim Select": {
+    "category": "frontend",
+    "website": "https://slimselectjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\'][^\"\\']*\\bss-values\\b",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\'][^\"\\']*\\bss-deselect\\b[^\"\\']*\\bss-hide\\b",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "slimselect(?:\\.min)?\\.js|slim-select",
+        "confidence": 85
+      }
+    ]
+  },
+  "Slimbox": {
+    "category": "frontend",
+    "website": "https://www.digitalia.be/software/slimbox",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "slimbox\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<link [^>]*href=\"[^/]*slimbox(?:-rtl)?\\.css",
+        "confidence": 100
+      }
+    ]
+  },
+  "Slimbox 2": {
+    "category": "frontend",
+    "website": "https://www.digitalia.be/software/slimbox2",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "slimbox2\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<link [^>]*href=\"[^/]*slimbox2(?:-rtl)?\\.css",
+        "confidence": 100
+      }
+    ]
+  },
+  "Snabbt": {
+    "category": "frontend",
+    "website": "https://daniel-lundin.github.io/snabbt.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?snabbt(?:[\\.-]min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "snabbt(?:[\\.-]min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Snap.svg": {
+    "category": "frontend",
+    "website": "https://snapsvg.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "snap\\.svg(?:-min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "SockJS": {
+    "category": "frontend",
+    "website": "https://github.com/sockjs/sockjs-client",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sockjs(?:-((?:\\d+\\.)+\\d+))?(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?sockjs(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Socket.io": {
+    "category": "frontend",
+    "website": "https://socket.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "socket\\.io.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "SolidJS": {
+    "category": "frontend",
+    "website": "https://www.solidjs.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "www\\.solidjs\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "SoundManager": {
+    "category": "frontend",
+    "website": "https://www.schillmania.com/projects/soundmanager2",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "soundmanager2(?:-(?:nodebug-)?jsmin)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "BaconPlayer|soundManager\\.version|\\bSoundManager\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "Spin.js": {
+    "category": "frontend",
+    "website": "https://spin.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdnjs\\.cloudflare\\.com/ajax/libs/spin\\.js/([\\d\\.]+)/spin\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Spine.js": {
+    "category": "frontend",
+    "website": "https://spine.github.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "spine(?:\\.min)?\\.js|pixi-spine",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Spine\\.version|pixi_spine\\.Spine",
+        "confidence": 70
+      }
+    ]
+  },
+  "Splide": {
+    "category": "frontend",
+    "website": "https://splidejs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "splide(?:\\.min)?\\.js|splide@|@splidejs/splide",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Splide\\.STATES|class=[\"\\'][^\"\\']*\\bsplide__(?:track|slide|list)\\b",
+        "confidence": 80
+      }
+    ]
+  },
+  "SpriteSpin": {
+    "category": "frontend",
+    "website": "https://github.com/giniedp/spritespin",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "spritespin(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\bSpriteSpin\\b",
+        "confidence": 60
+      }
+    ]
+  },
+  "Stellar.js": {
+    "category": "frontend",
+    "website": "https://markdalgleish.com/projects/stellar.js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "stellar(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Stimulus": {
+    "category": "frontend",
+    "website": "https://stimulusjs.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<[^>]+data-controller",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "/stimulus-bundle/controllers\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Stitches": {
+    "category": "frontend",
+    "website": "https://stitches.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^c-[A-Za-z]{5}$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Strapdown.js": {
+    "category": "frontend",
+    "website": "https://strapdownjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "strapdown\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Sugar": {
+    "category": "frontend",
+    "website": "https://sugarjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/sugar/([\\d\\.]+)/release/sugar\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "SugarJS": {
+    "category": "frontend",
+    "website": "https://sugarjs.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sugar\\/?((?:\\d+\\.)+\\d+)?(?:\\/sugar(?:-full)?)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Svelte": {
+    "category": "frontend",
+    "website": "https://svelte.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*/svelte/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<main[^>]+class=[\"\\']svelte-",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<(?:a|nav|section)[^>]+data-svelte-h=[\"\\']svelte-",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "__svelte|svelte_taxlistteaser",
+        "confidence": 80
+      }
+    ]
+  },
+  "SweetAlert": {
+    "category": "frontend",
+    "website": "https://sweetalert.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sweet(?:-)?alert(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "SweetAlert2": {
+    "category": "frontend",
+    "website": "https://sweetalert2.github.io/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/npm/sweetalert2@([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "sweetalert2@([\\d.]+)/dist/sweetalert2(?:\\.all)(?:\\.min)\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "limonte-sweetalert2/([\\d.]+)/sweetalert2(?:\\.all)(?:\\.min)\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Swiffy Slider": {
+    "category": "frontend",
+    "website": "https://swiffyslider.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/npm/swiffy-slider@([\\d\\.]+)/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Swiper": {
+    "category": "frontend",
+    "website": "https://swiperjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "swiper(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "swiper-bundle(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"swiper[\\s\"-][^\"]*\"|swiper-wrapper",
+        "confidence": 80
+      }
+    ]
+  },
+  "Swup": {
+    "category": "frontend",
+    "website": "https://swup.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/(?:dist\\/)?)?swup(?:-preload)?(?:-plugin)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Syncfusion": {
+    "category": "frontend",
+    "website": "https://www.syncfusion.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.syncfusion\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "script.aculo.us": {
+    "category": "frontend",
+    "website": "https://script.aculo.us",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
+        "confidence": 100
+      }
+    ]
+  },
+  "scrollreveal": {
+    "category": "frontend",
+    "website": "https://scrollrevealjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "scrollreveal(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<[^>]+data-sr(?:-id)",
+        "confidence": 100
+      }
+    ]
+  },
+  "sidr": {
+    "category": "frontend",
+    "website": "https://www.albertovarela.net/sidr/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sidr(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "slideout": {
+    "category": "frontend",
+    "website": "https://slideout.js.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "slideout(?:-init)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?slideout(?:-init)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "styled-components": {
+    "category": "frontend",
+    "website": "https://styled-components.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\[?sc-component-id",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<style[^>]+data-styled(?:-components|-version)?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Tablesorter": {
+    "category": "frontend",
+    "website": "https://mottie.github.io/tablesorter/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)[-\\/](?:dist\\/js\\/)?)?(?:jquery\\.)?tablesorter(?:[\\.\\/]pager)?(?:-custom-controls)?(?:\\.widgets)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Tabulator": {
+    "category": "frontend",
+    "website": "https://tabulator.info/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "tabulator(?:\\.min)?\\.js|tabulator-tables",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=[\"\\'][^\"\\']*\\btabulator\\b",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "new Tabulator\\(",
+        "confidence": 70
+      }
+    ]
+  },
+  "TanStack": {
+    "category": "frontend",
+    "website": "https://tanstack.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/static/.*npm\\.tanstack.*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "(?:https?:)?\\/\\/(?:www\\.)?tanstack\\.com(?:\\/[^\"'>]*)?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Tempus": {
+    "category": "frontend",
+    "website": "https://github.com/darkroomengineering/tempus",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "tempusVersion",
+        "confidence": 100
+      }
+    ]
+  },
+  "Timeago": {
+    "category": "frontend",
+    "website": "https://timeago.yarp.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "jquery\\.timeago\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Tiny Slider": {
+    "category": "frontend",
+    "website": "https://github.com/ganlanyuan/tiny-slider",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/([\\d\\.]+)/min/)?tiny-slider(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Tinycon": {
+    "category": "frontend",
+    "website": "https://github.com/tommoor/tinycon",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "tinycon(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Tippy.js": {
+    "category": "frontend",
+    "website": "https://atomiks.github.io/tippyjs",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/tippy\\.js(?:@|/)?([\\d\\.]+)?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Tipso": {
+    "category": "frontend",
+    "website": "https://tipso.object505.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/js/tipso\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "TogetherJS": {
+    "category": "frontend",
+    "website": "https://togetherjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "togetherjs(?:-min)?\\.js|togetherjs\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "TogetherJSConfig_cloneClicks|TogetherJSConfig_toolName|\\bTogetherJS\\b",
+        "confidence": 80
+      }
+    ]
+  },
+  "Transifex": {
+    "category": "frontend",
+    "website": "https://www.transifex.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.transifex\\.com/live|transifex\\.com/live",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Transifex\\.live\\.lib_version",
+        "confidence": 80
+      }
+    ]
+  },
+  "Tremor": {
+    "category": "frontend",
+    "website": "https://tremor.so",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+tremor-id=[\"\\'][^\"\\']*tremor-raw",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\'][^\"\\']*text-tremor-",
+        "confidence": 100
+      }
+    ]
+  },
+  "TurfJS": {
+    "category": "frontend",
+    "website": "https://turfjs.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(turf@[\\d.]+)?/?turf\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Twitter Flight": {
+    "category": "frontend",
+    "website": "https://flightjs.github.io/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "flight(?:\\.min)?\\.js|twitter/flight",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "\\bflight\\.(?:component|compose|advice)\\b",
+        "confidence": 60
+      }
+    ]
+  },
+  "Twitter typeahead.js": {
+    "category": "frontend",
+    "website": "https://twitter.github.io/typeahead.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:typeahead|bloodhound)\\.(?:jquery|bundle)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Typed.js": {
+    "category": "frontend",
+    "website": "https://mattboldt.com/demos/typed-js/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "typed(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Typer.js": {
+    "category": "frontend",
+    "website": "https://github.com/straversi/Typer.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "unpkg\\.com/typer-dot-js@([\\d\\.]+)/typer\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "timeago": {
+    "category": "frontend",
+    "website": "https://timeago.yarp.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?(?:jquery\\.)?[Tt]imeago(?:_mkdocs_material)?(?:\\.full)?(?:\\.locales)?(?:\\.native)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "toastr": {
+    "category": "frontend",
+    "website": "https://github.com/CodeSeven/toastr",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "toastr(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "toastr\\.version",
+        "confidence": 70
+      }
+    ]
+  },
+  "UmiJs": {
+    "category": "frontend",
+    "website": "https://umijs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/umi(\\.[\\w\\d]{8})?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Underscore.js": {
+    "category": "frontend",
+    "website": "https://underscorejs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "underscore.*\\.js(?:\\?ver=([\\d.]+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Unpoly": {
+    "category": "frontend",
+    "website": "https://unpoly.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "_unpoly_demo_layers_session",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/unpoly@([\\d\\.]+)/unpoly\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Uppy": {
+    "category": "frontend",
+    "website": "https://uppy.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "uppy(?:\\.min)?\\.js|uppy@|releases\\.transloadit\\.com/uppy",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Uppy\\.Audio|UppyUploader",
+        "confidence": 100
+      }
+    ]
+  },
+  "Vex": {
+    "category": "frontend",
+    "website": "https://github.hubspot.com/vex",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "vex(?:\\.combined)?(?:\\.min)?\\.js|vex-js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "vex\\.close",
+        "confidence": 70
+      }
+    ]
+  },
+  "Vike": {
+    "category": "frontend",
+    "website": "https://vike.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<script[^>]+id=[\"\\']vike_pageContext[\"\\']",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "__vike",
+        "confidence": 80
+      }
+    ]
+  },
+  "Vue.js": {
+    "category": "frontend",
+    "website": "https://vuejs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "vue[.-]([\\d.]*\\d)[^/]*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:/([\\d.]+))?/vue(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<(?!svg)[^>]+\\sdata-v(?:ue)?-",
+        "confidence": 100
+      }
+    ]
+  },
+  "VueStrap": {
+    "category": "frontend",
+    "website": "https://yuche.github.io/vue-strap",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/vue-strap/([\\d\\.]+)/vue-strap\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Vuex": {
+    "category": "frontend",
+    "website": "https://vuex.vuejs.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "vuex(?:\\.min|\\.global)?\\.js|vuex@",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Vuex\\.version",
+        "confidence": 70
+      }
+    ]
+  },
+  "vxe-table": {
+    "category": "frontend",
+    "website": "https://vxetable.cn",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\'][^\"\\']*vxe-table",
+        "confidence": 100
+      }
+    ]
+  },
+  "WeBlocks": {
+    "category": "frontend",
+    "website": "https://www.weblocks.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//weblocks\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Web Font Loader": {
+    "category": "frontend",
+    "website": "https://github.com/typekit/webfontloader",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/)?webfontloader(?:\\.min)?(?:[-\\.][\\d\\w]{0,32})?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Webix": {
+    "category": "frontend",
+    "website": "https://webix.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\bwebix\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Wijmo": {
+    "category": "frontend",
+    "website": "https://developer.mescius.com/wijmo",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/Scripts/Acts/Wijmo/wijmo\\.min\\.js\\?v=([\\d]+\\.\\d+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Wink": {
+    "category": "frontend",
+    "website": "https://winktoolkit.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:_base/js/base|wink).*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "WookMark": {
+    "category": "frontend",
+    "website": "https://wookmark.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "wookmark\\.min\\.js(?:\\?ver=([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Wurfl": {
+    "category": "frontend",
+    "website": "https://web.wurfl.io/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.wurfl\\.io",
+        "confidence": 100
+      }
+    ]
+  },
+  "waitForImages": {
+    "category": "frontend",
+    "website": "https://github.com/alexanderdickson/waitForImages",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:((?:\\d+\\.)+\\d+)\\/(?:jquery\\.)?)?waitforimages(?:-modded)?(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "(?:(?:jquery\\.)?)?waitforimages(?:-((?:\\d+\\.)+\\d+)-modded)?(?:\\.min)?\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "web-vitals": {
+    "category": "frontend",
+    "website": "https://github.com/GoogleChrome/web-vitals",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "web-vitals@([\\d.]+)/dist/web-vitals.*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "(8999999999999[\\s\\S]+1e12[\\s\\S]+(largest-contentful-paint|first-input|layout-shift)|(largest-contentful-paint|first-input|layout-shift)[\\s\\S]+8999999999999[\\s\\S]+1e12)",
+        "confidence": 100
+      }
+    ]
+  },
+  "XRegExp": {
+    "category": "frontend",
+    "website": "https://xregexp.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "xregexp[.-]([\\d.]*\\d)[^/]*\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/([\\d.]+)/xregexp(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "xregexp.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Xajax": {
+    "category": "frontend",
+    "website": "https://xajax-project.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "xajax_core.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "YUI": {
+    "category": "frontend",
+    "website": "https://clarle.github.io/yui3",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/yui/|yui\\.yahooapis\\.com)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Zepto": {
+    "category": "frontend",
+    "website": "https://zeptojs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "zepto.*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Ziggy": {
+    "category": "frontend",
+    "website": "https://github.com/tighten/ziggy",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\bZiggy\\b",
+        "confidence": 50
+      },
+      {
+        "type": "script",
+        "pattern": "ziggy(?:\\.min)?\\.js|vendor/tightenco/ziggy",
+        "confidence": 85
+      }
+    ]
+  },
+  "Zone.js": {
+    "category": "frontend",
+    "website": "https://github.com/angular/angular/tree/master/packages/zone.js",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:^|/)zone(?:\\.min)?\\.js|zone\\.js@",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Zone\\.root",
+        "confidence": 70
+      }
+    ]
+  }
+}

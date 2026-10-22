@@ -27,6 +27,20 @@ from .otx_urls import AlienVaultOTXUrls
 from .urlscan_urls import UrlScanUrls
 from .wayback_urls import WaybackUrls
 from .commoncrawl_urls import CommonCrawlUrls
+from .digitorus import Digitorus
+from .dnsrepo import DNSRepo
+from .driftnet import Driftnet
+from .hudsonrock import HudsonRock
+from .internetdb import ShodanInternetDB
+from .merklemap import MerkleMap
+from .myssl import MySSL
+from .reconeer import Reconeer
+from .shodanct import ShodanCT
+from .sitedossier import SiteDossier
+from .subdomaincenter import SubdomainCenter
+from .thc import THC
+from .threatcrowd import ThreatCrowd
+from .threatminer import ThreatMiner
 
 ALL_SOURCES: list[type[BaseSource]] = [
     CrtSh,
@@ -48,6 +62,20 @@ ALL_SOURCES: list[type[BaseSource]] = [
     GoogleCT,
     FacebookCT,
     DNSDumpster,
+    Digitorus,
+    DNSRepo,
+    Driftnet,
+    HudsonRock,
+    ShodanInternetDB,
+    MerkleMap,
+    MySSL,
+    Reconeer,
+    ShodanCT,
+    SiteDossier,
+    SubdomainCenter,
+    THC,
+    ThreatCrowd,
+    ThreatMiner,
     AlienVaultOTXUrls,
     UrlScanUrls,
     WaybackUrls,

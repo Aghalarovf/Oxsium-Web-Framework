@@ -1,0 +1,14 @@
+{
+  "domain": "socar.az",
+  "scanned_at": "2026-10-10T16:02:09.886000",
+  "results": {
+    "CMSeeK": {
+      "cms_detected": false,
+      "cms_id": null,
+      "cms_name": null,
+      "cms_url": null,
+      "cms_version": null,
+      "detection_method": null
+    }
+  }
+}

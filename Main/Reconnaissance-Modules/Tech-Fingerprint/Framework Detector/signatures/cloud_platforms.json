@@ -1,0 +1,133 @@
+{
+  "8base": {
+    "category": "backend",
+    "website": "https://www.8base.com",
+    "headers": [
+      {
+        "name": "x-8base-.*",
+        "pattern": ".*",
+        "confidence": 85
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "8base",
+        "confidence": 85
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "8base\\.com|api\\.8base\\.com|@8base/|8base-",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "api\\.8base\\.com|8base\\.com/graphql|8base-react-sdk|@8base/web|data-8base",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "8base",
+        "confidence": 30
+      }
+    ]
+  },
+  "Apigee": {
+    "category": "backend",
+    "website": "https://cloud.google.com/apigee",
+    "headers": [
+      {
+        "name": "via",
+        "pattern": "apigee",
+        "confidence": 85
+      },
+      {
+        "name": "x-apigee-.*",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "CactiveCloud": {
+    "category": "backend",
+    "website": "https://cactivecloud.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Cactive$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Google App Engine": {
+    "category": "backend",
+    "website": "https://cloud.google.com/appengine",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Knack": {
+    "category": "backend",
+    "website": "https://www.knack.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "loader\\.knack\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "LlamaLink Cloud Server": {
+    "category": "backend",
+    "website": "https://llamalink.net",
+    "headers": [
+      {
+        "name": "serverversion",
+        "pattern": "^LlamaLink",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Nordcraft": {
+    "category": "backend",
+    "website": "https://nordcraft.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^Nordcraft$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "application-name",
+        "pattern": "^Nordcraft$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Parse Platform": {
+    "category": "backend",
+    "website": "https://parseplatform.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "www\\.parsecdn\\.com",
+        "confidence": 100
+      }
+    ]
+  }
+}

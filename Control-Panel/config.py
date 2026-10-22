@@ -14,12 +14,14 @@ PYTHON      = VENV_PYTHON if VENV_PYTHON.exists() else Path(sys.executable)
 FILES: dict[str, Path] = {
     "connection":   ROOT / "Main" / "Backend" / "connection.py",
     "database_api": ROOT / "Main" / "SQLite-Engine" / "database-api.py",
+    "burp_api":     ROOT / "Main" / "Burp API" / "burp_api.py",
     "html":         ROOT / "Main" / "Oxsium-Web-Framework.html",
 }
 
 DEFAULT_PORTS: dict[str, int] = {
     "connection":   30300,
     "database_api": 30301,
+    "burp_api":     30302,
     "http":         30305,
 }
 
@@ -119,10 +121,13 @@ SERVICE_DEFS: list[tuple] = [
      "connection",   "connection",   "API",  C.G3),
     ("database_api", "Database API", "Database API · Flask · Data Layer",
      "database_api", "database_api", "DB",   C.G1),
+    ("burp_api",     "Burp API",     "Burp API · Flask · Burp Exporter",
+     "burp_api",     "burp_api",     "BURP", C.G2),
 ]
 
 SIDEBAR_ENTRIES: list[tuple[str, str, str]] = [
     ("⇌", "Connection  ·  API / DNS Engine", C.G3),
     ("⊞", "Database API  ·  Data Layer",      C.G1),
+    ("⇄", "Burp API  ·  Burp Exporter",       C.G2),
     ("◉", "Web Viewer  ·  HTTP Server",       C.G4),
 ]

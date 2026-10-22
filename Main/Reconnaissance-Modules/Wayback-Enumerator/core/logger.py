@@ -5,18 +5,7 @@ from colorama import Fore, Style, init
 
 init(autoreset=True)
 
-BANNER = r"""
-{}{}
- ██╗    ██╗███████╗██████╗  █████╗ ██████╗  ██████╗██╗  ██╗██╗██╗   ██╗███████╗
- ██║    ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔════╝██║  ██║██║██║   ██║██╔════╝
- ██║ █╗ ██║█████╗  ██████╔╝███████║██████╔╝██║     ███████║██║██║   ██║█████╗  
- ██║███╗██║██╔══╝  ██╔══██╗██╔══██║██╔══██╗██║     ██╔══██║██║╚██╗ ██╔╝██╔══╝  
- ╚███╔███╔╝███████╗██████╔╝██║  ██║██║  ██║╚██████╗██║  ██║██║ ╚████╔╝ ███████╗
-  ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝
-{}{}                 Archive-Based Passive Reconnaissance Engine v1.0
-                   Wayback · CommonCrawl · OTX · URLScan
-{}
-"""
+BANNER = "{}{}WebArchive Scanner{} {}v1.0{} — Passive Archive-Based Reconnaissance\n{}  Wayback · CommonCrawl · OTX · URLScan{}\n"
 
 C_INFO    = Fore.CYAN
 C_SUCCESS = Fore.GREEN
@@ -42,9 +31,9 @@ class Logger:
 
     def banner(self):
         print(BANNER.format(
-            Fore.CYAN, Style.BRIGHT,
-            Fore.WHITE, Style.DIM,
-            Style.RESET_ALL,
+            Fore.CYAN, Style.BRIGHT, C_RESET,
+            C_DIM, C_RESET,
+            C_DIM, C_RESET,
         ))
 
     def info(self, msg: str):
@@ -64,11 +53,7 @@ class Logger:
             print(self._fmt(C_DEBUG, "~", "DBG", msg))
 
     def section(self, title: str):
-        width = 60
-        bar = "─" * width
-        print(f"\n{C_BOLD}{Fore.CYAN}{bar}")
-        print(f"  {title}")
-        print(f"{bar}{C_RESET}\n")
+        print(f"\n{C_BOLD}{Fore.CYAN}── {title} {C_RESET}")
 
     def result(self, key: str, value, color: str = Fore.WHITE):
         print(f"  {C_DIM}{key:<30}{C_RESET} {color}{value}{C_RESET}")
@@ -93,6 +78,36 @@ class Logger:
             color = C_SUCCESS if isinstance(val, int) and val > 0 else Fore.WHITE
             self.result(key, val, color)
         print(f"\n  {C_DIM}Total time: {self.elapsed()}{C_RESET}\n")
+
+    def dump_results(self, results: dict):
+        if not results:
+            return
+        self.section("RESULTS")
+        for name, data in results.items():
+            print(f"{C_BOLD}{Fore.CYAN}[{name.upper()}]{C_RESET}")
+            self._dump_value(data, indent=2)
+            print()
+
+    def _dump_value(self, value, indent: int):
+        pad = " " * indent
+        if isinstance(value, list):
+            if not value:
+                print(f"{pad}{C_DIM}(empty){C_RESET}")
+                return
+            for item in value:
+                if isinstance(item, (dict, list)):
+                    self._dump_value(item, indent)
+                else:
+                    print(f"{pad}{item}")
+        elif isinstance(value, dict):
+            for key, sub in value.items():
+                if isinstance(sub, (dict, list)) and sub:
+                    print(f"{pad}{C_DIM}{key}:{C_RESET}")
+                    self._dump_value(sub, indent + 2)
+                else:
+                    print(f"{pad}{C_DIM}{key}:{C_RESET} {sub}")
+        else:
+            print(f"{pad}{value}")
 
     def progress(self, current: int, total: int, label: str = ""):
         if total == 0:

@@ -1,0 +1,1430 @@
+{
+  "ABP Framework": {
+    "category": "backend",
+    "website": "https://abp.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/libs/abp/|abp\\.(utils|event|ajax|localization)|Abp\\.(Account|Application)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "abp\\.(utils|event|ajax)|data-abp-|AbpZeroTemplate|abp\\.multiTenancy",
+        "confidence": 75
+      }
+    ]
+  },
+  "ASP.NET Boilerplate": {
+    "category": "backend",
+    "website": "https://aspnetboilerplate.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "abp\\.(utils|event|ajax)\\.js|/Scripts/abp\\.",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "AbpZeroTemplate|abp\\.multiTenancy|abp\\.ajax",
+        "confidence": 70
+      }
+    ]
+  },
+  "AdonisJS": {
+    "category": "backend",
+    "website": "https://adonisjs.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "AdonisJS",
+        "confidence": 95
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^adonis-session$",
+        "confidence": 90
+      },
+      {
+        "name": "^adonis_session$",
+        "confidence": 85
+      }
+    ],
+    "html": []
+  },
+  "Ajax.NET Professional": {
+    "category": "backend",
+    "website": "http://ajaxpro.info",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "AjaxPro",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/ajaxpro/[A-Za-z0-9_.]+,[A-Za-z0-9_.]+\\.ashx",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "AjaxPro\\.|/ajaxpro/",
+        "confidence": 70
+      }
+    ]
+  },
+  "Akka HTTP": {
+    "category": "backend",
+    "website": "https://doc.akka.io/docs/akka-http/current/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "akka-http",
+        "confidence": 95
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Alliance Auth": {
+    "category": "backend",
+    "website": "https://allianceauth.readthedocs.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Alliance Auth|allianceauth",
+        "confidence": 80
+      }
+    ]
+  },
+  "Amber": {
+    "category": "backend",
+    "website": "https://amberframework.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Amber",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^_amber_session$",
+        "confidence": 85
+      }
+    ],
+    "html": []
+  },
+  "Apache Wicket": {
+    "category": "backend",
+    "website": "https://wicket.apache.org",
+    "headers": [
+      {
+        "name": "wicket-ajax",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^wicket:",
+        "confidence": 60
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\?wicket:interface=|wicketPageId|wicket-fragment",
+        "confidence": 85
+      }
+    ]
+  },
+  "actionhero.js": {
+    "category": "backend",
+    "website": "https://www.actionherojs.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "actionhero",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Blade": {
+    "category": "backend",
+    "website": "https://laravel.com/docs/blade",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Blitz.js": {
+    "category": "backend",
+    "website": "https://blitzjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "blitz",
+        "confidence": 40
+      }
+    ]
+  },
+  "Bonfire": {
+    "category": "backend",
+    "website": "https://bonfirecodeigniter.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "bonfire",
+        "confidence": 70
+      }
+    ]
+  },
+  "CakePHP": {
+    "category": "backend",
+    "website": "https://cakephp.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "cakephp",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "application-name",
+        "pattern": "CakePHP",
+        "confidence": 100
+      }
+    ]
+  },
+  "Catberry.js": {
+    "category": "backend",
+    "website": "https://catberry.github.io/",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Catberry",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Chicago Boss": {
+    "category": "backend",
+    "website": "http://chicagoboss.org/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "_boss_session",
+        "confidence": 100
+      },
+      {
+        "name": "book_like_a_boss_session",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "CodeIgniter": {
+    "category": "backend",
+    "website": "https://codeigniter.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "ci_csrf_token",
+        "confidence": 100
+      },
+      {
+        "name": "ci_session",
+        "confidence": 100
+      },
+      {
+        "name": "exp_last_activity",
+        "confidence": 100
+      },
+      {
+        "name": "exp_tracker",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<input[^>]+name=\"ci_csrf_token\"",
+        "confidence": 100
+      }
+    ]
+  },
+  "Dancer": {
+    "category": "backend",
+    "website": "https://perldancer.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Perl Dancer ([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Perl Dancer ([\\d.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Django": {
+    "category": "backend",
+    "website": "https://djangoproject.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "django_language",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "(?:powered by <a[^>]+>Django ?([\\d.]+)?<\\/a>|<input[^>]*name=[\"']csrfmiddlewaretoken[\"'][^>]*>)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Express": {
+    "category": "backend",
+    "website": "https://expressjs.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^Express",
+        "confidence": 98
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Express",
+        "confidence": 85
+      },
+      {
+        "name": "etag",
+        "pattern": "^W/\"[0-9a-f]+-[A-Za-z0-9+/=]{20,}\"$",
+        "confidence": 15
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^connect\\.sid$",
+        "confidence": 80
+      },
+      {
+        "name": "^express:sess(\\.sig)?$",
+        "confidence": 90
+      },
+      {
+        "name": "^express\\.sid$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<pre>Cannot (GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS) /[^<]*</pre>",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "<title>Error</title>[\\s\\S]{0,80}<pre>(Cannot|Not Found|Error:)",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "at (Layer|Function)\\.handle \\[as handle_request\\]|node_modules/express/lib/router",
+        "confidence": 95
+      }
+    ]
+  },
+  "FarCry": {
+    "category": "backend",
+    "website": "https://www.farcrycore.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "FARCRYDEVICETYPE",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "FastAPI": {
+    "category": "backend",
+    "website": "https://fastapi.tiangolo.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"\\'][^\"\\']*fastapi\\.tiangolo\\.com[^>]*rel=[\"\\']shortcut icon[\"\\']|<link[^>]+rel=[\"\\']shortcut icon[\"\\'][^>]*href=[\"\\'][^\"\\']*fastapi\\.tiangolo\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Fat-Free Framework": {
+    "category": "backend",
+    "website": "https://fatfreeframework.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^Fat-Free Framework$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Flask": {
+    "category": "backend",
+    "website": "https://github.com/pallets/flask/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Werkzeug/?([\\d\\.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Frappe": {
+    "category": "backend",
+    "website": "https://frappeframework.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^frappe$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Fresh": {
+    "category": "backend",
+    "website": "https://fresh.deno.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<style[^>]+id=[\"\\']__FRSH_(?:TWIND|STYLE)[\"\\']",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<script[^>]+id=[\"\\']__FRSH_STATE[\"\\']",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*\\?__frsh_c=",
+        "confidence": 100
+      }
+    ]
+  },
+  "Frontity": {
+    "category": "backend",
+    "website": "https://frontity.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Frontity",
+        "confidence": 100
+      }
+    ]
+  },
+  "Google Web Toolkit": {
+    "category": "backend",
+    "website": "https://developers.google.com/web-toolkit",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "gwt:property",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ]
+  },
+  "Hono": {
+    "category": "backend",
+    "website": "https://hono.dev",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Hono",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Java Servlet": {
+    "category": "backend",
+    "website": "https://www.oracle.com/technetwork/java/index-jsp-135475.html",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Servlet(?:\\/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "JavaServer Faces": {
+    "category": "backend",
+    "website": "https://javaserverfaces.java.net",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "JSF(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "JavaServer Pages": {
+    "category": "backend",
+    "website": "https://www.oracle.com/technetwork/java/javaee/jsp/index.html",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "JSP(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Kemal": {
+    "category": "backend",
+    "website": "https://kemalcr.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Kemal",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Koa": {
+    "category": "backend",
+    "website": "https://koajs.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^koa$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Kohana": {
+    "category": "backend",
+    "website": "https://kohanaframework.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Kohana Framework ([\\d.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "kohanasession",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Ktor": {
+    "category": "backend",
+    "website": "https://ktor.io",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Ktor/debug$",
+        "confidence": 100
+      },
+      {
+        "name": "x-engine",
+        "pattern": "^Ktor$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Laravel": {
+    "category": "backend",
+    "website": "https://laravel.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "laravel_session",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Leptos": {
+    "category": "backend",
+    "website": "https://leptos.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<!--hk=_.*",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "export function microtask\\(f\\)",
+        "confidence": 75
+      }
+    ]
+  },
+  "Lift": {
+    "category": "backend",
+    "website": "https://liftweb.net",
+    "headers": [
+      {
+        "name": "x-lift-version",
+        "pattern": "(.+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Livewire": {
+    "category": "backend",
+    "website": "https://laravel-livewire.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "livewire(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<[^>]{1,512}\\bwire:",
+        "confidence": 100
+      }
+    ]
+  },
+  "Luana": {
+    "category": "backend",
+    "website": "https://luanaframework.github.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Luana\\sFramework\\s([\\d\\.]+)$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Macaron": {
+    "category": "backend",
+    "website": "https://go-macaron.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Marko": {
+    "category": "backend",
+    "website": "https://markojs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\.marko(\\.js)?",
+        "confidence": 100
+      }
+    ]
+  },
+  "MasterkinG32 Framework": {
+    "category": "backend",
+    "website": "https://masterking32.com",
+    "headers": [
+      {
+        "name": "x-powered-framework",
+        "pattern": "MasterkinG(?:)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^MasterkinG(?:)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Meteor": {
+    "category": "backend",
+    "website": "https://www.meteor.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<link[^>]+__meteor-css__",
+        "confidence": 100
+      }
+    ]
+  },
+  "Microsoft ASP.NET": {
+    "category": "backend",
+    "website": "https://www.asp.net",
+    "headers": [
+      {
+        "name": "x-aspnet-version",
+        "pattern": "(.+)",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "^ASP\\.NET",
+        "confidence": 100
+      },
+      {
+        "name": "set-cookie",
+        "pattern": "\\.AspNetCore",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "ASPSESSION",
+        "confidence": 100
+      },
+      {
+        "name": "ASP\\.NET_SessionId",
+        "confidence": 100
+      },
+      {
+        "name": "\\.ASPXAUTH",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<input[^>]+name=\"__VIEWSTATE",
+        "confidence": 100
+      }
+    ]
+  },
+  "Mojolicious": {
+    "category": "backend",
+    "website": "https://mojolicio.us",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^mojolicious",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "mojolicious",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Neos Flow": {
+    "category": "backend",
+    "website": "https://flow.neos.io",
+    "headers": [
+      {
+        "name": "x-flow-powered",
+        "pattern": "Flow/?(.+)?$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Nette Framework": {
+    "category": "backend",
+    "website": "https://nette.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^Nette Framework",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "nette-browser",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<input[^>]+data-nette-rules",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<div[^>]+id=\"snippet-",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<input[^>]+id=\"frm-",
+        "confidence": 100
+      }
+    ]
+  },
+  "Next.js": {
+    "category": "backend",
+    "website": "https://nextjs.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^Next\\.js ?([0-9.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "NEXT_LOCALE",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\.next\\.react",
+        "confidence": 100
+      }
+    ]
+  },
+  "Next.js App Router": {
+    "category": "backend",
+    "website": "https://nextjs.org/docs/app",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "self\\.__next_f\\.push",
+        "confidence": 80
+      }
+    ]
+  },
+  "Next.js Page Router SSR": {
+    "category": "backend",
+    "website": "https://nextjs.org/docs/pages/building-your-application/rendering/server-side-rendering",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "__NEXT_DATA__[^<]*\"(?:gip|gssp)\"\\s*:\\s*true",
+        "confidence": 100
+      }
+    ]
+  },
+  "Nuxt.js": {
+    "category": "backend",
+    "website": "https://nuxt.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/_nuxt/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<div [^>]*id=\"__nuxt\"",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<script [^>]*>window\\.__NUXT__",
+        "confidence": 100
+      }
+    ]
+  },
+  "Oat++": {
+    "category": "backend",
+    "website": "https://oatpp.io",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^oatpp/?([\\d.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Phoenix": {
+    "category": "backend",
+    "website": "https://github.com/Sazito/phoenix/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^phoenix",
+        "confidence": 100
+      }
+    ]
+  },
+  "Phoenix Framework": {
+    "category": "backend",
+    "website": "https://www.phoenixframework.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "phoenix(?:\\.min)?\\.js|/js/phoenix",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "Phoenix\\.Channel",
+        "confidence": 80
+      }
+    ]
+  },
+  "Phoenix LiveView": {
+    "category": "backend",
+    "website": "https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+data-phx-session",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "liveSocket\\.socket",
+        "confidence": 80
+      }
+    ]
+  },
+  "Play": {
+    "category": "backend",
+    "website": "https://www.playframework.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "PLAY_SESSION",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "PyWebIO": {
+    "category": "backend",
+    "website": "https://pywebio.readthedocs.io/en/latest/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/js/pywebio\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "pinoox": {
+    "category": "backend",
+    "website": "https://pinoox.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "pinoox_session",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Qwik": {
+    "category": "backend",
+    "website": "https://qwik.builder.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "q:version=[\"\\']([\\d.]+(?:-\\d+)?)[\"\\']",
+        "confidence": 100
+      }
+    ]
+  },
+  "RedwoodJS": {
+    "category": "backend",
+    "website": "https://redwoodjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+id=[\"\\']redwood-app[\"\\']",
+        "confidence": 100
+      }
+    ]
+  },
+  "Reflex": {
+    "category": "backend",
+    "website": "https://reflex.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "application-name",
+        "pattern": "^Reflex$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Remix": {
+    "category": "backend",
+    "website": "https://remix.run/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "__remixContext|__remixRouteModules|__remixRouter",
+        "confidence": 100
+      }
+    ]
+  },
+  "Revel": {
+    "category": "backend",
+    "website": "https://revel.github.io",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "REVEL_FLASH",
+        "confidence": 100
+      },
+      {
+        "name": "REVEL_SESSION",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Ruby on Rails": {
+    "category": "backend",
+    "website": "https://rubyonrails.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_(?:rails|rack)",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "mod_(?:rails|rack)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "_session_id",
+        "confidence": 75
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "csrf-param",
+        "pattern": "^authenticity_token$",
+        "confidence": 50
+      },
+      {
+        "type": "script",
+        "pattern": "/assets/application-[a-z\\d]{32}/\\.js",
+        "confidence": 50
+      }
+    ]
+  },
+  "Sails.js": {
+    "category": "backend",
+    "website": "https://sailsjs.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^Sails(?:$|[^a-z0-9])",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "sails\\.sid",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Sapper": {
+    "category": "backend",
+    "website": "https://sapper.svelte.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<script[^>]*>__SAPPER__",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "__SAPPER__",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shiny": {
+    "category": "backend",
+    "website": "https://shiny.posit.co",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^Shiny Server$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "SolidStart": {
+    "category": "backend",
+    "website": "https://start.solidjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "_\\$HY\\.init|_\\$HY\\b",
+        "confidence": 90
+      }
+    ]
+  },
+  "Spring": {
+    "category": "backend",
+    "website": "https://spring.io",
+    "headers": [
+      {
+        "name": "x-application-context",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "StimulusReflex": {
+    "category": "backend",
+    "website": "https://docs.stimulusreflex.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\.stimulate",
+        "confidence": 100
+      }
+    ]
+  },
+  "Streamlit": {
+    "category": "backend",
+    "website": "https://streamlit.io",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "_streamlit_csrf",
+        "confidence": 100
+      },
+      {
+        "name": "_streamlit_xsrf",
+        "confidence": 100
+      },
+      {
+        "name": "streamlit_session",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Symfony": {
+    "category": "backend",
+    "website": "https://symfony.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "sf_redirect",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "/@?symfony/",
+        "confidence": 100
+      }
+    ]
+  },
+  "ThinkPHP": {
+    "category": "backend",
+    "website": "https://www.thinkphp.cn",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "ThinkPHP",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "thinkphp_show_page_trace",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "TwistPHP": {
+    "category": "backend",
+    "website": "https://twistphp.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "TwistPHP",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "total.js": {
+    "category": "backend",
+    "website": "https://totaljs.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^total\\.js",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Vaadin": {
+    "category": "backend",
+    "website": "https://vaadin.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "vaadinBootstrap\\.js(?:\\?v=([\\d.]+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Web2py": {
+    "category": "backend",
+    "website": "https://web2py.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "web2py",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Web2py",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "web2py\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Wt": {
+    "category": "backend",
+    "website": "https://www.webtoolkit.eu/wt",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Wt\\.WT\\.\\$|WtOnLoad|WtSignalEmit",
+        "confidence": 100
+      }
+    ]
+  },
+  "Xeora": {
+    "category": "backend",
+    "website": "https://www.xeora.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "XeoraEngine",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "XeoraCube",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/_bi_sps_v.+\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<input type=\"hidden\" name=\"_sys_bind_\\d+\" id=\"_sys_bind_\\d+\" />",
+        "confidence": 100
+      }
+    ]
+  },
+  "Yii": {
+    "category": "backend",
+    "website": "https://www.yiiframework.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "YII_CSRF_TOKEN",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/assets/[a-zA-Z0-9]{8}\\/yii\\.js$",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "yii(?:\\.|)?(?:validation|activeform)\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by <a href=\"http://www\\.yiiframework\\.com/\" rel=\"external\">Yii Framework</a>",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<input type=\"hidden\" value=\"[a-zA-Z0-9]{40}\" name=\"YII_CSRF_TOKEN\" \\/>",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<!\\[CDATA\\[YII-BLOCK-(?:HEAD|BODY-BEGIN|BODY-END)\\]",
+        "confidence": 100
+      }
+    ]
+  },
+  "ZK": {
+    "category": "backend",
+    "website": "https://zkoss.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "zkau/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<!-- ZK [.\\d\\s]+-->",
+        "confidence": 100
+      }
+    ]
+  },
+  "Zend": {
+    "category": "backend",
+    "website": "https://zend.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Zend(?:Server)?(?:[\\s/]?([0-9.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "ZENDSERVERSESSID",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "Bool TypeScript": {
+    "category": "language",
+    "website": "https://bool.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "C": {
+    "category": "language",
+    "website": "https://www.open-std.org/jtc1/sc22/wg14/",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^C$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "CFML": {
+    "category": "language",
+    "website": "https://adobe.com/products/coldfusion-family.html",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "CFID",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Dart": {
+    "category": "language",
+    "website": "https://dart.dev",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "DARTSESSID",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/(?:\\.)?(?:dart)(?:\\.js)?/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Dragon": {
+    "category": "language",
+    "website": "https://dragon-lang.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Dragon Native ([\\d.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "GeneXus": {
+    "category": "language",
+    "website": "https://www.genexus.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/static/gxgral\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/static/gxtimezone\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<link[^>]+?id=\"gxtheme_css_reference\"",
+        "confidence": 100
+      }
+    ]
+  },
+  "Go": {
+    "category": "language",
+    "website": "https://go.dev",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "GraphQL": {
+    "category": "language",
+    "website": "https://graphql.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "store-config",
+        "pattern": "graphqlMethod",
+        "confidence": 100
+      }
+    ]
+  },
+  "Haskell": {
+    "category": "language",
+    "website": "https://wiki.haskell.org/Haskell",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Imba": {
+    "category": "language",
+    "website": "https://imba.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "imba(?:\\.min)?\\.js",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Imba\\.VERSION|\\bImba\\.(?:mount|Tag)\\b",
+        "confidence": 60
+      }
+    ]
+  },
+  "Java": {
+    "category": "language",
+    "website": "https://java.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "JSESSIONID",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "KPHP": {
+    "category": "language",
+    "website": "https://vkcom.github.io/kphp",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^KPHP/([\\d\\.]+)$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Kotlin": {
+    "category": "language",
+    "website": "https://kotlinlang.org",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Lua": {
+    "category": "language",
+    "website": "https://www.lua.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "\\bLua(?: ([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Node.js": {
+    "category": "language",
+    "website": "https://nodejs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\']appVersion[\"\\'][^>]*>.{0,200}<i[^>]+class=[\"\\'][^\"\\']*\\bicon-nodejs\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "PHP": {
+    "category": "language",
+    "website": "https://php.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "php/?([\\d.]+)?",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "^php/?([\\d.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "PHPSESSID",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\.php(?:\\?|$)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Perl": {
+    "category": "language",
+    "website": "https://perl.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "\\bPerl\\b(?: ?/?v?([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Python": {
+    "category": "language",
+    "website": "https://python.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "(?:^|\\s)Python(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Ruby": {
+    "category": "language",
+    "website": "https://ruby-lang.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "(?:Mongrel|Ruby(?:/([\\d\\.]+))?)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Rust": {
+    "category": "language",
+    "website": "https://www.rust-lang.org",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Sass": {
+    "category": "language",
+    "website": "https://sass-lang.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"\\'][^\"\\']*/index\\.scss",
+        "confidence": 60
+      }
+    ]
+  },
+  "Scala": {
+    "category": "language",
+    "website": "https://www.scala-lang.org",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "TypeScript": {
+    "category": "language",
+    "website": "https://www.typescriptlang.org",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "WebAssembly": {
+    "category": "language",
+    "website": "https://webassembly.org/",
+    "headers": [
+      {
+        "name": "content-type",
+        "pattern": "application/wasm",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/wasm_exec\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "XSLT": {
+    "category": "language",
+    "website": "https://www.w3.org/TR/xslt-10",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<xsl[^>]* version=\"(.+)\"",
+        "confidence": 100
+      }
+    ]
+  }
+}

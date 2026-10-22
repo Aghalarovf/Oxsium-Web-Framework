@@ -1,0 +1,226 @@
+{
+  "Chosen": {
+    "category": "backend",
+    "website": "https://harvesthq.github.io/chosen/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "chosen(?:\\.jquery)?(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "CouchDB": {
+    "category": "backend",
+    "website": "https://couchdb.apache.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "CouchDB/([\\d.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Creoline": {
+    "category": "backend",
+    "website": "https://www.creoline.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*\\.cstatic\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "HCL Domino": {
+    "category": "backend",
+    "website": "https://www.hcltechsw.com/domino",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Lotus-Domino$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Hamechio": {
+    "category": "backend",
+    "website": "https://hamech.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "hamech\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "HeliumWeb": {
+    "category": "backend",
+    "website": "https://heliumweb.adrikikicp-development.ml",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Adrikikicp Development",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "helium/src/helium.js/helium_web.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "http://maven.enriquitomcfh.ml/helium.js/helium_web.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "http://maven.enriquitomcfh.ml/helium.js/helium_web.min.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Helix Ultimate": {
+    "category": "backend",
+    "website": "https://www.joomshaper.com/joomla-templates/helixultimate",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<header[^>]+id=[\"\\']sp-header[\"\\']",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "<body[^>]+class=[\"\\'][^\"\\']*\\bhelix-ultimate\\b",
+        "confidence": 100
+      }
+    ]
+  },
+  "Ionic": {
+    "category": "backend",
+    "website": "https://ionicframework.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ionic(?:\\.bundle|\\.min)?\\.js|@ionic/core|ionic\\.esm\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Ionic\\.(?:config|version)",
+        "confidence": 70
+      }
+    ]
+  },
+  "Novaresa": {
+    "category": "backend",
+    "website": "https://www.novaresa.fr",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "www\\.novaresa\\.net/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Seosphera": {
+    "category": "backend",
+    "website": "https://seosphera.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.seosphera\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shopify Web Components": {
+    "category": "backend",
+    "website": "https://shopify.dev/docs/api/storefront-web-components",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.shopify\\.com/storefront/web-components\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Stencil": {
+    "category": "backend",
+    "website": "https://stenciljs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<html[^>]+data-stencil-build[^>]+class=[\"\\'][^\"\\']*hydrated",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<stencil-router|<stencil-route-link",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "stencil\\.inspect",
+        "confidence": 70
+      }
+    ]
+  },
+  "Tencent Waterproof Wall": {
+    "category": "backend",
+    "website": "https://007.qq.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/TCaptcha\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "captcha\\.qq\\.com/.*",
+        "confidence": 100
+      }
+    ]
+  },
+  "WOW": {
+    "category": "backend",
+    "website": "https://www.delac.io/WOW",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "wow(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?",
+        "confidence": 100
+      }
+    ]
+  }
+}

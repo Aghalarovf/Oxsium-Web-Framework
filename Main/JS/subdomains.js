@@ -150,6 +150,96 @@ const Subdomains = (() => {
         return `<span class="status-badge ${cls}">${code}</span>`;
     }
 
+    function _escapeHtml(value) {
+        return String(value ?? '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    function _formatList(value, empty = '--') {
+        const values = Array.isArray(value) ? value.filter(Boolean) : [];
+        return values.length ? values.map(_escapeHtml).join('<br>') : empty;
+    }
+
+    function _closeProperties() {
+        document.querySelector('.sub-properties-panel')?.remove();
+    }
+
+    function _showProperties(row, event) {
+        event.preventDefault();
+        _closeProperties();
+
+        const panel = document.createElement('aside');
+        panel.className = 'sub-properties-panel';
+        panel.setAttribute('role', 'dialog');
+        panel.setAttribute('aria-label', `Properties for ${row.subdomain}`);
+        panel.innerHTML = `
+            <div class="sub-properties-head">
+                <div>
+                    <div class="sub-properties-kicker">Subdomain Properties</div>
+                    <div class="sub-properties-title">${_escapeHtml(row.subdomain)}</div>
+                </div>
+                <button type="button" class="sub-properties-close" aria-label="Close properties">&times;</button>
+            </div>
+            <div class="sub-properties-body">
+                <div class="sub-properties-group">
+                    <div class="sub-properties-group-title">DNS</div>
+                    <div class="sub-properties-grid">
+                        <div class="sub-property"><span>Subdomain</span><strong>${_escapeHtml(row.subdomain)}</strong></div>
+                        <div class="sub-property"><span>IP address(es)</span><strong>${_formatList(row.ips)}</strong></div>
+                        <div class="sub-property"><span>DNS error</span><strong>${_escapeHtml(row.dns_error || '--')}</strong></div>
+                        <div class="sub-property"><span>CNAME chain</span><strong>${_formatList(row.cname_chain)}</strong></div>
+                    </div>
+                </div>
+                <div class="sub-properties-group">
+                    <div class="sub-properties-group-title">HTTP Probes</div>
+                    <div class="sub-properties-grid">
+                        <div class="sub-property"><span>HTTPS status</span><strong>${statusBadge(row.https)}</strong></div>
+                        <div class="sub-property"><span>HTTP status</span><strong>${statusBadge(row.http)}</strong></div>
+                        <div class="sub-property"><span>HTTPS final URL</span><strong>${_escapeHtml(row.https_final_url || '--')}</strong></div>
+                        <div class="sub-property"><span>HTTP final URL</span><strong>${_escapeHtml(row.http_final_url || '--')}</strong></div>
+                        <div class="sub-property"><span>HTTPS error</span><strong>${_escapeHtml(row.https_error || '--')}</strong></div>
+                        <div class="sub-property"><span>HTTP error</span><strong>${_escapeHtml(row.http_error || '--')}</strong></div>
+                    </div>
+                </div>
+                <div class="sub-properties-group">
+                    <div class="sub-properties-group-title">Security &amp; Discovery</div>
+                    <div class="sub-properties-grid">
+                        <div class="sub-property"><span>Takeover provider</span><strong>${_escapeHtml(row.takeover_provider || '--')}</strong></div>
+                        <div class="sub-property"><span>Takeover CNAME</span><strong>${_escapeHtml(row.takeover_cname || '--')}</strong></div>
+                        <div class="sub-property"><span>Takeover evidence</span><strong>${_escapeHtml(row.takeover_evidence || '--')}</strong></div>
+                        <div class="sub-property"><span>Sources</span><strong>${_formatList(row.sources)}</strong></div>
+                    </div>
+                </div>
+            </div>`;
+
+        document.body.appendChild(panel);
+        panel.querySelector('.sub-properties-close').addEventListener('click', _closeProperties);
+        requestAnimationFrame(() => panel.classList.add('visible'));
+    }
+
+    function _initPropertiesEvents() {
+        const body = $('sub-table-body');
+        if (!body || body.dataset.propertiesReady) return;
+        body.dataset.propertiesReady = 'true';
+        body.addEventListener('contextmenu', event => {
+            const rowEl = event.target.closest('.sub-row');
+            if (!rowEl) return;
+            const subdomain = rowEl.dataset.subdomain;
+            const row = _allRows.find(item => item.subdomain === subdomain);
+            if (row) _showProperties(row, event);
+        });
+        document.addEventListener('click', event => {
+            if (!event.target.closest('.sub-properties-panel')) _closeProperties();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') _closeProperties();
+        });
+    }
+
     /* ────────────────────────────────────────────────────────
        RENDER — SUMMARY STATS
     ──────────────────────────────────────────────────────── */
@@ -298,12 +388,13 @@ const Subdomains = (() => {
 
             const statusCell = statusBadge(bc);
 
-            return `<div class="sub-row">
+            return `<div class="sub-row" data-subdomain="${_escapeHtml(r.subdomain)}" title="Right-click to view properties">
                 <div class="sub-cell sub-cell-name" style="flex:2.2;min-width:0;">${r.subdomain}</div>
                 <div class="sub-cell sub-cell-ip"   style="flex:1.5;min-width:0;">${ipLabel}</div>
                 <div class="sub-cell sub-cell-status" style="width:130px;flex-shrink:0;display:flex;justify-content:center;">${statusCell}</div>
             </div>`;
         }).join('');
+        _initPropertiesEvents();
     }
 
     /* ────────────────────────────────────────────────────────
@@ -332,6 +423,7 @@ const Subdomains = (() => {
                 http_final_url  : httpChk?.final_url  || null,
                 cname_chain     : h?.cname_chain || [],
                 takeover_provider: null,
+                takeover_evidence: null,
                 sources,
             };
         });
@@ -438,6 +530,7 @@ const Subdomains = (() => {
                 cname_chain      : safeArr(r.cname_chain),
                 takeover_provider: r.takeover_provider || null,
                 takeover_cname   : r.takeover_cname   || null,
+                takeover_evidence: r.takeover_evidence || null,
                 sources          : [],
             }));
 
@@ -505,6 +598,7 @@ const Subdomains = (() => {
        RESET — clear leftover results before a new scan starts
     ──────────────────────────────────────────────────────── */
     function reset() {
+        _closeProperties();
         _allRows      = [];
         _filterText   = '';
         _filterStatus = 'all';

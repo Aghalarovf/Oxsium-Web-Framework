@@ -49,12 +49,15 @@ class BaseSource(ABC):
             )
 
     def get(self, url: str, *, attempts: int = 3, **kwargs) -> requests.Response:
-        resp = request_with_retry(
-            self.session, "GET", url, attempts=attempts, timeout=self.timeout, **kwargs
-        )
+        kwargs.setdefault("timeout", self.timeout)
+        resp = request_with_retry(self.session, "GET", url, attempts=attempts, **kwargs)
         if resp.status_code in (401, 403):
+            if self.requires_api_key or self.required_keys:
+                raise SourceError(
+                    f"{self.name}: authentication failed (HTTP {resp.status_code}) - check your API key(s) in api_keys.json"
+                )
             raise SourceError(
-                f"{self.name}: authentication failed - check your API key(s) in api_keys.json"
+                f"{self.name}: access denied (HTTP {resp.status_code}) - blocked, rate limited, or an API key is required"
             )
         return resp
 

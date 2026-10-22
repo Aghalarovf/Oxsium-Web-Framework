@@ -11,6 +11,7 @@ Examples:
   python webarchive.py -d example.com
   python webarchive.py -d example.com --sources --params
   python webarchive.py -d example.com --cdx --status 200
+  python webarchive.py -d example.com --extract --extract-types robots,sitemap
   python webarchive.py -d example.com --urls --params -o results.json
   python webarchive.py -d example.com --all -o report
         """,
@@ -27,7 +28,12 @@ Examples:
     modules.add_argument(
         "--sources",
         action="store_true",
-        help="Run multi-source archive URL collector (Wayback, CommonCrawl, OTX, URLScan)",
+        help="Run multi-source archive URL collector (Wayback, CommonCrawl, OTX, URLScan, VirusTotal, GhostArchive, Arquivo.pt, UKWA, Hudson Rock, IntelX)",
+    )
+    modules.add_argument(
+        "--extract",
+        action="store_true",
+        help="Extract and parse historical critical files (robots.txt, sitemap.xml, security.txt, crossdomain.xml, ...) from Wayback snapshots",
     )
     modules.add_argument(
         "--urls",
@@ -92,34 +98,69 @@ Examples:
         help="Export parameter wordlist for fuzzing",
     )
 
+    extract = parser.add_argument_group("Extract")
+    extract.add_argument(
+        "--extract-limit",
+        metavar="N",
+        type=int,
+        default=10,
+        help="Maximum snapshots analyzed per file, sampled across the timeline (default: 10)",
+    )
+    extract.add_argument(
+        "--extract-types",
+        metavar="LIST",
+        help="Comma-separated file types: robots,sitemap,security,crossdomain,clientaccess,humans,ads,wellknown (default: all)",
+    )
+    extract.add_argument(
+        "--extract-raw",
+        action="store_true",
+        help="Include raw snapshot content in the exported results",
+    )
+
+    providers = parser.add_argument_group("Providers")
+    providers.add_argument(
+        "--providers",
+        metavar="LIST",
+        help=(
+            "Comma-separated providers for --sources "
+            "(wayback,commoncrawl,otx,urlscan,virustotal,ghostarchive,arquivo,ukwa,hudsonrock,intelx). "
+            "Default: all except intelx"
+        ),
+    )
+    providers.add_argument(
+        "--api-keys",
+        metavar="PATH",
+        help="Path to api_keys.json (virustotal, intelx, intelx_host, urlscan, otx)",
+    )
+
     perf = parser.add_argument_group("Performance")
     perf.add_argument(
         "--concurrency",
         metavar="N",
         type=int,
-        default=10,
-        help="Number of concurrent requests (default: 10)",
+        default=5,
+        help="Number of concurrent requests (default: 5)",
     )
     perf.add_argument(
         "--timeout",
         metavar="SEC",
         type=int,
-        default=15,
-        help="Timeout in seconds for each request (default: 15)",
+        default=20,
+        help="Timeout in seconds for each request (default: 20)",
     )
     perf.add_argument(
         "--retries",
         metavar="N",
         type=int,
-        default=3,
-        help="Number of retries for failed requests (default: 3)",
+        default=4,
+        help="Number of retries for failed requests (default: 4)",
     )
     perf.add_argument(
         "--delay",
         metavar="SEC",
         type=float,
-        default=0.5,
-        help="Delay between requests in seconds (default: 0.5)",
+        default=1.0,
+        help="Delay between requests in seconds (default: 1.0)",
     )
 
     parser.add_argument(

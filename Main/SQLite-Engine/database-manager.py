@@ -589,17 +589,58 @@ def _write_reverse(writer: SqliteWriter, scan_id: int, data: dict) -> int:
         writer.create_index(spec.table_name, col)
     return count
 
+def _normalise_dangling_entry(entry: dict[str, Any]) -> dict[str, Any]:
+    """Map all dangling finding types to the columns used by the UI."""
+    if entry.get("subdomain") is not None:
+        return entry
+
+    if entry.get("ns") is not None:
+        root = entry.get("root_domain")
+        service = "NS delegation takeover"
+        if root:
+            service = f"{service} ({root})"
+        return {
+            "subdomain": "NS delegation",
+            "cname": entry["ns"],
+            "service": service,
+        }
+
+    if entry.get("mx_host") is not None:
+        return {
+            "subdomain": "MX record",
+            "cname": entry["mx_host"],
+            "service": "MX takeover",
+        }
+
+    if entry.get("srv") is not None:
+        target = entry.get("target") or ""
+        port = entry.get("port")
+        if port is not None:
+            target = f"{target}:{port}"
+        return {
+            "subdomain": entry["srv"],
+            "cname": target,
+            "service": "SRV dangling",
+        }
+
+    return {
+        "subdomain": entry.get("subdomain") or "Unknown record",
+        "cname": entry.get("cname") or entry.get("target"),
+        "service": entry.get("service") or entry.get("reason") or "Unknown",
+    }
+
 def _write_dangling(writer: SqliteWriter, scan_id: int, data: list) -> int:
     spec      = KNOWN_SPECS["dangling"]
     col_types = {"scan_id": "INTEGER", "subdomain": "TEXT", "cname": "TEXT", "service": "TEXT"}
     writer.ensure_table(spec.table_name, col_types)
     count = 0
     for entry in data:
+        normalised = _normalise_dangling_entry(entry)
         writer.insert(spec.table_name, {
             "scan_id":   scan_id,
-            "subdomain": entry.get("subdomain"),
-            "cname":     entry.get("cname"),
-            "service":   entry.get("service"),
+            "subdomain": normalised["subdomain"],
+            "cname":     normalised["cname"],
+            "service":   normalised["service"],
         })
         count += 1
     for col in spec.index_columns:

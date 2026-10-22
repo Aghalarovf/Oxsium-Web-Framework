@@ -4,7 +4,14 @@ from typing import Any
 from urllib.parse import urlencode, urlparse
 from collections import defaultdict
 
+from core.keys import load_keys
 from modules.base import BaseArchiveModule
+from modules.providers import (
+    BUILTIN_PROVIDERS,
+    EXTRA_PROVIDERS,
+    ProviderContext,
+    resolve_providers,
+)
 
 _CRITICAL_PATTERNS: list[tuple[str, str]] = [
     (r'/robots\.txt',         'robots-txt'),
@@ -299,33 +306,58 @@ class ArchiveSourcesModule(BaseArchiveModule):
     async def run(self) -> dict[str, Any]:
         self.logger.info(f"Source scan started → {self.domain}")
 
-        results = await asyncio.gather(
-            self.fetch_wayback_cdx(self.domain),
-            self.fetch_commoncrawl(self.domain),
-            self.fetch_alienvault_otx(self.domain),
-            self.fetch_urlscan(self.domain),
-            return_exceptions=True,
-        )
+        self._keys = load_keys(getattr(self.args, "api_keys", None))
+        selected, unknown = resolve_providers(getattr(self.args, "providers", None))
+        for name in unknown:
+            self.logger.warning(f"Unknown provider ignored: {name}")
 
-        wayback_urls, cc_urls, otx_urls, urlscan_urls = self._unpack(results)
-
-        merged = self.merge_and_deduplicate(
-            [wayback_urls, cc_urls, otx_urls, urlscan_urls]
-        )
-
-        stats = {
-            "total":       len(merged),
-            "wayback":     len(wayback_urls),
-            "commoncrawl": len(cc_urls),
-            "otx":         len(otx_urls),
-            "urlscan":     len(urlscan_urls),
+        builtin = {
+            "wayback":     self.fetch_wayback_cdx,
+            "commoncrawl": self.fetch_commoncrawl,
+            "otx":         self.fetch_alienvault_otx,
+            "urlscan":     self.fetch_urlscan,
         }
-
-        self.logger.success(
-            f"Total {stats['total']} unique URLs found "
-            f"(WB:{stats['wayback']} | CC:{stats['commoncrawl']} "
-            f"| OTX:{stats['otx']} | US:{stats['urlscan']})"
+        context = ProviderContext(
+            domain=self.domain,
+            requester=self.requester,
+            logger=self.logger,
+            keys=self._keys,
         )
+
+        jobs: dict[str, Any] = {}
+        for name in selected:
+            if name in builtin:
+                jobs[name] = builtin[name](self.domain)
+                continue
+            fetcher, required = EXTRA_PROVIDERS[name]
+            missing = [k for k in required if not self._keys.get(k)]
+            if missing:
+                self.logger.warning(
+                    f"Provider '{name}' skipped: missing API key(s): {', '.join(missing)}"
+                )
+                continue
+            jobs[name] = fetcher(context)
+
+        results = await asyncio.gather(*jobs.values(), return_exceptions=True)
+
+        per_source: dict[str, list[str]] = {}
+        for name, result in zip(jobs, results):
+            if isinstance(result, Exception):
+                self.logger.warning(f"Provider '{name}' failed: {result}")
+                per_source[name] = []
+            elif isinstance(result, list):
+                per_source[name] = result
+            else:
+                per_source[name] = []
+
+        merged = self.merge_and_deduplicate(list(per_source.values()))
+
+        stats: dict[str, int] = {"total": len(merged)}
+        for name, found in per_source.items():
+            stats[name] = len(found)
+
+        breakdown = " | ".join(f"{name}:{count}" for name, count in stats.items() if name != "total")
+        self.logger.success(f"Total {stats['total']} unique URLs found ({breakdown})")
 
         enriched = _enrich(merged, self.domain)
 
@@ -344,22 +376,45 @@ class ArchiveSourcesModule(BaseArchiveModule):
 
         pattern = f"*.{domain}/*"
 
-        num_pages = await self._wayback_page_count(pattern)
-        self.log_debug(f"Wayback CDX: {num_pages} pages")
+        num_pages, page_count_confident = await self._wayback_page_count(pattern)
+        self.log_debug(f"Wayback CDX: {num_pages} pages (confident={page_count_confident})")
 
-        tasks = [
-            self._wayback_fetch_page(pattern, page)
-            for page in range(num_pages)
-        ]
+        pending_pages = list(range(num_pages))
+        failed_pages: list[int] = []
+
+        tasks = [self._wayback_fetch_page(pattern, page) for page in pending_pages]
         pages = await asyncio.gather(*tasks, return_exceptions=True)
 
-        for page_urls in pages:
-            if isinstance(page_urls, list):
+        for page, page_urls in zip(pending_pages, pages):
+            if isinstance(page_urls, list) and page_urls:
                 urls.extend(page_urls)
+            else:
+                failed_pages.append(page)
+
+        if failed_pages:
+            self.log_debug(f"Wayback CDX: retrying {len(failed_pages)} failed page(s)")
+            await asyncio.sleep(self.requester.delay * 2)
+            retry_tasks = [self._wayback_fetch_page(pattern, page) for page in failed_pages]
+            retried = await asyncio.gather(*retry_tasks, return_exceptions=True)
+            for page_urls in retried:
+                if isinstance(page_urls, list):
+                    urls.extend(page_urls)
+
+        if not page_count_confident and urls and len(urls) >= WAYBACK_PAGE_LIMIT * 0.9:
+            self.log_debug("Wayback CDX: page count was a fallback and first page looked full, probing for more pages")
+            extra_page = num_pages
+            while True:
+                extra_urls = await self._wayback_fetch_page(pattern, extra_page)
+                if not extra_urls:
+                    break
+                urls.extend(extra_urls)
+                extra_page += 1
+                if extra_page >= 50:
+                    break
 
         return self.deduplicate(urls)
 
-    async def _wayback_page_count(self, pattern: str) -> int:
+    async def _wayback_page_count(self, pattern: str) -> tuple[int, bool]:
         params = {
             "url":        pattern,
             "output":     "json",
@@ -369,10 +424,15 @@ class ArchiveSourcesModule(BaseArchiveModule):
         }
         data = await self.requester.get(WAYBACK_CDX_URL, params=params, response_type="text")
         try:
-            count = int(data.strip()) if data else 1
-            return max(1, min(count, 50))
+            count = int(data.strip()) if data else None
         except (ValueError, AttributeError):
-            return 1
+            count = None
+
+        if count is None:
+            self.log_debug("Wayback CDX: page count request failed, falling back to 1 page")
+            return 1, False
+
+        return max(1, min(count, 50)), True
 
     async def _wayback_fetch_page(self, pattern: str, page: int) -> list[str]:
         params = {
@@ -403,16 +463,25 @@ class ArchiveSourcesModule(BaseArchiveModule):
         recent = indexes[:CC_MAX_INDEXES]
         self.log_debug(f"CommonCrawl: querying {len(recent)} indexes")
 
-        tasks = [
-            self._cc_query_index(idx["cdx-api"], domain)
-            for idx in recent
-            if "cdx-api" in idx
-        ]
+        index_names = [idx["cdx-api"] for idx in recent if "cdx-api" in idx]
+        tasks = [self._cc_query_index(api_url, domain) for api_url in index_names]
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
-        for res in results:
-            if isinstance(res, list):
+        failed_indexes = []
+        for api_url, res in zip(index_names, results):
+            if isinstance(res, list) and res:
                 urls.extend(res)
+            else:
+                failed_indexes.append(api_url)
+
+        if failed_indexes:
+            self.log_debug(f"CommonCrawl: retrying {len(failed_indexes)} failed index(es)")
+            await asyncio.sleep(self.requester.delay * 2)
+            retry_tasks = [self._cc_query_index(api_url, domain) for api_url in failed_indexes]
+            retried = await asyncio.gather(*retry_tasks, return_exceptions=True)
+            for res in retried:
+                if isinstance(res, list):
+                    urls.extend(res)
 
         return self.deduplicate(urls)
 
@@ -459,7 +528,16 @@ class ArchiveSourcesModule(BaseArchiveModule):
 
         while next_url:
             params = {"limit": OTX_PAGE_LIMIT, "page": page}
-            data = await self.requester.get(next_url, params=params, response_type="json")
+            data = await self.requester.get(
+                next_url, params=params, headers=self._otx_headers(), response_type="json"
+            )
+
+            if not data or not isinstance(data, dict):
+                self.log_debug(f"OTX: page {page} failed, retrying once after cooldown")
+                await asyncio.sleep(self.requester.delay * 2)
+                data = await self.requester.get(
+                    next_url, params=params, headers=self._otx_headers(), response_type="json"
+                )
 
             if not data or not isinstance(data, dict):
                 break
@@ -494,8 +572,21 @@ class ArchiveSourcesModule(BaseArchiveModule):
                 params["search_after"] = search_after
 
             data = await self.requester.get(
-                URLSCAN_SEARCH, params=params, response_type="json"
+                URLSCAN_SEARCH,
+                params=params,
+                headers=self._urlscan_headers(),
+                response_type="json",
             )
+
+            if not data or not isinstance(data, dict):
+                self.log_debug("URLScan: page failed, retrying once after cooldown")
+                await asyncio.sleep(self.requester.delay * 2)
+                data = await self.requester.get(
+                    URLSCAN_SEARCH,
+                    params=params,
+                    headers=self._urlscan_headers(),
+                    response_type="json",
+                )
 
             if not data or not isinstance(data, dict):
                 break
@@ -533,16 +624,10 @@ class ArchiveSourcesModule(BaseArchiveModule):
 
         return self.deduplicate(combined)
 
-    @staticmethod
-    def _unpack(gather_results: tuple) -> tuple[list, list, list, list]:
-        unpacked = []
-        for r in gather_results:
-            if isinstance(r, Exception):
-                unpacked.append([])
-            elif isinstance(r, list):
-                unpacked.append(r)
-            else:
-                unpacked.append([])
-        while len(unpacked) < 4:
-            unpacked.append([])
-        return tuple(unpacked[:4])
+    def _otx_headers(self) -> dict[str, str] | None:
+        key = getattr(self, "_keys", {}).get("otx")
+        return {"X-OTX-API-KEY": key} if key else None
+
+    def _urlscan_headers(self) -> dict[str, str] | None:
+        key = getattr(self, "_keys", {}).get("urlscan")
+        return {"API-Key": key} if key else None

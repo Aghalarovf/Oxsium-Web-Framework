@@ -1,0 +1,41 @@
+{
+  "HP iLO": {
+    "category": "backend",
+    "website": "https://hp.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "HP-iLO-Server(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Hirschmann HiOS": {
+    "category": "backend",
+    "website": "https://hirschmann.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "(?:HiSecOS-|HiOS-.+-)(\\d+\\.\\d+\\.\\d+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Intel Active Management Technology": {
+    "category": "backend",
+    "website": "https://intel.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Intel\\(R\\) Active Management Technology(?: ([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  }
+}

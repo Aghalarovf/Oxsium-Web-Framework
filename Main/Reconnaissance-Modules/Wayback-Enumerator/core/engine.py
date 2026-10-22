@@ -8,6 +8,7 @@ from core.exporter import Exporter
 
 MODULE_REGISTRY: dict[str, str] = {
     "sources": ("modules.sources_fetcher", "ArchiveSourcesModule"),
+    "extract": ("modules.archive_extract", "ArchiveExtractModule"),
     "urls":    ("modules.url_analyzer",    "URLAnalyzerModule"),
     "params":  ("modules.param_miner",     "ParamMinerModule"),
     "cdx":     ("modules.cdx_query",       "CDXQueryModule"),
@@ -37,8 +38,8 @@ class ArchiveEngine:
         if not active:
             self.logger.error(
                 "No module selected. "
-                "Use --sources / --urls / --params / --cdx / --diff / --all. "
-                "(--all: sources, params, diff işlədir; cdx ayrıca --cdx ilə işlədilə bilər)"
+                "Use --sources / --extract / --urls / --params / --cdx / --diff / --all. "
+                "(--all runs sources, extract, params and diff; cdx and urls must be enabled separately)"
             )
             return
 
@@ -58,8 +59,7 @@ class ArchiveEngine:
 
         self._finalize()
 
-    # --all verildiкdə işə düşən modullar (cdx xaric)
-    ALL_MODULES: list[str] = ["sources", "params", "diff"]
+    ALL_MODULES: list[str] = ["sources", "extract", "params", "diff"]
 
     def _resolve_active_modules(self) -> list[str]:
         if getattr(self.args, "all", False):
@@ -93,7 +93,7 @@ class ArchiveEngine:
 
             if name == "params":
                 urls = self._extract_urls_from_results()
-                self.logger.info(f"[params] {len(urls)} URL əvvəlki modullardan ötürüldü")
+                self.logger.info(f"[params] {len(urls)} URLs passed from previous modules")
                 result = await instance.run(urls=urls)
             else:
                 result = await instance.run()
@@ -111,7 +111,6 @@ class ArchiveEngine:
                 traceback.print_exc()
 
     def _extract_urls_from_results(self) -> list[str]:
-        """Əvvəlki modulların nəticəsindən bütün URL-ləri toplayır."""
         urls: list[str] = []
         seen: set[str] = set()
 
@@ -143,22 +142,29 @@ class ArchiveEngine:
 
         self.logger.summary(stats)
 
-        if self.args.output or self.args.format != "json":
+        if self.args.output:
             exporter = Exporter(
                 logger=self.logger,
                 output_path=self.args.output,
                 fmt=self.args.format,
             )
             exporter.export(self.results, label=self.domain.replace(".", "_"))
+        else:
+            self.logger.dump_results(self.results)
 
         if getattr(self.args, "wordlist", False) and "params" in self.results:
-            exporter = Exporter(
-                logger=self.logger,
-                output_path=self.args.output,
-                fmt="wordlist",
-            )
             param_data = self.results["params"].get("all_params", [])
-            exporter.export_wordlist(param_data)
+            if self.args.output:
+                exporter = Exporter(
+                    logger=self.logger,
+                    output_path=self.args.output,
+                    fmt="wordlist",
+                )
+                exporter.export_wordlist(param_data)
+            else:
+                self.logger.section("WORDLIST")
+                for param in sorted(set(param_data)):
+                    print(f"  {param}")
 
     @staticmethod
     def _count_result(data: Any) -> int:

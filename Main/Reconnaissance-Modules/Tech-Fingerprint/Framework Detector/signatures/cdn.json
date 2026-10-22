@@ -1,0 +1,1218 @@
+{
+  "5centsCDN": {
+    "category": "cdn",
+    "website": "https://www.5centscdn.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "5centsCDN|5cdn",
+        "confidence": 90
+      },
+      {
+        "name": "x-cdn-provider",
+        "pattern": "5centsCDN",
+        "confidence": 95
+      },
+      {
+        "name": "x-5cdn-.*",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "5centscdn\\.com|5cdn\\.(net|com)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "5centscdn\\.com|5cdn\\.(net|com)|5centsCDN",
+        "confidence": 70
+      }
+    ]
+  },
+  "Acquia Cloud Platform CDN": {
+    "category": "cdn",
+    "website": "https://www.acquia.com",
+    "headers": [
+      {
+        "name": "x-ac",
+        "pattern": ".*",
+        "confidence": 85
+      },
+      {
+        "name": "x-acquia-.*",
+        "pattern": ".*",
+        "confidence": 85
+      },
+      {
+        "name": "via",
+        "pattern": "acquia",
+        "confidence": 70
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "AiSpeed": {
+    "category": "cdn",
+    "website": "https://www.aispeed.com",
+    "headers": [
+      {
+        "name": "via",
+        "pattern": "AiSpeed",
+        "confidence": 85
+      },
+      {
+        "name": "x-aispeed-.*",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Akamai": {
+    "category": "cdn",
+    "website": "https://www.akamai.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "AkamaiGHost",
+        "confidence": 95
+      },
+      {
+        "name": "x-akamai-.*",
+        "pattern": ".*",
+        "confidence": 85
+      },
+      {
+        "name": "akamai-.*",
+        "pattern": ".*",
+        "confidence": 80
+      },
+      {
+        "name": "via",
+        "pattern": "akamai",
+        "confidence": 70
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^akamai_",
+        "confidence": 60
+      }
+    ],
+    "html": []
+  },
+  "Alibaba Cloud CDN": {
+    "category": "cdn",
+    "website": "https://www.alibabacloud.com/product/cdn",
+    "headers": [
+      {
+        "name": "via",
+        "pattern": "cache[0-9.]+ \\(Cdn77|ENet|Alibaba|aliyun",
+        "confidence": 70
+      },
+      {
+        "name": "x-swift-savetime",
+        "pattern": ".*",
+        "confidence": 70
+      },
+      {
+        "name": "x-cache",
+        "pattern": "aliyun|alicdn",
+        "confidence": 70
+      },
+      {
+        "name": "server",
+        "pattern": "Tengine",
+        "confidence": 25
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Amazon CloudFront": {
+    "category": "cdn",
+    "website": "https://aws.amazon.com/cloudfront/",
+    "headers": [
+      {
+        "name": "via",
+        "pattern": "CloudFront",
+        "confidence": 95
+      },
+      {
+        "name": "x-amz-cf-id",
+        "pattern": ".*",
+        "confidence": 95
+      },
+      {
+        "name": "x-amz-cf-pop",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "server",
+        "pattern": "CloudFront",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Apache Traffic Server": {
+    "category": "cdn",
+    "website": "https://trafficserver.apache.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "ATS/|Apache Traffic Server",
+        "confidence": 95
+      },
+      {
+        "name": "via",
+        "pattern": "ApacheTrafficServer",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "ArvanCloud": {
+    "category": "cdn",
+    "website": "https://www.arvancloud.ir",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "ArvanCloud",
+        "confidence": 95
+      },
+      {
+        "name": "x-arvan-.*",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-ar-powered-by",
+        "pattern": "ArvanCloud",
+        "confidence": 95
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Azion": {
+    "category": "cdn",
+    "website": "https://www.azion.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Azion",
+        "confidence": 90
+      },
+      {
+        "name": "x-azion-.*",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "via",
+        "pattern": "azion",
+        "confidence": 75
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Azure CDN": {
+    "category": "cdn",
+    "website": "https://azure.microsoft.com/products/cdn/",
+    "headers": [
+      {
+        "name": "x-azure-ref",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-cache",
+        "pattern": "azure",
+        "confidence": 60
+      },
+      {
+        "name": "server",
+        "pattern": "Microsoft-IIS.*ECAcc|ECAcc",
+        "confidence": 50
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "BootstrapCDN": {
+    "category": "cdn",
+    "website": "https://www.bootstrapcdn.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(maxcdn|stackpath)\\.bootstrapcdn\\.com",
+        "confidence": 95
+      }
+    ]
+  },
+  "Bunny": {
+    "category": "cdn",
+    "website": "https://bunny.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "BunnyCDN",
+        "confidence": 95
+      },
+      {
+        "name": "cdn-pullzone",
+        "pattern": ".*",
+        "confidence": 85
+      },
+      {
+        "name": "cdn-uid",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.b-cdn\\.net|bunny\\.net",
+        "confidence": 75
+      }
+    ]
+  },
+  "CDN77": {
+    "category": "cdn",
+    "website": "https://www.cdn77.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^CDN77-Turbo$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "CacheFly": {
+    "category": "cdn",
+    "website": "https://www.cachefly.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^CFS ",
+        "confidence": 100
+      },
+      {
+        "name": "x-cf1",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "x-cf2",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Cloud Guard": {
+    "category": "cdn",
+    "website": "https://cloudguard.ir",
+    "headers": [
+      {
+        "name": "cg-server-tag",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Cloudflare": {
+    "category": "cdn",
+    "website": "https://www.cloudflare.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^cloudflare$",
+        "confidence": 100
+      },
+      {
+        "name": "cf-cache-status",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "cf-ray",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "__cfduid",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "image",
+        "pattern": "//cdn\\.cloudflare",
+        "confidence": 100
+      }
+    ]
+  },
+  "Cloudimage": {
+    "category": "cdn",
+    "website": "https://www.cloudimage.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<img[^>]+src=[\"'][^\"']*\\.cloudimg\\.io/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*\\.cloudimg\\.io/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "ciResponsive\\.config",
+        "confidence": 60
+      }
+    ]
+  },
+  "Cloudinary": {
+    "category": "cdn",
+    "website": "https://cloudinary.com",
+    "headers": [
+      {
+        "name": "content-security-policy",
+        "pattern": "player\\.cloudinary\\.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "CreateJS": {
+    "category": "cdn",
+    "website": "https://code.createjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "code\\.createjs\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "cdnjs": {
+    "category": "cdn",
+    "website": "https://cdnjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdnjs\\.cloudflare\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "DERAK.CLOUD": {
+    "category": "cdn",
+    "website": "https://derak.cloud",
+    "headers": [
+      {
+        "name": "derak-umbrage",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "server",
+        "pattern": "^DERAK\\.CLOUD$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "__derak_auth",
+        "confidence": 100
+      },
+      {
+        "name": "__derak_user",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "DiamondCDN": {
+    "category": "cdn",
+    "website": "https://diamondcdn.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^DiamondCDN$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "DigiCDN": {
+    "category": "cdn",
+    "website": "https://digicloud.ir",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "digicloud",
+        "confidence": 20
+      }
+    ]
+  },
+  "DigitalOcean Spaces": {
+    "category": "cdn",
+    "website": "https://www.digitalocean.com/products/spaces",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<img[^>]+src=[\"'][^\"']*\\.digitaloceanspaces\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<img[^>]+data-src=[\"'][^\"']*\\.digitaloceanspaces\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Dorsa Cloud": {
+    "category": "cdn",
+    "website": "https://dorsa.cloud",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Dorsa Cloud$",
+        "confidence": 100
+      },
+      {
+        "name": "x-cdn-provider",
+        "pattern": "^Dorsa Cloud",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "^Dorsa Cloud",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Fastly": {
+    "category": "cdn",
+    "website": "https://www.fastly.com",
+    "headers": [
+      {
+        "name": "fastly-debug-digest",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "vary",
+        "pattern": "Fastly-SSL",
+        "confidence": 100
+      },
+      {
+        "name": "x-fastly-request-id",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "server",
+        "pattern": "Fastly",
+        "confidence": 100
+      },
+      {
+        "name": "x-fastly-origin",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "x-fastly-request-id",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "x-via-fastly",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Filestack": {
+    "category": "cdn",
+    "website": "https://www.filestack.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.filestackapi\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "\\.filestackapi\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Fireblade": {
+    "category": "cdn",
+    "website": "https://fireblade.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "fbs",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Gatsby Cloud Image CDN": {
+    "category": "cdn",
+    "website": "https://www.gatsbyjs.com/products/cloud/image-cdn",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<img[^>]+srcset=[\"'][^\"']*/_gatsby/image/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<source[^>]+srcset=[\"'][^\"']*/_gatsby/image/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Gcore": {
+    "category": "cdn",
+    "website": "https://gcore.com",
+    "headers": [
+      {
+        "name": "x-id",
+        "pattern": "^[\\w-]+-gc\\d{2}$",
+        "confidence": 100
+      },
+      {
+        "name": "x-id-fe",
+        "pattern": "^[\\w-]+-gc\\d{2}$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "GoCache": {
+    "category": "cdn",
+    "website": "https://www.gocache.com.br/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^gocache$",
+        "confidence": 100
+      },
+      {
+        "name": "x-gocache-cachestatus",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Google Cloud CDN": {
+    "category": "cdn",
+    "website": "https://cloud.google.com/cdn",
+    "headers": [
+      {
+        "name": "via",
+        "pattern": "^1\\.1 google$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Google Hosted Libraries": {
+    "category": "cdn",
+    "website": "https://developers.google.com/speed/libraries",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ajax\\.googleapis\\.com/ajax/libs/",
+        "confidence": 100
+      }
+    ]
+  },
+  "GotiPath": {
+    "category": "cdn",
+    "website": "https://gotipath.com",
+    "headers": [
+      {
+        "name": "x-cache",
+        "pattern": "\\.swiftserve\\.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "GuardFlame": {
+    "category": "cdn",
+    "website": "https://hydun.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^GuardFlame$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Hostinger CDN": {
+    "category": "cdn",
+    "website": "https://www.hostinger.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "hcdn",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "ImageEngine": {
+    "category": "cdn",
+    "website": "https://imageengine.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*\\.imgeng\\.in/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<img[^>]+src=[\"'][^\"']*\\.imgeng\\.in/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<img[^>]+data-src=[\"'][^\"']*\\.imgeng\\.in/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<source[^>]+srcset=[\"'][^\"']*\\.imgeng\\.in/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Imgix": {
+    "category": "cdn",
+    "website": "https://imgix.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<img[^>]+src=[\"'][^\"']*\\.imgix\\.net/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<img[^>]+data-src=[\"'][^\"']*\\.imgix\\.net/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<img[^>]+srcset=[\"'][^\"']*\\.imgix\\.net/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<source[^>]+src=[\"'][^\"']*\\.imgix\\.net/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<source[^>]+data-src=[\"'][^\"']*\\.imgix\\.net/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Imperva": {
+    "category": "cdn",
+    "website": "https://www.imperva.com",
+    "headers": [
+      {
+        "name": "x-cdn",
+        "pattern": "Incapsula",
+        "confidence": 100
+      },
+      {
+        "name": "x-iinfo",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "x-cdn",
+        "pattern": "^Imperva",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/_Incapsula_Resource",
+        "confidence": 100
+      }
+    ]
+  },
+  "Incapsula": {
+    "category": "cdn",
+    "website": "https://www.incapsula.com",
+    "headers": [
+      {
+        "name": "x-cdn",
+        "pattern": "Incapsula",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "jQuery CDN": {
+    "category": "cdn",
+    "website": "https://code.jquery.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "code\\.jquery\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "jsDelivr": {
+    "category": "cdn",
+    "website": "https://www.jsdelivr.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.jsdelivr\\.net",
+        "confidence": 100
+      }
+    ]
+  },
+  "KRT CDN": {
+    "category": "cdn",
+    "website": "https://krajtilak.in",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.krajtilak\\.in",
+        "confidence": 100
+      }
+    ]
+  },
+  "KelonCloud": {
+    "category": "cdn",
+    "website": "https://www.keloncloud.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^(?:(?:KelonCloud|KC)-Private-CDN|KelonCloud)$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "KeyCDN": {
+    "category": "cdn",
+    "website": "https://www.keycdn.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^keycdn-engine$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "KuronekoServer CDN": {
+    "category": "cdn",
+    "website": "https://cdn.krnk.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "cdn\\.krnk\\.org/",
+        "confidence": 100
+      }
+    ]
+  },
+  "MaxCDN": {
+    "category": "cdn",
+    "website": "https://www.maxcdn.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^NetDNA",
+        "confidence": 100
+      },
+      {
+        "name": "x-cdn-forward",
+        "pattern": "^maxcdn$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Microsoft Ajax Content Delivery Network": {
+    "category": "cdn",
+    "website": "https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ajax\\.aspnetcdn\\.com/ajax/",
+        "confidence": 100
+      }
+    ]
+  },
+  "MizbanCloud": {
+    "category": "cdn",
+    "website": "https://mizbancloud.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^MizbanCloud$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Netlify": {
+    "category": "cdn",
+    "website": "https://www.netlify.com/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Netlify",
+        "confidence": 100
+      },
+      {
+        "name": "x-nf-request-id",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Powa": {
+    "category": "cdn",
+    "website": "https://powa.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "powaHealthCheck|powaInitAssets|powaOnLoadJs|powaSyncLoadScripts",
+        "confidence": 100
+      }
+    ]
+  },
+  "QUIC.cloud": {
+    "category": "cdn",
+    "website": "https://www.quic.cloud",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "RawGit": {
+    "category": "cdn",
+    "website": "https://rawgit.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.rawgit\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Section.io": {
+    "category": "cdn",
+    "website": "https://www.section.io",
+    "headers": [
+      {
+        "name": "section-io-id",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "section-io-origin-status",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "section-io-origin-time-seconds",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Sotoon": {
+    "category": "cdn",
+    "website": "https://sotoon.ir",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Sotoon(?: CDN)?$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "StackPath": {
+    "category": "cdn",
+    "website": "https://www.stackpath.com",
+    "headers": [
+      {
+        "name": "x-backend-server",
+        "pattern": "hosting\\.stackcp\\.net$",
+        "confidence": 100
+      },
+      {
+        "name": "x-provided-by",
+        "pattern": "^StackCDN(?: ([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Statically": {
+    "category": "cdn",
+    "website": "https://statically.io",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^statically$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.statically\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Sucuri": {
+    "category": "cdn",
+    "website": "https://sucuri.net/",
+    "headers": [
+      {
+        "name": "x-sucuri-cache:",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "x-sucuri-id",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Tencent Cloud": {
+    "category": "cdn",
+    "website": "https://intl.cloud.tencent.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "copyright",
+        "pattern": "^.+Tencent\\sCloud\\.$",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "\\.tencent-cloud\\.(?:cn|com)/",
+        "confidence": 100
+      }
+    ]
+  },
+  "TwicPics": {
+    "category": "cdn",
+    "website": "https://www.twicpics.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^TwicPics/\\d+\\.\\d+\\.\\d+$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": ".+\\.twic\\.pics",
+        "confidence": 100
+      }
+    ]
+  },
+  "Unpkg": {
+    "category": "cdn",
+    "website": "https://unpkg.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "unpkg\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Uploadcare": {
+    "category": "cdn",
+    "website": "https://uploadcare.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<img[^>]+src=[\"'][^\"']*\\.ucarecdn\\.com/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*ucarecdn\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<img[^>]+data-src=[\"'][^\"']*\\.ucarecdn\\.com/",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "ucarecdn\\.com/widget/|uploadcare(?:\\.min)?\\.js",
+        "confidence": 90
+      }
+    ]
+  },
+  "VergeCloud": {
+    "category": "cdn",
+    "website": "https://www.vergecloud.com/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^vergecloud$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Wangsu": {
+    "category": "cdn",
+    "website": "https://en.wangsu.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "__cdnRoute\\s*=\\s*[\"\\']wangsu[\"\\']",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "playurl\\.wangsu",
+        "confidence": 100
+      }
+    ]
+  },
+  "Yandex.Cloud CDN": {
+    "category": "cdn",
+    "website": "https://cloud.yandex.com/en/services/cdn",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "(?:href|src)=[\"\\'][^\"\\']*storage\\.yandexcloud\\.net",
+        "confidence": 100
+      }
+    ]
+  }
+}

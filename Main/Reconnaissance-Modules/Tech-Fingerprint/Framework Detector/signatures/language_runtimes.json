@@ -1,0 +1,66 @@
+{
+  "bun": {
+    "category": "backend",
+    "website": "https://bun.sh",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Bun$",
+        "confidence": 90
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Bun",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Deno": {
+    "category": "backend",
+    "website": "https://deno.land",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "HHVM": {
+    "category": "backend",
+    "website": "https://hhvm.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "HHVM/?([\\d.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Mono": {
+    "category": "backend",
+    "website": "https://mono-project.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Mono",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "OpenSwoole": {
+    "category": "backend",
+    "website": "https://openswoole.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "OpenSwoole(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  }
+}

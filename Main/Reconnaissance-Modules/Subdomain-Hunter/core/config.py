@@ -4,6 +4,10 @@ import re
 __version__ = "0.5.0"
 
 USER_AGENT = "Subdomain-Hunter/0.5 (passive recon)"
+BROWSER_USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+)
 
 DOMAIN_RE = re.compile(
     r"^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$", re.I
@@ -20,4 +24,9 @@ ENV_FALLBACKS = {
     "hackertarget":   "HACKERTARGET_API_KEY",
     "circl_user":     "CIRCL_USER",
     "circl_pass":     "CIRCL_PASS",
+    "merklemap":      "MERKLEMAP_API_KEY",
+    "driftnet":       "DRIFTNET_API_KEY",
+    "dnsrepo":        "DNSREPO_API_KEY",
+    "reconeer":       "RECONEER_API_KEY",
+    "subdomaincenter": "SUBDOMAINCENTER_API_KEY",
 }

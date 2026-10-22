@@ -1,0 +1,5645 @@
+{
+  "AdNabu": {
+    "category": "misc",
+    "website": "https://www.adnabu.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "adnabu\\.com|adnabu-",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "adnabu",
+        "confidence": 60
+      }
+    ]
+  },
+  "AddToAny Share Buttons": {
+    "category": "misc",
+    "website": "https://www.addtoany.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "static\\.addtoany\\.com|a2a\\.min\\.js|addtoany",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\ba2a_(kit|dd|svg|floating_style)",
+        "confidence": 90
+      }
+    ]
+  },
+  "Adminer": {
+    "category": "misc",
+    "website": "https://www.adminer.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<title>\\s*Adminer\\s*[0-9.]*\\s*</title>|id=\"h1\">\\s*<a[^>]*>Adminer</a>",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "adminer\\.css|adminer\\.js|data-jush=",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Login - Adminer|Adminer\\s*&middot;",
+        "confidence": 90
+      }
+    ]
+  },
+  "Adobe RoboHelp": {
+    "category": "misc",
+    "website": "https://www.adobe.com/products/robohelp.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "RoboHelp",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "whthost\\.js|robohelp|wh_variables\\.js",
+        "confidence": 80
+      }
+    ]
+  },
+  "Affilo": {
+    "category": "misc",
+    "website": "https://www.affilo.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "affilo(jetpack|theme|blueprint)?",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "affilo",
+        "confidence": 40
+      }
+    ]
+  },
+  "Ali Reviews": {
+    "category": "misc",
+    "website": "https://alireviews.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "alireviews|ali-reviews",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bali-?reviews",
+        "confidence": 70
+      }
+    ]
+  },
+  "AlmaLinux": {
+    "category": "misc",
+    "website": "https://almalinux.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "\\(AlmaLinux\\)",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Alpine Linux": {
+    "category": "misc",
+    "website": "https://alpinelinux.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "\\(Alpine( Linux)?\\)",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "AlternC": {
+    "category": "misc",
+    "website": "https://alternc.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "AlternC|alternc",
+        "confidence": 75
+      }
+    ]
+  },
+  "Amazon EC2": {
+    "category": "misc",
+    "website": "https://aws.amazon.com/ec2/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "ec2\\.(amazonaws|internal)",
+        "confidence": 40
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Amazon S3": {
+    "category": "misc",
+    "website": "https://aws.amazon.com/s3/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^AmazonS3$",
+        "confidence": 95
+      },
+      {
+        "name": "x-amz-request-id",
+        "pattern": ".*",
+        "confidence": 80
+      },
+      {
+        "name": "x-amz-id-2",
+        "pattern": ".*",
+        "confidence": 80
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Applied CSR24": {
+    "category": "misc",
+    "website": "https://www.appliedsystems.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "csr24|appliedcsr24",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "CSR24|csr24",
+        "confidence": 55
+      }
+    ]
+  },
+  "AsciiDoc": {
+    "category": "misc",
+    "website": "https://asciidoc.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "AsciiDoc",
+        "confidence": 90
+      }
+    ]
+  },
+  "Asciidoctor": {
+    "category": "misc",
+    "website": "https://asciidoctor.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "Asciidoctor",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\basciidoc\\b",
+        "confidence": 60
+      }
+    ]
+  },
+  "Atera": {
+    "category": "misc",
+    "website": "https://www.atera.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "atera\\.com",
+        "confidence": 80
+      }
+    ]
+  },
+  "Autoconf": {
+    "category": "misc",
+    "website": "https://www.gnu.org/software/autoconf/",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Autoketing Product Reviews": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/product-reviews-autoketing",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "autoketing",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "autoketing",
+        "confidence": 65
+      }
+    ]
+  },
+  "BILLmanager": {
+    "category": "misc",
+    "website": "https://www.ispsystem.com/software/billmanager",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^billmgr$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "BILLmanager",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/billmgr/|/skins/[a-z]+/billmgr",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "billmgr|BILLmanager",
+        "confidence": 60
+      }
+    ]
+  },
+  "BON Loyalty": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/bon-loyalty-rewards",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bonloyalty|bon-loyalty",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbon-loyalty\\b|bonloyalty-widget",
+        "confidence": 75
+      }
+    ]
+  },
+  "BOOM": {
+    "category": "misc",
+    "website": "https://boom.cn",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "boom",
+        "confidence": 25
+      }
+    ]
+  },
+  "Back In Stock": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/back-in-stock",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "backinstock\\.org|back-in-stock",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bback-in-stock\\b|data-bis-",
+        "confidence": 80
+      }
+    ]
+  },
+  "Banno Banking": {
+    "category": "misc",
+    "website": "https://banno.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "banno",
+        "confidence": 80
+      }
+    ]
+  },
+  "Base44": {
+    "category": "misc",
+    "website": "https://base44.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "base44",
+        "confidence": 75
+      }
+    ]
+  },
+  "Basic": {
+    "category": "misc",
+    "website": "https://basicutils.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Beam AfterSell": {
+    "category": "misc",
+    "website": "https://aftersell.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "aftersell\\.com|aftersell-",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\baftersell\\b|data-aftersell",
+        "confidence": 80
+      }
+    ]
+  },
+  "Beam OutSell": {
+    "category": "misc",
+    "website": "https://outsell.ai",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "outsell\\.(ai|io)|outsell-",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\boutsell\\b|data-outsell",
+        "confidence": 70
+      }
+    ]
+  },
+  "Bentobox": {
+    "category": "misc",
+    "website": "https://www.getbento.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "getbento|bento",
+        "confidence": 60
+      }
+    ]
+  },
+  "Better Price": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/better-price",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "betterprice|better-price",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbetter-price\\b",
+        "confidence": 60
+      }
+    ]
+  },
+  "BiteSpeed": {
+    "category": "misc",
+    "website": "https://www.bitespeed.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bitespeed\\.co|bitespeed-chatbot",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "bitespeed",
+        "confidence": 60
+      }
+    ]
+  },
+  "Bogos": {
+    "category": "misc",
+    "website": "https://www.bogos.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bogos\\.io|bogos-",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbogos\\b",
+        "confidence": 65
+      }
+    ]
+  },
+  "Bold Brain": {
+    "category": "misc",
+    "website": "https://boldcommerce.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boldapps\\.net.*brain|bold-brain",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbold-brain\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "Bold Bundles": {
+    "category": "misc",
+    "website": "https://boldcommerce.com/products/product-bundles",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boldapps\\.net.*bundle|bold-bundle",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbold-bundle\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "Bold Custom Pricing": {
+    "category": "misc",
+    "website": "https://boldcommerce.com/products/custom-pricing",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boldapps\\.net.*pricing|bold-pricing",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbold-pricing\\b",
+        "confidence": 65
+      }
+    ]
+  },
+  "Bold Motivator": {
+    "category": "misc",
+    "website": "https://boldcommerce.com/products/motivator",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boldapps\\.net.*motivator|bold-motivator",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbold-motivator\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "Bold Page Builder": {
+    "category": "misc",
+    "website": "https://boldcommerce.com/products/page-builder",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boldapps\\.net.*(pagebuilder|page-builder)",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbold-pagebuilder\\b",
+        "confidence": 65
+      }
+    ]
+  },
+  "Bold Product Options": {
+    "category": "misc",
+    "website": "https://boldcommerce.com/products/product-options",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boldapps\\.net.*option|options-connector\\.js|bold-po-",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbold-option-set\\b|bold-po-",
+        "confidence": 75
+      }
+    ]
+  },
+  "Bold Subscriptions": {
+    "category": "misc",
+    "website": "https://boldcommerce.com/products/subscriptions",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boldapps\\.net.*subscri|subscriptions-by-bold",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbold-subscri",
+        "confidence": 70
+      }
+    ]
+  },
+  "Bold Upsell": {
+    "category": "misc",
+    "website": "https://boldcommerce.com/products/upsell",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boldapps\\.net.*upsell|bold-upsell|recommendation-offers",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbold-upsell\\b|bold-ro-",
+        "confidence": 75
+      }
+    ]
+  },
+  "BookThatApp": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/book-that-app",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bookthatapp\\.com|book-that-app",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "bookthatapp",
+        "confidence": 65
+      }
+    ]
+  },
+  "BookingKoala": {
+    "category": "misc",
+    "website": "https://bookingkoala.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "bookingkoala",
+        "confidence": 85
+      }
+    ]
+  },
+  "Boost Commerce": {
+    "category": "misc",
+    "website": "https://boostcommerce.net",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boostcommerce\\.net|boost-sd|boost-pfs",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bboost-(sd|pfs)\\b|data-boost-",
+        "confidence": 75
+      }
+    ]
+  },
+  "Boutiq": {
+    "category": "misc",
+    "website": "https://www.boutiq.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boutiq\\.io|boutiq-widget",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "boutiq",
+        "confidence": 55
+      }
+    ]
+  },
+  "Brilliant Web-to-Lead": {
+    "category": "misc",
+    "website": "https://www.brilliantwebtoleadforsalesforce.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "brilliantwebtolead|web-to-lead.*salesforce",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "brilliantwebtolead",
+        "confidence": 65
+      }
+    ]
+  },
+  "Brownie": {
+    "category": "misc",
+    "website": "https://eth-brownie.readthedocs.io",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Bubble": {
+    "category": "misc",
+    "website": "https://bubble.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bubble\\.io",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*bubble-|data-bubble",
+        "confidence": 60
+      }
+    ]
+  },
+  "Bugcrowd": {
+    "category": "misc",
+    "website": "https://www.bugcrowd.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bugcrowd",
+        "confidence": 80
+      }
+    ]
+  },
+  "Bump": {
+    "category": "misc",
+    "website": "https://www.usebump.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "usebump\\.com|bump-upsell",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbump-upsell\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "Business Website Builder": {
+    "category": "misc",
+    "website": "https://www.businesswebsitebuilder.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "businesswebsitebuilder",
+        "confidence": 70
+      }
+    ]
+  },
+  "BuySafe": {
+    "category": "misc",
+    "website": "https://www.buysafe.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "buysafe",
+        "confidence": 80
+      }
+    ]
+  },
+  "CJDropshipping app": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/cucheng",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.cjdropshipping\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Captch Me": {
+    "category": "misc",
+    "website": "https://captchme.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "^https?://api\\.captchme\\.net/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Cardina": {
+    "category": "misc",
+    "website": "https://cardina.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "static\\.cohere\\.so",
+        "confidence": 100
+      }
+    ]
+  },
+  "CareCart": {
+    "category": "misc",
+    "website": "https://carecart.io/abandoned-cart-recovery-app",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.carecart\\.io/api/abandoned-cart/",
+        "confidence": 100
+      }
+    ]
+  },
+  "CareCart Cartly Abandoned Cart Recovery": {
+    "category": "misc",
+    "website": "https://carecart.io/cartly-abandoned-cart-recovery/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.carecart\\.io/api/abandoned-cart/",
+        "confidence": 100
+      }
+    ]
+  },
+  "CareCart Sales Pop Up": {
+    "category": "misc",
+    "website": "https://carecart.io/sales-pop-up-app",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sales-pop\\.carecart\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "CargoServer": {
+    "category": "misc",
+    "website": "https://cargoserver.ch",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "application-name",
+        "pattern": "^CargoServer$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Carro": {
+    "category": "misc",
+    "website": "https://getcarro.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.getcarro\\.com/",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/carro\\.min\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "CartBot": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/cartbot-auto-add-to-cart",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn-app\\.cart-bot\\.net/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Cartylabs": {
+    "category": "misc",
+    "website": "https://cartylabs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "fast-checkout-api\\.cartylabs\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Chaser": {
+    "category": "misc",
+    "website": "https://chaser.ru",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "//chaser\\.ru'",
+        "confidence": 100
+      }
+    ]
+  },
+  "Citrix": {
+    "category": "misc",
+    "website": "https://www.citrix.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/ctxs\\.core\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "CleanTalk": {
+    "category": "misc",
+    "website": "https://cleantalk.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "moderate\\.cleantalk\\.org/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Clear": {
+    "category": "misc",
+    "website": "https://www.clearme.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "ClearMe\\.Environments|clearMeClientID",
+        "confidence": 100
+      }
+    ]
+  },
+  "Clerk": {
+    "category": "misc",
+    "website": "https://clerk.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "clerk(?:\\.browser)?(?:\\.min)?\\.js|\\.clerk\\.accounts\\.dev",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Clerk\\.(?:openSignIn|authenticateWithMetamask|version)",
+        "confidence": 60
+      }
+    ]
+  },
+  "ClickCease": {
+    "category": "misc",
+    "website": "https://www.clickcease.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.clickcease\\.com/monitor/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "www\\.clickcease\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "ClickHelp": {
+    "category": "misc",
+    "website": "https://clickhelp.com",
+    "headers": [
+      {
+        "name": "content-security-policy-report-only",
+        "pattern": "\\.clickhelp\\.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "ClickReport": {
+    "category": "misc",
+    "website": "https://www.clickreport.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "service\\.clickreport\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "ClickUp": {
+    "category": "misc",
+    "website": "https://clickup.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/app-cdn\\.clickup\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Cloudflare Bot Management": {
+    "category": "misc",
+    "website": "https://www.cloudflare.com/en-gb/products/bot-management/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "__cf_bm",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Cloudflare Turnstile": {
+    "category": "misc",
+    "website": "https://www.cloudflare.com/products/turnstile",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "challenges\\.cloudflare\\.com/turnstile/v0/api\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "class=[\"\\'][^\"\\']*\\bcf-turnstile\\b",
+        "confidence": 90
+      }
+    ]
+  },
+  "Code Climate": {
+    "category": "misc",
+    "website": "https://codeclimate.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a[^>]+href=[\"\\'][^\"\\']*codeclimate\\.com[^>]*>\\s*<img[^>]+src=[\"\\'][^\"\\']*api\\.codeclimate\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Coin Currency Converter": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/coin",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/apps/coin/coin\\.js.+\\.myshopify\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "CoinHive Captcha": {
+    "category": "misc",
+    "website": "https://coinhive.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Combahton FlowShield": {
+    "category": "misc",
+    "website": "https://combahton.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "antiddos/flowproxy",
+        "confidence": 100
+      },
+      {
+        "name": "x-flowproxy-author",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "FLOWPROXY-ORIGIN",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "ComplyAuto": {
+    "category": "misc",
+    "website": "https://complyauto.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.complyauto\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Confiant": {
+    "category": "misc",
+    "website": "https://www.confiant.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "confiant-integrations\\.global\\.ssl\\.fastly\\.net|\\.confiant\\.com",
+        "confidence": 90
+      }
+    ]
+  },
+  "Conjured": {
+    "category": "misc",
+    "website": "https://conjured.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.conjured\\.co/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Conversio App": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/conversio",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.conversio\\.com/.+\\.myshopify\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Covery": {
+    "category": "misc",
+    "website": "https://covery.ai",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "handleCoveryFpKey|sendCoveryFpKey",
+        "confidence": 100
+      }
+    ]
+  },
+  "Covet.pics": {
+    "category": "misc",
+    "website": "https://covet.pics",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.covet\\.pics/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Cozy AntiTheft": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/cozy-antitheft-for-images-and-more",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdncozyantitheft\\.addons\\.business/",
+        "confidence": 100
+      }
+    ]
+  },
+  "c/side": {
+    "category": "misc",
+    "website": "https://cside.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.cside\\.dev",
+        "confidence": 100
+      }
+    ]
+  },
+  "DDoS-Guard": {
+    "category": "misc",
+    "website": "https://ddos-guard.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^ddos-guard$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "DataDome": {
+    "category": "misc",
+    "website": "https://datadome.co",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^DataDome$",
+        "confidence": 100
+      },
+      {
+        "name": "x-datadome",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "x-datadome-cid",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "datadome",
+        "confidence": 100
+      },
+      {
+        "name": "datadome-_zldp",
+        "confidence": 100
+      },
+      {
+        "name": "datadome-_zldt",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "^https://ct\\.datadome\\.co/[a-z]\\.js$",
+        "confidence": 100
+      }
+    ]
+  },
+  "DataGrail": {
+    "category": "misc",
+    "website": "https://www.datagrail.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.datagrail\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Dataships": {
+    "category": "misc",
+    "website": "https://dataships.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.dataships\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "DelightChat": {
+    "category": "misc",
+    "website": "https://www.delightchat.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+id=[\"\\']delightchat-(?:welcome-)?widget[\"\\']",
+        "confidence": 100
+      }
+    ]
+  },
+  "Delm": {
+    "category": "misc",
+    "website": "https://delm.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.delm\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Detectify": {
+    "category": "misc",
+    "website": "https://detectify.com/",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Digest": {
+    "category": "misc",
+    "website": "https://tools.ietf.org/html/rfc7616",
+    "headers": [
+      {
+        "name": "www-authenticate",
+        "pattern": "^Digest",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Digismoothie Candy Rack": {
+    "category": "misc",
+    "website": "https://www.digismoothie.com/apps/candy-rack",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "CANDYRACK_DOCUMENT_LISTENER|candyrackEnableDebug",
+        "confidence": 100
+      }
+    ]
+  },
+  "DocFX": {
+    "category": "misc",
+    "website": "https://github.com/dotnet/docfx",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "docfx:navrel",
+        "pattern": "toc.html",
+        "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "docfx:tocrel",
+        "pattern": "toc.html",
+        "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "docfx\\s([\\d\\.]+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Docsify": {
+    "category": "misc",
+    "website": "https://docsify.js.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "docsify(?:@[\\d.]+)?(?:/lib)?/docsify(?:\\.min)?\\.js|docsify\\.min\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Docsify|window\\.\\$docsify",
+        "confidence": 70
+      }
+    ]
+  },
+  "Doctave": {
+    "category": "misc",
+    "website": "https://www.doctave.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Doctave$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Docusaurus": {
+    "category": "misc",
+    "website": "https://docusaurus.io/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "docusaurus_locale",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "docusaurus_tag",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Docusaurus(?: v(.+))?$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Doxygen": {
+    "category": "misc",
+    "website": "https://www.doxygen.nl/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "Doxygen ([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "(?:<!-- Generated by Doxygen ([\\d.]+)|<link[^>]+doxygen\\.css)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Drata": {
+    "category": "misc",
+    "website": "https://drata.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "author",
+        "pattern": "Drata Inc.",
+        "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "copyright",
+        "pattern": "Drata Inc.",
+        "confidence": 100
+      }
+    ]
+  },
+  "Drop A Hint": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/drop-a-hint-v2",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "dropahint\\.love/|dropAHintTypeProduct|DropAHint\\.BaseURL",
+        "confidence": 100
+      }
+    ]
+  },
+  "DutchIS": {
+    "category": "misc",
+    "website": "https://dutchis.net",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "ERPNext": {
+    "category": "misc",
+    "website": "https://erpnext.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^system_user$",
+        "confidence": 70
+      },
+      {
+        "name": "^user_image$",
+        "confidence": 50
+      },
+      {
+        "name": "^full_name$",
+        "confidence": 40
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^frappe$|ERPNext",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "/assets/(erpnext|frappe)/|/assets/js/(frappe-web|erpnext-web|frappe-web\\.min)",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "/assets/(erpnext|frappe)/|frappe\\.(ready|boot|csrf_token)|frappe-web|erpnext",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\b(frappe-card|web-form|page-content-wrapper)\\b|data-frappe",
+        "confidence": 55
+      }
+    ]
+  },
+  "Emergent": {
+    "category": "misc",
+    "website": "https://emergent.sh",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "Emergent",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "emergent\\.sh|assets\\.emergent|emergentagent\\.com|emergent-main|emergent-badge",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "emergent\\.sh|emergentagent\\.com|Made with Emergent|id=\"emergent-badge\"|data-emergent",
+        "confidence": 85
+      }
+    ]
+  },
+  "Enagic": {
+    "category": "misc",
+    "website": "https://www.enagic.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "enagic(\\.com|usa|-)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "enagic(\\.com|usa)|Enagic|Kangen Water",
+        "confidence": 65
+      }
+    ]
+  },
+  "EngagementHQ": {
+    "category": "misc",
+    "website": "https://granicus.com/solution/govservice/engagementhq/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "EngagementHQ|Bang the Table",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "engagementhq(\\.com)?|bangthetable|bang-the-table|/assets/ehq",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "engagementhq|bangthetable|Bang the Table|class=\"[^\"]*\\behq-|ehq-(app|container|page)",
+        "confidence": 85
+      }
+    ]
+  },
+  "Evolve Media": {
+    "category": "misc",
+    "website": "https://www.evolvemediacorp.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "evolvemedia(corp)?|evolve-media|evolvemediallc|evolvemedia\\.com|evolve\\.",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "evolvemedia(corp)?\\.com|Evolve Media|evolve-media",
+        "confidence": 60
+      }
+    ]
+  },
+  "eClass": {
+    "category": "misc",
+    "website": "https://www.openeclass.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^eclass_",
+        "confidence": 70
+      },
+      {
+        "name": "^PHPSESSID$",
+        "confidence": 1
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "(Open )?eClass",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Open eClass|openeclass|Greek Universities Network|GUnet|eclass\\.(uoa|auth|upatras|[a-z]+)\\.gr",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "modules/(auth|course_info|document|announcements)/|/template/(modern|default|bootstrap)/|courses/[A-Z]{2,}[0-9]+",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "eclass\\.com\\.hk|class=\"[^\"]*\\beclass-|/eclass/|eClass (Platform|Integrated)",
+        "confidence": 60
+      }
+    ]
+  },
+  "FOCUS WebWall": {
+    "category": "misc",
+    "website": "https://appsphere.app",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/focus_webwall/.*?/focus-webwall\\.js$",
+        "confidence": 100
+      }
+    ]
+  },
+  "FUGU": {
+    "category": "misc",
+    "website": "https://www.fugu-it.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "app\\.fugu-it\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Facebook Login": {
+    "category": "misc",
+    "website": "https://developers.facebook.com/docs/facebook-login/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "connect\\.facebook\\.net/[^\"\\']*/sdk\\.js",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "FB\\.getLoginStatus",
+        "confidence": 90
+      }
+    ]
+  },
+  "Fast Bundle": {
+    "category": "misc",
+    "website": "https://fastbundle.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api\\.fastbundle\\.co/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Fera Product Reviews App": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/fera",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.fera\\.ai/js/fera\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "feraJsUrl",
+        "confidence": 70
+      }
+    ]
+  },
+  "FireApps Ali Reviews": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/ali-reviews",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//alireviews\\.fireapps\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Flits": {
+    "category": "misc",
+    "website": "https://getflits.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "flitsObjects",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "flits(?:\\.min)?\\.js|cdn\\.flits\\.co",
+        "confidence": 80
+      }
+    ]
+  },
+  "Fontify": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/fontify-change-customize-font-for-your-store",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "fontify\\.nitroapps\\.co/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Forter": {
+    "category": "misc",
+    "website": "https://www.forter.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "forterToken",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "forter\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Fortinet FortiGate": {
+    "category": "misc",
+    "website": "https://www.fortinet.com/products/next-generation-firewall",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "FGTServer",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Fraud Blocker": {
+    "category": "misc",
+    "website": "https://fraudblocker.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "monitor\\.fraudblocker\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "\\.fraudblocker\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "FraudLabs Pro": {
+    "category": "misc",
+    "website": "https://www.fraudlabspro.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.fraudlabspro\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Frequently Bought Together": {
+    "category": "misc",
+    "website": "https://www.codeblackbelt.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.codeblackbelt\\.com/js/modules/frequently-bought-together/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Friendly Captcha": {
+    "category": "misc",
+    "website": "https://friendlycaptcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "x-frc-client\",\"js-(\\d+(\\.\\d+)+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Froonze": {
+    "category": "misc",
+    "website": "https://www.froonze.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.shopify\\.com/extensions/[^/]+/froonze-loyalty-wishlist[^/]*",
+        "confidence": 100
+      }
+    ]
+  },
+  "FunCaptcha": {
+    "category": "misc",
+    "website": "https://www.arkoselabs.com/arkose-matchkey/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api\\.funcaptcha\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "api\\.funcaptcha\\.com",
+        "confidence": 80
+      }
+    ]
+  },
+  "Furo": {
+    "category": "misc",
+    "website": "https://pradyunsg.me/furo",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "static/scripts/furo\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "GTranslate app": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/multilingual-shop-by-gtranslate",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "gtranslate\\.io/shopify/",
+        "confidence": 100
+      }
+    ]
+  },
+  "GeeTest": {
+    "category": "misc",
+    "website": "https://www.geetest.com",
+    "headers": [
+      {
+        "name": "content-security-policy",
+        "pattern": "\\.geetest\\.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.geetest\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "GetTerms": {
+    "category": "misc",
+    "website": "https://getterms.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.getterms\\.io",
+        "confidence": 100
+      }
+    ]
+  },
+  "Gist Giftship": {
+    "category": "misc",
+    "website": "https://gist-apps.com/giftship",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "assets/js/giftship\\.([\\d\\.]+)\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "GitBook": {
+    "category": "misc",
+    "website": "https://www.gitbook.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "GitBook ([\\d.]+)?",
+        "confidence": 100
+      }
+    ]
+  },
+  "GitLab CI/CD": {
+    "category": "misc",
+    "website": "https://about.gitlab.com/gitlab-ci",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "description",
+        "pattern": "GitLab CI/CD is a tool built into GitLab for software development through continuous methodologies.",
+        "confidence": 100
+      }
+    ]
+  },
+  "Glance": {
+    "category": "misc",
+    "website": "https://www.glance.cx",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "www\\.glancecdn\\.net",
+        "confidence": 100
+      }
+    ]
+  },
+  "Globo Also Bought": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/globo-related-products",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "assets/globo\\.alsobought\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Globo Color Swatch": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/globo-related-products",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "assets/globo\\.swatch\\.data\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Globo Form Builder": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/form-builder-contact-form",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/assets/globo\\.formbuilder\\.init\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Globo Pre-Order": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/pre-order-pro",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "GloboPreorderParams",
+        "confidence": 100
+      }
+    ]
+  },
+  "Google PageSpeed": {
+    "category": "misc",
+    "website": "https://developers.google.com/speed/pagespeed/mod",
+    "headers": [
+      {
+        "name": "x-mod-pagespeed",
+        "pattern": "([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "name": "x-page-speed",
+        "pattern": "(.+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Google Sign-in": {
+    "category": "misc",
+    "website": "https://developers.google.com/identity/sign-in/web",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "google-signin-client_id",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "google-signin-scope",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "accounts\\.google\\.com/gsi/client",
+        "confidence": 100
+      }
+    ]
+  },
+  "Govalo": {
+    "category": "misc",
+    "website": "https://govalo.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.shopify\\.com/extensions/.+/([\\d\\.]+)/assets/govalo\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "HSTS": {
+    "category": "misc",
+    "website": "https://www.rfc-editor.org/rfc/rfc6797#section-6.1",
+    "headers": [
+      {
+        "name": "strict-transport-security",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "HackerOne": {
+    "category": "misc",
+    "website": "https://www.hackerone.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Haddock": {
+    "category": "misc",
+    "website": "https://www.haskell.org/haddock/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "haddock-util\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<p>Produced by <a href=\"http://www\\.haskell\\.org/haddock/\">Haddock</a> version ([0-9.]+)</p>",
+        "confidence": 100
+      }
+    ]
+  },
+  "Hanko": {
+    "category": "misc",
+    "website": "https://www.hanko.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "_hankoStyle",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "hanko-elements|\\.hanko\\.io",
+        "confidence": 80
+      }
+    ]
+  },
+  "Helixo UFE": {
+    "category": "misc",
+    "website": "https://helixo.co/upsell-funnel-engine/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "ufe\\.funnelData|ufeStore\\.cartTotal",
+        "confidence": 100
+      }
+    ]
+  },
+  "HelpDocs": {
+    "category": "misc",
+    "website": "https://www.helpdocs.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.helpdocs\\.io",
+        "confidence": 100
+      }
+    ]
+  },
+  "Hextom Free Shipping Bar": {
+    "category": "misc",
+    "website": "https://hextom.com/case_study/free-shipping-bar",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.hextom\\.com/js/freeshippingbar\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Hextom Ultimate Sales Boost": {
+    "category": "misc",
+    "website": "https://hextom.com/case_study/ultimate-sales-boost",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.hextom\\.com/js/ultimatesalesboost\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "HulkApps Age Verification": {
+    "category": "misc",
+    "website": "https://www.hulkapps.com/products/age-verification-shopify",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "age-verification\\.hulkapps\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "HulkApps Form Builder": {
+    "category": "misc",
+    "website": "https://www.hulkapps.com/products/form-builder-shopify",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "formbuilder\\.hulkapps\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "HulkApps GDPR/CCPA Compliance Manager": {
+    "category": "misc",
+    "website": "https://www.hulkapps.com/products/gdpr-ccpa-cookie-manager-shopify-app",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cookiebar\\.hulkapps\\.com/hulk_cookie_bar\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "HulkApps Infinite Product Options": {
+    "category": "misc",
+    "website": "https://www.hulkapps.com/products/infinite-product-options-shopify",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "productoption\\.hulkapps\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "hulkapps\\.po_url",
+        "confidence": 80
+      }
+    ]
+  },
+  "HulkApps Product Reviews": {
+    "category": "misc",
+    "website": "https://www.hulkapps.com/products/product-reviews-shopify",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*reviews\\.hulkapps\\.com/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "hulkappsProductReview|hulkappsReviews",
+        "confidence": 100
+      }
+    ]
+  },
+  "Human Presence": {
+    "category": "misc",
+    "website": "https://www.humanpresence.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/.*\\.humanpresence\\.(?:io|app)/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Hyperspeed": {
+    "category": "misc",
+    "website": "https://www.hyperspeed.me",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.shopify\\.com/.+/assets/hs-(?:instantload|lazysizes)\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "hCaptcha": {
+    "category": "misc",
+    "website": "https://www.hcaptcha.com",
+    "headers": [
+      {
+        "name": "content-security-policy",
+        "pattern": "(?:\\.|//)hcaptcha\\.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "hcaptcha\\.com/([\\d]+?)/api\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Impero": {
+    "category": "misc",
+    "website": "https://www.imperosoftware.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.netop\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Imunify360": {
+    "category": "misc",
+    "website": "https://www.imunify360.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "imunify360-webshield/([\\d\\.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "In Cart Upsell & Cross-Sell": {
+    "category": "misc",
+    "website": "https://incartupsell.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.incartupsell\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Instafeed": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/instafeed",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "instafeed\\.nfcube\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Intercom Articles": {
+    "category": "misc",
+    "website": "https://www.intercom.com/articles",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a href=\"https://www.intercom.com/intercom-link[^\"]+solution=customer-support[^>]+>We run on Intercom",
+        "confidence": 100
+      }
+    ]
+  },
+  "Jamf": {
+    "category": "misc",
+    "website": "https://www.jamf.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Javadoc": {
+    "category": "misc",
+    "website": "https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<!-- Generated by javadoc -->",
+        "confidence": 100
+      }
+    ]
+  },
+  "Jenkins": {
+    "category": "misc",
+    "website": "https://jenkins.io/",
+    "headers": [
+      {
+        "name": "x-jenkins",
+        "pattern": "([\\d.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<span class=\"jenkins_ver\"><a href=\"https://jenkins\\.io/\">Jenkins ver\\. ([\\d.]+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Jilt App": {
+    "category": "misc",
+    "website": "https://community.shopify.com/c/shopify-apps/jilt-is-over-what-app-to-use-for-abandoned-carts-now/td-p/1575095",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "jiltStorefrontParams",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "jilt\\.com|cdn\\.jilt\\.com",
+        "confidence": 80
+      }
+    ]
+  },
+  "Jumio": {
+    "category": "misc",
+    "website": "https://www.jumio.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<iframe[^>]+src=[\"'][^\"']*\\.netverify\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "JumpCloud": {
+    "category": "misc",
+    "website": "https://jumpcloud.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "_jumpcloud_user_console_",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.jumpcloud\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Juphy": {
+    "category": "misc",
+    "website": "https://juphy.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "static\\.juphy\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Justuno App": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/justuno-pop-ups-email-conversion",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//scripttags\\.justuno\\.com/shopify_justuno",
+        "confidence": 100
+      }
+    ]
+  },
+  "Kasada": {
+    "category": "misc",
+    "website": "https://www.kasada.io",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "KP_UIDz",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Kerberos": {
+    "category": "misc",
+    "website": "https://tools.ietf.org/html/rfc4559",
+    "headers": [
+      {
+        "name": "www-authenticate",
+        "pattern": "^Kerberos",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Keybase": {
+    "category": "misc",
+    "website": "https://keybase.io/",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Kilatech": {
+    "category": "misc",
+    "website": "https://web.kilatechapps.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.kilatechapps\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Kiprotect": {
+    "category": "misc",
+    "website": "https://kiprotect.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.kiprotect\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Klip": {
+    "category": "misc",
+    "website": "https://klipcoupons.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "KLIP_APP_DATA\\.ATCPath|KLIP_APP_DATA",
+        "confidence": 90
+      }
+    ]
+  },
+  "Konduto": {
+    "category": "misc",
+    "website": "https://www.konduto.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.k-analytix\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "LINE Login": {
+    "category": "misc",
+    "website": "https://developers.line.biz/en/services/line-login/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a[^>]+href=[\"'][^\"']*access\\.line\\.me/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "access\\.line\\.me/oauth2/v[\\d.]+/",
+        "confidence": 90
+      }
+    ]
+  },
+  "LangShop": {
+    "category": "misc",
+    "website": "https://langshop.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.langshop\\.app/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Leaflet platform": {
+    "category": "misc",
+    "website": "https://join.leaflet.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "scripts\\.leaflet\\.co/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Linkedin Sign-in": {
+    "category": "misc",
+    "website": "https://www.linkedin.com/developers",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "platform\\.linkedin\\.com/(?:.*)?(?:in\\.js(?:\\?version)?([\\d.]+)?|litms/utag/[^?]+\\.js(?:\\?cb=[\\d]+)?)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Littledata": {
+    "category": "misc",
+    "website": "https://www.littledata.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "LittledataLayer",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "cdn\\.littledata\\.io",
+        "confidence": 90
+      }
+    ]
+  },
+  "Livescale": {
+    "category": "misc",
+    "website": "https://www.livescale.tv",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.livescale\\.tv/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Loadify": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/loadify",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.loadifyapp\\.ninety9\\.dev",
+        "confidence": 100
+      }
+    ]
+  },
+  "Locksmith": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/locksmith",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.locksmith|uselocksmith\\.com",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\bLocksmith\\b",
+        "confidence": 30
+      }
+    ]
+  },
+  "LogMeIn": {
+    "category": "misc",
+    "website": "https://www.logmein.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Login with Amazon": {
+    "category": "misc",
+    "website": "https://developer.amazon.com/apps-and-games/login-with-amazon",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "onAmazonLoginReady",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "api-cdn\\.amazon\\.com/sdk/login1\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "LoginRadius": {
+    "category": "misc",
+    "website": "https://www.loginradius.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.loginradius\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "\\.lrcontent\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "MTCaptcha": {
+    "category": "misc",
+    "website": "https://www.mtcaptcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "service(?:2)?\\.mtcaptcha\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "MagicLabs": {
+    "category": "misc",
+    "website": "https://magic.link",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.auth\\.magic\\.link",
+        "confidence": 100
+      }
+    ]
+  },
+  "Manula": {
+    "category": "misc",
+    "website": "https://www.manula.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "static\\.manula\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "MetaMap": {
+    "category": "misc",
+    "website": "https://www.metamap.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sdk\\.getmati\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "MinMaxify": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/order-limits-minmaxify",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "minMaxify\\.checkLimits|minMaxify\\.shop",
+        "confidence": 100
+      }
+    ]
+  },
+  "Mintlify": {
+    "category": "misc",
+    "website": "https://mintlify.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "mintlify\\.[^\"\\']+\\.amazonaws\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "__NEXT_DATA__[^<]*mintlify",
+        "confidence": 50
+      }
+    ]
+  },
+  "MkDocs": {
+    "category": "misc",
+    "website": "https://www.mkdocs.org/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^mkdocs-([\\d.]+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Mollom": {
+    "category": "misc",
+    "website": "https://mollom.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mollom(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<img[^>]+\\.mollom\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "MyPersonas": {
+    "category": "misc",
+    "website": "https://mypersonas.ai",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.mypersonas\\.ai/",
+        "confidence": 100
+      }
+    ]
+  },
+  "mdBook": {
+    "category": "misc",
+    "website": "https://github.com/rust-lang/mdBook",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "localStorage\\.getItem\\('mdbook-(?:sidebar|theme)'\\)",
+        "confidence": 100
+      }
+    ]
+  },
+  "mod_auth_pam": {
+    "category": "misc",
+    "website": "https://pam.sourceforge.net/mod_auth_pam",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_auth_pam(?:/([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_dav": {
+    "category": "misc",
+    "website": "https://webdav.org/mod_dav",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "\\b(?:mod_)?DAV\\b(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_fastcgi": {
+    "category": "misc",
+    "website": "https://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_fastcgi(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_jk": {
+    "category": "misc",
+    "website": "https://tomcat.apache.org/tomcat-3.3-doc/mod_jk-howto.html",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_jk(?:/([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_perl": {
+    "category": "misc",
+    "website": "https://perl.apache.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_perl(?:/([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_python": {
+    "category": "misc",
+    "website": "https://www.modpython.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_python(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_rack": {
+    "category": "misc",
+    "website": "https://phusionpassenger.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_rack(?:/([\\d.]+))?",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "mod_rack(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_rails": {
+    "category": "misc",
+    "website": "https://phusionpassenger.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_rails(?:/([\\d.]+))?",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "mod_rails(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_ssl": {
+    "category": "misc",
+    "website": "https://modssl.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_ssl(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_wsgi": {
+    "category": "misc",
+    "website": "https://code.google.com/p/modwsgi",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_wsgi(?:/([\\d.]+))?",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "mod_wsgi(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "NTLM": {
+    "category": "misc",
+    "website": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-ntht/",
+    "headers": [
+      {
+        "name": "www-authenticate",
+        "pattern": "^NTLM",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Neat A/B testing": {
+    "category": "misc",
+    "website": "https://neatab.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.neatab\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Negate": {
+    "category": "misc",
+    "website": "https://negate.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sapi\\.negate\\.io",
+        "confidence": 100
+      }
+    ]
+  },
+  "Netop": {
+    "category": "misc",
+    "website": "https://netop.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.netop\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "NextAuth.js": {
+    "category": "misc",
+    "website": "https://next-auth.js.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "__Host-next-auth.csrf-token",
+        "confidence": 100
+      },
+      {
+        "name": "__Secure-next-auth.callback-url",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "NexusPIPE": {
+    "category": "misc",
+    "website": "https://nexuspipe.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Nexuspipe.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "NoFraud": {
+    "category": "misc",
+    "website": "https://www.nofraud.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "services\\.nofraud\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Norton Shopping Guarantee": {
+    "category": "misc",
+    "website": "https://norton.buysafe.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "nsg\\.symantec\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Obsidian Incentivize": {
+    "category": "misc",
+    "website": "https://obsidianapps.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.shopify\\.com/extensions/.+/([\\.\\d]{3,})/assets/upsell\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Obsidian Publish": {
+    "category": "misc",
+    "website": "https://obsidian.md/publish",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "siteInfo[^<]{0,200}\\.obsidian\\.md",
+        "confidence": 70
+      },
+      {
+        "type": "script",
+        "pattern": "publish\\.obsidian\\.md|\\.obsidian\\.md",
+        "confidence": 85
+      }
+    ]
+  },
+  "Obviyo": {
+    "category": "misc",
+    "website": "https://www.obviyo.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "deploy\\.hiconversion\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Okendo": {
+    "category": "misc",
+    "website": "https://www.okendo.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\'][^\"\\']*\\bokeReviews\\b[^\"\\']*[\"\\'][^>]+data-oke-reviews-version=[\"\\']([\\d.]+)[\"\\']",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "okeReviewsWidgetOnInit|okeWidgetControlInit|okendoReviews",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "okendo\\.io",
+        "confidence": 90
+      }
+    ]
+  },
+  "Okta": {
+    "category": "misc",
+    "website": "https://developer.okta.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "oktacdn\\.com/.+/([\\d.]+)/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Omnisend Email Marketing & SMS": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/omnisend",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "omnis(?:nippet1|rc)\\.com/inShop/Embed/shopify\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "OneAll": {
+    "category": "misc",
+    "website": "https://www.oneall.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api\\.oneall\\.com/socialize",
+        "confidence": 100
+      }
+    ]
+  },
+  "Onfido": {
+    "category": "misc",
+    "website": "https://onfido.com",
+    "headers": [
+      {
+        "name": "content-security-policy",
+        "pattern": "(?:api|sync)\\.onfido\\.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "OpenSSL": {
+    "category": "misc",
+    "website": "https://openssl.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "OpenSSL(?:/([\\d.]+[a-z]?))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Order Deadline": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/order-deadline",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "orderDeadlineAppByEESL",
+        "confidence": 100
+      }
+    ]
+  },
+  "OrderLogic app": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/orderlogic",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "OrderLogic\\.(?:ALERTS_KEY|DEFAULT_MONEY_FORMAT|cartData)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Ordersify Product Alerts": {
+    "category": "misc",
+    "website": "https://ordersify.com/products/product-alerts",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.ordersify\\.com/sdk/productalerts-shopify\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Oxi Social Login": {
+    "category": "misc",
+    "website": "https://www.oxiapps.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "social-login\\.oxiapps\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Packlink PRO": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/packlink-pro",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "packlink-spf-pro\\.appspot\\.com/.+myshopify\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Palo Alto Networks": {
+    "category": "misc",
+    "website": "https://www.paloaltonetworks.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Palo Alto Networks - GlobalProtect": {
+    "category": "misc",
+    "website": "https://www.paloaltonetworks.com/sase/globalprotect",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*/global\\-protect/portal/css/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Paloma": {
+    "category": "misc",
+    "website": "https://www.getpaloma.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.getpaloma\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Pandectes": {
+    "category": "misc",
+    "website": "https://pandectes.io",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "_pandectes_gdpr",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "pandectes-core\\.js|(?:s3\\.us-west-2\\.amazonaws\\.com|gdpr-privacy-policy-assets\\.s3-us-west-2\\.amazonaws\\.com)/gdpr-privacy-policy-assets/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Parallels": {
+    "category": "misc",
+    "website": "https://www.parallels.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Passage": {
+    "category": "misc",
+    "website": "https://passage.1password.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.1password\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Passport.js": {
+    "category": "misc",
+    "website": "https://www.passportjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "passport(?:\\.min)?\\.js",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "Passport\\.Core|PassportHandler|_passport_html",
+        "confidence": 100
+      }
+    ]
+  },
+  "PerfectApps Swift": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/swift",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "swift\\.perfectapps\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "PerimeterX": {
+    "category": "misc",
+    "website": "https://www.perimeterx.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "_px3",
+        "confidence": 100
+      },
+      {
+        "name": "_pxff_cc",
+        "confidence": 100
+      },
+      {
+        "name": "_pxhd",
+        "confidence": 100
+      },
+      {
+        "name": "_pxvid",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "client\\.a\\.pxi\\.pub/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Picatcha": {
+    "category": "misc",
+    "website": "https://picatcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api\\.picatcha\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "api\\.picatcha\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "PickyStory": {
+    "category": "misc",
+    "website": "https://pickystory.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.pickystory\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Picture It": {
+    "category": "misc",
+    "website": "https://www.pictureit.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.pictureit\\.co/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Postman API Documentation": {
+    "category": "misc",
+    "website": "https://www.postman.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Postman Documenter$",
+        "confidence": 100
+      }
+    ]
+  },
+  "PreProduct": {
+    "category": "misc",
+    "website": "https://preproduct.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.preproduct\\.io",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "/preproduct-embed\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Preeco": {
+    "category": "misc",
+    "website": "https://www.preeco.de",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "widget\\.preeco\\.de",
+        "confidence": 100
+      }
+    ]
+  },
+  "Pretty Damn Quick": {
+    "category": "misc",
+    "website": "https://www.prettydamnquick.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "pdq-scripts\\.pdqprod\\.link",
+        "confidence": 100
+      }
+    ]
+  },
+  "Privy App": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/privy",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//shopify\\.privy\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Product Personalizer": {
+    "category": "misc",
+    "website": "https://productpersonalizer.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/product-personalizer/pplr_common\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Proxmox Mail Gateway": {
+    "category": "misc",
+    "website": "https://proxmox.com/en/proxmox-mail-gateway",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "pmg-mail-tracker|pmg-spam-archive",
+        "confidence": 100
+      }
+    ]
+  },
+  "Pulse Secure": {
+    "category": "misc",
+    "website": "https://www.pulsesecure.net/products/remote-access-overview/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "DSSIGNIN",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "PushDaddy Whatsapp Chat": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/whatsapp-chat-for-support",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.shopify\\.com/.+/pushdaddy_v([\\d\\.]+).*\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "PushOwl Web Push Notifications": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/pushowl",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/sdks/pushowl-shopify\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "phpDocumentor": {
+    "category": "misc",
+    "website": "https://www.phpdoc.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<!-- Generated by phpDocumentor",
+        "confidence": 100
+      }
+    ]
+  },
+  "phpMyAdmin": {
+    "category": "misc",
+    "website": "https://www.phpmyadmin.net",
+    "headers": [
+      {
+        "name": "set-cookie",
+        "pattern": "phpMyAdmin_https",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "!\\[CDATA\\[[^<]*PMA_VERSION:\\\"([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\(|<link [^>]*href=\"[^\"]*phpmyadmin\\.css\\.php)",
+        "confidence": 100
+      }
+    ]
+  },
+  "phpPgAdmin": {
+    "category": "misc",
+    "website": "https://phppgadmin.sourceforge.net",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "(?:<title>phpPgAdmin</title>|<span class=\"appname\">phpPgAdmin)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Qikify": {
+    "category": "misc",
+    "website": "https://qikify.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sdk\\.qikify\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Quoli": {
+    "category": "misc",
+    "website": "https://quoli.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.quoli\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "RDoc": {
+    "category": "misc",
+    "website": "https://github.com/ruby/rdoc",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=\"[^\"]*rdoc-style\\.css",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "Generated by <a[^>]+href=\"https?://rdoc\\.rubyforge\\.org[^>]+>RDoc</a> ([\\d.]*\\d)",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "Generated by <a href=\"https:\\/\\/ruby\\.github\\.io\\/rdoc\\/\">RDoc<\\/a> ([\\d.]*\\d)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Raneto": {
+    "category": "misc",
+    "website": "https://raneto.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/scripts/raneto\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Rapid Search": {
+    "category": "misc",
+    "website": "https://www.rapidsearch.app",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\.rapidsearch\\.dev",
+        "confidence": 100
+      }
+    ]
+  },
+  "RapidSec": {
+    "category": "misc",
+    "website": "https://rapidsec.com",
+    "headers": [
+      {
+        "name": "content-security-policy",
+        "pattern": "\\.rapidsec\\.net",
+        "confidence": 100
+      },
+      {
+        "name": "content-security-policy-report-only",
+        "pattern": "\\.rapidsec\\.net",
+        "confidence": 100
+      },
+      {
+        "name": "report-to",
+        "pattern": "\\.rapidsec\\.net",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "ReConvert": {
+    "category": "misc",
+    "website": "https://www.reconvert.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.stilyoapps\\.com/reconvert/assets/js/store_reconvert_node\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "ReDoc": {
+    "category": "misc",
+    "website": "https://github.com/Rebilly/ReDoc",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/redoc\\.(?:min\\.)?js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<redoc ",
+        "confidence": 100
+      }
+    ]
+  },
+  "ReSpec": {
+    "category": "misc",
+    "website": "https://respec.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "ReSpec ([\\d.]+)?",
+        "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "monetization",
+        "pattern": "respec\\.org",
+        "confidence": 100
+      }
+    ]
+  },
+  "Read the Docs": {
+    "category": "misc",
+    "website": "https://about.readthedocs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.readthedocs\\.io",
+        "confidence": 100
+      }
+    ]
+  },
+  "Really Simple SSL & Security": {
+    "category": "misc",
+    "website": "https://really-simple-ssl.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<body[^>]+data-rsssl",
+        "confidence": 100
+      }
+    ]
+  },
+  "Rebuy": {
+    "category": "misc",
+    "website": "https://rebuyengine.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "rebuyengine\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Recomify": {
+    "category": "misc",
+    "website": "https://www.recomify.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.recomify\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "RecoverMyCart": {
+    "category": "misc",
+    "website": "https://app.recovermycart.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.recovermycart\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Regula": {
+    "category": "misc",
+    "website": "https://regulaforensics.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "unpkg\\.com/@regulaforensics/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Released": {
+    "category": "misc",
+    "website": "https://www.released.so",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "embed\\.released\\.so/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Releasit COD Form & Upsells": {
+    "category": "misc",
+    "website": "https://www.releas.it/products/releasit-cod-form-upsells",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<script[^>]+id=[\"\\']rsi-cod-form-product-cache[\"\\']",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "RSI_CSS_LOADER",
+        "confidence": 100
+      }
+    ]
+  },
+  "Render Better": {
+    "category": "misc",
+    "website": "https://www.renderbetter.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\brenderbetter\\b",
+        "confidence": 60
+      },
+      {
+        "type": "script",
+        "pattern": "\\.renderbetter\\.app",
+        "confidence": 90
+      }
+    ]
+  },
+  "Reputon": {
+    "category": "misc",
+    "website": "https://reputon.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.reputon\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Reserve In-Store": {
+    "category": "misc",
+    "website": "https://www.reserveinstore.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "reserveInStore\\.version|reserveInStoreJsUrl",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "/reserveinstore\\.js",
+        "confidence": 85
+      }
+    ]
+  },
+  "Retention.com": {
+    "category": "misc",
+    "website": "https://retention.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "B2BRetention|addedToCartRetentionButton|viewedProductRetention",
+        "confidence": 100
+      }
+    ]
+  },
+  "Return Prime": {
+    "category": "misc",
+    "website": "https://www.returnprime.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//return-prime-proxy-prod\\.s3[^ ]*\\.amazonaws\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Revy": {
+    "category": "misc",
+    "website": "https://revy.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api\\.revy\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "RingCaptcha": {
+    "category": "misc",
+    "website": "https://ringcaptcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.ringcaptcha\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "reCAPTCHA": {
+    "category": "misc",
+    "website": "https://www.google.com/recaptcha/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api-secure\\.recaptcha\\.net",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "recaptcha_ajax\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/recaptcha/(?:api|enterprise)\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "/recaptcha/api\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "SAP Customer Data Cloud Sign-in": {
+    "category": "misc",
+    "website": "https://www.sap.com/uk/acquired-brands/what-is-gigya.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.gigya\\.com/JS/gigya\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "SPNEGO": {
+    "category": "misc",
+    "website": "https://tools.ietf.org/html/rfc4559",
+    "headers": [
+      {
+        "name": "www-authenticate",
+        "pattern": "^Negotiate",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "SQL Buddy": {
+    "category": "misc",
+    "website": "https://www.sqlbuddy.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "(?:<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)",
+        "confidence": 100
+      }
+    ]
+  },
+  "SafeBase": {
+    "category": "misc",
+    "website": "https://safebase.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\.safebase\\.io",
+        "confidence": 100
+      }
+    ]
+  },
+  "Sardine": {
+    "category": "misc",
+    "website": "https://www.sardine.ai",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api\\.sardine\\.ai",
+        "confidence": 100
+      }
+    ]
+  },
+  "Scalar": {
+    "category": "misc",
+    "website": "https://scalar.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/npm/@scalar/api-reference@(\\d+\\.\\d+\\.\\d+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "SchemaPlus": {
+    "category": "misc",
+    "website": "https://schemaplus.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//schemaplusfiles\\.s3\\.amazonaws\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Seal Subscriptions": {
+    "category": "misc",
+    "website": "https://www.sealsubscriptions.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.sealsubscriptions\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Secomapp": {
+    "category": "misc",
+    "website": "https://www.secomapp.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.secomapp\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Sections.design Shopify App Optimization": {
+    "category": "misc",
+    "website": "https://github.com/mirceapiturca/Sections/tree/master/App%20Optimization",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+id=[\"\\']shopify-section-app-optimization[\"\\']",
+        "confidence": 100
+      }
+    ]
+  },
+  "SecureMetrics": {
+    "category": "misc",
+    "website": "https://www.securitymetrics.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a[^>]+href=[\"\\'][^\"\\']*www\\.securitymetrics\\.com[^>]*>\\s*<img[^>]+src=[\"\\'][^\"\\']*www\\.securitymetrics\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Securiti": {
+    "category": "misc",
+    "website": "https://securiti.ai",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.securiti\\.ai",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "\\.securiti\\.ai",
+        "confidence": 100
+      }
+    ]
+  },
+  "Seon": {
+    "category": "misc",
+    "website": "https://seon.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.seon\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shelf": {
+    "category": "misc",
+    "website": "https://pub.dev/packages/shelf",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "dart:io with Shelf",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Dart with package:shelf",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "ShellInABox": {
+    "category": "misc",
+    "website": "https://shellinabox.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<title>Shell In A Box</title>",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "must be enabled for ShellInABox</noscript>",
+        "confidence": 100
+      }
+    ]
+  },
+  "ShipTection": {
+    "category": "misc",
+    "website": "https://wamapps.io/pages/shiptection-protection",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.shiptection\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shogun Landing Page Builder": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/shogun",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.getshogun\\.com/.+\\.myshopify\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "ShopKeeper Tools": {
+    "category": "misc",
+    "website": "https://www.shopkeepertools.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "magic-button-app\\.shopkeepertools\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "ShopPad Infinite Options": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/custom-options",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Shoppad\\.apps\\.infiniteoptions",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shopapps": {
+    "category": "misc",
+    "website": "https://www.shopapps.in",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.myshopapps\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shopify Buy Button": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/buy-button",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sdk\\. shopifycdn\\.com/buy-button/latest/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shopify Chat": {
+    "category": "misc",
+    "website": "https://www.shopify.com/inbox",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.shopify\\.com/shopifycloud/shopify_chat/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shopify Consent Management": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/customer-privacy-banner",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cookie_consent_shopify\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shopify Geolocation App": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/geolocation",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "geolocation-recommendations\\.shopifycloud\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shopify Product Reviews": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/product-reviews",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "productreviews\\.shopifycdn\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Shortly": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/shortly",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//shortly\\.shop/",
+        "confidence": 100
+      }
+    ]
+  },
+  "SimpleSAMLphp": {
+    "category": "misc",
+    "website": "https://simplesamlphp.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "SimpleSAML",
+        "confidence": 100
+      },
+      {
+        "name": "SimpleSAMLSessionID",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Simplio Upsells": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/simple-promotions-and-upsells",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//upsell\\.simplio\\.app/",
+        "confidence": 100
+      }
+    ]
+  },
+  "SiteLock": {
+    "category": "misc",
+    "website": "https://www.sitelock.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a[^>]+href=[\"\\'][^\"\\']*#[^>]*>\\s*<img[^>]+src=[\"\\'][^\"\\']*\\.sitelock\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Skio": {
+    "category": "misc",
+    "website": "https://skio.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.skio\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Skyflow": {
+    "category": "misc",
+    "website": "https://www.skyflow.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "js\\.skyflow\\.com|skyflow-js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Skyflow\\.ElementType\\.CARD_NUMBER|Skyflow\\.ValidationRuleType",
+        "confidence": 100
+      }
+    ]
+  },
+  "Slider Captcha": {
+    "category": "misc",
+    "website": "https://github.com/ArgoZhang/SliderCaptcha",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "slidercaptcha(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "sliderCaptcha",
+        "confidence": 70
+      }
+    ]
+  },
+  "Smile App": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/smile-io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "js\\.smile\\.io/.+smile-shopify\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "SnapHost": {
+    "category": "misc",
+    "website": "https://snaphost.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<form[^>]+action=[\"\\'][^\"\\']*\\.SnapHost\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Socure": {
+    "category": "misc",
+    "website": "https://www.socure.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.socure\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Solve Media": {
+    "category": "misc",
+    "website": "https://solvemedia.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "^https?://api\\.solvemedia\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Sourcey": {
+    "category": "misc",
+    "website": "https://sourcey.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "Sourcey(?: ([\\d.]+))?",
+        "confidence": 100
+      }
+    ]
+  },
+  "Speca": {
+    "category": "misc",
+    "website": "https://speca.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "application-name",
+        "pattern": "^Speca$",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/js/speca\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Sphinx": {
+    "category": "misc",
+    "website": "https://www.sphinx-doc.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/sphinx-book-theme\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "Created using <a href=\"https?://(?:www\\.)?sphinx-doc\\.org/\">Sphinx</a> ([0-9.]+)\\.",
+        "confidence": 100
+      }
+    ]
+  },
+  "Spin-a-Sale": {
+    "category": "misc",
+    "website": "https://spinasale.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "client\\.spinasale\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "SpurIT Abandoned Cart Reminder": {
+    "category": "misc",
+    "website": "https://spur-i-t.com/shopify-apps/abandoned-cart-reminder/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn-spurit\\.com/shopify-apps/abandoned-cart-reminder/",
+        "confidence": 100
+      }
+    ]
+  },
+  "SpurIT Loyalty App": {
+    "category": "misc",
+    "website": "https://spur-i-t.com/shopify-apps/loyalty-points-manager",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn-spurit\\.com/shopify-apps/loyaltypoints/",
+        "confidence": 100
+      }
+    ]
+  },
+  "SpurIT Partial Payments App": {
+    "category": "misc",
+    "website": "https://spur-i-t.com/shopify-apps/split-partial-payments/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn-spurit\\.com/shopify-apps/split-payments/",
+        "confidence": 100
+      }
+    ]
+  },
+  "SpurIT Recurring Payments App": {
+    "category": "misc",
+    "website": "https://spur-i-t.com/shopify-apps/recurring-order-subscription",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn-spurit\\.com/shopify-apps/recurring-invoices/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Sqreen": {
+    "category": "misc",
+    "website": "https://sqreen.io",
+    "headers": [
+      {
+        "name": "x-protected-by",
+        "pattern": "^Sqreen$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "StarTest": {
+    "category": "misc",
+    "website": "https://startest.top",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.startest\\.top",
+        "confidence": 100
+      }
+    ]
+  },
+  "Starlight": {
+    "category": "misc",
+    "website": "https://starlight.astro.build",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Starlight v([\\d.]+)$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Stoplight": {
+    "category": "misc",
+    "website": "https://stoplight.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//stoplight\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "SuperLemon app": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/whatsapp-chat-button",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/files/superlemon_.+\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Support Hero": {
+    "category": "misc",
+    "website": "https://www.supporthero.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a[^>]+href=[\"\\'][^\"\\']*\\.supporthero\\.io/[^\"\\']*[\"\\'][^>]+target=[\"\\']_blank[\"\\']",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "supportHeroWidget|supporthero",
+        "confidence": 70
+      }
+    ]
+  },
+  "Swagger UI": {
+    "category": "misc",
+    "website": "https://swagger.io/tools/swagger-ui",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/([\\d.]+))?/swagger-ui-bundle\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Sweet Upsell": {
+    "category": "misc",
+    "website": "https://sweetupsell.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "app\\.sweetupsell\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Swym Wishlist Plus": {
+    "category": "misc",
+    "website": "https://swym.it/apps/wishlist/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "swappName\\s*=\\s*[\"\\']Wishlist[\"\\']",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "swymCart\\.attributes",
+        "confidence": 50
+      }
+    ]
+  },
+  "Tabarnapp": {
+    "category": "misc",
+    "website": "https://tabarnapp.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.tabarn\\.app/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Tada": {
+    "category": "misc",
+    "website": "https://trytada.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.trytada\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "TeamCity": {
+    "category": "misc",
+    "website": "https://www.jetbrains.com/teamcity/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "application-name",
+        "pattern": "TeamCity",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<span class=\"versionTag\"><span class=\"vWord\">Version</span> ([\\d\\.]+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "TechTarget": {
+    "category": "misc",
+    "website": "https://www.techtarget.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.techtarget\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Tern": {
+    "category": "misc",
+    "website": "https://www.tern.eco",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "live\\.tern-returns\\.eastsideapps\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Testflow": {
+    "category": "misc",
+    "website": "https://testflow.eu",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "app\\.testflow\\.eu",
+        "confidence": 100
+      }
+    ]
+  },
+  "Thimatic": {
+    "category": "misc",
+    "website": "https://thimatic-apps.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "thimatic-apps\\.com/product_review/.*?v=([\\d.]+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "ThreatMetrix": {
+    "category": "misc",
+    "website": "https://risk.lexisnexis.com/products/threatmetrix",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.online-metrix\\.net",
+        "confidence": 100
+      }
+    ]
+  },
+  "TikShop": {
+    "category": "misc",
+    "website": "https://tikshop.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.tikshop\\.co/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Timesact": {
+    "category": "misc",
+    "website": "https://timesact.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<div[^>]+class=[\"\\'][^\"\\']*timesact_powered_by",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "timesactScriptNew",
+        "confidence": 100
+      }
+    ]
+  },
+  "Token of Trust": {
+    "category": "misc",
+    "website": "https://tokenoftrust.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.tokenoftrust\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "app\\.tokenoftrust\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Track123": {
+    "category": "misc",
+    "website": "https://www.track123.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "track123\\.com\\/common\\/checkout-script-loader\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Transcy": {
+    "category": "misc",
+    "website": "https://transcy.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "_transcy|transcy_apiURI|transcy_shopifyLocales",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "transcy",
+        "confidence": 60
+      }
+    ]
+  },
+  "Trezor": {
+    "category": "misc",
+    "website": "https://trezor.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "connect\\.trezor\\.io",
+        "confidence": 100
+      }
+    ]
+  },
+  "TruValidate": {
+    "category": "misc",
+    "website": "https://www.transunion.com/solution/truvalidate",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mpsnare\\.iesnare\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "ci-mpsnare\\.iovation\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Twilio Authy": {
+    "category": "misc",
+    "website": "https://authy.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "authy(?:\\.min)?\\.js|authy-form-helpers",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\bAuthy\\b",
+        "confidence": 40
+      }
+    ]
+  },
+  "TypeDoc": {
+    "category": "misc",
+    "website": "https://typedoc.org",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Tyslo EasySell": {
+    "category": "misc",
+    "website": "https://tyslo.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "openTysloForm|tysloApplyDiscount|tysloConfigVersion|tysloEasysellConfig",
+        "confidence": 100
+      }
+    ]
+  },
+  "Upscope": {
+    "category": "misc",
+    "website": "https://upscope.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "js\\.upscope\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Userbase": {
+    "category": "misc",
+    "website": "https://userbase.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "userbase-js|userbase(?:\\.min)?\\.js|sdk\\.userbase\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\buserbase\\.(?:init|signIn|signUp|openDatabase)\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "uLogin": {
+    "category": "misc",
+    "website": "https://ulogin.ru",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ulogin\\.ru/js/ulogin\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "uLogin\\.version",
+        "confidence": 80
+      }
+    ]
+  },
+  "VAPTCHA": {
+    "category": "misc",
+    "website": "https://en.vaptcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.vaptcha\\.com/v([\\d\\.]+)\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Vanta": {
+    "category": "misc",
+    "website": "https://www.vanta.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "static\\.vanta\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Variti": {
+    "category": "misc",
+    "website": "https://variti.io",
+    "headers": [
+      {
+        "name": "x-variti-ccr",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "VentryShield": {
+    "category": "misc",
+    "website": "https://ventryshield.net",
+    "headers": [
+      {
+        "name": "x-ventryshield-cache-status",
+        "pattern": "no-cache",
+        "confidence": 100
+      },
+      {
+        "name": "x-ventryshield-sid",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "ventryshield_pre",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Very Good Security": {
+    "category": "misc",
+    "website": "https://www.verygoodsecurity.com",
+    "headers": [
+      {
+        "name": "content-security-policy",
+        "pattern": "\\.verygoodvault\\.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "js\\.verygoodvault\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Video Greet": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/videogreet-gift-messages",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "__vg\\.video_greet_button_src",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "videogreet",
+        "confidence": 70
+      }
+    ]
+  },
+  "Visely": {
+    "category": "misc",
+    "website": "https://visely.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Visely\\.RecommendationsApi|ViselyCartProductIds|ViselyPage",
+        "confidence": 100
+      }
+    ]
+  },
+  "Visual Quiz Builder": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/product-recommendation-quiz",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//whai-cdn\\.nyc\\d\\.cdn\\.digitaloceanspaces\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Vouched": {
+    "category": "misc",
+    "website": "https://www.vouched.id",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "static\\.vouched\\.id|vouched(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\bVouched\\b",
+        "confidence": 40
+      }
+    ]
+  },
+  "v4Guard Checkpoint": {
+    "category": "misc",
+    "website": "https://v4guard.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.v4guard\\.io/checkpoint",
+        "confidence": 100
+      }
+    ]
+  },
+  "WAR.PE": {
+    "category": "misc",
+    "website": "https://war.pe",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//war\\.pe/warp\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "WWPass": {
+    "category": "misc",
+    "website": "https://www.wwpass.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.wwpass\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "WideBundle": {
+    "category": "misc",
+    "website": "https://en.widebundle.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//widebundle\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Wiki.js": {
+    "category": "misc",
+    "website": "https://js.wiki",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "WIKI\\.\\$_apolloInitData|WIKI\\.\\$apolloProvider",
+        "confidence": 100
+      }
+    ]
+  },
+  "Wishlist King": {
+    "category": "misc",
+    "website": "https://appmate.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Appmate\\.wk",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "Appmate\\.version",
+        "confidence": 1
+      }
+    ]
+  },
+  "Wiz": {
+    "category": "misc",
+    "website": "https://www.wiz.io",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Xano": {
+    "category": "misc",
+    "website": "https://www.xano.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "XanoBaseStorage|XanoClient|XanoCookieStorage",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "@xano/js-sdk|xano(?:\\.min)?\\.js",
+        "confidence": 80
+      }
+    ]
+  },
+  "YMQ Product Options Variant Option": {
+    "category": "misc",
+    "website": "https://apps.shopify.com/ymq-options",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ymq[-_]?option[^\"\\']*\\.js\\?v=([\\d.]+)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "ymq_option\\.v",
+        "confidence": 90
+      }
+    ]
+  },
+  "YUI Doc": {
+    "category": "misc",
+    "website": "https://developer.yahoo.com/yui/yuidoc",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "(?:<html[^>]* yuilibrary\\.com/rdf/[\\d.]+/yui\\.rdf|<body[^>]+class=\"yui3-skin-sam)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Yandex SmartCaptcha": {
+    "category": "misc",
+    "website": "https://cloud.yandex.com/en/services/smartcaptcha",
+    "headers": [
+      {
+        "name": "x-yandex-captcha",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Yandex SmartCaptcha",
+        "confidence": 100
+      }
+    ]
+  },
+  "Yoast SEO for Shopify": {
+    "category": "misc",
+    "website": "https://yoast.com/shopify/apps/yoast-seo/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<!-- This site is optimized with Yoast SEO for Shopify -->",
+        "confidence": 100
+      }
+    ]
+  },
+  "Yotpo Subscriptions": {
+    "category": "misc",
+    "website": "https://www.yotpo.com/platform/subscriptions/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<!-- BEGIN app block: shopify://apps/yotpo-subscriptions/blocks/app-embed-block",
+        "confidence": 100
+      }
+    ]
+  },
+  "YouPay": {
+    "category": "misc",
+    "website": "https://youpay.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.youpay\\.ai/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Zakeke Visual Customizer": {
+    "category": "misc",
+    "website": "https://www.zakeke.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.zakeke\\.com/Scripts/integration/shopify/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Zalify": {
+    "category": "misc",
+    "website": "https://www.zalify.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.zalify\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "ZendApps": {
+    "category": "misc",
+    "website": "https://zendapps.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.zend-apps\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Zendesk": {
+    "category": "misc",
+    "website": "https://zendesk.com",
+    "headers": [
+      {
+        "name": "x-zendesk-user-id",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "_help_center_session",
+        "confidence": 100
+      },
+      {
+        "name": "_zendesk_cookie",
+        "confidence": 100
+      },
+      {
+        "name": "_zendesk_shared_session",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "static\\.zdassets\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Zensical": {
+    "category": "misc",
+    "website": "https://zensical.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "zensical-([\\d\\.]+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Zipify OCU": {
+    "category": "misc",
+    "website": "https://zipify.com/apps/ocu/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/zipify-oneclickupsell-vendor\\.js",
+        "confidence": 100
+      }
+    ]
+  }
+}

@@ -182,8 +182,11 @@ class ServiceController:
 
         from config import PYTHON
         env = build_env({"PORT": str(port), "HOST": host})
+        command = [str(PYTHON), str(self.fpath), "--host", host, "--port", str(port)]
+        if self.key == "burp_api":
+            command.append("--start")
         self._runner = ServiceRunner(
-            [str(PYTHON), str(self.fpath), "--host", host, "--port", str(port)],
+            command,
             self.fpath.parent, env)
         self._runner.started.connect(self._on_started)
         self._runner.failed.connect(self._on_failed)

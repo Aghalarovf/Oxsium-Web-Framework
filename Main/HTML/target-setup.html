@@ -21,6 +21,12 @@
       <input class="form-input" id="input-domain" type="text" placeholder="example.com" spellcheck="false" style="width:100%;">
     </div>
   </div>
+  <div class="form-row single">
+    <div class="form-group">
+      <label class="form-label">Name Server <span style="opacity:.45;font-weight:400;">optional</span></label>
+      <input class="form-input" id="input-nameserver" type="text" placeholder="ns1.example.com" spellcheck="false" style="width:100%;">
+    </div>
+  </div>
   <div class="form-row" style="grid-template-columns:1fr 1fr;">
     <div class="form-group">
       <label class="form-label">Threads</label>
@@ -84,14 +90,6 @@
       </div>
       <div style="margin-top:5px;color:var(--text-dim);font-size:10px;">Path to a captured traffic log</div>
     </div>
-  </div>
-</div>
-
-<div class="connect-card">
-  <div class="card-title">Protocol &amp; Transport</div>
-  <div class="protocol-grid">
-    <button class="proto-btn selected"><span class="proto-name">HTTP / HTTPS</span><span class="proto-port">80 / 443</span></button>
-    <button class="proto-btn" style="opacity:0.45;cursor:not-allowed;pointer-events:none;"><span class="proto-name">WS / WSS</span><span class="proto-port" style="font-size:9px;opacity:0.7;">Soon</span></button>
   </div>
 </div>
 

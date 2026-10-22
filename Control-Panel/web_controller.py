@@ -1,13 +1,3 @@
-"""
-core/web_controller.py
-──────────────────────
-WebController — local HTTP static server (for Oxsium-Web-Framework.html).
-
-Standalone module; unlike ServiceController, uses threading instead of subprocess.
-
-HTTP logs are sent to the UI instead of the terminal (_SilentHandler).
-"""
-
 from __future__ import annotations
 
 import http.server

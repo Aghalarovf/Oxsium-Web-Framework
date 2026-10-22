@@ -1,0 +1,252 @@
+{
+  "Centminmod": {
+    "category": "backend",
+    "website": "https://centminmod.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "centminmod",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "cPanel": {
+    "category": "backend",
+    "website": "https://www.cpanel.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "cpsrvd/([\\d.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "cprelogin",
+        "confidence": 100
+      },
+      {
+        "name": "cpsession",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<!-- cPanel",
+        "confidence": 100
+      }
+    ]
+  },
+  "DirectAdmin": {
+    "category": "backend",
+    "website": "https://www.directadmin.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "DirectAdmin Daemon v([\\d.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a[^>]+>DirectAdmin</a> Web Control Panel",
+        "confidence": 100
+      }
+    ]
+  },
+  "FeatherPanel": {
+    "category": "backend",
+    "website": "https://featherpanel.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "author",
+        "pattern": "^FeatherPanel$",
+        "confidence": 100
+      }
+    ]
+  },
+  "GLPI": {
+    "category": "backend",
+    "website": "https://glpi-project.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "glpi:csrf_token",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "//.*glpi.+common\\.min\\.js\\?v=(\\d+\\.\\d+\\.\\d+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Includable": {
+    "category": "backend",
+    "website": "https://includable.com",
+    "headers": [
+      {
+        "name": "x-includable-version",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "i-MSCP": {
+    "category": "backend",
+    "website": "https://github.com/i-MSCP/imscp",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "application-name",
+        "pattern": "^i-MSCP$",
+        "confidence": 100
+      }
+    ]
+  },
+  "MiniServ": {
+    "category": "backend",
+    "website": "https://github.com/webmin/webmin/blob/master/miniserv.pl",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "MiniServ/([\\d\\.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Plesk": {
+    "category": "backend",
+    "website": "https://www.plesk.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^Plesk(?:L|W)in",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by-plesk",
+        "pattern": "^Plesk",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "plesk-build",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "common\\.js\\?plesk",
+        "confidence": 100
+      }
+    ]
+  },
+  "Pterodactyl Panel": {
+    "category": "backend",
+    "website": "https://pterodactyl.io",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "pterodactyl_session",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "SlickStack": {
+    "category": "backend",
+    "website": "https://slickstack.io",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "SlickStack",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "TCAdmin": {
+    "category": "backend",
+    "website": "https://www.tcadmin.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\bTCAdmin\\b",
+        "confidence": 60
+      },
+      {
+        "type": "script",
+        "pattern": "tcadmin",
+        "confidence": 50
+      }
+    ]
+  },
+  "VirtFusion": {
+    "category": "backend",
+    "website": "https://virtfusion.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "virtfusion_session",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "XAMPP": {
+    "category": "backend",
+    "website": "https://www.apachefriends.org/en/xampp.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "author",
+        "pattern": "Kai Oswald Seidler",
+        "confidence": 10
+      },
+      {
+        "type": "body",
+        "pattern": "<title>XAMPP(?: Version ([\\d\\.]+))?</title>",
+        "confidence": 100
+      }
+    ]
+  },
+  "YunoHost": {
+    "category": "backend",
+    "website": "https://yunohost.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/ynh_portal\\.js",
+        "confidence": 100
+      }
+    ]
+  }
+}

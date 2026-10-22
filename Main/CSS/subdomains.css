@@ -133,6 +133,7 @@
 }
 .sub-row:hover       { background: var(--bg-hover); }
 .sub-row:last-child  { border-bottom: none; }
+.sub-row { cursor: context-menu; }
 
 .sub-cell       { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0 4px; }
 .sub-cell-name  { flex: 2;      font-family: var(--mono); color: var(--text-sec); }
@@ -155,6 +156,111 @@
 .status-5xx { background: #3a1a1a; color: #f06060; border: 1px solid #7a2020; }
 .status-err { color: var(--text-dim); font-size: 10px; }
 
+/* ── Subdomain properties panel ─────────────────────────── */
+.sub-properties-panel {
+  position: fixed;
+  z-index: 10020;
+  top: 50%;
+  left: 50%;
+  width: min(560px, calc(100vw - 28px));
+  max-height: min(720px, calc(100vh - 28px));
+  transform: translate(-50%, -48%) scale(.98);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--bg-panel), var(--bg-input));
+  box-shadow: 0 22px 60px rgba(0,0,0,.65), 0 0 0 1px rgba(240,192,48,.08) inset;
+  transition: opacity .14s ease, transform .14s ease;
+}
+.sub-properties-panel.visible {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.sub-properties-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 15px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(240,192,48,.09), transparent 75%);
+}
+.sub-properties-kicker {
+  color: var(--accent);
+  font-family: var(--head);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.sub-properties-title {
+  margin-top: 4px;
+  color: var(--text-hi);
+  font-family: var(--mono);
+  font-size: 13px;
+  word-break: break-all;
+}
+.sub-properties-close {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+.sub-properties-close:hover { border-color: var(--accent-dim); color: var(--accent); }
+.sub-properties-body { overflow: auto; padding: 13px 15px 15px; }
+.sub-properties-group + .sub-properties-group {
+  margin-top: 15px;
+  padding-top: 13px;
+  border-top: 1px solid var(--border);
+}
+.sub-properties-group-title {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-family: var(--head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sub-properties-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+.sub-property {
+  min-width: 0;
+  padding: 7px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,.015);
+}
+.sub-property > span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-dim);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.sub-property > strong {
+  display: block;
+  color: var(--text-sec);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
 /* ── IP cluster rows ────────────────────────────────────── */
 .ip-cluster-row {
   display: flex;
@@ -168,6 +274,10 @@
 .ip-cluster-addr  { width: 150px; font-family: var(--mono); color: var(--accent); flex-shrink: 0; }
 .ip-cluster-count { width: 60px;  font-family: var(--mono); color: var(--text-dim); flex-shrink: 0; }
 .ip-cluster-subs  { flex: 1; font-family: var(--mono); color: var(--text-dim); font-size: 10px; word-break: break-all; line-height: 1.6; }
+
+@media (max-width: 620px) {
+  .sub-properties-grid { grid-template-columns: 1fr; }
+}
 
 /* ── SubdomainScanController: module tracker & output console ── */
 #sub-module-tracker {

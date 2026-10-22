@@ -56,7 +56,7 @@ def scan(
                 result = SourceResult(source=name)
                 try:
                     result.subdomains = future.result()
-                    print(f"[+] [{name}] Authentication successful — {len(result.subdomains)} subdomain(s) found", file=sys.stderr)
+                    print(f"[+] [{name}] Done — {len(result.subdomains)} subdomain(s) found", file=sys.stderr)
                 except SourceError as exc:
                     result.error = str(exc)
                     print(f"[!] [{name}] Error: {exc}", file=sys.stderr)

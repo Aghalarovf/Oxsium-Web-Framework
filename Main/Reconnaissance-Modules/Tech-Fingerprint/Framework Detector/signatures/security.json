@@ -1,0 +1,465 @@
+{
+  "ARCaptcha": {
+    "category": "security",
+    "website": "https://arcaptcha.co",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "arcaptcha\\.co|arcaptcha(\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\barcaptcha\\b|data-arcaptcha",
+        "confidence": 85
+      }
+    ]
+  },
+  "AWS WAF Captcha": {
+    "category": "security",
+    "website": "https://aws.amazon.com/waf/",
+    "headers": [
+      {
+        "name": "x-amzn-waf-action",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^aws-waf-token$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "challenge\\.awswaf\\.com|aws-waf.*captcha",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "awswaf-captcha|AwsWafIntegration",
+        "confidence": 80
+      }
+    ]
+  },
+  "Accertify": {
+    "category": "security",
+    "website": "https://www.accertify.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "accertify\\.(net|com)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "accertify",
+        "confidence": 55
+      }
+    ]
+  },
+  "Age Gate": {
+    "category": "security",
+    "website": "https://wordpress.org/plugins/age-gate/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^age_gate",
+        "confidence": 80
+      },
+      {
+        "name": "^agegate",
+        "confidence": 75
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "age-gate|age_gate",
+        "confidence": 55
+      }
+    ]
+  },
+  "Akamai Bot Manager": {
+    "category": "security",
+    "website": "https://www.akamai.com/products/bot-manager",
+    "headers": [
+      {
+        "name": "x-akamai-bot",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^_abck$",
+        "confidence": 85
+      },
+      {
+        "name": "^ak_bmsc$",
+        "confidence": 85
+      },
+      {
+        "name": "^bm_sz$",
+        "confidence": 75
+      },
+      {
+        "name": "^bm_sv$",
+        "confidence": 70
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "akam/[0-9]+/[a-z0-9_]+|/akam/[0-9]+",
+        "confidence": 80
+      }
+    ]
+  },
+  "Akamai Web Application Protector": {
+    "category": "security",
+    "website": "https://www.akamai.com",
+    "headers": [
+      {
+        "name": "x-akamai-transformed",
+        "pattern": ".*",
+        "confidence": 85
+      },
+      {
+        "name": "server",
+        "pattern": "AkamaiGHost",
+        "confidence": 60
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Akismet": {
+    "category": "security",
+    "website": "https://akismet.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "/wp-content/plugins/akismet/",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "akismet",
+        "confidence": 45
+      }
+    ]
+  },
+  "Alibaba Cloud Verification Code": {
+    "category": "security",
+    "website": "https://www.alibabacloud.com/product/afs",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "g\\.alicdn\\.com/sd/nvc/|aliyuncs\\.com/afs|captcha\\.aliyun\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "nc_container|nc-container|aliyun.*captcha",
+        "confidence": 60
+      }
+    ]
+  },
+  "Altcha": {
+    "category": "security",
+    "website": "https://altcha.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "altcha(\\.min)?\\.js|altcha-widget",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "<altcha-widget",
+        "confidence": 95
+      }
+    ]
+  },
+  "Amazon Cognito": {
+    "category": "security",
+    "website": "https://aws.amazon.com/cognito/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^CognitoIdentityServiceProvider\\.",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cognito-idp\\.[a-z0-9\\-]+\\.amazonaws\\.com|amazon-cognito-identity|aws-amplify.*auth",
+        "confidence": 85
+      }
+    ]
+  },
+  "AntiBot.Cloud": {
+    "category": "security",
+    "website": "https://antibot.cloud",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "antibot\\.cloud",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "antibot\\.cloud|AntiBot\\.Cloud",
+        "confidence": 75
+      }
+    ]
+  },
+  "Anubis": {
+    "category": "security",
+    "website": "https://github.com/TecharoHQ/anubis",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^[Aa]nubis",
+        "confidence": 90
+      },
+      {
+        "name": "x-anubis-.*",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^within\\.website-x-cmd-anubis-",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Making sure you're not a bot!|Anubis (?:is|requires) JavaScript|id=\"anubis_challenge\"",
+        "confidence": 90
+      }
+    ]
+  },
+  "Apereo CAS": {
+    "category": "security",
+    "website": "https://apereo.github.io/cas/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^CASTGC$",
+        "confidence": 90
+      },
+      {
+        "name": "^CASPRIVACY$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "/cas/login|Central Authentication Service|cas-?(login|logo)",
+        "confidence": 70
+      }
+    ]
+  },
+  "Apple Sign-in": {
+    "category": "security",
+    "website": "https://developer.apple.com/sign-in-with-apple/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "appleid\\.cdn-apple\\.com/appleauth/",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "signinwithapple|appleid\\.auth",
+        "confidence": 70
+      }
+    ]
+  },
+  "Apruvd": {
+    "category": "security",
+    "website": "https://www.apruvd.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "apruvd\\.com|apruvd-",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "apruvd",
+        "confidence": 60
+      }
+    ]
+  },
+  "Arkose Labs": {
+    "category": "security",
+    "website": "https://www.arkoselabs.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^arkose_.*",
+        "confidence": 75
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "arkoselabs\\.com|funcaptcha\\.com|client-api\\.arkoselabs",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "funcaptcha|arkoselabs|FunCaptcha\\.|data-pkey=",
+        "confidence": 75
+      }
+    ]
+  },
+  "Auth0": {
+    "category": "security",
+    "website": "https://auth0.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^auth0$",
+        "confidence": 70
+      },
+      {
+        "name": "^auth0_compat$",
+        "confidence": 70
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.auth0\\.com|\\.auth0\\.com/js/|auth0-spa-js",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "window\\.auth0|new auth0\\.(WebAuth|Authentication)",
+        "confidence": 85
+      }
+    ]
+  },
+  "Auth0 Lock": {
+    "category": "security",
+    "website": "https://auth0.com/docs/libraries/lock",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.auth0\\.com/js/lock",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "new Auth0Lock\\(|auth0-lock",
+        "confidence": 90
+      }
+    ]
+  },
+  "Authy": {
+    "category": "security",
+    "website": "https://authy.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "authy\\.com|js\\.authy\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "authy-form|data-authy",
+        "confidence": 75
+      }
+    ]
+  },
+  "Azure AD B2C": {
+    "category": "security",
+    "website": "https://azure.microsoft.com/products/active-directory-b2c/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^x-ms-cpim-.*",
+        "confidence": 75
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "b2clogin\\.com|login\\.microsoftonline\\.com/.*/B2C_",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "b2clogin\\.com|B2C_1[A-Za-z0-9_\\-]*",
+        "confidence": 75
+      }
+    ]
+  },
+  "adCAPTCHA": {
+    "category": "security",
+    "website": "https://adcaptcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "adcaptcha\\.com|adcaptcha(\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\badcaptcha\\b|data-adcaptcha",
+        "confidence": 80
+      }
+    ]
+  },
+  "authorized.by": {
+    "category": "security",
+    "website": "https://authorized.by",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "authorized\\.by",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "authorized\\.by",
+        "confidence": 65
+      }
+    ]
+  }
+}

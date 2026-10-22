@@ -1,0 +1,920 @@
+{
+  "AOLserver": {
+    "category": "backend",
+    "website": "https://aolserver.sourceforge.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "AOLserver",
+        "confidence": 95
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Adobe ColdFusion": {
+    "category": "backend",
+    "website": "https://www.adobe.com/products/coldfusion-family.html",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "ColdFusion",
+        "confidence": 95
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^CFID$",
+        "confidence": 85
+      },
+      {
+        "name": "^CFTOKEN$",
+        "confidence": 85
+      },
+      {
+        "name": "^CFGLOBALS$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\.cfm(\\?|\"|')|ColdFusion Server|cfajax",
+        "confidence": 55
+      }
+    ]
+  },
+  "Angie": {
+    "category": "backend",
+    "website": "https://angie.software",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^[Aa]ngie",
+        "confidence": 95
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Apache APISIX": {
+    "category": "backend",
+    "website": "https://apisix.apache.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "APISIX",
+        "confidence": 95
+      },
+      {
+        "name": "x-apisix-.*",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Apache HTTP Server": {
+    "category": "backend",
+    "website": "https://httpd.apache.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Apache(/[0-9.]+)?(\\s|$)",
+        "confidence": 95
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<address>Apache(/[0-9.]+)? Server at",
+        "confidence": 90
+      }
+    ]
+  },
+  "Apache Tomcat": {
+    "category": "backend",
+    "website": "https://tomcat.apache.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Apache-Coyote",
+        "confidence": 95
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^JSESSIONID$",
+        "confidence": 15
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Apache Tomcat/[0-9.]+|<title>Apache Tomcat",
+        "confidence": 95
+      }
+    ]
+  },
+  "Artifactory Web Server": {
+    "category": "backend",
+    "website": "https://jfrog.com/artifactory/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Artifactory",
+        "confidence": 95
+      },
+      {
+        "name": "x-artifactory-.*",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "/artifactory/webapp/|JFrog Artifactory",
+        "confidence": 85
+      }
+    ]
+  },
+  "Caddy": {
+    "category": "backend",
+    "website": "https://caddyserver.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Caddy",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Cherokee": {
+    "category": "backend",
+    "website": "https://www.cherokee-project.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Cherokee(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "CherryPy": {
+    "category": "backend",
+    "website": "https://cherrypy.org/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "CherryPy(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Cowboy": {
+    "category": "backend",
+    "website": "https://github.com/ninenines/cowboy",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Cowboy$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Daphne": {
+    "category": "backend",
+    "website": "https://github.com/django/daphne",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Daphne",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Ferron": {
+    "category": "backend",
+    "website": "https://ferron.sh",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Ferron$",
+        "confidence": 100
+      },
+      {
+        "name": "x-ferron-cache",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "GlassFish": {
+    "category": "backend",
+    "website": "https://glassfish.java.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "GlassFish(?: Server)?(?: Open Source Edition)?(?: ?/?([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "GoAhead": {
+    "category": "backend",
+    "website": "https://embedthis.com/products/goahead/index.html",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "GoAhead",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Google Web Server": {
+    "category": "backend",
+    "website": "https://en.wikipedia.org/wiki/Google_Web_Server",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "gws",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "gunicorn": {
+    "category": "backend",
+    "website": "https://gunicorn.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "gunicorn(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "H2O": {
+    "category": "backend",
+    "website": "https://github.com/h2o/h2o",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^h2o(?:/)?([\\d\\.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "h2o_casper",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "HP Compact Server": {
+    "category": "backend",
+    "website": "https://hp.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "HP_Compact_Server(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Hiawatha": {
+    "category": "backend",
+    "website": "https://gitlab.com/hsleisink/hiawatha",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Hiawatha v([\\d.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Hypercorn": {
+    "category": "backend",
+    "website": "https://pgjones.gitlab.io/hypercorn/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "hypercorn",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "IBM HTTP Server": {
+    "category": "backend",
+    "website": "https://ibm.com/software/webservers/httpservers",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "IBM_HTTP_Server(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "IIS": {
+    "category": "backend",
+    "website": "https://www.iis.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^(?:Microsoft-)?IIS(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Indy": {
+    "category": "backend",
+    "website": "https://indyproject.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Indy(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "JBoss Application Server": {
+    "category": "backend",
+    "website": "https://jboss.org/jbossas.html",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "JBoss(?:-([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "JBoss Web": {
+    "category": "backend",
+    "website": "https://jboss.org/jbossweb",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "JBossWeb(?:-([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Jetty": {
+    "category": "backend",
+    "website": "https://www.eclipse.org/jetty",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Jetty(?:\\(([\\d\\.]*\\d+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Kangle": {
+    "category": "backend",
+    "website": "https://kangle.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^kangle(?:/([\\d\\.]+))?",
+        "confidence": 100
+      },
+      {
+        "name": "x-cache",
+        "pattern": "^MISS from (?:[\\w& ]+ )?kangle\\b",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Kestrel": {
+    "category": "backend",
+    "website": "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Kestrel",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "LiteSpeed": {
+    "category": "backend",
+    "website": "https://litespeedtech.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^LiteSpeed$",
+        "confidence": 100
+      },
+      {
+        "name": "x-turbo-charged-by",
+        "pattern": "^LiteSpeed$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "libwww-perl-daemon": {
+    "category": "backend",
+    "website": "https://metacpan.org/pod/HTTP::Daemon",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "libwww-perl-daemon(?:/([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "lighttpd": {
+    "category": "backend",
+    "website": "https://www.lighttpd.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "(?:L|l)ight(?:y)?(?:tpd)?(?:/([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Microsoft HTTPAPI": {
+    "category": "backend",
+    "website": "https://learn.microsoft.com/en-us/windows/win32/http/http-api-start-page",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Microsoft-HTTPAPI(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "MochiWeb": {
+    "category": "backend",
+    "website": "https://github.com/mochi/mochiweb",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "MochiWeb(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Mongrel": {
+    "category": "backend",
+    "website": "https://mongrel2.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Mongrel",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Monkey HTTP Server": {
+    "category": "backend",
+    "website": "https://monkey-project.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Monkey/?([\\d.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mini_httpd": {
+    "category": "backend",
+    "website": "https://acme.com/software/mini_httpd",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mini_httpd(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Nginx": {
+    "category": "backend",
+    "website": "https://nginx.org/en",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "nginx(?:/([\\d.]+))?",
+        "confidence": 100
+      },
+      {
+        "name": "x-fastcgi-cache",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "nghttpx - HTTP/2 proxy": {
+    "category": "backend",
+    "website": "https://nghttp2.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "nghttpx nghttp2/?([\\d.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "OpenBSD httpd": {
+    "category": "backend",
+    "website": "https://man.openbsd.org/httpd.8",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^OpenBSD httpd",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "OpenGSE": {
+    "category": "backend",
+    "website": "https://code.google.com/p/opengse",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "GSE",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "OpenResty": {
+    "category": "backend",
+    "website": "https://openresty.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "openresty(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Oracle Application Server": {
+    "category": "backend",
+    "website": "https://www.oracle.com/technetwork/middleware/ias/overview/index.html",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Oracle[- ]Application[- ]Server(?: Containers for J2EE)?(?:[- ](\\d[\\da-z./]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Oracle HTTP Server": {
+    "category": "backend",
+    "website": "https://oracle.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Oracle-HTTP-Server(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Phusion Passenger": {
+    "category": "backend",
+    "website": "https://phusionpassenger.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Phusion Passenger ([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Phusion Passenger(?:\\(R\\))? ?([\\d.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "RX Web Server": {
+    "category": "backend",
+    "website": "https://developers.rokitax.co.uk/projects/rxweb",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "RX-WEB",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Resin": {
+    "category": "backend",
+    "website": "https://caucho.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Resin(?:/(\\S*))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "RoadRunner": {
+    "category": "backend",
+    "website": "https://roadrunner.dev",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "RoadRunner",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "SimpleHTTP": {
+    "category": "backend",
+    "website": "https://example.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "SimpleHTTP(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Snap": {
+    "category": "backend",
+    "website": "https://snapframework.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Snap/([.\\d]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Starlet": {
+    "category": "backend",
+    "website": "https://metacpan.org/pod/Starlet",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Plack::Handler::Starlet",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Tengine": {
+    "category": "backend",
+    "website": "https://tengine.taobao.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Tengine",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "TornadoServer": {
+    "category": "backend",
+    "website": "https://tornadoweb.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "TornadoServer(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "TwistedWeb": {
+    "category": "backend",
+    "website": "https://twistedmatrix.com/trac/wiki/TwistedWeb",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "TwistedWeb(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "thttpd": {
+    "category": "backend",
+    "website": "https://acme.com/software/thttpd",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "\\bthttpd(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Uvicorn": {
+    "category": "backend",
+    "website": "https://www.uvicorn.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "uvicorn",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "WEBrick": {
+    "category": "backend",
+    "website": "https://docs.ruby-lang.org/en/2.4.0/WEBrick.html",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^WEBrick/([\\d\\.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Warp": {
+    "category": "backend",
+    "website": "https://www.stackage.org/package/warp",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Warp/(\\d+(?:\\.\\d+)+)?$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "WebSphere": {
+    "category": "backend",
+    "website": "https://www.ibm.com/products/websphere-application-server",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "(?i)ltpatoken",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Weblogic Server": {
+    "category": "backend",
+    "website": "https://www.oracle.com/java/weblogic",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^WebLogic\\sServer\\s([\\d\\.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Winstone Servlet Container": {
+    "category": "backend",
+    "website": "https://winstone.sourceforge.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Winstone Servlet (?:Container|Engine) v?([\\d.]+)?",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Winstone(?:\\/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Xitami": {
+    "category": "backend",
+    "website": "https://xitami.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Xitami(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Yaws": {
+    "category": "backend",
+    "website": "https://github.com/erlyaws/yaws",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Yaws(?: ([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Zope": {
+    "category": "backend",
+    "website": "https://zope.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Zope/",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  }
+}

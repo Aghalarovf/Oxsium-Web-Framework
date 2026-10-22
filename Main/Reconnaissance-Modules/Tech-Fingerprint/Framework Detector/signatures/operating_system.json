@@ -1,0 +1,255 @@
+{
+  "CentOS": {
+    "category": "backend",
+    "website": "https://centos.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "CentOS",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "CentOS",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Darwin": {
+    "category": "backend",
+    "website": "https://opensource.apple.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Darwin",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Darwin",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Debian": {
+    "category": "backend",
+    "website": "https://debian.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Debian",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "(?:Debian|dotdeb|(potato|woody|sarge|etch|lenny|squeeze|wheezy|jessie|stretch|buster|sid))",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Fedora": {
+    "category": "backend",
+    "website": "https://fedoraproject.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Fedora",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "FreeBSD": {
+    "category": "backend",
+    "website": "https://freebsd.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "FreeBSD(?: ([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Gentoo": {
+    "category": "backend",
+    "website": "https://www.gentoo.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "gentoo",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Raspbian": {
+    "category": "backend",
+    "website": "https://www.raspbian.org/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Raspbian",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Raspbian",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Red Hat": {
+    "category": "backend",
+    "website": "https://www.redhat.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Red Hat",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Red Hat",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "SUSE": {
+    "category": "backend",
+    "website": "https://suse.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "SUSE(?:/?\\s?-?([\\d.]+))?",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "SUSE(?:/?\\s?-?([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Scientific Linux": {
+    "category": "backend",
+    "website": "https://scientificlinux.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Scientific Linux",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Scientific Linux",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "SunOS": {
+    "category": "backend",
+    "website": "https://oracle.com/solaris",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "SunOS( [\\d\\.]+)?",
+        "confidence": 100
+      },
+      {
+        "name": "servlet-engine",
+        "pattern": "SunOS( [\\d\\.]+)?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "UNIX": {
+    "category": "backend",
+    "website": "https://unix.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Unix",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Ubuntu": {
+    "category": "backend",
+    "website": "https://www.ubuntu.com/server",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Ubuntu",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Ubuntu",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "UniFi OS": {
+    "category": "backend",
+    "website": "https://www.ui.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "unifiConstant\\.VERSION|unifiConstant",
+        "confidence": 90
+      }
+    ]
+  },
+  "Windows CE": {
+    "category": "backend",
+    "website": "https://microsoft.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "\\bWinCE\\b",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Windows Server": {
+    "category": "backend",
+    "website": "https://microsoft.com/windowsserver",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Win32|Win64",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  }
+}
