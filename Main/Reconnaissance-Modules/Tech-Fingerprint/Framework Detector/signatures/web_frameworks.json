@@ -198,7 +198,13 @@
   "CakePHP": {
     "category": "backend",
     "website": "https://cakephp.org",
-    "headers": [],
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "CakePHP",
+        "confidence": 95
+      }
+    ],
     "cookies": [
       {
         "name": "cakephp",
@@ -211,6 +217,51 @@
         "name": "application-name",
         "pattern": "CakePHP",
         "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by CakePHP",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "CakePHP",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"_csrfToken\"",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"_Token\\[(fields|unlocked)\\]\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "DebugKit|debug_kit|debug-kit",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Cake\\\\(Core|Http|Controller|Database|View)\\\\",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Missing (Controller|Action|Template|View|Table|Route)",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "/css/(cake|home)\\.css",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "/img/cake\\.(icon|power)\\.(png|gif)",
+        "confidence": 90
       }
     ]
   },
@@ -270,6 +321,51 @@
         "type": "body",
         "pattern": "<input[^>]+name=\"ci_csrf_token\"",
         "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "A PHP Error was encountered",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "A Database Error Occurred",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Message:\\s+.+\\s+Filename:\\s+.+\\.php\\s+Line Number:\\s+\\d+",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"csrf_test_name\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by CodeIgniter",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "CodeIgniter",
+        "confidence": 35
+      },
+      {
+        "type": "body",
+        "pattern": "<title>404 Page Not Found</title>",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "/index\\.php/[\\w/\\-]+",
+        "confidence": 30
+      },
+      {
+        "type": "body",
+        "pattern": "debugbar_loader|ci-debug-toolbar",
+        "confidence": 85
       }
     ]
   },
@@ -299,6 +395,14 @@
       {
         "name": "django_language",
         "confidence": 100
+      },
+      {
+        "name": "^csrftoken$",
+        "confidence": 60
+      },
+      {
+        "name": "^sessionid$",
+        "confidence": 30
       }
     ],
     "html": [
@@ -306,6 +410,46 @@
         "type": "body",
         "pattern": "(?:powered by <a[^>]+>Django ?([\\d.]+)?<\\/a>|<input[^>]*name=[\"']csrfmiddlewaretoken[\"'][^>]*>)",
         "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/static/admin/js/",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/static/admin/",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Django (administration|site admin)",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "__debug__",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "djdt|django-debug-toolbar",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Using the URLconf defined in",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "You're seeing this error because you have <code>DEBUG = True",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "Django Version",
+        "confidence": 70
       }
     ]
   },
@@ -358,6 +502,21 @@
         "type": "body",
         "pattern": "at (Layer|Function)\\.handle \\[as handle_request\\]|node_modules/express/lib/router",
         "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by Express",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "at (Function|Layer)\\.(handle|process_params)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "<pre>(Type|Reference|Syntax|Range)?Error: .+\\n\\s+(&nbsp;)*\\s*at ",
+        "confidence": 50
       }
     ]
   },
@@ -376,13 +535,59 @@
   "FastAPI": {
     "category": "backend",
     "website": "https://fastapi.tiangolo.com",
-    "headers": [],
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "uvicorn",
+        "confidence": 45
+      }
+    ],
     "cookies": [],
     "html": [
       {
         "type": "body",
         "pattern": "<link[^>]+href=[\"\\'][^\"\\']*fastapi\\.tiangolo\\.com[^>]*rel=[\"\\']shortcut icon[\"\\']|<link[^>]+rel=[\"\\']shortcut icon[\"\\'][^>]*href=[\"\\'][^\"\\']*fastapi\\.tiangolo\\.com",
         "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "\"detail\":\\s*\"Not Found\"",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "\"detail\":\\s*\\[\\s*\\{\\s*\"loc\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "\"msg\":\\s*\"Field required\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "\"type\":\\s*\"(missing|value_error|string_type|int_parsing)\"",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "<title>[^<]+ - (Swagger UI|ReDoc)</title>",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "/openapi\\.json",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "\"openapi\":\\s*\"3\\.\\d+\\.\\d+\"",
+        "confidence": 35
+      },
+      {
+        "type": "body",
+        "pattern": "swagger-ui-(dist|bundle)",
+        "confidence": 35
       }
     ]
   },
@@ -410,7 +615,43 @@
       }
     ],
     "cookies": [],
-    "html": []
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Werkzeug Debugger",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "The debugger caught an exception in your WSGI application",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "__debugger__=yes",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by Flask",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Flask-(WTF|Login|Admin|Bootstrap|Babel)",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "The requested URL was not found on the server\\. If you entered the URL manually",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "The method is not allowed for the requested URL",
+        "confidence": 80
+      }
+    ]
   },
   "Frappe": {
     "category": "backend",
@@ -460,6 +701,64 @@
         "name": "generator",
         "pattern": "^Frontity",
         "confidence": 100
+      }
+    ]
+  },
+  "Gin": {
+    "category": "backend",
+    "website": "https://gin-gonic.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^gin_session$",
+        "confidence": 30
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "\\[GIN(-debug)?\\]",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "github\\.com/gin-gonic/gin(@v[\\d.]+)?/",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "gin-gonic",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "gin-contrib/",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by Gin",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "goroutine \\d+ \\[running\\]:[\\s\\S]*gin",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "\"message\":\\s*\"(page not found|Not Found)\"",
+        "confidence": 20
+      },
+      {
+        "type": "body",
+        "pattern": "(^|>)\\s*404 page not found\\s*(<|$)",
+        "confidence": 30
+      },
+      {
+        "type": "body",
+        "pattern": "/swagger/index\\.html",
+        "confidence": 25
       }
     ]
   },
@@ -599,9 +898,44 @@
       {
         "name": "laravel_session",
         "confidence": 100
+      },
+      {
+        "name": "^XSRF-TOKEN$",
+        "confidence": 40
       }
     ],
-    "html": []
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Whoops, looks like something went wrong",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Illuminate\\\\(Database|Http|Support|Foundation|Routing)\\\\",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "window\\.Laravel",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Laravel v?[\\d.]+ \\(PHP v?[\\d.]+\\)",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "facade/ignition|spatie/laravel-ignition",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "/vendor/telescope/",
+        "confidence": 70
+      }
+    ]
   },
   "Leptos": {
     "category": "backend",
@@ -710,12 +1044,62 @@
     "category": "backend",
     "website": "https://www.meteor.com",
     "headers": [],
-    "cookies": [],
+    "cookies": [
+      {
+        "name": "^meteor_login_token$",
+        "confidence": 85
+      }
+    ],
     "html": [
       {
         "type": "body",
         "pattern": "<link[^>]+__meteor-css__",
         "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "meteor_runtime_config\\.js",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "__meteor_runtime_config__\\s*=\\s*JSON\\.parse\\(decodeURIComponent\\(",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "__meteor_runtime_config__",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "meteor_(js|css)_resource=true",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/packages/[\\w\\-]+\\.js",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "Meteor\\.(startup|isClient|isServer|call|methods|subscribe)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/sockjs/info",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "/__cordova/",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Tracker\\.autorun",
+        "confidence": 70
       }
     ]
   },
@@ -737,6 +1121,11 @@
         "name": "set-cookie",
         "pattern": "\\.AspNetCore",
         "confidence": 100
+      },
+      {
+        "name": "x-aspnetmvc-version",
+        "pattern": ".*",
+        "confidence": 100
       }
     ],
     "cookies": [
@@ -751,6 +1140,14 @@
       {
         "name": "\\.ASPXAUTH",
         "confidence": 100
+      },
+      {
+        "name": "^\\.AspNetCore\\.",
+        "confidence": 90
+      },
+      {
+        "name": "^\\.AspNetCore\\.Antiforgery\\.",
+        "confidence": 95
       }
     ],
     "html": [
@@ -758,6 +1155,56 @@
         "type": "body",
         "pattern": "<input[^>]+name=\"__VIEWSTATE",
         "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/_framework/blazor\\.(server|webassembly)\\.js",
+        "confidence": 98
+      },
+      {
+        "type": "script",
+        "pattern": "/_framework/aspnetcore-browser-refresh\\.js",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/_vs/browserLink|/__browserLink/",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "jquery\\.validate\\.unobtrusive",
+        "confidence": 60
+      },
+      {
+        "type": "script",
+        "pattern": "/lib/bootstrap/",
+        "confidence": 35
+      },
+      {
+        "type": "body",
+        "pattern": "__RequestVerificationToken",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "data-val-(required|length|regex|range|email)=",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "An unhandled exception occurred while processing the request",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Microsoft\\.AspNetCore\\.",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/lib/(bootstrap|jquery|jquery-validation)(-[\\w\\-]+)?/dist/",
+        "confidence": 55
       }
     ]
   },
@@ -778,6 +1225,39 @@
     ],
     "cookies": [],
     "html": []
+  },
+  "NestJS": {
+    "category": "backend",
+    "website": "https://nestjs.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "@nestjs/",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\"message\":\\s*\"Cannot (GET|POST|PUT|PATCH|DELETE) /[^\"]*\"",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "/api-json",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "\"statusCode\":\\s*(400|401|403|404|500)",
+        "confidence": 20
+      },
+      {
+        "type": "body",
+        "pattern": "\"error\":\\s*\"(Not Found|Bad Request|Unauthorized|Forbidden|Internal Server Error)\"",
+        "confidence": 20
+      }
+    ]
   },
   "Neos Flow": {
     "category": "backend",
@@ -929,8 +1409,19 @@
   "Phoenix Framework": {
     "category": "backend",
     "website": "https://www.phoenixframework.org",
-    "headers": [],
-    "cookies": [],
+    "headers": [
+      {
+        "name": "x-request-id",
+        "pattern": ".*",
+        "confidence": 25
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^_.*_key$",
+        "confidence": 40
+      }
+    ],
     "html": [
       {
         "type": "script",
@@ -941,6 +1432,46 @@
         "type": "body",
         "pattern": "Phoenix\\.Channel",
         "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "data-phx-(main|session|static|view|component|link|id)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "phx-(click|submit|change|hook|update|target|socket)",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"_csrf_token\"",
+        "confidence": 45
+      },
+      {
+        "type": "body",
+        "pattern": "phoenix(\\.min)?\\.js|phoenix_html|phoenix_live_view",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Phoenix\\.(LiveView|Router|Endpoint|Controller)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Phoenix\\.Router\\.NoRouteError",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "/(live|socket)/websocket",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "<title data-suffix",
+        "confidence": 70
       }
     ]
   },
@@ -965,14 +1496,66 @@
   "Play": {
     "category": "backend",
     "website": "https://www.playframework.com",
-    "headers": [],
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "^Play( Framework)?",
+        "confidence": 70
+      }
+    ],
     "cookies": [
       {
         "name": "PLAY_SESSION",
         "confidence": 100
       }
     ],
-    "html": []
+    "html": [
+      {
+        "type": "body",
+        "pattern": "play\\.(api|core)\\.",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Action Not Found",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "For request '(GET|POST|PUT|PATCH|DELETE) [^']*'",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Execution exception",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "This page is generated by Play|Welcome to Play",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"csrfToken\"",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "csrfToken=[0-9a-f\\-]{20,}",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "/@documentation",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/assets/(javascripts|stylesheets|images)/",
+        "confidence": 30
+      }
+    ]
   },
   "PyWebIO": {
     "category": "backend",
@@ -1081,12 +1664,26 @@
         "name": "x-powered-by",
         "pattern": "mod_(?:rails|rack)",
         "confidence": 100
+      },
+      {
+        "name": "x-runtime",
+        "pattern": ".*",
+        "confidence": 60
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Phusion Passenger",
+        "confidence": 50
       }
     ],
     "cookies": [
       {
         "name": "_session_id",
         "confidence": 75
+      },
+      {
+        "name": "^_rails_session$",
+        "confidence": 60
       }
     ],
     "html": [
@@ -1100,6 +1697,46 @@
         "type": "script",
         "pattern": "/assets/application-[a-z\\d]{32}/\\.js",
         "confidence": 50
+      },
+      {
+        "type": "script",
+        "pattern": "/assets/application-[0-9a-f]{8,}\\.(js|css)",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "authenticity_token",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "ActionController::[A-Za-z]+",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "ActionView::Template::Error",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "No route matches \\[(GET|POST|PUT|PATCH|DELETE)\\]",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "data-turbolinks|data-turbo(-track|-frame)?",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "/rails/active_storage/",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Rails\\.(env|root|logger)",
+        "confidence": 70
       }
     ]
   },
@@ -1176,7 +1813,48 @@
       }
     ],
     "cookies": [],
-    "html": []
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Whitelabel Error Page",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "This application has no explicit mapping for /error",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "\"timestamp\":\\s*\"[^\"]+\",\\s*\"status\":\\s*\\d{3},\\s*\"error\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "org\\.springframework\\.",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "<title>Please sign in</title>",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "/actuator(/|\")",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "Spring (Boot|Security|MVC)",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"_csrf\"",
+        "confidence": 30
+      }
+    ]
   },
   "StimulusReflex": {
     "category": "backend",
@@ -1214,7 +1892,18 @@
   "Symfony": {
     "category": "backend",
     "website": "https://symfony.com",
-    "headers": [],
+    "headers": [
+      {
+        "name": "x-debug-token",
+        "pattern": ".*",
+        "confidence": 95
+      },
+      {
+        "name": "x-debug-token-link",
+        "pattern": ".*",
+        "confidence": 95
+      }
+    ],
     "cookies": [
       {
         "name": "sf_redirect",
@@ -1226,6 +1915,51 @@
         "type": "body",
         "pattern": "/@?symfony/",
         "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/bundles/",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "sf-toolbar|sf-minitoolbar",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/_wdt/[\\w\\-]+",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/_profiler/[\\w\\-]+",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Symfony Profiler",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Symfony\\\\(Component|Bundle)\\\\",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Symfony Exception",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"[A-Za-z_]+\\[_token\\]\"",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "/bundles/[a-z0-9_\\-]+/",
+        "confidence": 40
       }
     ]
   },
@@ -1388,6 +2122,52 @@
         "type": "body",
         "pattern": "<!\\[CDATA\\[YII-BLOCK-(?:HEAD|BODY-BEGIN|BODY-END)\\]",
         "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Yii ?([\\d.]+)?",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "yii\\.(js|activeForm|validation|captcha|gridView)",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "/assets/[0-9a-f]{8}/",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"_csrf(-\\w+)?\"",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "<meta name=\"csrf-param\" content=\"_csrf(-\\w+)?\">",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "yiiframework\\.com",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "yii\\\\(base|web|db|helpers)\\\\",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Unable to resolve the request",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "yii2?-debug",
+        "confidence": 80
       }
     ]
   },
