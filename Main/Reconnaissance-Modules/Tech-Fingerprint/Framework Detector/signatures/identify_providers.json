@@ -1,0 +1,389 @@
+{
+  "CA SiteMinder": {
+    "category": "security",
+    "website": "https://www.broadcom.com/products/identity/siteminder",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "SiteMinder",
+        "confidence": 80
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^SMSESSION$",
+        "confidence": 90
+      },
+      {
+        "name": "^SMCHALLENGE$",
+        "confidence": 90
+      },
+      {
+        "name": "^SMIDENTITY$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/siteminderagent/",
+        "confidence": 80
+      }
+    ]
+  },
+  "ForgeRock AM / OpenAM": {
+    "category": "security",
+    "website": "https://www.forgerock.com",
+    "headers": [
+      {
+        "name": "x-forgerock-transactionid",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^iPlanetDirectoryPro$",
+        "confidence": 90
+      },
+      {
+        "name": "^amlbcookie$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/openam/XUI/",
+        "confidence": 80
+      },
+      {
+        "type": "script",
+        "pattern": "/am/XUI/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "Google Account": {
+    "category": "security",
+    "website": "https://myaccount.google.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^__Secure-1PSID$",
+        "confidence": 90
+      },
+      {
+        "name": "^__Secure-3PSID$",
+        "confidence": 90
+      },
+      {
+        "name": "^__Secure-1PAPISID$",
+        "confidence": 90
+      },
+      {
+        "name": "^__Secure-3PAPISID$",
+        "confidence": 90
+      },
+      {
+        "name": "^__Secure-1PSIDTS$",
+        "confidence": 90
+      },
+      {
+        "name": "^__Secure-3PSIDTS$",
+        "confidence": 90
+      },
+      {
+        "name": "^__Secure-1PSIDCC$",
+        "confidence": 90
+      },
+      {
+        "name": "^__Secure-3PSIDCC$",
+        "confidence": 90
+      },
+      {
+        "name": "^SAPISID$",
+        "confidence": 90
+      },
+      {
+        "name": "^APISID$",
+        "confidence": 90
+      },
+      {
+        "name": "^SIDCC$",
+        "confidence": 90
+      }
+    ],
+    "html": []
+  },
+  "IBM Security Verify / Tivoli Access Manager": {
+    "category": "security",
+    "website": "https://www.ibm.com/products/verify",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "IBM_HTTP_Server",
+        "confidence": 15
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^PD-S-SESSION-ID$",
+        "confidence": 90
+      },
+      {
+        "name": "^PD_STATEFUL_",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/mga/sps/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "Keycloak": {
+    "category": "security",
+    "website": "https://www.keycloak.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Keycloak",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^KEYCLOAK_SESSION",
+        "confidence": 90
+      },
+      {
+        "name": "^KEYCLOAK_IDENTITY",
+        "confidence": 90
+      },
+      {
+        "name": "^AUTH_SESSION_ID",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/resources/js/keycloak",
+        "confidence": 80
+      },
+      {
+        "type": "script",
+        "pattern": "/auth/js/keycloak",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "Microsoft ADFS / SharePoint Claims Auth": {
+    "category": "security",
+    "website": "https://learn.microsoft.com/windows-server/identity/ad-fs/ad-fs-overview",
+    "headers": [
+      {
+        "name": "x-ms-server-fqdn",
+        "pattern": ".*",
+        "confidence": 50
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^FedAuth$",
+        "confidence": 85
+      },
+      {
+        "name": "^rtFa$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/adfs/portal/script/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      ".NET"
+    ]
+  },
+  "Microsoft Entra ID / Azure AD": {
+    "category": "security",
+    "website": "https://www.microsoft.com/security/business/identity-access/microsoft-entra-id",
+    "headers": [
+      {
+        "name": "x-ms-request-id",
+        "pattern": ".*",
+        "confidence": 15
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^ESTSAUTH$",
+        "confidence": 90
+      },
+      {
+        "name": "^ESTSAUTHPERSISTENT$",
+        "confidence": 90
+      },
+      {
+        "name": "^ESTSAUTHLIGHT$",
+        "confidence": 90
+      },
+      {
+        "name": "^esctx",
+        "confidence": 80
+      },
+      {
+        "name": "^buid$",
+        "confidence": 40
+      },
+      {
+        "name": "^stsservicecookie$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "aadcdn\\.msauth\\.net",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "aadcdn\\.msftauth\\.net",
+        "confidence": 85
+      }
+    ]
+  },
+  "OneLogin": {
+    "category": "security",
+    "website": "https://www.onelogin.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^sub_session_onelogin$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.onelogin\\.com",
+        "confidence": 85
+      }
+    ]
+  },
+  "Oracle Access Manager": {
+    "category": "security",
+    "website": "https://www.oracle.com/security/identity-management/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Oracle-Application-Server",
+        "confidence": 20
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^ObSSOCookie$",
+        "confidence": 90
+      },
+      {
+        "name": "^OAMAuthnCookie",
+        "confidence": 90
+      },
+      {
+        "name": "^OAM_ID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/oam/server/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "PingFederate / PingOne": {
+    "category": "security",
+    "website": "https://www.pingidentity.com",
+    "headers": [
+      {
+        "name": "x-instance-id",
+        "pattern": ".*",
+        "confidence": 15
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^PF$",
+        "confidence": 60
+      },
+      {
+        "name": "^PA.global$",
+        "confidence": 90
+      },
+      {
+        "name": "^ST$",
+        "confidence": 5
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/idp/resources/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "Shibboleth SP": {
+    "category": "security",
+    "website": "https://www.shibboleth.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Shibboleth",
+        "confidence": 80
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^_shibsession_",
+        "confidence": 90
+      },
+      {
+        "name": "^_shibstate_",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/Shibboleth\\.sso/",
+        "confidence": 80
+      }
+    ]
+  }
+}
