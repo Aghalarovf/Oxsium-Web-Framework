@@ -1,0 +1,425 @@
+{
+  "BigCommerce": {
+    "category": "cms",
+    "website": "https://www.bigcommerce.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^SHOP_SESSION_TOKEN$",
+        "confidence": 90
+      },
+      {
+        "name": "^fornax_anonymousId$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^BigCommerce",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "cdn11\\.bigcommerce\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "cdn\\.bcapp\\.dev",
+        "confidence": 85
+      }
+    ]
+  },
+  "Magento": {
+    "category": "cms",
+    "website": "https://magento.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^frontend$",
+        "confidence": 5
+      },
+      {
+        "name": "^mage-cache-sessid$",
+        "confidence": 90
+      },
+      {
+        "name": "^mage-cache-storage$",
+        "confidence": 90
+      },
+      {
+        "name": "^mage-messages$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Magento ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/skin/frontend/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/js/mage/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/js/varien/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Magento 2 / Adobe Commerce": {
+    "category": "cms",
+    "website": "https://business.adobe.com/products/magento/magento-commerce.html",
+    "headers": [
+      {
+        "name": "x-magento-cache-debug",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-magento-tags",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^private_content_version$",
+        "confidence": 90
+      },
+      {
+        "name": "^section_data_ids$",
+        "confidence": 90
+      },
+      {
+        "name": "^form_key$",
+        "confidence": 40
+      },
+      {
+        "name": "^X-Magento-Vary$",
+        "confidence": 90
+      },
+      {
+        "name": "^product_data_storage$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Magento ?2? ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/static/frontend/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "nopCommerce": {
+    "category": "cms",
+    "website": "https://www.nopcommerce.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "nopCommerce",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^\\.Nop\\.Customer$",
+        "confidence": 90
+      },
+      {
+        "name": "^\\.Nop\\.Antiforgery$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^nopCommerce ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/Scripts/nopCommerce",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "ASP.NET"
+    ]
+  },
+  "OpenCart": {
+    "category": "cms",
+    "website": "https://www.opencart.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "OpenCart",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^OCSESSID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^OpenCart",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/catalog/view/javascript/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/catalog/view/theme/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "PrestaShop": {
+    "category": "cms",
+    "website": "https://prestashop.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "PrestaShop",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^PrestaShop-",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^PrestaShop ?([\\d.]+)?",
+        "confidence": 95
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Salesforce Commerce Cloud (Demandware)": {
+    "category": "cms",
+    "website": "https://www.salesforce.com/products/commerce-cloud/overview/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Demandware",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^dwsid$",
+        "confidence": 90
+      },
+      {
+        "name": "^dwanonymous_",
+        "confidence": 90
+      },
+      {
+        "name": "^__cq_uuid$",
+        "confidence": 90
+      },
+      {
+        "name": "^__cq_seg$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Demandware|^Salesforce Commerce Cloud",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/on/demandware.static/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/dw/image/",
+        "confidence": 75
+      }
+    ]
+  },
+  "SAP Commerce Cloud (Hybris)": {
+    "category": "cms",
+    "website": "https://www.sap.com/products/commerce-cloud.html",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "SAP Commerce Cloud|Hybris",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^anonymous-consents$",
+        "confidence": 20
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^SAP Commerce Cloud|^Hybris",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/_ui/responsive/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/medias/sys_master/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "Shopify": {
+    "category": "cms",
+    "website": "https://www.shopify.com",
+    "headers": [
+      {
+        "name": "x-shopify-stage",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-shopid",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-sorting-hat-shopid",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^_shopify_y$",
+        "confidence": 90
+      },
+      {
+        "name": "^_shopify_s$",
+        "confidence": 90
+      },
+      {
+        "name": "^secure_customer_sig$",
+        "confidence": 90
+      },
+      {
+        "name": "^_shopify_fs$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Shopify",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "cdn\\.shopify\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "/cdn/shop/",
+        "confidence": 75
+      }
+    ]
+  },
+  "Shopware": {
+    "category": "cms",
+    "website": "https://www.shopware.com",
+    "headers": [
+      {
+        "name": "sw-version-id",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Shopware",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^session-$",
+        "confidence": 5
+      },
+      {
+        "name": "^sw-cache-hash$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Shopware ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/bundles/storefront/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  }
+}
