@@ -385,5 +385,419 @@
         "confidence": 80
       }
     ]
+  },
+  "Okta": {
+    "category": "security",
+    "website": "https://www.okta.com",
+    "headers": [
+      {
+        "name": "x-okta-request-id",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^DT$",
+        "confidence": 40
+      },
+      {
+        "name": "^JSESSIONID$",
+        "confidence": 10
+      },
+      {
+        "name": "^okta-oauth-nonce$",
+        "confidence": 85
+      },
+      {
+        "name": "^okta-oauth-state$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ok(?:1|2)static\\.oktacdn\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "op1static\\.oktacdn\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "okta-sign-in(?:\\.min)?\\.js",
+        "confidence": 85
+      }
+    ]
+  },
+  "Auth0": {
+    "category": "security",
+    "website": "https://auth0.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^auth0$",
+        "confidence": 70
+      },
+      {
+        "name": "^auth0_compat$",
+        "confidence": 70
+      },
+      {
+        "name": "^did$",
+        "confidence": 20
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.auth0\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "auth0-spa-js",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "auth0\\.min\\.js",
+        "confidence": 85
+      }
+    ]
+  },
+  "Duo Security": {
+    "category": "security",
+    "website": "https://duo.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api-[\\w.-]*duosecurity\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "Duo-Frame",
+        "confidence": 70
+      },
+      {
+        "type": "script",
+        "pattern": "duo_iframe",
+        "confidence": 75
+      }
+    ]
+  },
+  "Centrify / CyberArk Identity (Idaptive)": {
+    "category": "security",
+    "website": "https://www.cyberark.com/products/identity/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^OasisAccessToken$",
+        "confidence": 85
+      },
+      {
+        "name": "^_idaptive_session$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.my\\.centrify\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "\\.my\\.idaptive\\.app",
+        "confidence": 85
+      }
+    ]
+  },
+  "SailPoint IdentityNow / IdentityIQ": {
+    "category": "security",
+    "website": "https://www.sailpoint.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^JSESSIONID$",
+        "confidence": 10
+      },
+      {
+        "name": "^sp_jwt$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.identitynow\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "/identityiq/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "AWS Cognito": {
+    "category": "security",
+    "website": "https://aws.amazon.com/cognito/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^CognitoIdentityServiceProvider\\.",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "amazon-cognito-identity(?:\\.min)?\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "\\.auth\\.[\\w-]+\\.amazoncognito\\.com",
+        "confidence": 90
+      }
+    ]
+  },
+  "WSO2 Identity Server": {
+    "category": "security",
+    "website": "https://wso2.com/identity-and-access-management/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "WSO2 Carbon Server",
+        "confidence": 85
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^commonAuthId$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/authenticationendpoint/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "Gluu Server": {
+    "category": "security",
+    "website": "https://gluu.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^opbs$",
+        "confidence": 50
+      },
+      {
+        "name": "^session_state$",
+        "confidence": 30
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/oxauth/",
+        "confidence": 80
+      },
+      {
+        "type": "script",
+        "pattern": "/identity/",
+        "confidence": 40
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "F5 BIG-IP APM": {
+    "category": "security",
+    "website": "https://www.f5.com/products/big-ip-services/access-policy-manager",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^MRHSession$",
+        "confidence": 80
+      },
+      {
+        "name": "^LastMRH_Session$",
+        "confidence": 80
+      },
+      {
+        "name": "^F5_ST$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/my\\.policy",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/vdesk/",
+        "confidence": 70
+      }
+    ]
+  },
+  "RSA SecurID Access": {
+    "category": "security",
+    "website": "https://www.rsa.com/products/securid/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^amauthreason$",
+        "confidence": 60
+      },
+      {
+        "name": "^RSA_SID$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.securid\\.com",
+        "confidence": 85
+      }
+    ]
+  },
+  "JumpCloud": {
+    "category": "security",
+    "website": "https://jumpcloud.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^_jcIdSrv$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "console\\.jumpcloud\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "sso\\.jumpcloud\\.com",
+        "confidence": 90
+      }
+    ]
+  },
+  "miniOrange": {
+    "category": "security",
+    "website": "https://www.miniorange.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "login\\.xecurify\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "miniorange",
+        "confidence": 60
+      }
+    ]
+  },
+  "Cloudflare Access": {
+    "category": "security",
+    "website": "https://www.cloudflare.com/products/zero-trust/access/",
+    "headers": [
+      {
+        "name": "cf-access-jwt-assertion",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^CF_Authorization$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cloudflareaccess\\.com",
+        "confidence": 85
+      }
+    ]
+  },
+  "Akamai Identity Cloud (Janrain)": {
+    "category": "security",
+    "website": "https://www.akamai.com/products/identity-cloud",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^janrain_",
+        "confidence": 80
+      },
+      {
+        "name": "^gigya_",
+        "confidence": 70
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "janrainbackplane\\.com",
+        "confidence": 80
+      },
+      {
+        "type": "script",
+        "pattern": "cdns\\.gigya\\.com",
+        "confidence": 85
+      }
+    ]
+  },
+  "Salesforce SSO (My Domain)": {
+    "category": "security",
+    "website": "https://help.salesforce.com/s/articleView?id=sf.domain_name_overview.htm",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^sid$",
+        "confidence": 15
+      },
+      {
+        "name": "^oinfo$",
+        "confidence": 70
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.my\\.salesforce\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "login\\.salesforce\\.com",
+        "confidence": 85
+      }
+    ]
   }
 }
