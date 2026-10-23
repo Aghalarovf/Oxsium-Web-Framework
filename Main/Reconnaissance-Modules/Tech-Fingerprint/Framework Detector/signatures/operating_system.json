@@ -251,5 +251,31 @@
     ],
     "cookies": [],
     "html": []
+  },
+  "AlmaLinux": {
+    "category": "backend",
+    "website": "https://almalinux.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "\\(AlmaLinux\\)",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Alpine Linux": {
+    "category": "backend",
+    "website": "https://alpinelinux.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "\\(Alpine( Linux)?\\)",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
   }
 }
