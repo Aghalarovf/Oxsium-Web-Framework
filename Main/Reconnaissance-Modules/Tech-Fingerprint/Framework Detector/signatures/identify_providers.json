@@ -429,6 +429,11 @@
         "type": "script",
         "pattern": "okta-sign-in(?:\\.min)?\\.js",
         "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "oktacdn\\.com/.+/([\\d.]+)/",
+        "confidence": 100
       }
     ]
   },
@@ -689,6 +694,10 @@
       {
         "name": "^_jcIdSrv$",
         "confidence": 80
+      },
+      {
+        "name": "_jumpcloud_user_console_",
+        "confidence": 100
       }
     ],
     "html": [
@@ -701,6 +710,11 @@
         "type": "script",
         "pattern": "sso\\.jumpcloud\\.com",
         "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "\\.jumpcloud\\.com/",
+        "confidence": 100
       }
     ]
   },
@@ -799,5 +813,385 @@
         "confidence": 85
       }
     ]
+  },
+  "Clerk": {
+    "category": "security",
+    "website": "https://clerk.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "clerk(?:\\.browser)?(?:\\.min)?\\.js|\\.clerk\\.accounts\\.dev",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Clerk\\.(?:openSignIn|authenticateWithMetamask|version)",
+        "confidence": 60
+      }
+    ]
+  },
+  "Facebook Login": {
+    "category": "security",
+    "website": "https://developers.facebook.com/docs/facebook-login/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "connect\\.facebook\\.net/[^\"\\']*/sdk\\.js",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "FB\\.getLoginStatus",
+        "confidence": 90
+      }
+    ]
+  },
+  "Google Sign-in": {
+    "category": "security",
+    "website": "https://developers.google.com/identity/sign-in/web",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "google-signin-client_id",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "type": "meta",
+        "name": "google-signin-scope",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "accounts\\.google\\.com/gsi/client",
+        "confidence": 100
+      }
+    ]
+  },
+  "Linkedin Sign-in": {
+    "category": "security",
+    "website": "https://www.linkedin.com/developers",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "platform\\.linkedin\\.com/(?:.*)?(?:in\\.js(?:\\?version)?([\\d.]+)?|litms/utag/[^?]+\\.js(?:\\?cb=[\\d]+)?)",
+        "confidence": 100
+      }
+    ]
+  },
+  "LINE Login": {
+    "category": "security",
+    "website": "https://developers.line.biz/en/services/line-login/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a[^>]+href=[\"'][^\"']*access\\.line\\.me/",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "access\\.line\\.me/oauth2/v[\\d.]+/",
+        "confidence": 90
+      }
+    ]
+  },
+  "Login with Amazon": {
+    "category": "security",
+    "website": "https://developer.amazon.com/apps-and-games/login-with-amazon",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "onAmazonLoginReady",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "api-cdn\\.amazon\\.com/sdk/login1\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "LoginRadius": {
+    "category": "security",
+    "website": "https://www.loginradius.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.loginradius\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "\\.lrcontent\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Hanko": {
+    "category": "security",
+    "website": "https://www.hanko.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "_hankoStyle",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "hanko-elements|\\.hanko\\.io",
+        "confidence": 80
+      }
+    ]
+  },
+  "MagicLabs": {
+    "category": "security",
+    "website": "https://magic.link",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.auth\\.magic\\.link",
+        "confidence": 100
+      }
+    ]
+  },
+  "NextAuth.js": {
+    "category": "security",
+    "website": "https://next-auth.js.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "__Host-next-auth.csrf-token",
+        "confidence": 100
+      },
+      {
+        "name": "__Secure-next-auth.callback-url",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "OneAll": {
+    "category": "security",
+    "website": "https://www.oneall.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api\\.oneall\\.com/socialize",
+        "confidence": 100
+      }
+    ]
+  },
+  "Oxi Social Login": {
+    "category": "security",
+    "website": "https://www.oxiapps.com/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "social-login\\.oxiapps\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Passage": {
+    "category": "security",
+    "website": "https://passage.1password.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.1password\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Passport.js": {
+    "category": "security",
+    "website": "https://www.passportjs.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "passport(?:\\.min)?\\.js",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "Passport\\.Core|PassportHandler|_passport_html",
+        "confidence": 100
+      }
+    ]
+  },
+  "SAP Customer Data Cloud Sign-in": {
+    "category": "security",
+    "website": "https://www.sap.com/uk/acquired-brands/what-is-gigya.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.gigya\\.com/JS/gigya\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "SimpleSAMLphp": {
+    "category": "security",
+    "website": "https://simplesamlphp.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "SimpleSAML",
+        "confidence": 100
+      },
+      {
+        "name": "SimpleSAMLSessionID",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "uLogin": {
+    "category": "security",
+    "website": "https://ulogin.ru",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "ulogin\\.ru/js/ulogin\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "uLogin\\.version",
+        "confidence": 80
+      }
+    ]
+  },
+  "Userbase": {
+    "category": "security",
+    "website": "https://userbase.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "userbase-js|userbase(?:\\.min)?\\.js|sdk\\.userbase\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\buserbase\\.(?:init|signIn|signUp|openDatabase)\\b",
+        "confidence": 70
+      }
+    ]
+  },
+  "WWPass": {
+    "category": "security",
+    "website": "https://www.wwpass.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.wwpass\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Twilio Authy": {
+    "category": "security",
+    "website": "https://authy.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "authy(?:\\.min)?\\.js|authy-form-helpers",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\bAuthy\\b",
+        "confidence": 40
+      }
+    ]
+  },
+  "Digest": {
+    "category": "security",
+    "website": "https://tools.ietf.org/html/rfc7616",
+    "headers": [
+      {
+        "name": "www-authenticate",
+        "pattern": "^Digest",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Kerberos": {
+    "category": "security",
+    "website": "https://tools.ietf.org/html/rfc4559",
+    "headers": [
+      {
+        "name": "www-authenticate",
+        "pattern": "^Kerberos",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "NTLM": {
+    "category": "security",
+    "website": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-ntht/",
+    "headers": [
+      {
+        "name": "www-authenticate",
+        "pattern": "^NTLM",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "SPNEGO": {
+    "category": "security",
+    "website": "https://tools.ietf.org/html/rfc4559",
+    "headers": [
+      {
+        "name": "www-authenticate",
+        "pattern": "^Negotiate",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
   }
 }
