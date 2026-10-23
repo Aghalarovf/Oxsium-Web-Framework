@@ -636,5 +636,59 @@
         "confidence": 50
       }
     ]
+  },
+  "Amazon EC2": {
+    "category": "backend",
+    "website": "https://aws.amazon.com/ec2/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "ec2\\.(amazonaws|internal)",
+        "confidence": 40
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Amazon S3": {
+    "category": "backend",
+    "website": "https://aws.amazon.com/s3/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^AmazonS3$",
+        "confidence": 95
+      },
+      {
+        "name": "x-amz-request-id",
+        "pattern": ".*",
+        "confidence": 80
+      },
+      {
+        "name": "x-amz-id-2",
+        "pattern": ".*",
+        "confidence": 80
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Xano": {
+    "category": "backend",
+    "website": "https://www.xano.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "XanoBaseStorage|XanoClient|XanoCookieStorage",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "@xano/js-sdk|xano(?:\\.min)?\\.js",
+        "confidence": 80
+      }
+    ]
   }
 }
