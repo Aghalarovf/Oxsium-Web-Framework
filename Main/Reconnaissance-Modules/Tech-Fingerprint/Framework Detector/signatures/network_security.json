@@ -19,6 +19,11 @@
         "type": "body",
         "pattern": "/global-protect/login\\.esp|/global-protect/portal/css/",
         "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*/global\\-protect/portal/css/",
+        "confidence": 100
       }
     ]
   },
@@ -34,6 +39,10 @@
       {
         "name": "^FGTServer$",
         "confidence": 85
+      },
+      {
+        "name": "FGTServer",
+        "confidence": 100
       }
     ],
     "html": [
@@ -207,6 +216,11 @@
         "type": "body",
         "pattern": "NetScaler Gateway|Citrix Gateway",
         "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/ctxs\\.core\\.min\\.js",
+        "confidence": 100
       }
     ]
   },
@@ -322,6 +336,10 @@
       {
         "name": "^DSID$",
         "confidence": 90
+      },
+      {
+        "name": "DSSIGNIN",
+        "confidence": 100
       }
     ],
     "html": [
@@ -336,5 +354,12 @@
         "confidence": 90
       }
     ]
+  },
+  "Palo Alto Networks": {
+    "category": "network_security",
+    "website": "https://www.paloaltonetworks.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
   }
 }
