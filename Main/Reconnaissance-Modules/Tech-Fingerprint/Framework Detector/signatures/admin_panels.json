@@ -1,0 +1,106 @@
+{
+  "Adminer": {
+    "category": "admin",
+    "website": "https://www.adminer.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<title>\\s*Adminer\\s*[0-9.]*\\s*</title>|id=\"h1\">\\s*<a[^>]*>Adminer</a>",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "adminer\\.css|adminer\\.js|data-jush=",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Login - Adminer|Adminer\\s*&middot;",
+        "confidence": 90
+      }
+    ]
+  },
+  "phpMyAdmin": {
+    "category": "admin",
+    "website": "https://www.phpmyadmin.net",
+    "headers": [
+      {
+        "name": "set-cookie",
+        "pattern": "phpMyAdmin_https",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "!\\[CDATA\\[[^<]*PMA_VERSION:\\\"([\\d.]+)",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\(|<link [^>]*href=\"[^\"]*phpmyadmin\\.css\\.php)",
+        "confidence": 100
+      }
+    ]
+  },
+  "phpPgAdmin": {
+    "category": "admin",
+    "website": "https://phppgadmin.sourceforge.net",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "(?:<title>phpPgAdmin</title>|<span class=\"appname\">phpPgAdmin)",
+        "confidence": 100
+      }
+    ]
+  },
+  "SQL Buddy": {
+    "category": "admin",
+    "website": "https://www.sqlbuddy.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "(?:<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)",
+        "confidence": 100
+      }
+    ]
+  },
+  "ShellInABox": {
+    "category": "admin",
+    "website": "https://shellinabox.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<title>Shell In A Box</title>",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "must be enabled for ShellInABox</noscript>",
+        "confidence": 100
+      }
+    ]
+  },
+  "Proxmox Mail Gateway": {
+    "category": "admin",
+    "website": "https://proxmox.com/en/proxmox-mail-gateway",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "pmg-mail-tracker|pmg-spam-archive",
+        "confidence": 100
+      }
+    ]
+  }
+}
