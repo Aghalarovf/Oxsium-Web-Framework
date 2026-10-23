@@ -124,7 +124,7 @@
       }
     ]
   },
-  "F5 BIG-IP ASM / Advanced WAF": {
+  "F5 BIG-IP ASM": {
     "category": "waf",
     "website": "https://www.f5.com/products/security/big-ip-advanced-waf",
     "headers": [
