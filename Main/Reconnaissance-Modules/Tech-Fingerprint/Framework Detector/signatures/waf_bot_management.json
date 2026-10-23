@@ -31,6 +31,10 @@
       {
         "name": "^cf_clearance$",
         "confidence": 90
+      },
+      {
+        "name": "__cf_bm",
+        "confidence": 100
       }
     ],
     "html": [
@@ -292,6 +296,22 @@
       {
         "name": "^_pxff_",
         "confidence": 80
+      },
+      {
+        "name": "_px3",
+        "confidence": 100
+      },
+      {
+        "name": "_pxff_cc",
+        "confidence": 100
+      },
+      {
+        "name": "_pxhd",
+        "confidence": 100
+      },
+      {
+        "name": "_pxvid",
+        "confidence": 100
       }
     ],
     "html": [
@@ -304,6 +324,11 @@
         "type": "body",
         "pattern": "Please verify you are a human|PX-CAPTCHA",
         "confidence": 70
+      },
+      {
+        "type": "script",
+        "pattern": "client\\.a\\.pxi\\.pub/",
+        "confidence": 100
       }
     ]
   },
@@ -315,12 +340,39 @@
         "name": "x-datadome",
         "pattern": ".*",
         "confidence": 90
+      },
+      {
+        "name": "server",
+        "pattern": "^DataDome$",
+        "confidence": 100
+      },
+      {
+        "name": "x-datadome",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "x-datadome-cid",
+        "pattern": ".*",
+        "confidence": 100
       }
     ],
     "cookies": [
       {
         "name": "^datadome$",
         "confidence": 90
+      },
+      {
+        "name": "datadome",
+        "confidence": 100
+      },
+      {
+        "name": "datadome-_zldp",
+        "confidence": 100
+      },
+      {
+        "name": "datadome-_zldt",
+        "confidence": 100
       }
     ],
     "html": [
@@ -333,6 +385,11 @@
         "type": "body",
         "pattern": "DataDome.{0,30}(captcha|protection)",
         "confidence": 80
+      },
+      {
+        "type": "script",
+        "pattern": "^https://ct\\.datadome\\.co/[a-z]\\.js$",
+        "confidence": 100
       }
     ]
   },
@@ -425,6 +482,155 @@
         "type": "body",
         "pattern": "AppFirewall.{0,30}violation|Citrix Systems",
         "confidence": 70
+      }
+    ]
+  },
+  "DDoS-Guard": {
+    "category": "waf",
+    "website": "https://ddos-guard.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^ddos-guard$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Combahton FlowShield": {
+    "category": "waf",
+    "website": "https://combahton.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "antiddos/flowproxy",
+        "confidence": 100
+      },
+      {
+        "name": "x-flowproxy-author",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "FLOWPROXY-ORIGIN",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Imunify360": {
+    "category": "waf",
+    "website": "https://www.imunify360.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "imunify360-webshield/([\\d\\.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Kasada": {
+    "category": "waf",
+    "website": "https://www.kasada.io",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "KP_UIDz",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Sqreen": {
+    "category": "waf",
+    "website": "https://sqreen.io",
+    "headers": [
+      {
+        "name": "x-protected-by",
+        "pattern": "^Sqreen$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "NexusPIPE": {
+    "category": "waf",
+    "website": "https://nexuspipe.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Nexuspipe.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "VentryShield": {
+    "category": "waf",
+    "website": "https://ventryshield.net",
+    "headers": [
+      {
+        "name": "x-ventryshield-cache-status",
+        "pattern": "no-cache",
+        "confidence": 100
+      },
+      {
+        "name": "x-ventryshield-sid",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "ventryshield_pre",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Variti": {
+    "category": "waf",
+    "website": "https://variti.io",
+    "headers": [
+      {
+        "name": "x-variti-ccr",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "v4Guard Checkpoint": {
+    "category": "waf",
+    "website": "https://v4guard.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.v4guard\\.io/checkpoint",
+        "confidence": 100
+      }
+    ]
+  },
+  "Negate": {
+    "category": "waf",
+    "website": "https://negate.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sapi\\.negate\\.io",
+        "confidence": 100
       }
     ]
   }
