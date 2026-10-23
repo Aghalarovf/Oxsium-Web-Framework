@@ -1,0 +1,170 @@
+{
+  "Wiz": {
+    "category": "security",
+    "website": "https://www.wiz.io",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Bugcrowd": {
+    "category": "security",
+    "website": "https://www.bugcrowd.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bugcrowd",
+        "confidence": 80
+      }
+    ]
+  },
+  "HackerOne": {
+    "category": "security",
+    "website": "https://www.hackerone.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Detectify": {
+    "category": "security",
+    "website": "https://detectify.com/",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "SecureMetrics": {
+    "category": "security",
+    "website": "https://www.securitymetrics.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a[^>]+href=[\"\\'][^\"\\']*www\\.securitymetrics\\.com[^>]*>\\s*<img[^>]+src=[\"\\'][^\"\\']*www\\.securitymetrics\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "SiteLock": {
+    "category": "security",
+    "website": "https://www.sitelock.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<a[^>]+href=[\"\\'][^\"\\']*#[^>]*>\\s*<img[^>]+src=[\"\\'][^\"\\']*\\.sitelock\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Norton Shopping Guarantee": {
+    "category": "security",
+    "website": "https://norton.buysafe.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "nsg\\.symantec\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "BuySafe": {
+    "category": "security",
+    "website": "https://www.buysafe.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "buysafe",
+        "confidence": 80
+      }
+    ]
+  },
+  "Confiant": {
+    "category": "security",
+    "website": "https://www.confiant.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "confiant-integrations\\.global\\.ssl\\.fastly\\.net|\\.confiant\\.com",
+        "confidence": 90
+      }
+    ]
+  },
+  "c/side": {
+    "category": "security",
+    "website": "https://cside.dev",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.cside\\.dev",
+        "confidence": 100
+      }
+    ]
+  },
+  "RapidSec": {
+    "category": "security",
+    "website": "https://rapidsec.com",
+    "headers": [
+      {
+        "name": "content-security-policy",
+        "pattern": "\\.rapidsec\\.net",
+        "confidence": 100
+      },
+      {
+        "name": "content-security-policy-report-only",
+        "pattern": "\\.rapidsec\\.net",
+        "confidence": 100
+      },
+      {
+        "name": "report-to",
+        "pattern": "\\.rapidsec\\.net",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "HSTS": {
+    "category": "security",
+    "website": "https://www.rfc-editor.org/rfc/rfc6797#section-6.1",
+    "headers": [
+      {
+        "name": "strict-transport-security",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Keybase": {
+    "category": "security",
+    "website": "https://keybase.io/",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Trezor": {
+    "category": "security",
+    "website": "https://trezor.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "connect\\.trezor\\.io",
+        "confidence": 100
+      }
+    ]
+  }
+}
