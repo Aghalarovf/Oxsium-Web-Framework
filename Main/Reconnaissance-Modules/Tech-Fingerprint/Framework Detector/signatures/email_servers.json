@@ -67,6 +67,123 @@
       "PHP"
     ]
   },
+  "Axigen Webmail": {
+    "category": "misc",
+    "website": "https://www.axigen.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Axigen",
+        "confidence": 85
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^AXSESSID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Axigen ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Axigen( Webmail| Mail Server)?",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "/webmail/(js|skins)/",
+        "confidence": 40
+      }
+    ]
+  },
+  "Citadel / WebCit": {
+    "category": "misc",
+    "website": "https://www.citadel.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Citadel|WebCit",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^webcit-session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Citadel|WebCit",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "powered by.{0,20}Citadel",
+        "confidence": 85
+      }
+    ]
+  },
+  "CommuniGate Pro": {
+    "category": "misc",
+    "website": "https://www.communigate.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "CommuniGate",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^CGP_session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^CommuniGate ?Pro ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "CommuniGate ?Pro",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "/Session/",
+        "confidence": 30
+      }
+    ]
+  },
+  "Cyrus IMAP (banner)": {
+    "category": "misc",
+    "website": "https://www.cyrusimap.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Cyrus IMAP",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\* OK \\[CAPABILITY .*\\] Cyrus IMAP",
+        "confidence": 90
+      }
+    ]
+  },
   "Dovecot (IMAP/POP3 banner)": {
     "category": "misc",
     "website": "https://www.dovecot.org",
@@ -98,6 +215,48 @@
         "pattern": "doveadm|dovecot-lda|dovecot\\.conf",
         "confidence": 75
       }
+    ]
+  },
+  "EGroupware": {
+    "category": "misc",
+    "website": "https://www.egroupware.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "EGroupware",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^egw_session$",
+        "confidence": 90
+      },
+      {
+        "name": "^sessionid$",
+        "confidence": 10
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^EGroupware ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "EGroupware",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "/egroupware/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "PHP"
     ]
   },
   "Exim (SMTP banner)": {
@@ -135,6 +294,62 @@
       {
         "type": "body",
         "pattern": "ESMTP Exim",
+        "confidence": 90
+      }
+    ]
+  },
+  "Group-Office": {
+    "category": "misc",
+    "website": "https://www.group-office.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Group-Office",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^GO_SESSION_ID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Group-Office",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "/group-office/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "hMailServer": {
+    "category": "misc",
+    "website": "https://www.hmailserver.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "hMailServer",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "hMailServer",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "ESMTP hMailServer",
         "confidence": 90
       }
     ]
@@ -226,6 +441,67 @@
       "PHP"
     ]
   },
+  "iRedMail (iRedAdmin)": {
+    "category": "misc",
+    "website": "https://www.iredmail.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^iredadmin_session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "iRedAdmin|iRedMail",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "powered by.{0,20}iRedMail",
+        "confidence": 85
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Kerio Connect": {
+    "category": "misc",
+    "website": "https://www.gfi.com/products-and-solutions/network-security-solutions/kerioconnect",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Kerio Connect",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^sessionID$",
+        "confidence": 10
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Kerio ?Connect ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Kerio ?Connect( WebMail)?",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "/webmail/(login|js|skins)/",
+        "confidence": 60
+      }
+    ]
+  },
   "Mailcow": {
     "category": "misc",
     "website": "https://mailcow.email",
@@ -278,6 +554,38 @@
         "pattern": "github\\.com/mailcow",
         "confidence": 80
       }
+    ]
+  },
+  "MailEnable": {
+    "category": "misc",
+    "website": "https://www.mailenable.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "MailEnable",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^MESESSIONID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "MailEnable( Webmail| Professional| Standard| Enterprise)?",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "/MEWebMail/",
+        "confidence": 85
+      }
+    ],
+    "implies": [
+      ".NET"
     ]
   },
   "MDaemon": {
@@ -486,6 +794,52 @@
       ".NET"
     ]
   },
+  "Open-Xchange / OX App Suite": {
+    "category": "misc",
+    "website": "https://www.open-xchange.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Open-Xchange",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^open-xchange-public-session-",
+        "confidence": 90
+      },
+      {
+        "name": "^JSESSIONID$",
+        "confidence": 5
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "OX App Suite|Open-Xchange",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "ox\\.ui\\.apps|io\\.ox/",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/appsuite/(api|v=)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"languageselect\"",
+        "confidence": 40
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
   "Postfix (SMTP banner)": {
     "category": "misc",
     "website": "https://www.postfix.org",
@@ -517,6 +871,24 @@
         "type": "body",
         "pattern": "Postfix ?Admin|postfixadmin",
         "confidence": 85
+      }
+    ]
+  },
+  "qmail (SMTP banner)": {
+    "category": "misc",
+    "website": "https://cr.yp.to/qmail.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "qmail",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "This is the qmail-send program",
+        "confidence": 90
       }
     ]
   },
@@ -677,6 +1049,30 @@
     ],
     "implies": [
       "PHP"
+    ]
+  },
+  "Sendmail (SMTP banner)": {
+    "category": "misc",
+    "website": "https://www.proofpoint.com/us/products/email-protection/open-source-email-solution",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Sendmail",
+        "confidence": 80
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "ESMTP Sendmail",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Sendmail ?\\d+\\.\\d+",
+        "confidence": 75
+      }
     ]
   },
   "SOGo Groupware": {
@@ -893,6 +1289,38 @@
     ],
     "implies": [
       "Java"
+    ]
+  },
+  "Zoho Mail": {
+    "category": "misc",
+    "website": "https://www.zoho.com/mail/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^zm_pr$",
+        "confidence": 80
+      },
+      {
+        "name": "^IAM_CSRF_TOKEN$",
+        "confidence": 40
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "mail\\.zoho\\.com",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "accounts\\.zoho\\.com",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "ZohoMail|zmsrc",
+        "confidence": 70
+      }
     ]
   }
 }
