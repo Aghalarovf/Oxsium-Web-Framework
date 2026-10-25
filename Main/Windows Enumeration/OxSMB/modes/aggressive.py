@@ -1,0 +1,21 @@
+MODE_PROFILE = {
+    "name": "aggressive",
+    "threads": 50,
+    "connect_timeout": 3.0,
+    "read_timeout": 3.0,
+    "retries": 2,
+    "jitter_min": 0.0,
+    "jitter_max": 0.0,
+    "modules": [
+        "smbdialectprober",
+        "smbsigningauditor",
+        "smbcapabilityscanner",
+        "smbv1detector",
+        "smbencryptionchecker",
+        "smbportmapper",
+        "smbserverstringextractor",
+        "smbdialectdowngradechecker",
+        "guestaccessprober",
+        "smbtimeoutbehaviorprober",
+    ],
+}

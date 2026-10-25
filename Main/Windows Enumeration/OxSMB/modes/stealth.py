@@ -1,0 +1,21 @@
+MODE_PROFILE = {
+    "name": "stealth",
+    "threads": 1,
+    "connect_timeout": 10.0,
+    "read_timeout": 10.0,
+    "retries": 0,
+    "jitter_min": 1.0,
+    "jitter_max": 3.0,
+    "modules": [
+        "smbdialectprober",
+        "smbsigningauditor",
+        "smbcapabilityscanner",
+        "smbv1detector",
+        "smbencryptionchecker",
+        "smbportmapper",
+        "smbserverstringextractor",
+        "smbdialectdowngradechecker",
+        "guestaccessprober",
+        "smbtimeoutbehaviorprober",
+    ],
+}

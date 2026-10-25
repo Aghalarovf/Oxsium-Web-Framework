@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "remediations": [
+    {
+      "finding_id": "smb1_enabled",
+      "title": "Disable SMBv1 Entirely",
+      "priority": "critical",
+      "recommendation": "Remove the SMBv1 protocol from the server. It has no place on a modern network and is required by no supported application.",
+      "steps": [
+        "Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol",
+        "Alternatively: Set-SmbServerConfiguration -EnableSMB1Protocol $false",
+        "Reboot the host and re-run this scanner to confirm the SMBv1 Detector module now reports smb1_enabled=false",
+        "Block legacy SMBv1 negotiation at the network layer (firewall/IPS) as defense-in-depth for hosts that cannot be patched immediately"
+      ],
+      "references": [
+        "https://learn.microsoft.com/windows-server/storage/file-server/troubleshoot/detect-enable-and-disable-smbv1-v2-v3",
+        "Microsoft Security Bulletin MS17-010"
+      ]
+    },
+    {
+      "finding_id": "signing_not_required",
+      "title": "Enforce SMB Message Signing",
+      "priority": "high",
+      "recommendation": "Require SMB signing on both the client and server side so that relayed or tampered authentication attempts are rejected.",
+      "steps": [
+        "Set-SmbServerConfiguration -RequireSecuritySignature $true",
+        "Set-SmbClientConfiguration -RequireSecuritySignature $true",
+        "Enforce via Group Policy: Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options > 'Microsoft network server: Digitally sign communications (always)'",
+        "Prioritize Domain Controllers and Tier-0 assets first, then expand to the rest of the fleet"
+      ],
+      "references": [
+        "https://learn.microsoft.com/windows-server/storage/file-server/smb-signing-overview",
+        "MITRE ATT&CK T1557.001"
+      ]
+    },
+    {
+      "finding_id": "encryption_not_supported",
+      "title": "Enable SMB 3.x Transport Encryption",
+      "priority": "medium",
+      "recommendation": "Upgrade or reconfigure the SMB stack so SMB 3.x encryption is negotiable, then enforce it for sensitive shares.",
+      "steps": [
+        "Confirm the host OS supports SMB 3.x encryption (Windows Server 2012 or later)",
+        "Set-SmbServerConfiguration -EncryptData $true",
+        "For per-share enforcement: Set-SmbShare -Name <ShareName> -EncryptData $true",
+        "Verify with this scanner that encryption_state reports 'required' after the change"
+      ],
+      "references": [
+        "https://learn.microsoft.com/windows-server/storage/file-server/smb-security"
+      ]
+    },
+    {
+      "finding_id": "encryption_not_enforced",
+      "title": "Make SMB Encryption Mandatory, Not Optional",
+      "priority": "low",
+      "recommendation": "Encryption capability exists but is not enforced. Flip enforcement on so every session is protected rather than only sessions that opt in.",
+      "steps": [
+        "Set-SmbServerConfiguration -EncryptData $true -RejectUnencryptedAccess $true",
+        "For per-share enforcement: Set-SmbShare -Name <ShareName> -EncryptData $true",
+        "Re-scan to confirm encryption_state now reports 'required'"
+      ],
+      "references": [
+        "https://learn.microsoft.com/windows-server/storage/file-server/smb-security"
+      ]
+    },
+    {
+      "finding_id": "dialect_downgrade_possible",
+      "title": "Restrict The Minimum Negotiable SMB Dialect",
+      "priority": "medium",
+      "recommendation": "Prevent the server from accepting legacy SMB 2.0.2 negotiation so an on-path attacker cannot strip the session down to a weaker dialect.",
+      "steps": [
+        "Set-SmbServerConfiguration -EnableSMB2Protocol $true (keep SMB2+ enabled)",
+        "Where business requirements allow, raise the minimum accepted dialect via Group Policy or registry to exclude SMB 2.0.2",
+        "Pair this with mandatory signing and encryption so a downgraded session is still protected",
+        "Validate with this scanner that downgrade_possible reports false after remediation"
+      ],
+      "references": [
+        "https://learn.microsoft.com/windows-server/storage/file-server/smb-security"
+      ]
+    },
+    {
+      "finding_id": "guest_access_allowed",
+      "title": "Disable Guest Session Fallback",
+      "priority": "high",
+      "recommendation": "Prevent the server from silently falling back to a guest-equivalent session for unrecognized or blank credentials.",
+      "steps": [
+        "Set-SmbServerConfiguration -EnableInsecureGuestLogons $false",
+        "Enforce via Group Policy: 'Microsoft network server: Allow insecure guest logons' = Disabled",
+        "Audit local accounts to ensure a Guest account is not inadvertently enabled",
+        "Re-scan to confirm guest_access_allowed reports false"
+      ],
+      "references": [
+        "https://learn.microsoft.com/windows-server/storage/file-server/troubleshoot/guest-access-in-smb2-disabled-by-default"
+      ]
+    },
+    {
+      "finding_id": "null_session_allowed",
+      "title": "Restrict Anonymous (Null Session) Access",
+      "priority": "high",
+      "recommendation": "Eliminate the ability to establish an unauthenticated session, which removes an entire class of pre-authentication enumeration.",
+      "steps": [
+        "Set the 'Network access: Restrict anonymous access to Named Pipes and Shares' Group Policy setting to Enabled",
+        "Set 'Network access: Do not allow anonymous enumeration of SAM accounts' and the 'and shares' variant to Enabled",
+        "Review the RestrictNullSessAccess, NullSessionPipes and NullSessionShares registry values under HKLM\\SYSTEM\\CurrentControlSet\\Services\\LanManServer\\Parameters",
+        "Re-scan to confirm session_is_null reports false"
+      ],
+      "references": [
+        "CIS Microsoft Windows Server Benchmark: Network Access controls"
+      ]
+    },
+    {
+      "finding_id": "admin_share_access",
+      "title": "Lock Down Administrative Share Access",
+      "priority": "critical",
+      "recommendation": "Ensure ADMIN$, C$ and IPC$ are only reachable by accounts that are explicitly authorized local or domain administrators, never by guest or low-privilege sessions.",
+      "steps": [
+        "Confirm no guest or null session can authenticate at all (see the guest_access_allowed and null_session_allowed remediations, which remove the precondition for this finding)",
+        "Review local Administrators group membership and remove unnecessary members",
+        "Where administrative shares are not required operationally, disable them via the AutoShareServer/AutoShareWks registry values",
+        "Deploy Windows Defender Credential Guard and LAPS to reduce the value of any credential that does reach this host"
+      ],
+      "references": [
+        "MITRE ATT&CK T1021.002 mitigations",
+        "https://learn.microsoft.com/windows-server/identity/laps/laps-overview"
+      ]
+    },
+    {
+      "finding_id": "os_version_disclosed",
+      "title": "Suppress Pre-Authentication OS Version Disclosure",
+      "priority": "low",
+      "recommendation": "Reduce the amount of fingerprinting information handed to unauthenticated clients during NTLM negotiation.",
+      "steps": [
+        "Set the registry value HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0 to suppress the OS version in the NTLM NegotiateFlags where supported by the OS version",
+        "Treat this as a defense-in-depth measure, not a substitute for patching; attackers can often fingerprint builds through other means",
+        "Prioritize this only after the higher-severity findings on this report are closed"
+      ],
+      "references": [
+        "MS-NLMP: NTLM Authentication Protocol specification"
+      ]
+    },
+    {
+      "finding_id": "credentials_valid",
+      "title": "Rotate And Harden The Validated Credential",
+      "priority": "critical",
+      "recommendation": "The supplied credential authenticated successfully, which this assessment should treat as a confirmed compromised or weak credential requiring immediate action.",
+      "steps": [
+        "Rotate the password or NTLM hash for this account immediately",
+        "Review the account's privilege level and remove unnecessary group memberships, especially local administrator or domain-privileged roles",
+        "Enable multi-factor authentication or a compensating control for interactive logon paths tied to this identity where available",
+        "Audit authentication logs for this account for prior unauthorized use"
+      ],
+      "references": [
+        "MITRE ATT&CK T1078 mitigations"
+      ]
+    },
+    {
+      "finding_id": "compression_enabled",
+      "title": "Verify Patch Level Against CVE-2020-0796",
+      "priority": "info",
+      "recommendation": "Compression support alone is not a vulnerability; confirm the host has the March 2020 or later cumulative update applied.",
+      "steps": [
+        "Check the installed Windows build and cumulative update level against Microsoft Security Advisory ADV200005",
+        "If the host cannot be patched immediately, disable SMB compression as a temporary mitigation: Set-SmbServerConfiguration -DisableCompression $true",
+        "Re-enable compression once the patch is confirmed installed, since disabling it is a workaround, not a fix"
+      ],
+      "references": [
+        "CVE-2020-0796",
+        "Microsoft Security Advisory ADV200005"
+      ]
+    },
+    {
+      "finding_id": "version_dialect_inconsistent",
+      "title": "Validate Target Identity Before Further Testing",
+      "priority": "info",
+      "recommendation": "Manually verify this host is the intended, legitimate target before continuing assessment or remediation work against it.",
+      "steps": [
+        "Cross-check the host's inventory record (asset management / CMDB) against the IP and hostname reported by this scan",
+        "If the host is unexpected or unrecognized, treat it as a potential honeypot or rogue device and escalate to the network/security team",
+        "Re-run the scan from a different vantage point to confirm the inconsistency is not a transient network artifact"
+      ],
+      "references": []
+    }
+  ]
+}

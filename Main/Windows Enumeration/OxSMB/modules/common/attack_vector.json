@@ -1,0 +1,331 @@
+{
+  "schema_version": "1.0",
+  "findings": [
+    {
+      "id": "smb1_enabled",
+      "title": "SMBv1 Protocol Enabled",
+      "severity": "critical",
+      "module": "smbv1detector",
+      "when": {"field": "smb1_enabled", "equals": true}
+    },
+    {
+      "id": "signing_not_required",
+      "title": "SMB Message Signing Not Required",
+      "severity": "high",
+      "module": "smbsigningauditor",
+      "when": {"field": "signing_required", "equals": false}
+    },
+    {
+      "id": "encryption_not_supported",
+      "title": "SMB Transport Encryption Not Supported",
+      "severity": "medium",
+      "module": "smbencryptionchecker",
+      "when": {"field": "encryption_state", "equals": "not_supported"}
+    },
+    {
+      "id": "encryption_not_enforced",
+      "title": "SMB Transport Encryption Supported But Not Enforced",
+      "severity": "low",
+      "module": "smbencryptionchecker",
+      "when": {"field": "encryption_state", "equals": "supported_not_required"}
+    },
+    {
+      "id": "dialect_downgrade_possible",
+      "title": "SMB Dialect Downgrade Accepted By Server",
+      "severity": "medium",
+      "module": "smbdialectdowngradechecker",
+      "when": {"field": "downgrade_possible", "equals": true}
+    },
+    {
+      "id": "guest_access_allowed",
+      "title": "Guest Session Establishment Allowed",
+      "severity": "high",
+      "module": "guestaccessprober",
+      "when": {"field": "guest_access_allowed", "equals": true}
+    },
+    {
+      "id": "null_session_allowed",
+      "title": "Unauthenticated Null Session Allowed",
+      "severity": "high",
+      "module": "guestaccessprober",
+      "when": {"field": "session_is_null", "equals": true}
+    },
+    {
+      "id": "admin_share_access",
+      "title": "Administrative Shares Reachable Without Privileged Credentials",
+      "severity": "critical",
+      "module": "guestaccessprober",
+      "when": {"field": "admin_share_access", "equals": true}
+    },
+    {
+      "id": "os_version_disclosed",
+      "title": "Operating System Version Disclosed Pre-Authentication",
+      "severity": "low",
+      "module": "smbserverstringextractor",
+      "when": {"field": "os_version_disclosed", "equals": true}
+    },
+    {
+      "id": "credentials_valid",
+      "title": "Supplied Credentials Successfully Authenticated",
+      "severity": "critical",
+      "module": "credentialvalidator",
+      "when": {"field": "credentials_valid", "equals": true}
+    },
+    {
+      "id": "compression_enabled",
+      "title": "SMB 3.1.1 Compression Negotiation Supported",
+      "severity": "info",
+      "module": "smbcapabilityscanner",
+      "when": {"field": "compression_supported", "equals": true}
+    },
+    {
+      "id": "version_dialect_inconsistent",
+      "title": "Disclosed OS Version Inconsistent With Negotiated Dialect",
+      "severity": "info",
+      "module": "smbserverstringextractor",
+      "when": {"field": "version_dialect_consistency", "equals": "inconsistent_possible_honeypot"}
+    }
+  ],
+  "attack_vectors": [
+    {
+      "id": "eternalblue_wannacry",
+      "title": "EternalBlue / WannaCry-Class Remote Code Execution",
+      "severity": "critical",
+      "requires": ["smb1_enabled"],
+      "mitre_attack": {
+        "tactic": "Initial Access / Execution",
+        "technique": "T1210 - Exploitation of Remote Services"
+      },
+      "summary": "The target still answers SMBv1 negotiation requests, which is the mandatory precondition for MS17-010 class exploits (EternalBlue, EternalRomance, EternalChampion) weaponized by WannaCry and NotPetya.",
+      "narrative": [
+        "Attacker confirms SMBv1 is reachable on TCP/445 using a dialect probe, exactly as this tool did.",
+        "Attacker sends a crafted SMBv1 Trans2 SECONDARY request that triggers a buffer overflow in srv.sys / srv2.sys.",
+        "A successful heap spray yields arbitrary kernel-mode code execution as SYSTEM, with no authentication required.",
+        "The implant can self-propagate to every other SMBv1-reachable host on the same broadcast domain."
+      ],
+      "impact": "Unauthenticated remote code execution as SYSTEM and worm-style lateral propagation across the network.",
+      "references": [
+        "CVE-2017-0143", "CVE-2017-0144", "CVE-2017-0145", "CVE-2017-0146", "CVE-2017-0148",
+        "Microsoft Security Bulletin MS17-010"
+      ]
+    },
+    {
+      "id": "smb_relay_attack",
+      "title": "NTLM Relay Via SMB (SMB Relay)",
+      "severity": "high",
+      "requires": ["signing_not_required"],
+      "mitre_attack": {
+        "tactic": "Lateral Movement / Credential Access",
+        "technique": "T1557.001 - Adversary-in-the-Middle: LLMNR/NBT-NS Poisoning and SMB Relay"
+      },
+      "summary": "Because the server does not require SMB signing, any NTLM authentication attempt captured on the local segment can be relayed to this host to establish an authenticated session as the coerced identity.",
+      "narrative": [
+        "Attacker poisons LLMNR/NBT-NS/mDNS or abuses a coercion primitive (e.g. PetitPotam, PrinterBug) to force a privileged account to authenticate to an attacker-controlled listener.",
+        "The captured NTLM authentication handshake is relayed in real time to this target over SMB because signing is not enforced.",
+        "The relayed session inherits the privileges of the coerced account on this host.",
+        "If the coerced account is a Domain Admin or local administrator, the attacker obtains full administrative control of the target."
+      ],
+      "impact": "Unauthorized authenticated access to the target, potentially with administrative privileges, without ever cracking a password hash.",
+      "references": [
+        "CVE-2019-1040", "CVE-2021-36942 (PetitPotam)", "MITRE ATT&CK T1557.001"
+      ]
+    },
+    {
+      "id": "mitm_cleartext_capture",
+      "title": "On-Path Traffic Interception / Hash Capture",
+      "severity": "medium",
+      "requires": ["encryption_not_supported"],
+      "mitre_attack": {
+        "tactic": "Credential Access",
+        "technique": "T1557 - Adversary-in-the-Middle"
+      },
+      "summary": "SMB transport encryption is not supported by this host, so all file transfers, directory listings and authentication exchanges traverse the wire in clear or weakly protected form.",
+      "narrative": [
+        "Attacker positions on the same network segment via ARP spoofing, a rogue switch port, or a compromised intermediate device.",
+        "Attacker passively captures SMB traffic to and from the target, extracting file contents, share layouts and NTLMv2 challenge/response material.",
+        "Captured NTLMv2 hashes can be cracked offline or relayed (see SMB Relay vector) depending on the signing posture."
+      ],
+      "impact": "Confidentiality loss for data in transit and exposure of authentication material to offline cracking.",
+      "references": ["MITRE ATT&CK T1557", "MS-SMB2 3.1.4.3 Encryption"]
+    },
+    {
+      "id": "downgrade_to_legacy_dialect",
+      "title": "Forced SMB Dialect Downgrade",
+      "severity": "medium",
+      "requires": ["dialect_downgrade_possible"],
+      "mitre_attack": {
+        "tactic": "Defense Evasion",
+        "technique": "T1562 - Impair Defenses (Protocol Downgrade)"
+      },
+      "summary": "The server accepted a negotiation request restricted to a weaker SMB dialect, meaning an on-path attacker who intercepts and rewrites the initial negotiate request can strip the client down to a dialect with fewer security properties.",
+      "narrative": [
+        "Attacker intercepts the SMB2 Negotiate request on-path and rewrites the offered dialect list to contain only SMB 2.0.2.",
+        "The server accepts the downgraded dialect rather than rejecting the tampered negotiation.",
+        "The resulting session loses access to SMB 3.x security improvements (pre-authentication integrity, newer signing/encryption negotiation), widening the window for relay and tampering attacks."
+      ],
+      "impact": "Reduced cryptographic assurance for the session, increasing exposure to relay and tampering attacks.",
+      "references": ["MS-SMB2 3.3.5.4 Negotiate", "MITRE ATT&CK T1562"]
+    },
+    {
+      "id": "anonymous_enumeration",
+      "title": "Anonymous / Guest Session Enumeration",
+      "severity": "high",
+      "requires": ["guest_access_allowed"],
+      "mitre_attack": {
+        "tactic": "Reconnaissance / Discovery",
+        "technique": "T1087 - Account Discovery / T1135 - Network Share Discovery"
+      },
+      "summary": "The server grants a usable guest session, letting an unauthenticated or low-privilege attacker enumerate shares, local accounts and system metadata without supplying valid domain credentials.",
+      "narrative": [
+        "Attacker authenticates with a blank or guest-equivalent credential.",
+        "Using the resulting session, the attacker enumerates SMB shares, named pipes and (where RPC endpoints are reachable) local user and group accounts.",
+        "Collected usernames feed password-spraying and targeted phishing campaigns against the organization."
+      ],
+      "impact": "Pre-authentication reconnaissance that materially lowers the cost of subsequent password spraying and social engineering.",
+      "references": ["MITRE ATT&CK T1087", "MITRE ATT&CK T1135"]
+    },
+    {
+      "id": "null_session_enumeration",
+      "title": "Unauthenticated Null Session Enumeration",
+      "severity": "high",
+      "requires": ["null_session_allowed"],
+      "mitre_attack": {
+        "tactic": "Reconnaissance / Discovery",
+        "technique": "T1135 - Network Share Discovery"
+      },
+      "summary": "A fully anonymous (null) SMB session is accepted, which is the historical IPC$ enumeration primitive used to harvest usernames, shares and policy information with zero credentials.",
+      "narrative": [
+        "Attacker connects to IPC$ using an empty username and password.",
+        "Through the null session, the attacker queries SAMR/LSA named pipes (where exposed) for usernames, RIDs and password policy, or simply lists shares.",
+        "This information is used directly for password spraying with no prior account knowledge required."
+      ],
+      "impact": "Complete pre-authentication account and share enumeration with no credentials of any kind.",
+      "references": ["MITRE ATT&CK T1135", "CIS Benchmark: Restrict Anonymous Access to Named Pipes and Shares"]
+    },
+    {
+      "id": "admin_share_lateral_movement",
+      "title": "Remote Code Execution Via Writable Administrative Shares",
+      "severity": "critical",
+      "requires": ["admin_share_access"],
+      "mitre_attack": {
+        "tactic": "Lateral Movement",
+        "technique": "T1021.002 - Remote Services: SMB/Windows Admin Shares"
+      },
+      "summary": "The current session can reach administrative shares (ADMIN$, C$ and/or IPC$), which is the exact primitive used by PsExec-style lateral movement and remote service deployment.",
+      "narrative": [
+        "Attacker connects to ADMIN$ or C$ using the available session and uploads an executable payload.",
+        "Attacker uses the Service Control Manager (SCM) over the already-reachable IPC$ pipe to create and start a service pointing at the uploaded payload.",
+        "The service executes the payload as SYSTEM, giving the attacker full interactive control of the host."
+      ],
+      "impact": "Full remote code execution and privilege escalation to SYSTEM on the target host.",
+      "references": ["MITRE ATT&CK T1021.002", "PsExec / Impacket psexec.py technique"]
+    },
+    {
+      "id": "credential_reuse_takeover",
+      "title": "Full Host Takeover Via Validated Credentials",
+      "severity": "critical",
+      "requires": ["credentials_valid"],
+      "mitre_attack": {
+        "tactic": "Lateral Movement / Persistence",
+        "technique": "T1078 - Valid Accounts"
+      },
+      "summary": "The credentials supplied to this scan authenticated successfully, confirming the account is usable against this host over SMB.",
+      "narrative": [
+        "Attacker who obtained these credentials via phishing, credential stuffing or a prior breach authenticates directly over SMB.",
+        "If the account holds local administrator or domain-privileged rights, the attacker chains into share access, service creation or scheduled-task creation for code execution.",
+        "Valid, working credentials also enable the account to be reused across every other host that trusts the same identity, multiplying the blast radius."
+      ],
+      "impact": "Direct authenticated access to the host and potential pivot point across every system trusting the same account.",
+      "references": ["MITRE ATT&CK T1078"]
+    },
+    {
+      "id": "os_fingerprint_targeted_exploitation",
+      "title": "Targeted Exploit Selection Via OS Fingerprint Disclosure",
+      "severity": "low",
+      "requires": ["os_version_disclosed"],
+      "mitre_attack": {
+        "tactic": "Reconnaissance",
+        "technique": "T1592.004 - Gather Victim Host Information: Client Configurations"
+      },
+      "summary": "The server discloses its build number pre-authentication, letting an attacker map the exact patch level and select exploits known to work against that build without further probing.",
+      "narrative": [
+        "Attacker records the disclosed NTLM build number alongside the negotiated SMB dialect.",
+        "Attacker cross-references the build number against public vulnerability databases to shortlist unpatched, build-specific exploits.",
+        "This removes guesswork from exploit selection and shortens the attacker's time-to-impact."
+      ],
+      "impact": "Reduced attacker reconnaissance effort and higher confidence exploit targeting; not independently exploitable.",
+      "references": ["MITRE ATT&CK T1592.004"]
+    },
+    {
+      "id": "smbghost_compression_exposure",
+      "title": "Potential SMBv3 Compression Vulnerability Exposure (SMBGhost-Class)",
+      "severity": "info",
+      "requires": ["compression_enabled"],
+      "mitre_attack": {
+        "tactic": "Execution",
+        "technique": "T1203 - Exploitation for Client Execution"
+      },
+      "summary": "The host negotiates SMB 3.1.1 compression, the same negotiation surface exploited by CVE-2020-0796 (SMBGhost). Compression support alone does not confirm the host is unpatched; the installed update level must be verified separately.",
+      "narrative": [
+        "Attacker confirms compression negotiation is supported, as this tool did.",
+        "Attacker sends a crafted SMB2 COMPRESSION_TRANSFORM_HEADER with an invalid decompressed size, triggering an integer overflow in srv2.sys on unpatched builds.",
+        "On a vulnerable, unpatched build this can lead to unauthenticated pre-authentication remote code execution or a kernel denial of service."
+      ],
+      "impact": "Potential unauthenticated remote code execution or denial of service, conditional on missing the March 2020 (or later) security update.",
+      "references": ["CVE-2020-0796", "Microsoft Security Advisory ADV200005"]
+    },
+    {
+      "id": "deception_or_honeypot_indicator",
+      "title": "Possible Deception / Honeypot Indicator",
+      "severity": "info",
+      "requires": ["version_dialect_inconsistent"],
+      "mitre_attack": {
+        "tactic": "Reconnaissance",
+        "technique": "N/A - Operator Advisory"
+      },
+      "summary": "The disclosed OS version string is inconsistent with the negotiated SMB dialect capabilities, which can indicate a spoofed banner, a honeypot/decoy host, or a non-standard SMB implementation.",
+      "narrative": [
+        "Automated tooling or an attacker fingerprints the host using the disclosed version string and the negotiated dialect feature set independently.",
+        "The two signals disagree, which should be treated as a flag to manually verify the host identity before committing further offensive or defensive effort against it."
+      ],
+      "impact": "No direct technical impact; this is an advisory signal to validate target authenticity before deeper engagement.",
+      "references": []
+    },
+    {
+      "id": "zero_credential_domain_foothold",
+      "title": "Zero-Credential Foothold Via Guest Session and Writable Admin Shares",
+      "severity": "critical",
+      "requires": ["guest_access_allowed", "admin_share_access"],
+      "mitre_attack": {
+        "tactic": "Initial Access / Lateral Movement",
+        "technique": "T1078 + T1021.002 (chained)"
+      },
+      "summary": "Guest access is permitted and the resulting session can already reach administrative shares, meaning an attacker needs no valid credentials at all to progress straight from initial contact to code execution.",
+      "narrative": [
+        "Attacker establishes a guest session with no prior reconnaissance or credential material.",
+        "Using that session, the attacker immediately reaches ADMIN$/C$ and deploys a payload via the Service Control Manager.",
+        "The entire chain, from first packet to SYSTEM-level code execution, requires zero valid credentials."
+      ],
+      "impact": "Complete, unauthenticated compromise of the host from a cold start.",
+      "references": ["MITRE ATT&CK T1078", "MITRE ATT&CK T1021.002"]
+    },
+    {
+      "id": "signing_disabled_plus_cleartext",
+      "title": "Combined Interception and Relay Exposure",
+      "severity": "high",
+      "requires": ["signing_not_required", "encryption_not_supported"],
+      "mitre_attack": {
+        "tactic": "Credential Access / Lateral Movement",
+        "technique": "T1557 + T1557.001 (chained)"
+      },
+      "summary": "Signing is not required and encryption is not supported at the same time, so an on-path attacker can both passively harvest authentication material and actively relay it in the same session.",
+      "narrative": [
+        "Attacker captures NTLM authentication material from unencrypted SMB traffic.",
+        "The same attacker relays live authentication attempts to this host because signing enforcement is absent.",
+        "The combination removes both passive and active mitigations the server would otherwise rely on."
+      ],
+      "impact": "Materially higher likelihood of successful credential theft and session hijacking compared to either weakness in isolation.",
+      "references": ["MITRE ATT&CK T1557", "MITRE ATT&CK T1557.001"]
+    }
+  ]
+}

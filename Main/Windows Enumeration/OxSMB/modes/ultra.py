@@ -1,0 +1,21 @@
+MODE_PROFILE = {
+    "name": "ultra",
+    "threads": 200,
+    "connect_timeout": 1.5,
+    "read_timeout": 1.5,
+    "retries": 0,
+    "jitter_min": 0.0,
+    "jitter_max": 0.0,
+    "modules": [
+        "smbdialectprober",
+        "smbsigningauditor",
+        "smbcapabilityscanner",
+        "smbv1detector",
+        "smbencryptionchecker",
+        "smbportmapper",
+        "smbserverstringextractor",
+        "smbdialectdowngradechecker",
+        "guestaccessprober",
+        "smbtimeoutbehaviorprober",
+    ],
+}

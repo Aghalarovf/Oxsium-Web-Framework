@@ -1,0 +1,21 @@
+MODE_PROFILE = {
+    "name": "normal",
+    "threads": 10,
+    "connect_timeout": 5.0,
+    "read_timeout": 5.0,
+    "retries": 1,
+    "jitter_min": 0.0,
+    "jitter_max": 0.0,
+    "modules": [
+        "smbdialectprober",
+        "smbsigningauditor",
+        "smbcapabilityscanner",
+        "smbv1detector",
+        "smbencryptionchecker",
+        "smbportmapper",
+        "smbserverstringextractor",
+        "smbdialectdowngradechecker",
+        "guestaccessprober",
+        "smbtimeoutbehaviorprober",
+    ],
+}
