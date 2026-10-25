@@ -1,0 +1,882 @@
+{
+  "3dcart / Shift4Shop": {
+    "category": "cms",
+    "website": "https://www.shift4shop.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "3dcart|Shift4Shop",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^3dvisit$",
+        "confidence": 85
+      },
+      {
+        "name": "^3dsessionid$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "3dcart|Shift4Shop",
+        "confidence": 65
+      },
+      {
+        "type": "script",
+        "pattern": "/assets/images/3dcart/|cdn11\\.shift4shop\\.com",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "ASP.NET"
+    ]
+  },
+  "Big Cartel": {
+    "category": "cms",
+    "website": "https://www.bigcartel.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^_bigcartel_session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bigcartel\\.com/js/",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "bigcartel\\.com",
+        "confidence": 50
+      }
+    ]
+  },
+  "BigCommerce": {
+    "category": "cms",
+    "website": "https://www.bigcommerce.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^SHOP_SESSION_TOKEN$",
+        "confidence": 90
+      },
+      {
+        "name": "^fornax_anonymousId$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^BigCommerce",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "cdn11\\.bigcommerce\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "cdn\\.bcapp\\.dev",
+        "confidence": 85
+      }
+    ]
+  },
+  "commercetools": {
+    "category": "cms",
+    "website": "https://commercetools.com",
+    "headers": [
+      {
+        "name": "x-commercetools-request-id",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "commercetools",
+        "confidence": 60
+      }
+    ]
+  },
+  "CS-Cart": {
+    "category": "cms",
+    "website": "https://www.cs-cart.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "CS-Cart",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^CART_LANGUAGE$",
+        "confidence": 40
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^CS-Cart",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/js/tygh/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Ecwid": {
+    "category": "cms",
+    "website": "https://www.ecwid.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^ec_",
+        "confidence": 40
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "app\\.ecwid\\.com/script\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "xProductBrowser|Ecwid\\.OnAPILoaded",
+        "confidence": 85
+      }
+    ]
+  },
+  "Magento": {
+    "category": "cms",
+    "website": "https://magento.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^frontend$",
+        "confidence": 5
+      },
+      {
+        "name": "^mage-cache-sessid$",
+        "confidence": 90
+      },
+      {
+        "name": "^mage-cache-storage$",
+        "confidence": 90
+      },
+      {
+        "name": "^mage-messages$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Magento ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/skin/frontend/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/js/mage/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/js/varien/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Magento 2 / Adobe Commerce": {
+    "category": "cms",
+    "website": "https://business.adobe.com/products/magento/magento-commerce.html",
+    "headers": [
+      {
+        "name": "x-magento-cache-debug",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-magento-tags",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^private_content_version$",
+        "confidence": 90
+      },
+      {
+        "name": "^section_data_ids$",
+        "confidence": 90
+      },
+      {
+        "name": "^form_key$",
+        "confidence": 40
+      },
+      {
+        "name": "^X-Magento-Vary$",
+        "confidence": 90
+      },
+      {
+        "name": "^product_data_storage$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Magento ?2? ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/static/frontend/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "nopCommerce": {
+    "category": "cms",
+    "website": "https://www.nopcommerce.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "nopCommerce",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^\\.Nop\\.Customer$",
+        "confidence": 90
+      },
+      {
+        "name": "^\\.Nop\\.Antiforgery$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^nopCommerce ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/Scripts/nopCommerce",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "ASP.NET"
+    ]
+  },
+  "OpenCart": {
+    "category": "cms",
+    "website": "https://www.opencart.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "OpenCart",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^OCSESSID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^OpenCart",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/catalog/view/javascript/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/catalog/view/theme/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "osCommerce": {
+    "category": "cms",
+    "website": "https://www.oscommerce.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^osCsid$",
+        "confidence": 90
+      },
+      {
+        "name": "^osCAdminID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^osCommerce",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "osCommerce",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "catalog/includes/|osCsid=",
+        "confidence": 70
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "PrestaShop": {
+    "category": "cms",
+    "website": "https://prestashop.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "PrestaShop",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^PrestaShop-",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^PrestaShop ?([\\d.]+)?",
+        "confidence": 95
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Saleor": {
+    "category": "cms",
+    "website": "https://saleor.io",
+    "headers": [
+      {
+        "name": "saleor-version",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Saleor",
+        "confidence": 60
+      }
+    ],
+    "implies": [
+      "Python"
+    ]
+  },
+  "Salesforce Commerce Cloud (Demandware)": {
+    "category": "cms",
+    "website": "https://www.salesforce.com/products/commerce-cloud/overview/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Demandware",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^dwsid$",
+        "confidence": 90
+      },
+      {
+        "name": "^dwanonymous_",
+        "confidence": 90
+      },
+      {
+        "name": "^__cq_uuid$",
+        "confidence": 90
+      },
+      {
+        "name": "^__cq_seg$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Demandware|^Salesforce Commerce Cloud",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/on/demandware.static/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/dw/image/",
+        "confidence": 75
+      }
+    ]
+  },
+  "SAP Commerce Cloud (Hybris)": {
+    "category": "cms",
+    "website": "https://www.sap.com/products/commerce-cloud.html",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "SAP Commerce Cloud|Hybris",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^anonymous-consents$",
+        "confidence": 20
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^SAP Commerce Cloud|^Hybris",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/_ui/responsive/",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/medias/sys_master/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "Shopify": {
+    "category": "cms",
+    "website": "https://www.shopify.com",
+    "headers": [
+      {
+        "name": "x-shopify-stage",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-shopid",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-sorting-hat-shopid",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^_shopify_y$",
+        "confidence": 90
+      },
+      {
+        "name": "^_shopify_s$",
+        "confidence": 90
+      },
+      {
+        "name": "^secure_customer_sig$",
+        "confidence": 90
+      },
+      {
+        "name": "^_shopify_fs$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Shopify",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "cdn\\.shopify\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "/cdn/shop/",
+        "confidence": 75
+      }
+    ]
+  },
+  "Shopware": {
+    "category": "cms",
+    "website": "https://www.shopware.com",
+    "headers": [
+      {
+        "name": "sw-version-id",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Shopware",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^session-$",
+        "confidence": 5
+      },
+      {
+        "name": "^sw-cache-hash$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Shopware ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/bundles/storefront/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Spryker": {
+    "category": "cms",
+    "website": "https://www.spryker.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Spryker",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Spryker",
+        "confidence": 60
+      },
+      {
+        "type": "script",
+        "pattern": "/assets/Yves/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Squarespace Commerce": {
+    "category": "cms",
+    "website": "https://www.squarespace.com/ecommerce-website",
+    "headers": [
+      {
+        "name": "x-contextid",
+        "pattern": ".*",
+        "confidence": 60
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^crumb$",
+        "confidence": 10
+      },
+      {
+        "name": "^SS_MID$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Squarespace",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "static1\\.squarespace\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Static\\.SQUARESPACE_CONTEXT|commerce\\.squarespace",
+        "confidence": 80
+      }
+    ]
+  },
+  "VirtueMart": {
+    "category": "cms",
+    "website": "https://virtuemart.net",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "VirtueMart",
+        "confidence": 65
+      },
+      {
+        "type": "script",
+        "pattern": "/components/com_virtuemart/",
+        "confidence": 85
+      }
+    ],
+    "implies": [
+      "Joomla",
+      "PHP"
+    ]
+  },
+  "Volusion": {
+    "category": "cms",
+    "website": "https://www.volusion.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Volusion",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^VOLUSION_",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Volusion",
+        "confidence": 65
+      },
+      {
+        "type": "script",
+        "pattern": "/v/vspfiles/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "ASP.NET"
+    ]
+  },
+  "VTEX": {
+    "category": "cms",
+    "website": "https://vtex.com",
+    "headers": [
+      {
+        "name": "x-vtex-request-id",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^VtexIdclientAutCookie$",
+        "confidence": 90
+      },
+      {
+        "name": "^vtex_session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "vteximg\\.com\\.br|\\.vtexassets\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "VTEX",
+        "confidence": 55
+      }
+    ]
+  },
+  "Wix Stores": {
+    "category": "cms",
+    "website": "https://www.wix.com/ecommerce/website",
+    "headers": [
+      {
+        "name": "x-wix-request-id",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^hs$",
+        "confidence": 10
+      },
+      {
+        "name": "^svSession$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Wix\\.com",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "static\\.wixstatic\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "wixBiSession|wixStoresApi",
+        "confidence": 80
+      }
+    ]
+  },
+  "WooCommerce": {
+    "category": "cms",
+    "website": "https://woocommerce.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^woocommerce_cart_hash$",
+        "confidence": 90
+      },
+      {
+        "name": "^woocommerce_items_in_cart$",
+        "confidence": 90
+      },
+      {
+        "name": "^wp_woocommerce_session_",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^WooCommerce ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/plugins/woocommerce/",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "woocommerce-page|is-woocommerce-activated",
+        "confidence": 60
+      }
+    ],
+    "implies": [
+      "WordPress",
+      "PHP"
+    ]
+  },
+  "Zen Cart": {
+    "category": "cms",
+    "website": "https://www.zen-cart.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^zenid$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Zen Cart",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Zen Cart",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "zc_install_overlay|zenid=",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "Grafana": {
+    "category": "monitoring",
+    "website": "https://grafana.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^grafana_session$",
+        "confidence": 90
+      },
+      {
+        "name": "^grafana_sess$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Loading Grafana|window\\.grafanaBootData",
+        "confidence": 80
+      },
+      {
+        "type": "script",
+        "pattern": "/public/build/runtime",
+        "confidence": 65
+      }
+    ]
+  },
+  "Prometheus": {
+    "category": "monitoring",
+    "website": "https://prometheus.io",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Prometheus",
+        "confidence": 80
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Prometheus Time Series Collection and Processing Server",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/graph\\?g0\\.|prometheus-page",
+        "confidence": 60
+      }
+    ]
+  },
+  "Kibana": {
+    "category": "monitoring",
+    "website": "https://www.elastic.co/kibana",
+    "headers": [
+      {
+        "name": "kbn-name",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "kbn-version",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Kibana",
+        "confidence": 55
+      },
+      {
+        "type": "script",
+        "pattern": "/bundles/kbn-ui-shared-deps",
+        "confidence": 80
+      }
+    ]
+  },
+  "Zabbix": {
+    "category": "monitoring",
+    "website": "https://www.zabbix.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^zbx_session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Zabbix",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Zabbix SIA|Zabbix ?[\\d.]*",
+        "confidence": 65
+      }
+    ]
+  },
+  "Nagios Core / Nagios XI": {
+    "category": "monitoring",
+    "website": "https://www.nagios.org",
+    "headers": [
+      {
+        "name": "www-authenticate",
+        "pattern": "Nagios Access",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^nagios_token$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Nagios ?Core|Nagios®? ?XI",
+        "confidence": 75
+      }
+    ]
+  },
+  "Netdata": {
+    "category": "monitoring",
+    "website": "https://www.netdata.cloud",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "netdata-main\\.js|NETDATA\\.options",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Netdata, Real-time performance monitoring",
+        "confidence": 85
+      }
+    ]
+  },
+  "Graylog": {
+    "category": "monitoring",
+    "website": "https://graylog.org",
+    "headers": [
+      {
+        "name": "x-graylog-node-id",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Graylog",
+        "confidence": 60
+      }
+    ]
+  },
+  "Icinga Web 2": {
+    "category": "monitoring",
+    "website": "https://icinga.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^Icingaweb2$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Icinga ?Web ?2?|icinga-logo",
+        "confidence": 70
+      }
+    ]
+  },
+  "Checkmk": {
+    "category": "monitoring",
+    "website": "https://checkmk.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Check_?MK|Checkmk",
+        "confidence": 65
+      },
+      {
+        "type": "script",
+        "pattern": "/check_mk/",
+        "confidence": 75
+      }
+    ]
+  },
+  "Cacti": {
+    "category": "monitoring",
+    "website": "https://www.cacti.net",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^Cacti$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Cacti",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Cacti®? - The Complete RRDTool-based Graphing Solution",
+        "confidence": 85
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "PRTG Network Monitor": {
+    "category": "monitoring",
+    "website": "https://www.paessler.com/prtg",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "PRTG",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "PRTG Network Monitor",
+        "confidence": 80
+      }
+    ]
+  },
+  "Datadog (RUM/Agent)": {
+    "category": "monitoring",
+    "website": "https://www.datadoghq.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^_dd_s$",
+        "confidence": 70
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "datadoghq-browser-agent|dd-rum",
+        "confidence": 85
+      }
+    ]
+  },
+  "New Relic Browser (RUM)": {
+    "category": "monitoring",
+    "website": "https://newrelic.com",
+    "headers": [
+      {
+        "name": "x-nr-agent-id",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "js-agent\\.newrelic\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "NREUM",
+        "confidence": 75
+      }
+    ]
+  },
+  "Elastic APM (RUM)": {
+    "category": "monitoring",
+    "website": "https://www.elastic.co/observability/application-performance-monitoring",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "elastic-apm-rum",
+        "confidence": 85
+      }
+    ]
+  },
+  "Sentry (Error Tracking)": {
+    "category": "monitoring",
+    "website": "https://sentry.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "browser\\.sentry-cdn\\.com|js\\.sentry-cdn\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Sentry\\.init\\(",
+        "confidence": 60
+      }
+    ]
+  }
+}

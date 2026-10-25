@@ -1,0 +1,365 @@
+{
+  "Palo Alto Networks GlobalProtect / PAN-OS": {
+    "category": "network_security",
+    "website": "https://www.paloaltonetworks.com/sase/globalprotect",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^PANOSOAuthToken$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "GlobalProtect Portal|GlobalProtect Gateway",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/global-protect/login\\.esp|/global-protect/portal/css/",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "<link[^>]+href=[\"'][^\"']*/global\\-protect/portal/css/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Fortinet FortiGate (SSL-VPN / Admin)": {
+    "category": "network_security",
+    "website": "https://www.fortinet.com/products/next-generation-firewall",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^SVPNCOOKIE$",
+        "confidence": 90
+      },
+      {
+        "name": "^FGTServer$",
+        "confidence": 85
+      },
+      {
+        "name": "FGTServer",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "FortiGate|Fortinet",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "/remote/login|sslvpn_login",
+        "confidence": 75
+      }
+    ]
+  },
+  "SonicWall SSL-VPN / Management": {
+    "category": "network_security",
+    "website": "https://www.sonicwall.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "SonicWALL|SonicWall",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "/sslvpn/portal\\.html|NetExtender",
+        "confidence": 80
+      }
+    ]
+  },
+  "Check Point Security Gateway / Mobile Access": {
+    "category": "network_security",
+    "website": "https://www.checkpoint.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^CPWEBSESSIONID",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Check Point",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "/sslvpn/Login/Login|Mobile Access Portal",
+        "confidence": 80
+      }
+    ]
+  },
+  "pfSense": {
+    "category": "network_security",
+    "website": "https://www.pfsense.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^pfSense",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "pfSense",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "csrf-magic\\.js|login\\.css.{0,20}pfSense",
+        "confidence": 50
+      }
+    ]
+  },
+  "OPNsense": {
+    "category": "network_security",
+    "website": "https://opnsense.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^OPNsense",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "OPNsense",
+        "confidence": 70
+      }
+    ]
+  },
+  "Cisco ASA / WebVPN Clientless Portal": {
+    "category": "network_security",
+    "website": "https://www.cisco.com/c/en/us/products/security/adaptive-security-appliance-asa-software",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^webvpn$",
+        "confidence": 85
+      },
+      {
+        "name": "^webvpnc$",
+        "confidence": 85
+      },
+      {
+        "name": "^webvpnSharePoint$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "SSL VPN Service|Cisco Systems, Inc\\.",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "/+CSCOE\\+/|/+webvpn\\+/",
+        "confidence": 85
+      }
+    ]
+  },
+  "Cisco Firepower Management Center (FMC)": {
+    "category": "network_security",
+    "website": "https://www.cisco.com/c/en/us/products/security/firepower-management-center",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Cisco Firepower Management Center",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/ui/login",
+        "confidence": 40
+      }
+    ]
+  },
+  "Citrix NetScaler / ADC Gateway": {
+    "category": "network_security",
+    "website": "https://www.citrix.com/products/citrix-adc/",
+    "headers": [
+      {
+        "name": "via",
+        "pattern": "NS-CACHE",
+        "confidence": 70
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^NSC_",
+        "confidence": 80
+      },
+      {
+        "name": "^citrix_ns_id$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "NetScaler Gateway|Citrix Gateway",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/ctxs\\.core\\.min\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Juniper Junos J-Web": {
+    "category": "network_security",
+    "website": "https://www.juniper.net",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "J-Web|Junos",
+        "confidence": 60
+      },
+      {
+        "type": "script",
+        "pattern": "/jscript/jweb/",
+        "confidence": 75
+      }
+    ]
+  },
+  "WatchGuard Firebox": {
+    "category": "network_security",
+    "website": "https://www.watchguard.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "WatchGuard",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "Firebox( System Manager)?",
+        "confidence": 70
+      }
+    ]
+  },
+  "Barracuda NG / CloudGen Firewall": {
+    "category": "network_security",
+    "website": "https://www.barracuda.com/products/network-protection/cloudgen-firewall",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Barracuda NG Firewall|CloudGen Firewall",
+        "confidence": 75
+      }
+    ]
+  },
+  "Sophos XG / Sophos Firewall": {
+    "category": "network_security",
+    "website": "https://www.sophos.com/products/next-gen-firewall",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Sophos Firewall|Sophos XG",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "/userportal/|/webconsole/",
+        "confidence": 40
+      }
+    ]
+  },
+  "MikroTik RouterOS (WebFig)": {
+    "category": "network_security",
+    "website": "https://mikrotik.com/software",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mikrotik",
+        "confidence": 85
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "MikroTik RouterOS|WebFig",
+        "confidence": 80
+      }
+    ]
+  },
+  "Ubiquiti UniFi Network Controller": {
+    "category": "network_security",
+    "website": "https://www.ui.com/wi-fi-defined/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^unifises$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "UniFi( Network)? Controller|window\\.UNIFI_CONFIG",
+        "confidence": 70
+      }
+    ]
+  },
+  "Pulse Secure / Ivanti Connect Secure": {
+    "category": "network_security",
+    "website": "https://www.ivanti.com/products/connect-secure-vpn",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^DSID$",
+        "confidence": 90
+      },
+      {
+        "name": "DSSIGNIN",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Pulse Secure|Ivanti Connect Secure",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "/dana-na/auth/url_default/welcome\\.cgi",
+        "confidence": 90
+      }
+    ]
+  },
+  "Palo Alto Networks": {
+    "category": "network_security",
+    "website": "https://www.paloaltonetworks.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  }
+}

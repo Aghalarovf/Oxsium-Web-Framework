@@ -14365,5 +14365,234 @@
         "confidence": 60
       }
     ]
+  },
+  "Bubble": {
+    "category": "cms",
+    "website": "https://bubble.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "bubble\\.io",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*bubble-|data-bubble",
+        "confidence": 60
+      }
+    ]
+  },
+  "Base44": {
+    "category": "cms",
+    "website": "https://base44.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "base44",
+        "confidence": 75
+      }
+    ]
+  },
+  "Emergent": {
+    "category": "cms",
+    "website": "https://emergent.sh",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "Emergent",
+        "confidence": 85
+      },
+      {
+        "type": "script",
+        "pattern": "emergent\\.sh|assets\\.emergent|emergentagent\\.com|emergent-main|emergent-badge",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "emergent\\.sh|emergentagent\\.com|Made with Emergent|id=\"emergent-badge\"|data-emergent",
+        "confidence": 85
+      }
+    ]
+  },
+  "Business Website Builder": {
+    "category": "cms",
+    "website": "https://www.businesswebsitebuilder.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "businesswebsitebuilder",
+        "confidence": 70
+      }
+    ]
+  },
+  "Shogun Landing Page Builder": {
+    "category": "cms",
+    "website": "https://apps.shopify.com/shogun",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.getshogun\\.com/.+\\.myshopify\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Bold Page Builder": {
+    "category": "cms",
+    "website": "https://boldcommerce.com/products/page-builder",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "boldapps\\.net.*(pagebuilder|page-builder)",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\bbold-pagebuilder\\b",
+        "confidence": 65
+      }
+    ]
+  },
+  "ERPNext": {
+    "category": "cms",
+    "website": "https://erpnext.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^system_user$",
+        "confidence": 70
+      },
+      {
+        "name": "^user_image$",
+        "confidence": 50
+      },
+      {
+        "name": "^full_name$",
+        "confidence": 40
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^frappe$|ERPNext",
+        "confidence": 90
+      },
+      {
+        "type": "script",
+        "pattern": "/assets/(erpnext|frappe)/|/assets/js/(frappe-web|erpnext-web|frappe-web\\.min)",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "/assets/(erpnext|frappe)/|frappe\\.(ready|boot|csrf_token)|frappe-web|erpnext",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "class=\"[^\"]*\\b(frappe-card|web-form|page-content-wrapper)\\b|data-frappe",
+        "confidence": 55
+      }
+    ]
+  },
+  "eClass": {
+    "category": "cms",
+    "website": "https://www.openeclass.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^eclass_",
+        "confidence": 70
+      },
+      {
+        "name": "^PHPSESSID$",
+        "confidence": 1
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "(Open )?eClass",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Open eClass|openeclass|Greek Universities Network|GUnet|eclass\\.(uoa|auth|upatras|[a-z]+)\\.gr",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "modules/(auth|course_info|document|announcements)/|/template/(modern|default|bootstrap)/|courses/[A-Z]{2,}[0-9]+",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "eclass\\.com\\.hk|class=\"[^\"]*\\beclass-|/eclass/|eClass (Platform|Integrated)",
+        "confidence": 60
+      }
+    ]
+  },
+  "EngagementHQ": {
+    "category": "cms",
+    "website": "https://granicus.com/solution/govservice/engagementhq/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "EngagementHQ|Bang the Table",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "engagementhq(\\.com)?|bangthetable|bang-the-table|/assets/ehq",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "engagementhq|bangthetable|Bang the Table|class=\"[^\"]*\\behq-|ehq-(app|container|page)",
+        "confidence": 85
+      }
+    ]
+  },
+  "Really Simple SSL & Security": {
+    "category": "cms",
+    "website": "https://really-simple-ssl.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<body[^>]+data-rsssl",
+        "confidence": 100
+      }
+    ]
+  },
+  "Yoast SEO for Shopify": {
+    "category": "cms",
+    "website": "https://yoast.com/shopify/apps/yoast-seo/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "<!-- This site is optimized with Yoast SEO for Shopify -->",
+        "confidence": 100
+      }
+    ]
   }
 }

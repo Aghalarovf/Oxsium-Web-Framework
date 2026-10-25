@@ -22,14 +22,143 @@
   "CFML": {
     "category": "language",
     "website": "https://adobe.com/products/coldfusion-family.html",
-    "headers": [],
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "ColdFusion",
+        "confidence": 90
+      }
+    ],
     "cookies": [
       {
         "name": "CFID",
         "confidence": 100
+      },
+      {
+        "name": "^CFTOKEN$",
+        "confidence": 100
+      },
+      {
+        "name": "^CFGLOBALS$",
+        "confidence": 90
       }
     ],
-    "html": []
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Adobe ?ColdFusion ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/CFIDE/scripts/",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "/CFIDE/scripts/",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "CFTOKEN=\\d+",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "CFID=\\d+",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Adobe ColdFusion",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "ColdFusion\\.(Ajax|Bind|Event|Window|Layout)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "cfajax",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "The error occurred in .+\\.cfm",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "\\.cfm(?:\\?|[\"'#])",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\.cfc(?:\\?|[\"'#])",
+        "confidence": 80
+      }
+    ]
+  },
+  "Classic ASP": {
+    "category": "language",
+    "website": "https://en.wikipedia.org/wiki/Active_Server_Pages",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^ASPSESSIONID[A-Z]{8}$",
+        "confidence": 95
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Microsoft VBScript (runtime|compilation) error",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Active Server Pages error",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "ADODB\\.(Field|Recordset|Connection|Command)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "ASP 0\\d{3}",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Microsoft OLE DB Provider for",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Microsoft JET Database Engine",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "ODBC (Drivers|Microsoft Access Driver)",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "<%[=@#]?\\s",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "\\.asp(?:\\?|[\"'#])",
+        "confidence": 60
+      }
+    ]
   },
   "Dart": {
     "category": "language",
@@ -88,9 +217,61 @@
   "Go": {
     "category": "language",
     "website": "https://go.dev",
-    "headers": [],
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Go-http-client|net/http",
+        "confidence": 30
+      }
+    ],
     "cookies": [],
-    "html": []
+    "html": [
+      {
+        "type": "body",
+        "pattern": "goroutine \\d+ \\[(running|runnable|chan receive|select)\\]",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "(^|>)\\s*404 page not found\\s*(<|$)",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "http: panic serving",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "runtime error: (index out of range|invalid memory address|nil pointer)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "panic: .+\\n\\s*goroutine",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "\\.go:\\d+ \\+0x[0-9a-f]+",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "gorilla\\.csrf\\.Token",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "github\\.com/(gin-gonic|labstack|gofiber|beego|gorilla|go-chi)/",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by (Gin|Echo|Fiber|Beego|Revel|Buffalo)",
+        "confidence": 70
+      }
+    ]
   },
   "GraphQL": {
     "category": "language",
@@ -134,14 +315,91 @@
   "Java": {
     "category": "language",
     "website": "https://java.com",
-    "headers": [],
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Apache-Coyote|Tomcat|JBoss|WildFly|GlassFish|Jetty",
+        "confidence": 85
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Servlet|JSP",
+        "confidence": 90
+      }
+    ],
     "cookies": [
       {
         "name": "JSESSIONID",
         "confidence": 100
       }
     ],
-    "html": []
+    "html": [
+      {
+        "type": "body",
+        "pattern": ";jsessionid=[A-Za-z0-9._\\-]+",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "javax\\.faces\\.ViewState",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "jakarta\\.faces\\.ViewState",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Apache Tomcat/[\\d.]+",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "HTTP Status \\d{3}\\s*[–-]",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "java\\.lang\\.[A-Za-z]+(Exception|Error)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "org\\.apache\\.(struts|jasper)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "org\\.springframework\\.",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "Whitelabel Error Page",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "\\.jsp(?:\\?|[\"'#])",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "\\.xhtml(?:\\?|[\"'#])",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "\\.do(?:\\?|[\"'#])",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "\\.action(?:\\?|[\"'#])",
+        "confidence": 35
+      }
+    ]
   },
   "KPHP": {
     "category": "language",
@@ -176,16 +434,165 @@
     "cookies": [],
     "html": []
   },
+  ".NET": {
+    "category": "language",
+    "website": "https://dotnet.microsoft.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "ASP\\.NET",
+        "confidence": 95
+      },
+      {
+        "name": "x-aspnet-version",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "x-aspnetmvc-version",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^ASP\\.NET_SessionId$",
+        "confidence": 95
+      },
+      {
+        "name": "^\\.AspNetCore\\.",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/WebResource\\.axd",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/ScriptResource\\.axd",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "__VIEWSTATE",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "__EVENTVALIDATION",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "__VIEWSTATEGENERATOR",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "__doPostBack\\(",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "WebForm_(DoPostBackWithOptions|PostBackOptions)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "__RequestVerificationToken",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Server Error in '.+' Application",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "ASP\\.NET is configured to show verbose error messages",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "blazor\\.(server|webassembly)\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\.aspx(?:\\?|[\"'#])",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\.ashx(?:\\?|[\"'#])",
+        "confidence": 70
+      }
+    ]
+  },
   "Node.js": {
     "category": "language",
     "website": "https://nodejs.org",
-    "headers": [],
-    "cookies": [],
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Express|Node\\.js",
+        "confidence": 80
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^connect\\.sid$",
+        "confidence": 60
+      }
+    ],
     "html": [
       {
         "type": "body",
         "pattern": "<div[^>]+class=[\"\\']appVersion[\"\\'][^>]*>.{0,200}<i[^>]+class=[\"\\'][^\"\\']*\\bicon-nodejs\\b",
         "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Cannot (GET|POST|PUT|PATCH|DELETE) /",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "<pre>(Type|Reference|Syntax|Range)?Error: .+\\n\\s+at ",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "node_modules/",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"__next\"",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "__NEXT_DATA__",
+        "confidence": 45
+      },
+      {
+        "type": "body",
+        "pattern": "window\\.__NUXT__",
+        "confidence": 45
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by Express",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "/socket\\.io/socket\\.io\\.js",
+        "confidence": 55
       }
     ]
   },
@@ -215,6 +622,41 @@
         "type": "body",
         "pattern": "\\.php(?:\\?|$)",
         "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<\\?php",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "PHP Version [\\d.]+",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by PHP",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "<title>phpinfo\\(\\)",
+        "confidence": 98
+      },
+      {
+        "type": "body",
+        "pattern": "(Fatal error|Parse error|Warning|Notice): .+ in .+\\.php on line \\d+",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "[?&;]PHPSESSID=[a-z0-9,-]{20,}",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"PHPSESSID\"",
+        "confidence": 85
       }
     ]
   },
@@ -226,10 +668,76 @@
         "name": "server",
         "pattern": "\\bPerl\\b(?: ?/?v?([\\d.]+))?",
         "confidence": 100
+      },
+      {
+        "name": "server",
+        "pattern": "mod_perl",
+        "confidence": 90
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Perl",
+        "confidence": 85
       }
     ],
-    "cookies": [],
-    "html": []
+    "cookies": [
+      {
+        "name": "^CGISESSID$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Software error:",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Premature end of script headers",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "Can't locate .+ in @INC",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "CGI\\.pm",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Mojolicious|Catalyst|Dancer2?|Template Toolkit",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by Perl",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/cgi-bin/[\\w\\-]+\\.(pl|cgi)",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "mod_perl",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "\\.cgi(?:\\?|[\"'#])",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "\\.pl(?:\\?|[\"'#])",
+        "confidence": 45
+      }
+    ]
   },
   "Python": {
     "category": "language",
@@ -239,10 +747,66 @@
         "name": "server",
         "pattern": "(?:^|\\s)Python(?:/([\\d.]+))?",
         "confidence": 100
+      },
+      {
+        "name": "server",
+        "pattern": "WSGIServer",
+        "confidence": 85
+      },
+      {
+        "name": "server",
+        "pattern": "Werkzeug",
+        "confidence": 80
+      },
+      {
+        "name": "server",
+        "pattern": "gunicorn",
+        "confidence": 70
+      },
+      {
+        "name": "server",
+        "pattern": "uvicorn",
+        "confidence": 60
       }
     ],
     "cookies": [],
-    "html": []
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Traceback \\(most recent call last\\)",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Powered by (Django|Flask|Werkzeug|FastAPI|Tornado)",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "csrfmiddlewaretoken",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Werkzeug Debugger",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Django Version",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "You're seeing this error because you have <code>DEBUG = True",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\{\"detail\":\\s*\"Not Found\"\\}",
+        "confidence": 50
+      }
+    ]
   },
   "Ruby": {
     "category": "language",
@@ -252,10 +816,71 @@
         "name": "server",
         "pattern": "(?:Mongrel|Ruby(?:/([\\d\\.]+))?)",
         "confidence": 100
+      },
+      {
+        "name": "server",
+        "pattern": "Puma|Unicorn|WEBrick",
+        "confidence": 80
+      },
+      {
+        "name": "server",
+        "pattern": "Passenger",
+        "confidence": 50
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Phusion Passenger",
+        "confidence": 55
       }
     ],
-    "cookies": [],
-    "html": []
+    "cookies": [
+      {
+        "name": "^_session_id$",
+        "confidence": 40
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Powered by Rails",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"csrf-param\"",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"authenticity_token\"",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "ActionController::[A-Za-z]+",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Phusion Passenger",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "We're sorry, but something went wrong",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "data-turbolinks|data-turbo(-track)?",
+        "confidence": 55
+      },
+      {
+        "type": "script",
+        "pattern": "/assets/application-[0-9a-f]{8,}\\.(js|css)",
+        "confidence": 55
+      }
+    ]
   },
   "Rust": {
     "category": "language",

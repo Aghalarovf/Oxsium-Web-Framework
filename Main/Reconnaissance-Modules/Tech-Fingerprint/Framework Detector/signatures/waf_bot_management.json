@@ -1,0 +1,637 @@
+{
+  "Cloudflare WAF / Bot Management": {
+    "category": "waf",
+    "website": "https://www.cloudflare.com/waf/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "cloudflare",
+        "confidence": 40
+      },
+      {
+        "name": "cf-ray",
+        "pattern": ".*",
+        "confidence": 60
+      },
+      {
+        "name": "cf-mitigated",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^__cf_bm$",
+        "confidence": 85
+      },
+      {
+        "name": "^__cfduid$",
+        "confidence": 70
+      },
+      {
+        "name": "^cf_clearance$",
+        "confidence": 90
+      },
+      {
+        "name": "__cf_bm",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Attention Required! \\| Cloudflare|Sorry, you have been blocked",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "cdn-cgi/challenge-platform",
+        "confidence": 85
+      }
+    ]
+  },
+  "Akamai Kona Site Defender / Bot Manager": {
+    "category": "waf",
+    "website": "https://www.akamai.com/products/app-and-api-protector",
+    "headers": [
+      {
+        "name": "x-akamai-transformed",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^_abck$",
+        "confidence": 85
+      },
+      {
+        "name": "^ak_bmsc$",
+        "confidence": 85
+      },
+      {
+        "name": "^bm_sz$",
+        "confidence": 80
+      },
+      {
+        "name": "^bm_sv$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Access Denied.{0,40}Akamai|Reference #[\\da-f.]+",
+        "confidence": 75
+      },
+      {
+        "type": "script",
+        "pattern": "/akam/\\d+/",
+        "confidence": 80
+      }
+    ]
+  },
+  "Imperva / Incapsula": {
+    "category": "waf",
+    "website": "https://www.imperva.com/products/web-application-firewall-waf/",
+    "headers": [
+      {
+        "name": "x-iinfo",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-cdn",
+        "pattern": "Incapsula",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^incap_ses_",
+        "confidence": 90
+      },
+      {
+        "name": "^visid_incap_",
+        "confidence": 90
+      },
+      {
+        "name": "^nlbi_",
+        "confidence": 70
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Incapsula incident ID|Request unsuccessful\\. Incapsula",
+        "confidence": 90
+      }
+    ]
+  },
+  "F5 BIG-IP ASM": {
+    "category": "waf",
+    "website": "https://www.f5.com/products/security/big-ip-advanced-waf",
+    "headers": [
+      {
+        "name": "x-wa-info",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^TS[0-9a-fA-F]{8}$",
+        "confidence": 80
+      },
+      {
+        "name": "^BIGipServer",
+        "confidence": 60
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "The requested URL was rejected\\. Please consult with your administrator",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "support ID is:? \\d+",
+        "confidence": 60
+      }
+    ]
+  },
+  "AWS WAF": {
+    "category": "waf",
+    "website": "https://aws.amazon.com/waf/",
+    "headers": [
+      {
+        "name": "x-amzn-requestid",
+        "pattern": ".*",
+        "confidence": 20
+      },
+      {
+        "name": "x-amzn-waf-action",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^aws-waf-token$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "The request could not be satisfied\\.|ERROR: The request could not be satisfied",
+        "confidence": 65
+      }
+    ]
+  },
+  "Sucuri WAF / CloudProxy": {
+    "category": "waf",
+    "website": "https://sucuri.net/website-firewall/",
+    "headers": [
+      {
+        "name": "x-sucuri-id",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-sucuri-cache",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "server",
+        "pattern": "Sucuri",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^sucuri-",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Access Denied.{0,40}Sucuri|Sucuri WebSite Firewall",
+        "confidence": 90
+      }
+    ]
+  },
+  "Barracuda WAF": {
+    "category": "waf",
+    "website": "https://www.barracuda.com/products/application-protection/web-application-firewall",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^barra_counter_session$",
+        "confidence": 85
+      },
+      {
+        "name": "^BNI__BARRACUDA_LB_COOKIE$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "You have been blocked.{0,40}Barracuda|Barracuda Networks",
+        "confidence": 80
+      }
+    ]
+  },
+  "ModSecurity (OWASP CRS)": {
+    "category": "waf",
+    "website": "https://modsecurity.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Mod_Security|ModSecurity",
+        "confidence": 85
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "This error was generated by Mod_Security|Mod_Security.{0,30}Action",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "NOYB|has been blocked in accordance with company policy",
+        "confidence": 40
+      }
+    ]
+  },
+  "PerimeterX / HUMAN Bot Defender": {
+    "category": "waf",
+    "website": "https://www.humansecurity.com/platform/bot-defender",
+    "headers": [
+      {
+        "name": "x-px",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^_px$",
+        "confidence": 85
+      },
+      {
+        "name": "^_pxvid$",
+        "confidence": 85
+      },
+      {
+        "name": "^_pxhd$",
+        "confidence": 85
+      },
+      {
+        "name": "^_pxff_",
+        "confidence": 80
+      },
+      {
+        "name": "_px3",
+        "confidence": 100
+      },
+      {
+        "name": "_pxff_cc",
+        "confidence": 100
+      },
+      {
+        "name": "_pxhd",
+        "confidence": 100
+      },
+      {
+        "name": "_pxvid",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "client\\.perimeterx\\.net|/px\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Please verify you are a human|PX-CAPTCHA",
+        "confidence": 70
+      },
+      {
+        "type": "script",
+        "pattern": "client\\.a\\.pxi\\.pub/",
+        "confidence": 100
+      }
+    ]
+  },
+  "DataDome": {
+    "category": "waf",
+    "website": "https://datadome.co",
+    "headers": [
+      {
+        "name": "x-datadome",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "server",
+        "pattern": "^DataDome$",
+        "confidence": 100
+      },
+      {
+        "name": "x-datadome",
+        "pattern": ".*",
+        "confidence": 100
+      },
+      {
+        "name": "x-datadome-cid",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^datadome$",
+        "confidence": 90
+      },
+      {
+        "name": "datadome",
+        "confidence": 100
+      },
+      {
+        "name": "datadome-_zldp",
+        "confidence": 100
+      },
+      {
+        "name": "datadome-_zldt",
+        "confidence": 100
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "js\\.datadome\\.co|ct\\.captcha-delivery\\.com",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "DataDome.{0,30}(captcha|protection)",
+        "confidence": 80
+      },
+      {
+        "type": "script",
+        "pattern": "^https://ct\\.datadome\\.co/[a-z]\\.js$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Fastly / Signal Sciences (Next-Gen WAF)": {
+    "category": "waf",
+    "website": "https://www.fastly.com/products/web-application-firewall",
+    "headers": [
+      {
+        "name": "x-fastly-request-id",
+        "pattern": ".*",
+        "confidence": 30
+      },
+      {
+        "name": "x-sigsci-tags",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Radware AppWall": {
+    "category": "waf",
+    "website": "https://www.radware.com/products/appwall/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^AppWallGUID$",
+        "confidence": 90
+      },
+      {
+        "name": "^RDWRSessionID$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Unauthorized Activity Has Been Detected|Radware",
+        "confidence": 75
+      }
+    ]
+  },
+  "Reblaze": {
+    "category": "waf",
+    "website": "https://www.reblaze.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Reblaze",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^rbzid$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Reblaze Secure Web Gateway",
+        "confidence": 85
+      }
+    ]
+  },
+  "Citrix NetScaler AppFirewall": {
+    "category": "waf",
+    "website": "https://www.citrix.com/products/citrix-web-app-firewall/",
+    "headers": [
+      {
+        "name": "via",
+        "pattern": "NS-CACHE",
+        "confidence": 70
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^ns_af$",
+        "confidence": 90
+      },
+      {
+        "name": "^citrix_ns_id$",
+        "confidence": 80
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "AppFirewall.{0,30}violation|Citrix Systems",
+        "confidence": 70
+      }
+    ]
+  },
+  "DDoS-Guard": {
+    "category": "waf",
+    "website": "https://ddos-guard.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^ddos-guard$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Combahton FlowShield": {
+    "category": "waf",
+    "website": "https://combahton.net",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "antiddos/flowproxy",
+        "confidence": 100
+      },
+      {
+        "name": "x-flowproxy-author",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "FLOWPROXY-ORIGIN",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Imunify360": {
+    "category": "waf",
+    "website": "https://www.imunify360.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "imunify360-webshield/([\\d\\.]+)",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Kasada": {
+    "category": "waf",
+    "website": "https://www.kasada.io",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "KP_UIDz",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Sqreen": {
+    "category": "waf",
+    "website": "https://sqreen.io",
+    "headers": [
+      {
+        "name": "x-protected-by",
+        "pattern": "^Sqreen$",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "NexusPIPE": {
+    "category": "waf",
+    "website": "https://nexuspipe.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^Nexuspipe.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "VentryShield": {
+    "category": "waf",
+    "website": "https://ventryshield.net",
+    "headers": [
+      {
+        "name": "x-ventryshield-cache-status",
+        "pattern": "no-cache",
+        "confidence": 100
+      },
+      {
+        "name": "x-ventryshield-sid",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [
+      {
+        "name": "ventryshield_pre",
+        "confidence": 100
+      }
+    ],
+    "html": []
+  },
+  "Variti": {
+    "category": "waf",
+    "website": "https://variti.io",
+    "headers": [
+      {
+        "name": "x-variti-ccr",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "v4Guard Checkpoint": {
+    "category": "waf",
+    "website": "https://v4guard.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.v4guard\\.io/checkpoint",
+        "confidence": 100
+      }
+    ]
+  },
+  "Negate": {
+    "category": "waf",
+    "website": "https://negate.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "sapi\\.negate\\.io",
+        "confidence": 100
+      }
+    ]
+  }
+}

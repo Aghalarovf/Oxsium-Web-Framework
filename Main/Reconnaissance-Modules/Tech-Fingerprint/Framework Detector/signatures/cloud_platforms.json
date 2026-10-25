@@ -69,7 +69,18 @@
     "website": "https://cloud.google.com/appengine",
     "headers": [],
     "cookies": [],
-    "html": []
+    "html": [
+      {
+        "type": "script",
+        "pattern": "[a-z0-9-]+\\.appspot\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "[a-z0-9-]+\\.appspot\\.com",
+        "confidence": 60
+      }
+    ]
   },
   "Knack": {
     "category": "backend",
@@ -127,6 +138,556 @@
         "type": "script",
         "pattern": "www\\.parsecdn\\.com",
         "confidence": 100
+      }
+    ]
+  },
+  "Amazon Web Services (AWS)": {
+    "category": "backend",
+    "website": "https://aws.amazon.com",
+    "headers": [
+      {
+        "name": "x-amz-request-id",
+        "pattern": ".*",
+        "confidence": 80
+      },
+      {
+        "name": "server",
+        "pattern": "AmazonS3|awselb",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "AWSALB",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "AWSALBCORS",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "AWSALBTG",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "[a-z0-9.-]+\\.amazonaws\\.com",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "[a-z0-9.-]+\\.amazonaws\\.com",
+        "confidence": 50
+      }
+    ]
+  },
+  "Amazon CloudFront": {
+    "category": "backend",
+    "website": "https://aws.amazon.com/cloudfront",
+    "headers": [
+      {
+        "name": "x-amz-cf-pop",
+        "pattern": ".*",
+        "confidence": 95
+      },
+      {
+        "name": "x-amz-cf-id",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "via",
+        "pattern": "CloudFront",
+        "confidence": 95
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "[a-z0-9]+\\.cloudfront\\.net",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "[a-z0-9]+\\.cloudfront\\.net",
+        "confidence": 60
+      }
+    ],
+    "implies": [
+      "Amazon Web Services (AWS)"
+    ]
+  },
+  "Microsoft Azure": {
+    "category": "backend",
+    "website": "https://azure.microsoft.com",
+    "headers": [
+      {
+        "name": "x-azure-ref",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-ms-routing-name",
+        "pattern": ".*",
+        "confidence": 85
+      },
+      {
+        "name": "server",
+        "pattern": "Microsoft-Azure",
+        "confidence": 80
+      }
+    ],
+    "cookies": [
+      {
+        "name": "ARRAffinity",
+        "pattern": ".*",
+        "confidence": 85
+      },
+      {
+        "name": "ARRAffinitySameSite",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.azurewebsites\\.net|\\.blob\\.core\\.windows\\.net|\\.cloudapp\\.azure\\.com",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "\\.azurewebsites\\.net|\\.blob\\.core\\.windows\\.net|\\.cloudapp\\.azure\\.com",
+        "confidence": 55
+      }
+    ]
+  },
+  "Google Cloud Platform (GCP)": {
+    "category": "backend",
+    "website": "https://cloud.google.com",
+    "headers": [
+      {
+        "name": "x-goog-.*",
+        "pattern": ".*",
+        "confidence": 85
+      },
+      {
+        "name": "server",
+        "pattern": "Google Frontend|gws|GSE",
+        "confidence": 40
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.run\\.app|storage\\.googleapis\\.com",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\.run\\.app|storage\\.googleapis\\.com",
+        "confidence": 55
+      }
+    ]
+  },
+  "DigitalOcean": {
+    "category": "backend",
+    "website": "https://www.digitalocean.com",
+    "headers": [
+      {
+        "name": "x-do-app-origin",
+        "pattern": ".*",
+        "confidence": 95
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.digitaloceanspaces\\.com|\\.ondigitalocean\\.app",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\.digitaloceanspaces\\.com|\\.ondigitalocean\\.app",
+        "confidence": 55
+      }
+    ]
+  },
+  "Vercel": {
+    "category": "backend",
+    "website": "https://vercel.com",
+    "headers": [
+      {
+        "name": "x-vercel-id",
+        "pattern": ".*",
+        "confidence": 95
+      },
+      {
+        "name": "x-vercel-cache",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "server",
+        "pattern": "^Vercel$",
+        "confidence": 95
+      }
+    ],
+    "cookies": [
+      {
+        "name": "_vercel_jwt",
+        "pattern": ".*",
+        "confidence": 95
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.vercel\\.app",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "\\.vercel\\.app",
+        "confidence": 50
+      }
+    ]
+  },
+  "Netlify": {
+    "category": "backend",
+    "website": "https://www.netlify.com",
+    "headers": [
+      {
+        "name": "x-nf-request-id",
+        "pattern": ".*",
+        "confidence": 95
+      },
+      {
+        "name": "server",
+        "pattern": "^Netlify$",
+        "confidence": 95
+      }
+    ],
+    "cookies": [
+      {
+        "name": "nf_jwt",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.netlify\\.app",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "\\.netlify\\.app",
+        "confidence": 50
+      }
+    ]
+  },
+  "Heroku": {
+    "category": "backend",
+    "website": "https://www.heroku.com",
+    "headers": [
+      {
+        "name": "via",
+        "pattern": "vegur",
+        "confidence": 90
+      },
+      {
+        "name": "x-heroku-.*",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.herokuapp\\.com",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "\\.herokuapp\\.com",
+        "confidence": 50
+      }
+    ]
+  },
+  "Cloudflare Pages / Workers": {
+    "category": "backend",
+    "website": "https://pages.cloudflare.com",
+    "headers": [
+      {
+        "name": "cf-ray",
+        "pattern": ".*",
+        "confidence": 35
+      },
+      {
+        "name": "server",
+        "pattern": "^cloudflare$",
+        "confidence": 30
+      }
+    ],
+    "cookies": [
+      {
+        "name": "__cflb",
+        "pattern": ".*",
+        "confidence": 60
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.pages\\.dev|\\.workers\\.dev",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\.pages\\.dev|\\.workers\\.dev",
+        "confidence": 55
+      }
+    ]
+  },
+  "Alibaba Cloud": {
+    "category": "backend",
+    "website": "https://www.alibabacloud.com",
+    "headers": [
+      {
+        "name": "x-oss-request-id",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "server",
+        "pattern": "^Tengine$",
+        "confidence": 40
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.aliyuncs\\.com|\\.oss-cn-",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\.aliyuncs\\.com|\\.oss-cn-",
+        "confidence": 55
+      }
+    ]
+  },
+  "Linode / Akamai Connected Cloud": {
+    "category": "backend",
+    "website": "https://www.linode.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.linodeobjects\\.com|\\.linode\\.com",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "\\.linodeobjects\\.com|\\.linode\\.com",
+        "confidence": 50
+      }
+    ]
+  },
+  "OVHcloud": {
+    "category": "backend",
+    "website": "https://www.ovhcloud.com",
+    "headers": [
+      {
+        "name": "x-ovh-.*",
+        "pattern": ".*",
+        "confidence": 85
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.ovh\\.net|\\.ovhcloud\\.com",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "\\.ovh\\.net|\\.ovhcloud\\.com",
+        "confidence": 50
+      }
+    ]
+  },
+  "Render": {
+    "category": "backend",
+    "website": "https://render.com",
+    "headers": [
+      {
+        "name": "x-render-origin-server",
+        "pattern": ".*",
+        "confidence": 95
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.onrender\\.com",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "\\.onrender\\.com",
+        "confidence": 50
+      }
+    ]
+  },
+  "Fly.io": {
+    "category": "backend",
+    "website": "https://fly.io",
+    "headers": [
+      {
+        "name": "fly-request-id",
+        "pattern": ".*",
+        "confidence": 95
+      },
+      {
+        "name": "server",
+        "pattern": "^Fly/",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "_fly_instance",
+        "pattern": ".*",
+        "confidence": 70
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.fly\\.dev",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "\\.fly\\.dev",
+        "confidence": 50
+      }
+    ]
+  },
+  "Tencent Cloud": {
+    "category": "backend",
+    "website": "https://www.tencentcloud.com",
+    "headers": [
+      {
+        "name": "x-daa-tunnel",
+        "pattern": ".*",
+        "confidence": 80
+      },
+      {
+        "name": "server",
+        "pattern": "Tencent",
+        "confidence": 70
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.myqcloud\\.com|\\.tencentcos\\.cn",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "\\.myqcloud\\.com|\\.tencentcos\\.cn",
+        "confidence": 55
+      }
+    ]
+  },
+  "Hetzner Cloud": {
+    "category": "backend",
+    "website": "https://www.hetzner.com/cloud",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.your-objectstorage\\.com|hetzner\\.cloud",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "\\.your-objectstorage\\.com|hetzner\\.cloud",
+        "confidence": 50
+      }
+    ]
+  },
+  "Amazon EC2": {
+    "category": "backend",
+    "website": "https://aws.amazon.com/ec2/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "ec2\\.(amazonaws|internal)",
+        "confidence": 40
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Amazon S3": {
+    "category": "backend",
+    "website": "https://aws.amazon.com/s3/",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "^AmazonS3$",
+        "confidence": 95
+      },
+      {
+        "name": "x-amz-request-id",
+        "pattern": ".*",
+        "confidence": 80
+      },
+      {
+        "name": "x-amz-id-2",
+        "pattern": ".*",
+        "confidence": 80
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Xano": {
+    "category": "backend",
+    "website": "https://www.xano.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "XanoBaseStorage|XanoClient|XanoCookieStorage",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "@xano/js-sdk|xano(?:\\.min)?\\.js",
+        "confidence": 80
       }
     ]
   }

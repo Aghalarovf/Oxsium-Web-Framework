@@ -1,0 +1,294 @@
+{
+  "Captch Me": {
+    "category": "captcha",
+    "website": "https://captchme.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "^https?://api\\.captchme\\.net/",
+        "confidence": 100
+      }
+    ]
+  },
+  "CleanTalk": {
+    "category": "captcha",
+    "website": "https://cleantalk.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "moderate\\.cleantalk\\.org/",
+        "confidence": 100
+      }
+    ]
+  },
+  "CoinHive Captcha": {
+    "category": "captcha",
+    "website": "https://coinhive.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "https?://authedmine\\.com/(?:lib/captcha|captcha)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Friendly Captcha": {
+    "category": "captcha",
+    "website": "https://friendlycaptcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "x-frc-client\",\"js-(\\d+(\\.\\d+)+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "FunCaptcha": {
+    "category": "captcha",
+    "website": "https://www.arkoselabs.com/arkose-matchkey/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api\\.funcaptcha\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "api\\.funcaptcha\\.com",
+        "confidence": 80
+      }
+    ]
+  },
+  "GeeTest": {
+    "category": "captcha",
+    "website": "https://www.geetest.com",
+    "headers": [
+      {
+        "name": "content-security-policy",
+        "pattern": "\\.geetest\\.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.geetest\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "hCaptcha": {
+    "category": "captcha",
+    "website": "https://www.hcaptcha.com",
+    "headers": [
+      {
+        "name": "content-security-policy",
+        "pattern": "(?:\\.|//)hcaptcha\\.com",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "hcaptcha\\.com/([\\d]+?)/api\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "MTCaptcha": {
+    "category": "captcha",
+    "website": "https://www.mtcaptcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "service(?:2)?\\.mtcaptcha\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Picatcha": {
+    "category": "captcha",
+    "website": "https://picatcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api\\.picatcha\\.com",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "api\\.picatcha\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "reCAPTCHA": {
+    "category": "captcha",
+    "website": "https://www.google.com/recaptcha/",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "api-secure\\.recaptcha\\.net",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "recaptcha_ajax\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/recaptcha/(?:api|enterprise)\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "/recaptcha/api\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "RingCaptcha": {
+    "category": "captcha",
+    "website": "https://ringcaptcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "cdn\\.ringcaptcha\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Slider Captcha": {
+    "category": "captcha",
+    "website": "https://github.com/ArgoZhang/SliderCaptcha",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "slidercaptcha(?:\\.min)?\\.js",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "sliderCaptcha",
+        "confidence": 70
+      }
+    ]
+  },
+  "Solve Media": {
+    "category": "captcha",
+    "website": "https://solvemedia.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "^https?://api\\.solvemedia\\.com/",
+        "confidence": 100
+      }
+    ]
+  },
+  "VAPTCHA": {
+    "category": "captcha",
+    "website": "https://en.vaptcha.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.vaptcha\\.com/v([\\d\\.]+)\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "Yandex SmartCaptcha": {
+    "category": "captcha",
+    "website": "https://cloud.yandex.com/en/services/smartcaptcha",
+    "headers": [
+      {
+        "name": "x-yandex-captcha",
+        "pattern": ".*",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Yandex SmartCaptcha",
+        "confidence": 100
+      }
+    ]
+  },
+  "Cloudflare Turnstile": {
+    "category": "captcha",
+    "website": "https://www.cloudflare.com/products/turnstile",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "challenges\\.cloudflare\\.com/turnstile/v0/api\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "class=[\"\\'][^\"\\']*\\bcf-turnstile\\b",
+        "confidence": 90
+      }
+    ]
+  },
+  "Mollom": {
+    "category": "captcha",
+    "website": "https://mollom.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "mollom(?:\\.min)?\\.js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<img[^>]+\\.mollom\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Human Presence": {
+    "category": "captcha",
+    "website": "https://www.humanpresence.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/.*\\.humanpresence\\.(?:io|app)/",
+        "confidence": 100
+      }
+    ]
+  }
+}

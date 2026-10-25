@@ -916,5 +916,195 @@
     ],
     "cookies": [],
     "html": []
+  },
+  "mod_auth_pam": {
+    "category": "backend",
+    "website": "https://pam.sourceforge.net/mod_auth_pam",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_auth_pam(?:/([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_dav": {
+    "category": "backend",
+    "website": "https://webdav.org/mod_dav",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "\\b(?:mod_)?DAV\\b(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_fastcgi": {
+    "category": "backend",
+    "website": "https://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_fastcgi(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_jk": {
+    "category": "backend",
+    "website": "https://tomcat.apache.org/tomcat-3.3-doc/mod_jk-howto.html",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_jk(?:/([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_perl": {
+    "category": "backend",
+    "website": "https://perl.apache.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_perl(?:/([\\d\\.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_python": {
+    "category": "backend",
+    "website": "https://www.modpython.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_python(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_rack": {
+    "category": "backend",
+    "website": "https://phusionpassenger.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_rack(?:/([\\d.]+))?",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "mod_rack(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_rails": {
+    "category": "backend",
+    "website": "https://phusionpassenger.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_rails(?:/([\\d.]+))?",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "mod_rails(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_ssl": {
+    "category": "backend",
+    "website": "https://modssl.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_ssl(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "mod_wsgi": {
+    "category": "backend",
+    "website": "https://code.google.com/p/modwsgi",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "mod_wsgi(?:/([\\d.]+))?",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "mod_wsgi(?:/([\\d.]+))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "OpenSSL": {
+    "category": "backend",
+    "website": "https://openssl.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "OpenSSL(?:/([\\d.]+[a-z]?))?",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "Shelf": {
+    "category": "backend",
+    "website": "https://pub.dev/packages/shelf",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "dart:io with Shelf",
+        "confidence": 100
+      },
+      {
+        "name": "x-powered-by",
+        "pattern": "Dart with package:shelf",
+        "confidence": 100
+      }
+    ],
+    "cookies": [],
+    "html": []
+  },
+  "CargoServer": {
+    "category": "backend",
+    "website": "https://cargoserver.ch",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "application-name",
+        "pattern": "^CargoServer$",
+        "confidence": 100
+      }
+    ]
   }
 }

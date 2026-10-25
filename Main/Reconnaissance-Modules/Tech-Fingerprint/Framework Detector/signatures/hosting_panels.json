@@ -248,5 +248,47 @@
         "confidence": 100
       }
     ]
+  },
+  "AlternC": {
+    "category": "backend",
+    "website": "https://alternc.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "AlternC|alternc",
+        "confidence": 75
+      }
+    ]
+  },
+  "BILLmanager": {
+    "category": "backend",
+    "website": "https://www.ispsystem.com/software/billmanager",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^billmgr$",
+        "confidence": 85
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "BILLmanager",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/billmgr/|/skins/[a-z]+/billmgr",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "billmgr|BILLmanager",
+        "confidence": 60
+      }
+    ]
   }
 }

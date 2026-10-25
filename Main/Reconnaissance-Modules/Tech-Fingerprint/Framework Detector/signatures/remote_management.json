@@ -37,5 +37,65 @@
     ],
     "cookies": [],
     "html": []
+  },
+  "Atera": {
+    "category": "backend",
+    "website": "https://www.atera.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "atera\\.com",
+        "confidence": 80
+      }
+    ]
+  },
+  "Netop": {
+    "category": "backend",
+    "website": "https://netop.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.netop\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "Impero": {
+    "category": "backend",
+    "website": "https://www.imperosoftware.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "\\.netop\\.com",
+        "confidence": 100
+      }
+    ]
+  },
+  "LogMeIn": {
+    "category": "backend",
+    "website": "https://www.logmein.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Jamf": {
+    "category": "backend",
+    "website": "https://www.jamf.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
+  },
+  "Parallels": {
+    "category": "backend",
+    "website": "https://www.parallels.com",
+    "headers": [],
+    "cookies": [],
+    "html": []
   }
 }

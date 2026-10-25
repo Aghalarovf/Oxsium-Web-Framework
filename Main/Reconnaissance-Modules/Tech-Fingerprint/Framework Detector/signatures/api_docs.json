@@ -1,0 +1,92 @@
+{
+  "Swagger UI": {
+    "category": "api-docs",
+    "website": "https://swagger.io/tools/swagger-ui",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "(?:/([\\d.]+))?/swagger-ui-bundle\\.js",
+        "confidence": 100
+      }
+    ]
+  },
+  "ReDoc": {
+    "category": "api-docs",
+    "website": "https://github.com/Rebilly/ReDoc",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/redoc\\.(?:min\\.)?js",
+        "confidence": 100
+      },
+      {
+        "type": "body",
+        "pattern": "<redoc ",
+        "confidence": 100
+      }
+    ]
+  },
+  "Scalar": {
+    "category": "api-docs",
+    "website": "https://scalar.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/npm/@scalar/api-reference@(\\d+\\.\\d+\\.\\d+)",
+        "confidence": 100
+      }
+    ]
+  },
+  "Stoplight": {
+    "category": "api-docs",
+    "website": "https://stoplight.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "//stoplight\\.io/",
+        "confidence": 100
+      }
+    ]
+  },
+  "Postman API Documentation": {
+    "category": "api-docs",
+    "website": "https://www.postman.com",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Postman Documenter$",
+        "confidence": 100
+      }
+    ]
+  },
+  "Speca": {
+    "category": "api-docs",
+    "website": "https://speca.io",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "meta",
+        "name": "application-name",
+        "pattern": "^Speca$",
+        "confidence": 100
+      },
+      {
+        "type": "script",
+        "pattern": "/js/speca\\.js",
+        "confidence": 100
+      }
+    ]
+  }
+}

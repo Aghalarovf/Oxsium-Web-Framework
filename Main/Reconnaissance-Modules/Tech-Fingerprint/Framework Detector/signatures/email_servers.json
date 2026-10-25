@@ -1,0 +1,1326 @@
+{
+  "Atmail": {
+    "category": "misc",
+    "website": "https://www.atmail.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Atmail",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^atmail_session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Atmail ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Atmail( Webmail| Email| Suite| Cloud| Open)?",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "/atmail/",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "atmail\\.com",
+        "confidence": 55
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"emailName\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"emailDomain\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"requestedServer\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "mail/auth/processlogin",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/index\\.php/mail/",
+        "confidence": 75
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Axigen Webmail": {
+    "category": "misc",
+    "website": "https://www.axigen.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Axigen",
+        "confidence": 85
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^AXSESSID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Axigen ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Axigen( Webmail| Mail Server)?",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "/webmail/(js|skins)/",
+        "confidence": 40
+      }
+    ]
+  },
+  "Citadel / WebCit": {
+    "category": "misc",
+    "website": "https://www.citadel.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Citadel|WebCit",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^webcit-session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Citadel|WebCit",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "powered by.{0,20}Citadel",
+        "confidence": 85
+      }
+    ]
+  },
+  "CommuniGate Pro": {
+    "category": "misc",
+    "website": "https://www.communigate.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "CommuniGate",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^CGP_session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^CommuniGate ?Pro ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "CommuniGate ?Pro",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "/Session/",
+        "confidence": 30
+      }
+    ]
+  },
+  "Cyrus IMAP (banner)": {
+    "category": "misc",
+    "website": "https://www.cyrusimap.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Cyrus IMAP",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\* OK \\[CAPABILITY .*\\] Cyrus IMAP",
+        "confidence": 90
+      }
+    ]
+  },
+  "Dovecot (IMAP/POP3 banner)": {
+    "category": "misc",
+    "website": "https://www.dovecot.org",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Dovecot ready",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\+OK Dovecot",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "\\* OK \\[CAPABILITY .*\\] Dovecot",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Dovecot (Pigeonhole|Sieve)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "doveadm|dovecot-lda|dovecot\\.conf",
+        "confidence": 75
+      }
+    ]
+  },
+  "EGroupware": {
+    "category": "misc",
+    "website": "https://www.egroupware.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "EGroupware",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^egw_session$",
+        "confidence": 90
+      },
+      {
+        "name": "^sessionid$",
+        "confidence": 10
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^EGroupware ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "EGroupware",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "/egroupware/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Exim (SMTP banner)": {
+    "category": "misc",
+    "website": "https://www.exim.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Exim",
+        "confidence": 80
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Exim ?\\d+\\.\\d+",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "This message was created automatically by mail delivery software",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "A message that you sent could not be delivered to one or more of its recipients",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "X-Exim",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "ESMTP Exim",
+        "confidence": 90
+      }
+    ]
+  },
+  "Group-Office": {
+    "category": "misc",
+    "website": "https://www.group-office.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Group-Office",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^GO_SESSION_ID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "Group-Office",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "/group-office/",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "hMailServer": {
+    "category": "misc",
+    "website": "https://www.hmailserver.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "hMailServer",
+        "confidence": 90
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "hMailServer",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "ESMTP hMailServer",
+        "confidence": 90
+      }
+    ]
+  },
+  "Horde Webmail": {
+    "category": "misc",
+    "website": "https://www.horde.org",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Horde",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^Horde$",
+        "confidence": 90
+      },
+      {
+        "name": "^horde_imp$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Horde ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/horde/js/",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Horde (Groupware|Webmail|Application Framework)",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Horde_(Core|Registry|Auth|Mime|Imap)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "HordeCore|hordecore(\\.min)?\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"horde_user\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"horde_pass\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"horde_user\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"horde_pass\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/horde/(js|themes|login\\.php)",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "/imp/(dynamic|basic|minimal)",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "horde[_\\-](imp|ingo|turba|kronolith|nag|mnemo|gollem)",
+        "confidence": 85
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "iRedMail (iRedAdmin)": {
+    "category": "misc",
+    "website": "https://www.iredmail.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^iredadmin_session$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "iRedAdmin|iRedMail",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "powered by.{0,20}iRedMail",
+        "confidence": 85
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Kerio Connect": {
+    "category": "misc",
+    "website": "https://www.gfi.com/products-and-solutions/network-security-solutions/kerioconnect",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Kerio Connect",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^sessionID$",
+        "confidence": 10
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Kerio ?Connect ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "Kerio ?Connect( WebMail)?",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "/webmail/(login|js|skins)/",
+        "confidence": 60
+      }
+    ]
+  },
+  "Mailcow": {
+    "category": "misc",
+    "website": "https://mailcow.email",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "mailcow",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^MCSID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "mailcow( UI| dockerized)?",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "mailcow-dockerized",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"login_user\"",
+        "confidence": 30
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"pass_user\"",
+        "confidence": 30
+      },
+      {
+        "type": "body",
+        "pattern": "/SOGo/(so/)?",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "/rspamd/",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "github\\.com/mailcow",
+        "confidence": 80
+      }
+    ]
+  },
+  "MailEnable": {
+    "category": "misc",
+    "website": "https://www.mailenable.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "MailEnable",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^MESESSIONID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "MailEnable( Webmail| Professional| Standard| Enterprise)?",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "/MEWebMail/",
+        "confidence": 85
+      }
+    ],
+    "implies": [
+      ".NET"
+    ]
+  },
+  "MDaemon": {
+    "category": "misc",
+    "website": "https://mdaemon.com",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "MDaemon",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^WorldClient$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^MDaemon ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "WorldClient(\\.dll)?",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "MDaemon( Webmail| Remote Administration| Technologies)?",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "/WorldClient\\.dll\\?(View|Session)=",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Alt-N",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "altn\\.com|mdaemon\\.com",
+        "confidence": 55
+      }
+    ],
+    "implies": [
+      ".NET"
+    ]
+  },
+  "Microsoft 365 / Exchange Online": {
+    "category": "misc",
+    "website": "https://www.microsoft.com/microsoft-365/exchange/exchange-online",
+    "headers": [
+      {
+        "name": "x-msedge-ref",
+        "pattern": ".*",
+        "confidence": 30
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^OIDC$",
+        "confidence": 5
+      },
+      {
+        "name": "^MSFPC$",
+        "confidence": 30
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "outlook\\.office(365)?\\.com",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "login\\.microsoftonline\\.com",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "Outlook on the web",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "urn:federation:MicrosoftOnline",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "autodiscover-s\\.outlook\\.com",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "microsoftonline-p\\.com",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "aadcdn\\.(msauth|msftauth)\\.net",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "Microsoft 365|Office 365",
+        "confidence": 40
+      }
+    ]
+  },
+  "Microsoft Exchange / Outlook Web Access (OWA)": {
+    "category": "misc",
+    "website": "https://learn.microsoft.com/exchange/",
+    "headers": [
+      {
+        "name": "x-owa-version",
+        "pattern": ".*",
+        "confidence": 90
+      },
+      {
+        "name": "x-feserver",
+        "pattern": ".*",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^OutlookSession$",
+        "confidence": 90
+      },
+      {
+        "name": "^exchangecookie$",
+        "confidence": 90
+      },
+      {
+        "name": "^X-OWA-CANARY$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/owa/auth/",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Outlook Web (App|Access)|Outlook on the web",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Microsoft Exchange",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "/owa/auth/(logon\\.aspx|[\\d.]+/)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/owa/(prem|scripts)/[\\d.]+",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/owa/\\d+\\.\\d+\\.\\d+\\.\\d+/",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "action=\"auth\\.owa\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"forcedownlevel\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"isUtf8\"",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"lgnDiv\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "OwaStrings|g_isNewOwa|owaconfig",
+        "confidence": 90
+      }
+    ],
+    "implies": [
+      ".NET"
+    ]
+  },
+  "Open-Xchange / OX App Suite": {
+    "category": "misc",
+    "website": "https://www.open-xchange.com",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Open-Xchange",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^open-xchange-public-session-",
+        "confidence": 90
+      },
+      {
+        "name": "^JSESSIONID$",
+        "confidence": 5
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "OX App Suite|Open-Xchange",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "ox\\.ui\\.apps|io\\.ox/",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/appsuite/(api|v=)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"languageselect\"",
+        "confidence": 40
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "Postfix (SMTP banner)": {
+    "category": "misc",
+    "website": "https://www.postfix.org",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Postfix",
+        "confidence": 80
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "This is the mail system at host",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "Reporting-MTA: dns;",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "ESMTP Postfix",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Postfix ?Admin|postfixadmin",
+        "confidence": 85
+      }
+    ]
+  },
+  "qmail (SMTP banner)": {
+    "category": "misc",
+    "website": "https://cr.yp.to/qmail.html",
+    "headers": [],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "qmail",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "This is the qmail-send program",
+        "confidence": 90
+      }
+    ]
+  },
+  "RainLoop Webmail": {
+    "category": "misc",
+    "website": "https://www.rainloop.net",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "RainLoop",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^rainloop$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/rainloop/v/",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "RainLoop( Webmail)?",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "rainloop/v/[\\d.]+/",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "rainloopAppData|rainloopTEMPLATES|window\\.rainloop",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"rl-(app|loading|content|loading-error|check)\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/\\?/(AppData|Css|Template|Lang|Plugins)/",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "rainloop-community",
+        "confidence": 85
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Roundcube Webmail": {
+    "category": "misc",
+    "website": "https://roundcube.net",
+    "headers": [
+      {
+        "name": "x-powered-by",
+        "pattern": "Roundcube",
+        "confidence": 90
+      }
+    ],
+    "cookies": [
+      {
+        "name": "^roundcube_sessid$",
+        "confidence": 90
+      },
+      {
+        "name": "^roundcube_sessauth$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Roundcube ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/program/js/",
+        "confidence": 80
+      },
+      {
+        "type": "script",
+        "pattern": "/skins/elastic/",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Roundcube Webmail",
+        "confidence": 60
+      },
+      {
+        "type": "body",
+        "pattern": "rcmail(\\.|\\b)",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "rcmail\\.(env|init|command|gettext|set_env)",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "rcube_webmail",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"rcmloginuser\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"rcmloginpwd\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "id=\"rcmloginsubmit\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"_task\" value=\"login\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"_action\" value=\"login\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/program/js/(app|common|jquery)(\\.min)?\\.js",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/skins/(elastic|larry|classic)/",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "_task=(mail|login|addressbook|settings)",
+        "confidence": 70
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Sendmail (SMTP banner)": {
+    "category": "misc",
+    "website": "https://www.proofpoint.com/us/products/email-protection/open-source-email-solution",
+    "headers": [
+      {
+        "name": "server",
+        "pattern": "Sendmail",
+        "confidence": 80
+      }
+    ],
+    "cookies": [],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "ESMTP Sendmail",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Sendmail ?\\d+\\.\\d+",
+        "confidence": 75
+      }
+    ]
+  },
+  "SOGo Groupware": {
+    "category": "misc",
+    "website": "https://www.sogo.nu",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^SOGoSudoUserPerm$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "script",
+        "pattern": "/SOGo\\.woa/",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "SOGo( Web ?Mail| Groupware)?",
+        "confidence": 65
+      },
+      {
+        "type": "body",
+        "pattern": "SOGo\\.woa",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/SOGo/so/",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/SOGo/connect",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/SOGo\\.woa/WebServerResources/(js|css)/",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "ng-app=\"SOGo\\.",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "SOGoRootURL|SOGoSudo",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"rememberLogin\"",
+        "confidence": 60
+      }
+    ]
+  },
+  "SquirrelMail": {
+    "category": "misc",
+    "website": "https://squirrelmail.org",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^SQMSESSID$",
+        "confidence": 90
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^SquirrelMail",
+        "confidence": 95
+      },
+      {
+        "type": "body",
+        "pattern": "SquirrelMail( version)? ?[\\d.]*",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"login_username\"",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"secretkey\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"js_autodetect_results\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"just_logged_in\"",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "src/(login|redirect|webmail|right_main|left_main)\\.php",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "squirrelmail\\.org",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "SquirrelMail Project Team",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "/squirrelmail/(src|plugins|functions|themes)/",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "sqspell",
+        "confidence": 80
+      }
+    ],
+    "implies": [
+      "PHP"
+    ]
+  },
+  "Zimbra Collaboration Suite": {
+    "category": "misc",
+    "website": "https://www.zimbra.com",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^ZM_AUTH_TOKEN$",
+        "confidence": 90
+      },
+      {
+        "name": "^JSESSIONID$",
+        "confidence": 5
+      }
+    ],
+    "html": [
+      {
+        "type": "meta",
+        "name": "generator",
+        "pattern": "^Zimbra ?([\\d.]+)?",
+        "confidence": 95
+      },
+      {
+        "type": "script",
+        "pattern": "/zimbra/js/",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "ZmZimbraMail",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "Zimbra Web Client",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "Zimbra Collaboration( Suite)?",
+        "confidence": 70
+      },
+      {
+        "type": "body",
+        "pattern": "Synacor|Zimbra,? Inc",
+        "confidence": 40
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"loginOp\"",
+        "confidence": 85
+      },
+      {
+        "type": "body",
+        "pattern": "name=\"login_csrf\"",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "zLoginField|zLoginButton|ZLoginFormPanel",
+        "confidence": 90
+      },
+      {
+        "type": "body",
+        "pattern": "/zimbra/(js|img|h|m|public)/",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "/js/(ajax|zimbraMail|zimbraAdmin)/",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "zimbraAdmin|ZimbraAdmin",
+        "confidence": 75
+      },
+      {
+        "type": "body",
+        "pattern": "client=(preferred|advanced|standard|mobile)",
+        "confidence": 60
+      }
+    ],
+    "implies": [
+      "Java"
+    ]
+  },
+  "Zoho Mail": {
+    "category": "misc",
+    "website": "https://www.zoho.com/mail/",
+    "headers": [],
+    "cookies": [
+      {
+        "name": "^zm_pr$",
+        "confidence": 80
+      },
+      {
+        "name": "^IAM_CSRF_TOKEN$",
+        "confidence": 40
+      }
+    ],
+    "html": [
+      {
+        "type": "body",
+        "pattern": "mail\\.zoho\\.com",
+        "confidence": 80
+      },
+      {
+        "type": "body",
+        "pattern": "accounts\\.zoho\\.com",
+        "confidence": 50
+      },
+      {
+        "type": "body",
+        "pattern": "ZohoMail|zmsrc",
+        "confidence": 70
+      }
+    ]
+  }
+}
